@@ -1,5 +1,5 @@
 # Class Mudpuppy
-#### 20200316-Python-FullStack-Night
+## 20200316-Python-FullStack-Night
 Repo for the PDX Code Guild Python Full Stack night course starting 03/16/2020
 
 Class is held from **March 16th, 2020 - July 24th, 2020**
