@@ -1,7 +1,7 @@
 import random
 
 eyes = [':', ';', '8', 'X']
-nose = ['-', '>']
+nose = ['-', '>', '^', '*']
 mouth = ['D', '|', 'P', ')', '(']
 how_many = input('How many emoticons do you want? ')
 how_many = int(how_many)
