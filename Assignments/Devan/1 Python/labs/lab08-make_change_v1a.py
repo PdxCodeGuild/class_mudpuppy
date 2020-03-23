@@ -6,4 +6,5 @@ dimes = user_amount % 100 % 25 // 10
 nickles = user_amount % 100 % 25 % 10 // 5
 pennies = user_amount % 5
 
-print(f'I can give you {dollars} dollars, {quarters} quarters, {dimes} dimes, {nickles} nickles, and {pennies} pennies.')
+print(
+    f'I can give you {dollars} dollars, {quarters} quarters, {dimes} dimes, {nickles} nickles, and {pennies} pennies.')
