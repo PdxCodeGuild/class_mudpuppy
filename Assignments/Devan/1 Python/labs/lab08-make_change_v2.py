@@ -5,11 +5,11 @@ def make_change():
         print('You must enter a positive number.')
     else:
         dollars = user_amount // 100
-        quarters = user_amount % 100 // 25
-        dimes = user_amount % 100 % 25 // 10
-        nickles = user_amount % 100 % 25 % 10 // 5
-        pennies = user_amount % 5
-
+        leftover_pennies = user_amount % 100
+        quarters = leftover_pennies // 25
+        dimes = leftover_pennies % 25 // 10
+        nickles = leftover_pennies % 25 % 10 // 5
+        pennies = leftover_pennies % 5
     print(
         f'I can give you {dollars} dollars, {quarters} quarters,\n{dimes} dimes, {nickles} nickles, and {pennies} pennies.')
 
