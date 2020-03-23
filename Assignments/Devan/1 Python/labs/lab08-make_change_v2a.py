@@ -24,6 +24,7 @@ class Change_Machine:
     def deposit(self):
         amount = float(input('\nHow much would you like to add? '))
         self.balance += amount
+        round(self.balance)
         print(f'\nYou have ${self.balance} available.')
         machine.actions()
 
