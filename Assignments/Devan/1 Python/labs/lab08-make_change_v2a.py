@@ -1,8 +1,7 @@
-currency = {'dollar': 100, 'quarter': 25, 'dime': 10, 'nickle': 5, 'penny': 1}
-actions = ['deposit', 'withdraw', 'empty account', 'check balance']
-
-
 class Change_Machine:
+    currency = {'dollar': 100, 'quarter': 25, 'dime': 10, 'nickle': 5, 'penny': 1}
+    actions = ['deposit', 'withdraw', 'empty account', 'check balance']
+
     def actions(self):
         print('\nWhat would you like to do?\n')
         user_action = input('Deposit, Withdraw, Empty Account, Check Balance, or Exit. ')
