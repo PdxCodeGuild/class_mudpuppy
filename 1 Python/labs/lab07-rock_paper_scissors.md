@@ -21,4 +21,10 @@ Let's list all the cases:
 
 After playing, ask them if they'd like to play again. If they say yes, restart the game, otherwise exit.
 
+## Advanced Version 1 (optional)
 
+Make a dictionary where each key is a choice, and each value is a list of two choices, ordered so that index zero will win against the key and index one will lose against the key. Use this dictionary to check who wins and who loses.
+
+## Advanced Version 2 (optional)
+
+Make a list of three choices. Get the indecies of the user's choice and the computer's choice. Compare these numbers to decide who wins and who loses. Modulus can help you compare the numbers.
