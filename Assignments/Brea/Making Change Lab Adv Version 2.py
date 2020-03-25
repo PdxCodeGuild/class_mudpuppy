@@ -7,6 +7,7 @@ user_input = float(user_input)
 user_input = round(user_input * 100)
 
 while True:
+
     user_dollars = user_input // 100
 
     user_quarters = round(user_input % 100 // 25)
@@ -21,12 +22,19 @@ while True:
 
     user_input2 = input("Would you like to add or subtract money, or are you done?: ")
     
-    if user_input2 = 'add':
+    if user_input2 == 'add':
+        user_input_add = input("How much would you like to add? : $ ")
+        user_input_add = float(user_input_add)
+        user_input_add = round(user_input_add * 100)
+        user_input = user_input + user_input_add
 
-    if user_input2 = "subtract":
 
-    if user_input2 = "done":
+    if user_input2 == "subtract":
+        user_input_sub = input("How much would you like to subtract? : $ ")
+        float(user_input_sub)
+        user_input2 = round(user_input * 100)
+        user_input = user_input + user_input_add
+
+    if user_input2 == "done":
         print("Thank you!")
         break
-
-
