@@ -1,10 +1,17 @@
-num_of_pennies = int(input('How many pennies do you have? '))
-if num_of_pennies < 0:
-    print('You must enter a postitive number')
-else:
-    quarters = num_of_pennies // 25
-    dimes = (num_of_pennies % 25) // 10
-    nickles = num_of_pennies % 25 % 10 // 5
-    pennies = num_of_pennies % 5
-print(
-    f'I can give you {quarters} quarters, {dimes} dimes, {nickles} nickles, and {pennies} pennies.')
+def make_change():
+    user_amount = float(input('How much money do you have (ex. 1.25)? '))
+    user_amount = round(user_amount * 100)
+    if user_amount < 0:
+        print('You must enter a positive number.')
+    else:
+        dollars = user_amount // 100
+        leftover_pennies = user_amount % 100
+        quarters = leftover_pennies // 25
+        dimes = leftover_pennies % 25 // 10
+        nickles = leftover_pennies % 25 % 10 // 5
+        pennies = leftover_pennies % 5
+    print(
+        f'I can give you {dollars} dollars, {quarters} quarters,\n{dimes} dimes, {nickles} nickles, and {pennies} pennies.')
+
+
+make_change()
