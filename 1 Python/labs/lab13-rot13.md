@@ -12,3 +12,11 @@ Write a program that prompts the user for a string, and encodes it with ROT13. F
 ## Version 2 (optional)
 
 Allow the user to input the amount of rotation used in the encryption / decryption.
+
+## Advanced Version 1 (optional)
+
+Allow the user to enter in punctuation, and ignore the punctuation. Remember, it is easier to check if something is in a set than a string or a list.
+
+## Advanced Version 2 (optional)
+
+Use ord, chr, and modulus to achieve the rotation.

@@ -29,3 +29,7 @@ Allow the user to keep performing operations until they say 'done'. Use `while T
 ## Version 3 (optional)
 
 Allow the user to enter a full arithmetic expression and use [eval](https://docs.python.org/3/library/functions.html#eval) to evaluate it.
+
+## Advanced version 1 (optional)
+
+Create a dictionary where the keys are strings representing the operation, and the values are magic methods that are attributes of the int class. Use this dictionary to perform the desired operation.
