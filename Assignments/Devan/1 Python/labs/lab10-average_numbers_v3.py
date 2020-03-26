@@ -12,17 +12,25 @@ while True:
     num = float(user_num)
     num_list.append(num)
 
+
 def reduce_list_to_value(fn, starting_value, values):
     accumulator = starting_value
     for val in values:
         accumulator = fn(accumulator, val)
-
     return accumulator
 
+
+def add_nums():
+    for num in num_list:
+        num_list += num
+    return
+
+
 # add up all the entered numbers
-number_sum = reduce_list_to_value(operator.add, 0, num_list)
+number_sum = reduce_list_to_value(add_nums, 0, num_list)
 
 # get the average and sum
+
 avg = number_sum / len(num_list)
 
 # print out average

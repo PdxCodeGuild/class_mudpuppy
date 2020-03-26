@@ -30,3 +30,11 @@ One function you might write is `pick6()` which will generate a list of 6 random
 ## Version 2
 
 The ROI (return on investment) is defined as `(earnings - expenses)/expenses`. Calculate your ROI, print it out along with your earnings and expenses.
+
+## Advanced Version 1
+
+Create a class that represents a ticket.
+
+## Advanced Version 2
+
+Give your class the magic method \_\_and\_\_, so that `ticket1 & ticket2` evaluates to a list of ones and zeroes, a one representing matching numbers and a zero representing non-matching numbers. `len(ticket1 & ticket2)` should let you know how many matches there are between the tickets.

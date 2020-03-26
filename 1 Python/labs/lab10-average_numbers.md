@@ -37,3 +37,7 @@ Below is an example input/output:
 > enter a number, or 'done': done
 average: 4
 ```
+
+## Advanced Version 1 (optional)
+
+Find the median and mode. To find the median, use the list.sort method. To find the mode, use a dictionary to count instances of each number.
