@@ -27,11 +27,15 @@ while True:
             print('\nThanks for using the calculator.')
             break
         if operator not in operators:
-            print('Not a vaild operator...')
+            print('Not a vaild operator...')		
         else:
-            n1 = int(input('Enter the first number: '))
+            n1 = input('Enter the first number: ') # todo: validate user entered number
+            if n1 is not int:
+            	print('Enter a vaild number. ')
             n2 = int(input('Enter the second number: '))
-            print(eval(get_operator(operator), n1, n2))
+            if n2 is not int:
+            	print('Enter a valid number. ')
+            print(eval(get_operator(operator), int(n1), int(n2)))
     except KeyboardInterrupt:
         print('\nThank You')
         break
