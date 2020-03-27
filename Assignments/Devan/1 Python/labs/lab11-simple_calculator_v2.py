@@ -1,10 +1,5 @@
-'''
-Lab 11: Simple Calculator
+# Lab 11: Simple Calculator Version 2
 
-Version 2
-
-Allow the user to keep performing operations until they say 'done'. Use while True and break
-'''
 
 def calc_2_nums(usr_operator, num1, num2):
     if usr_operator == '+':
