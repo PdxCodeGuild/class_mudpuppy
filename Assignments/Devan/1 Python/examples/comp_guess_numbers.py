@@ -1,5 +1,5 @@
 def average(x,y):
-    return round((x + y)) / 2
+    return (x + y) // 2
 
 def search(lower, upper, target, guess):
     print(f'You guessed {guess}')
@@ -8,10 +8,10 @@ def search(lower, upper, target, guess):
         print('Correct')
     elif guess < target:
         print('Too low.')
-        search(guess, upper, target, average(guess, upper))
+        search(guess, upper, target, average(guess, upper)+1)
     elif guess > target:
         print('Too high.')
         search(lower, guess, target, average(lower, guess))
 
 
-search(1,10,5,1)
+search(1,100,1,2)
