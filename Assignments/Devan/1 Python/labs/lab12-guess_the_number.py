@@ -7,5 +7,7 @@ for i in range(10):
     if usr_num == comp_num:
         print(f'Correct, the number was {comp_num}. ')
         break
-
-    print(f'Wrong, you have {9 - i} guesses remaining.')
+    elif usr_num < comp_num:
+        print(f'Too low, you have {9 - i} guesses remaining.')
+    elif usr_num > comp_num:
+        print(f'Too high, you have {9 - i} guesses remaining.')
