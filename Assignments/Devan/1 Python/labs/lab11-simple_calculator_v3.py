@@ -1,4 +1,4 @@
-# Lab 11: Simple Calculator Version 3
+#  Lab 11: Simple Calculator Version 3
 
 def get_operator(op):
     return operators[op]
