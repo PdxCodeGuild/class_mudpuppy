@@ -1,20 +1,25 @@
 import string as str
 import clipboard
+import sys
 from colorama import Fore, Style
 
 class Rot13:
 
     def menu(self):
-        action = input("\nEnter encrypt, decrypt, or done: ")
-        if action == 'encrypt':
-            rot13.encrypt()
-        if action == 'decrypt':
-            rot13.decrypt()
-        if action == 'done':
-            pass
-        else:
-            print('\nNot a valid input. ')
-            rot13.menu()
+        try:
+            action = input("\nEnter encrypt, decrypt, or done: ")
+            if action == 'encrypt':
+                rot13.encrypt()
+            if action == 'decrypt':
+                rot13.decrypt()
+            if action == 'done':
+                print(Fore.YELLOW + "\nThank's for using the cypher.")
+                sys.exit()
+            else:
+                print('\nNot a valid input. ')
+                rot13.menu()
+        except KeyboardInterrupt:
+            print(Fore.YELLOW + "\nThank's for using the cypher.")
 
     def encrypt(self):
         text = input('What would you like to encrypt: ')
@@ -56,5 +61,3 @@ class Rot13:
 rot13 = Rot13()
 
 rot13.menu()
-
-print("Thank's for using the cypher.")
