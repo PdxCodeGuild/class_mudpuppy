@@ -1,39 +1,26 @@
-# import string
-# user_input = (input(f"Choose the first letter of your code "))
-# user_input2 = (string.ascii_lowercase)
-# code = (user_input2[0:13])
-# code2 = (user_input2[13:26])
-# full_code = code2 + code
-# for letter in user_input:
-#     print(letter)
-# switch = (user_input2.index(letter))
-# print(full_code[switch])
+def rot13(message):
+    encoded_message = []
+    for c in message:
+        e = ord(c)
+        if e >= 97 and e < 97 + 26:
+            e -= 97
+            e += 13
+            e %= 26
+            e += 97
+            encoded_message.append(chr(e))
+        elif e >= 65 and e < 65 +26:
+            e -= 65
+            e += 13
+            e %= 26
+            e += 65
+            encoded_message.append(chr(e))
+        else:
+            encoded_message.append(chr(e))
 
-"""
-version 2
-"""
-
-import string
-user_input = (input(f"Choose the first letter of your code "))
-user_input2 = (string.ascii_lowercase)
-user_input3 = int(input(f"choose number of rotations: "))
-user_input4 = (string.punctuation)
-code = (user_input2[0:user_input3])
-code2 = (user_input2[user_input3:26])
-# print(code)
-# print(code2)
-full_code = code2 + code
-for letter in user_input:
-    print(letter)
-switch = (user_input2.index(letter))
-print(full_code[switch])
+    
+    return "".join(encoded_message)
+print(rot13(""))
+# print(rot13("hedwig dies on page 17"))
 
 
 
-# my_str = 'abc'
-# in_code = 'cab'
-# output = ''
-# for letter in in_code:
-#     num = in_code.index(letter)
-#     output = output + in_code[(num + 2) % 3]
-# print(output)
