@@ -23,7 +23,7 @@ def find_matches(winning_nums, ticket):
 winning_nums = pick6()
 cost = 0
 earnings = 0
-for i in range(1000000):
+for i in range(2000000):
     ticket = pick6()
     cost += 2
     earnings += find_matches(winning_nums, ticket)
@@ -38,3 +38,5 @@ if net_earnings > 0:
     print(f"You made: ${net_earnings}")
 else:
     print(f"You lost: ${net_earnings}")
+
+print(f"Your ROI is: {net_earnings/cost}")
