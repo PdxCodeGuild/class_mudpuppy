@@ -32,4 +32,8 @@ Allow the user to enter a full arithmetic expression and use [eval](https://docs
 
 ## Advanced version 1 (optional)
 
-Create a dictionary where the keys are strings representing the operation, and the values are magic methods that are attributes of the int class. Use this dictionary to perform the desired operation.
+Create a dictionary where the keys are strings representing the operation, and the values are functions. Use this dictionary to perform the desired operation.
+
+## Advanced version 2 (optional)
+
+Instead of making the dictionary's values functions, make the dictionary's values the magic methods of the int class (such as `int.__add__`).
