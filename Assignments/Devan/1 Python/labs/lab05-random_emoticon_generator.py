@@ -1,11 +1,24 @@
 import random
 
-eyes = [':', ';', '8', 'X']
-nose = ['-', '>', '^', '*']
-mouth = ['D', '|', 'P', ')', '(']
-how_many = input('How many emoticons do you want? ')
-how_many = int(how_many)
-emoticon = ''
-for i in range(how_many):
-    emoticon = random.choice(eyes) + random.choice(nose) + random.choice(mouth)
-    print(emoticon)
+
+
+def _main_():
+    how_many = int(input('How many emoticons do you want? '))
+    emoticon = ''
+    for _ in range(how_many):
+        emoticon = make_face()
+        print(emoticon)
+
+def make_eyes():
+    return random.choice(':;8X')
+    
+def make_nose():
+    return random.choice('->^•')
+    
+def make_mouth():
+    return random.choice('D|])(P')
+    
+def make_face():
+    return make_eyes() + make_nose() + make_mouth()
+
+_main_()
