@@ -1,8 +1,7 @@
-#Lab 15, version 1, March 31st, 2020
-
-user_input = int(input("What whole number (1-99) would you like to convert to words?: "))
+user_input = int(input("What whole number (1-999) would you like to convert to words?: "))
 
 ones_dict = {
+0: '',
 1: 'one',
 2: 'two',
 3: 'three',
@@ -26,6 +25,7 @@ teens_dict = {
 19: 'nineteen'}
 
 tens_dict = {
+0: '',
 2: 'twenty',
 3: 'thirty',
 4: 'forty',
@@ -36,7 +36,7 @@ tens_dict = {
 9: 'ninety'}
 
 hunds_dict = {
-1: 'one hundred'
+1: 'one hundred',
 2: 'two hundred',
 3: 'three hundred',
 4: 'four hundred',
@@ -60,16 +60,13 @@ elif user_input > 9 and user_input < 20:
 elif user_input > 19 and user_input < 100:
     tens_dig = user_input // 10
     ones_dig = user_input % 10
-    print(f"Your number in words is {tens_dict[tens_dig]}-{ones_dict[ones_dig]}")
+    print(f"Your number in words is {tens_dict[tens_dig]} {ones_dict[ones_dig]}")
 
 elif user_input > 99:
     hunds_dig = user_input // 100
     tens_dig = (user_input % 100) // 10
     ones_dig = user_input % 10
-    print(f"Your number in words is {hunds_dig[hunds_dict]} {tens_dict[tens_dig]}-{ones_dict[ones_dig]}")
+    print(f"Your number in words is {hunds_dict[hunds_dig]} {tens_dict[tens_dig]} {ones_dict[ones_dig]}")
 
 elif user_input < 1 or user_input > 999:
     print("That number is not accepted")
-
-
-
