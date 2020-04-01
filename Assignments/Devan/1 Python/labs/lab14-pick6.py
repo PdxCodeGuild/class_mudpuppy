@@ -15,7 +15,7 @@ def pick6():
 def find_matches(winning_nums, ticket):
     jackpot = [0, 4, 7, 100, 50000, 1000000, 25000000]
     num_wins = 0
-    for i in range(6):
+    for i in range(len(ticket)):
         if winning_nums[i] == ticket[i]:
             num_wins += 1
     return jackpot[num_wins]
