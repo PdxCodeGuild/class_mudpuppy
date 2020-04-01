@@ -1,4 +1,4 @@
-
+from huepy import *
 
 # Define our dicts of numbers in text form
 singles = {1: 'One', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', 6: 'Six', \
@@ -22,10 +22,27 @@ def tens_text(num):
         else:
             return tens[tens_digit-2] + ' ' + singles[singles_digit]
 
+def hundreds_text(num):
+    """Converts a number between 100 and 1000 to text"""
+    hundreds_digit = num // 100
+    tens_digit = num % 100
+    hundreds_text = singles[hundreds_digit] + ' ' + "Hundred"
+    return hundreds_text + ' ' + tens_text(tens_digit)
 
-num = int(input("Please enter a number: "))
 
-if num < 100:
-    print(f"Your number is {tens_text(num)}")
-elif num < 1000:
-    print(f"Your number is unknown")
+def _main_():
+    num = int(input("Please enter a number: "))
+    if num < 0:
+        num = abs(num)
+        if num < 100:
+            print(f"Your number is negative {tens_text(num)}")
+        elif num < 1000:
+            print(f"Your number is negative {hundreds_text(num)}")
+    elif num == 0:
+        print("Your number is zero")
+    elif num < 100:
+        print(f"Your number is {tens_text(num)}")
+    elif num < 1000:
+        print(f"Your number is {hundreds_text(num)}")
+
+_main_()
