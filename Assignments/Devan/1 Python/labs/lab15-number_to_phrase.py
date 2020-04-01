@@ -1,6 +1,4 @@
-from huepy import *
-
-# Define our dicts of numbers in text form
+# Define the dicts of numbers in text form
 singles = {1: 'One', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', 6: 'Six', \
            7: 'Seven', 8: 'Eight', 9: 'Nine'}
 teens = {10: 'Ten', 11: 'Eleven', 12: 'Twelve', 13: 'Thirteen', 14: 'Fourteen', \
@@ -31,18 +29,25 @@ def hundreds_text(num):
 
 
 def _main_():
-    num = int(input("Please enter a number: "))
-    if num < 0:
-        num = abs(num)
-        if num < 100:
-            print(f"Your number is negative {tens_text(num)}")
-        elif num < 1000:
-            print(f"Your number is negative {hundreds_text(num)}")
-    elif num == 0:
-        print("Your number is zero")
-    elif num < 100:
-        print(f"Your number is {tens_text(num)}")
-    elif num < 1000:
-        print(f"Your number is {hundreds_text(num)}")
+    """Takes a number, calls functions to convert it to text, then prints the text"""
+    while True:
+        num = input("Please enter a number or done: ")
+        if num == "done":
+            print("Thank You!")
+            break
+        else:
+            num = int(num)
+            if num < 0:
+                num = abs(num)
+                if num < 100:
+                    print(f"Your number is negative {tens_text(num)}")
+                elif num < 1000:
+                    print(f"Your number is negative {hundreds_text(num)}")
+            elif num == 0:
+                print("Your number is zero")
+            elif num < 100:
+                print(f"Your number is {tens_text(num)}")
+            elif num < 1000:
+                print(f"Your number is {hundreds_text(num)}")
 
 _main_()
