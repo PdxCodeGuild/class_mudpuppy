@@ -21,7 +21,7 @@ secret_message = ''
 
 for letter in message_list:    #convert letters of message into indices
     code_list.append(alpha_list.index(letter))
-
+    
 for num in code_list:       #adds 13 to every code
     num += 13
     rot_code_list.append(num)

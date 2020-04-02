@@ -1,16 +1,40 @@
-'''
-We're going to average a list of numbers. Start with the following list, iterate through it, keeping a 'running sum', then divide that sum by the number of elements in that list. Remember len will give you the length of a list.
-'''
+import operator
 
 
-nums = [5, 0, 8, 3, 4, 1, 6]
+# create an empty list for numbers
+num_list = []
 
-running_sum = 0
-for num in nums:
-    running_sum += num
+# loop unti user enters done and add input to num_list
+while True:
+    user_num = input('Enter a number, or done: ')
+    if user_num == 'done':
+        break
+    num = float(user_num)
+    num_list.append(num)
 
-avg = running_sum / len(nums)
 
-print(running_sum)
+def reduce_list_to_value(fn, starting_value, values):
+    accumulator = starting_value
+    for val in values:
+        accumulator = fn(accumulator, val)
+    return accumulator
 
-print(f'The average is {avg}')
+
+def add_nums():
+    for num in num_list:
+        num_list += num
+    return
+
+
+# add up all the entered numbers
+number_sum = reduce_list_to_value(add_nums, 0, num_list)
+
+# get the average and sum
+
+avg = number_sum / len(num_list)
+
+# print out average
+print(f'Your average is {avg}')
+
+# print out total
+print(f'The sum is {number_sum}')
