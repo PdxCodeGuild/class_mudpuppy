@@ -28,9 +28,7 @@ def greyscale():
     img_grey.save('1 Python/labs/img/mudpuppy_greyscale.jpeg')
     img_grey.show()
 
-def stick_figure():
-    width = 500
-    height = 500
+def stick_figure(width, height, head_color='tan'):
 
     img = Image.new('RGB', (width, height))
 
@@ -46,19 +44,20 @@ def stick_figure():
 
     # draw a line from x0, y0, x1, y1
     color = (256, 128, 128)  # pink
-    draw.line(((width/2), (height/4), (width/2), (height-(height/3))), fill=color) # body
-    draw.line((200, 250, 300, 250), fill=color) # arms
-    draw.line((250, 300, 200, 350), fill=color) # l leg
-    draw.line((250, 300, 300, 350), fill=color) # r leg
-
+    draw.line(((width/2), (height/4), (width/2), (height-(height/2.5))), fill=color) # body
+    draw.line(((width/1.5), (height/2), (width-(width/1.5)), (height/2)), fill=color) # arms
+    draw.line(((width/2), (height-(height/2.5)), (width/1.5), (height-(height/6))), fill=color) # l leg
+    draw.line(((width/2), (height-(height/2.5)), (width-(width/1.5)), (height-(height/6))), fill=color) # r leg
 
     circle_x = width/2
     circle_y = height/4
-    circle_radius = 50
-    draw.ellipse((circle_x-circle_radius, circle_y-circle_radius, circle_x+circle_radius, circle_y+circle_radius), fill='tan')
+    circle_radius = width/10
+    draw.ellipse((circle_x-circle_radius, circle_y-circle_radius, circle_x+circle_radius, circle_y+circle_radius), fill=head_color)
 
     img.show()
 
 
-stick_figure()
+stick_figure(600, 600, head_color='red')
+
+
 # greyscale()
