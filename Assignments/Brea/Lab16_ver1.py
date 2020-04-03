@@ -22,6 +22,7 @@ for i in range(width):
 
         Grey = int(R + G + B)
 
+
         pixels[i, j] = (Grey, Grey, Grey)
 
 img_mudpuppy.show()
