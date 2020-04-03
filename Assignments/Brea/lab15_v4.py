@@ -1,8 +1,14 @@
-#Lab 15, version 2, March 31st, 2020
+#Lab 15, version 4, March 31st, 2020
+import datetime
 
-user_input = int(input("What time (##:##) convert to words?: "))
+user_input = input("What time (##:##) do you want to convert to words?: ")
 
-ones_dict = {
+user_input_datetime = datetime.datetime.strftime(user_input "%I:%M")
+
+hours = user_input_datetime(%l)
+print(hours)
+
+hours_dict = {
 0: '',
 1: 'one',
 2: 'two',
@@ -12,9 +18,12 @@ ones_dict = {
 6: 'six',
 7: 'seven',
 8: 'eight',
-9: 'nine'}
+9: 'nine',
+10: 'ten'
+11: 'eleven',
+12: 'twelve'}
 
-teens_dict = {
+mins_dict = {
 10: 'ten',
 11: 'eleven',
 12: 'twelve',
@@ -48,27 +57,36 @@ hunds_dict = {
 8: 'eight hundred',
 9: 'nine hundred'}
 
+# def hours_words():
+#     return(hours_dict[hours])
 
-if user_input < 10:
-    output = ones_dict[user_input]
-    output = str(output)
-    print(f"Your number in words is {output}")
+# def mins_words:
+#     if minutes >
+    
 
-elif user_input > 9 and user_input < 20:
-    output = teens_dict[user_input]
-    output = str(output)
-    print(f"Your number in words is {output}")
 
-elif user_input > 19 and user_input < 100:
-    tens_dig = user_input // 10
-    ones_dig = user_input % 10
-    print(f"Your number in words is {tens_dict[tens_dig]} {ones_dict[ones_dig]}")
+# if user_input < 10:
+#     output = ones_dict[user_input]
+#     output = str(output)
+#     print(f"Your number in words is {output}")
 
-elif user_input > 99:
-    hunds_dig = user_input // 100
-    tens_dig = (user_input % 100) // 10
-    ones_dig = user_input % 10
-    print(f"Your number in words is {hunds_dict[hunds_dig]} {tens_dict[tens_dig]} {ones_dict[ones_dig]}")
+# elif user_input > 9 and user_input < 20:
+#     output = teens_dict[user_input]
+#     output = str(output)
+#     print(f"Your number in words is {output}")
 
-elif user_input < 1 or user_input > 999:
-    print("That number is not accepted")
+# elif user_input > 19 and user_input < 100:
+#     tens_dig = user_input // 10
+#     ones_dig = user_input % 10
+#     print(f"Your number in words is {tens_dict[tens_dig]} {ones_dict[ones_dig]}")
+
+# elif user_input > 99:
+#     hunds_dig = user_input // 100
+#     tens_dig = (user_input % 100) // 10
+#     ones_dig = user_input % 10
+#     print(f"Your number in words is {hunds_dict[hunds_dig]} {tens_dict[tens_dig]} {ones_dict[ones_dig]}")
+
+# elif user_input < 1 or user_input > 999:
+#     print("That number is not accepted")
+
+# print(f"The time is {hours} hours and {minutes} minutes")
