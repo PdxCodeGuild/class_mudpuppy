@@ -1,3 +1,5 @@
+## BUG: If you enter a total value of 30 you get an out of range error
+
 
 def blackjack_advisor():
     """ Ask's for 3 cards and tells you wether to stay or hit. """
