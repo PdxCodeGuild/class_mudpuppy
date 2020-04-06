@@ -1,0 +1,42 @@
+1,7c1,7
+< # def check_palindrome():
+< #     user_input = input('word: ')
+< #     for index in range(len(user_input)):
+< #             if user_input[index] == user_input[len(user_input) - index - 1]:
+< #                 print("they match ")
+< #                 # user_input = user_input - 1
+< # # return 
+---
+> def check_palindrome():
+>     user_input = input('word: ')
+>     # Set True/False flag
+>     for index in range(len(user_input)):
+>             if user_input[index] == user_input[len(user_input) - index - 1]: # Check for mismatches, not matches
+>                 # change True/False flag
+>     # return True/False flag
+9c9,10
+< # print(check_palindrome())
+---
+> 
+> print(check_palindrome())
+17,21c18,31
+<     if word1 == word2:
+<         print("True")
+<     else:
+<         print("False")
+< check_anagram("a bc", "acB")
+---
+>     return word1 == word2:
+> 
+> print(check_anagram("a bc", "acB"))
+> in1 = 'a bc'
+> in2 = 'acB'
+> if check_anagram(in1, in2):
+>     print("They are anagrams")
+> else:
+>     print("They aren't anagrams")
+> 
+> def remove_vowels(in_text): # hint for removing punctuation
+>     for vowel in 'aoeuiy':
+>         in_text = in_text.replace(vowel, '')
+>     return in_text
