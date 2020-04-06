@@ -1,0 +1,20 @@
+5,7d4
+< winner_card = []
+< my_card = []
+< 
+11c8
+<             card.append(random.choice(range(1, 100)))
+---
+>             card.append(random.choice(range(1, 100))) # should probably be random.randint
+16c13
+<     for _ in range(len(winner_card)):
+---
+>     for _ in range(len(winner_card)): # Don't use underscore here, use i or index
+44a42
+>     # return [0, 4, 7, 100][matching_counter] + my_balance - 2
+63c61,62
+< print(f"I won ${my_balance}! My ROI was ${roi_calc}")
+\ No newline at end of file
+---
+> print(f"I won ${my_balance}! My ROI was ${roi_calc}")
+> # Nice, great job!
