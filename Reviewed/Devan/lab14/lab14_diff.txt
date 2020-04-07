@@ -1,0 +1,11 @@
+12,13c12
+<     nums = [random.randint(1,99) for i in range(6)]
+<     return nums
+---
+>     return [random.randint(1,99) for i in range(6)]
+21a21,23
+>     # You can, but shouldn't, do this:
+>     # return jackpot[sum((winning_nums[i] == ticket[i] for i in range(6)))]
+>     
+42a45
+> # Nice, looks great!
