@@ -8,7 +8,7 @@ while user_input == 'yes':
     print('Let\'s play rock-paper-scissors!')
     print('The computer will ask the user for their choice of rock, paper or scissors, and then the computer will randomly make a selection.')
     #computer tell user how the game will work
-    user = input ('rock, paper or scissors: ')
+    user = input ('rock, paper or scissors:')
 
     choices = ('rock', 'paper', 'scissors')
     #the user will have to choose one of these options
@@ -32,12 +32,9 @@ while user_input == 'yes':
         if computer == 'rock':
             print('Computer wins, the computer chose rock')
 
-    user = input('Would you like to play again? Yes or No ') 
-    if user.lower() == 'no':
-        #stop the loop
-        break
-    # else: stop loop
-    #     print('Let\'s play again')
+    user = input('Would you like to play again?')
+
+    
 
 
 

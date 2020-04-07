@@ -1,0 +1,24 @@
+12c12
+< print(first_word)
+---
+> print(first_word) # nice prints, lets you see every step
+15a16,21
+> '''
+> Consider experimenting with combining some of these lines
+> 
+> first_word = list(input("First word: ").lower())
+> second_word = list(input("Second word: ").lower())
+> '''
+30,33c36,37
+<     if user_input == user_input_reverse:
+<         return True
+<     else:
+<         return False
+---
+>     return user_input == user_input_reverse
+> # Let me know if you want to do this lab the other way
+37c41
+< print (palindrome(user_input))
+\ No newline at end of file
+---
+> print (palindrome(user_input)) # Cool function!

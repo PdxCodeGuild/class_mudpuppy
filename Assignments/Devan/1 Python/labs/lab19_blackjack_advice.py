@@ -1,32 +1,20 @@
-"""
-Aces can be worth 11 if they won't put the total point value of both cards over 21.
-Remember that you can have multiple aces in a hand.
-Try generating a list of all possible hand values by doubling the number of values
-    in the output whenever you encounter an ace.
-For one half, add 1, for the other, add 11.
-This ensures if you have multiple aces that you account for the full range of possible values.
-"""
+## BUG: If you enter a total value of 30 you get an out of range error
 
-def find_card_value(card):
-    if card == "A":
-        return 1
-    elif card == "J" or card == "Q" or card == "K":
-        return 10
-    return int(card)
-
-def add_cards(c1, c2, c3):
-    return c1 + c2 + c3
 
 def blackjack_advisor():
+    """ Ask's for 3 cards and tells you wether to stay or hit. """
     c1 = input("What's your first card? ").upper()
     c2 = input("What's your second card? ").upper()
     c3 = input("What's your third card? ").upper()
 
-    total = add_cards(find_card_value(c1), find_card_value(c2), find_card_value(c3))
+    possibles = find_possible_totals(find_card_value(c1), find_card_value(c2), find_card_value(c3))
 
+    possibles.sort(reverse=True)    # Sorts the list largest to smallest
+    total = [val for val in possibles if val <= 21] # Loops through totals and returns you the first possible total <= 21
+    total = total[0] # Grabs the value from the new total list
     if total < 17:
         print(f"{total}: Hit")
-    elif total >= 17 < 21:
+    elif total >= 17 > 21:
         print(f"{total}: Stay")
     elif total == 21:
         print(f"{total}: Blackjack!")
@@ -34,4 +22,23 @@ def blackjack_advisor():
         print(f"{total}: BUSTED!")
 
 
-blackjack_advisor()
+def find_card_value(card):
+    """ Looks at input and returns a list of possible values for the card. """
+    if card == "A":
+        return [1, 11]
+    elif card == "J" or card == "Q" or card == "K":
+        return [10]
+    return [int(card)]
+
+
+def find_possible_totals(c1, c2, c3):
+    """ Gives you a list of possible totals while looking at both values of Ace """
+    possibles = []
+    for val1 in c1:     # Looks at all each value of the card and adds them up
+        for val2  in c2:
+            for val3 in c3:
+                possibles.append(val1 + val2 + val3)
+    return possibles    # Returns a list of all possible totals
+
+if __name__ == "__main__":
+    blackjack_advisor()
