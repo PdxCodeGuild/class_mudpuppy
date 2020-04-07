@@ -11,7 +11,7 @@ tens = ['Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Nin
 
 
 def _main_():
-    """Takes a number, calls functions to convert it to text, then prints the text"""
+    """ Takes a number, calls functions to convert it to text, then prints the text """
     while True:
         num = input("Please enter a number or done: ")
         if num == "done":
@@ -37,7 +37,7 @@ def _main_():
 
 
 def tens_text(num):
-    """Converts an number less than 100 to text"""
+    """ Converts an number less than 100 to text """
     if num < 10:
         return singles[num]
     elif num < 20:
@@ -51,7 +51,7 @@ def tens_text(num):
             return tens[tens_digit-2] + ' ' + singles[singles_digit]
 
 def hundreds_text(num):
-    """Converts a number between 100 and 1000 to text"""
+    """ Converts a number between 100 and 1000 to text """
     hundreds_digit = num // 100
     tens_digit = num % 100
     hundreds_text = singles[hundreds_digit] + ' ' + "Hundred"
@@ -59,18 +59,21 @@ def hundreds_text(num):
 
 
 
-#TODO:  Trying to grab the value from the dict and add it to the output string #idea
-# def num_to_roman(num):
-#     roman_numerals = {1: 'I', 5: 'V', 10: 'X', 50: 'L', 100: 'C', 500: 'D', 1000: 'M'}
-#     roman_num = ''
-#     while num > 0:
-#         for i in range(num // roman_numerals[key]):
-#             roman_num += roman_numerals[value]
-#             num -= roman_numerals[key]
-#             i += 1
-#         return roman_num
+# TODO:  Trying to grab the value from the dict and add it to the output string #idea
+def num_to_roman(num):
+    """ Convert number to Roman numeral. """
+    value =   [1000, 500, 100, 50,  10,   5,   1]
+    romans =  ['M',  'D', 'C', 'L', 'X', 'V', 'I']
+    roman_num = ''
+    i = 0
+    while num > 0:
+        for _ in range(len(value)):
+            roman_num += romans[i]
+            num -= value[i]
+            i += 1
+    return roman_num
 
 
 
-_main_()
-# num_to_roman(16)
+# _main_()
+print(num_to_roman(1))
