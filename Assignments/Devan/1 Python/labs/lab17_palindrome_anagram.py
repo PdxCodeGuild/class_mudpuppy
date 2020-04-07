@@ -1,15 +1,18 @@
 
-def _main_():
+def main_menu():
     """ Ask's if you would like to check palindrome or anagram """
     while True:
-        c = input("Enter palindrome, anagram, im done: ")
-        if c.lower() == "im done":
+        user_action = input("Enter palindrome, anagram, im done: ")
+
+    # # IDEA: Take punctuation out of user input
+    
+        if user_action.lower() == "im done":
             print("Thank You! ")
             break
-        if c.lower() == "palindrome":
+        if user_action.lower() == "palindrome":
             text = input("Enter a word: ")
             check_palindrome(text)
-        elif c.lower() == "anagram":
+        elif user_action.lower() == "anagram":
             word1 = input("Enter the first word: ")
             word2 = input("Enter the second word: ")
             check_anagram(word1, word2)
@@ -39,4 +42,6 @@ def check_anagram(word1, word2):
     else:
         print(f"{word1} and {word2} are not anagrams!")
 
-_main_()
+
+if __name__ == "__main__":
+    main_menu()
