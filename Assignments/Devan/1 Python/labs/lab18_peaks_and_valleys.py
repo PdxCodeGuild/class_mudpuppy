@@ -1,4 +1,4 @@
-
+from huepy import *
 data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
 
 
@@ -26,6 +26,19 @@ def peaks_and_valleys(data):
     return sorted(peaks_and_valleys)
 
 
-print(find_peaks(data))
-print(find_valleys(data))
-print(peaks_and_valleys(data))
+def draw_chart(data):
+    highest = max(data)
+    for x in range(highest, 0, -1):
+        row = ""
+        for y in range(len(data)):
+            if x <= data[y]:
+                row += ("X")
+            else:
+                row += " "
+        print(*row)
+    print(*data)
+
+draw_chart(data)
+# print(find_peaks(data))
+# print(find_valleys(data))
+# print(peaks_and_valleys(data))
