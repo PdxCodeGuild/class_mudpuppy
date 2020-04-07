@@ -1,6 +1,5 @@
-from huepy import *
-data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
 
+data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
 
 def find_peaks(data):
     """ Returns the indices of 'peaks', a number with a lower number on both the left and the right. """
@@ -37,6 +36,10 @@ def draw_chart(data):
                 row += " "
         print(*row)
     print(*data)
+
+def water(data):
+    water = 0
+    
 
 draw_chart(data)
 # print(find_peaks(data))
