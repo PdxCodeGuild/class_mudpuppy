@@ -1,4 +1,3 @@
-## BUG: If you enter a total value of 30 you get an out of range error
 
 
 def blackjack_advisor():
@@ -11,6 +10,9 @@ def blackjack_advisor():
 
     possibles.sort(reverse=True)    # Sorts the list largest to smallest
     total = [val for val in possibles if val <= 21] # Loops through totals and returns you the first possible total <= 21
+    if len(total) == 0: # If there are no totals <= to 21, print bust
+        print("You busted!")
+        return
     total = total[0] # Grabs the value from the new total list
     if total < 17:
         print(f"{total}: Hit")
