@@ -1,4 +1,4 @@
-#simple calculator lab 3.25.20
+#simple calculator lab v1 3.25.20
 
 op_input = input("What operation would you like to perform? (+, -, *, /) : ")
 
