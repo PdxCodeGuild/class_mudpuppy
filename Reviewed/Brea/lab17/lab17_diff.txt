@@ -1,0 +1,9 @@
+4a5,6
+> # good practice, but generally don't make a function
+> # that calls a single function, especially one that's already well-known like list()
+11a14,16
+> # I like that you did this the hard way (you learn more that way)
+> # but you could just do str.replace('', ' ')
+> # Also, don't use the parameter str, that overwrites a builtin function
+30a36
+> # Nice!

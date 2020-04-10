@@ -1,0 +1,41 @@
+5c5
+<         c = input("Enter palindrome, anagram, im done: ")
+---
+>         c = input("Enter palindrome, anagram, im done: ") # maybe just do .lower() once on this line after input
+11c11
+<             check_palindrome(text)
+---
+>             print(check_palindrome(text))
+15c15
+<             check_anagram(word1, word2)
+---
+>             print(check_anagram(word1, word2))
+22a23,28
+> # I like the way you did this, you could use text[::-1] or ''.join(reversed(text))
+> # You can also use .replace with text here to remove punctuation
+> def remove_vowels(text):
+>     for vowel in 'aoeui':
+>         text.replace(vowel, '')
+>     return text
+27,29c33,34
+<         print(f'{text} is a palindrome!')
+<     else:
+<         print(f'{text} is not a palendrome!')
+---
+>         return f'{text} is a palindrome!'
+>     return f'{text} is not a palendrome!'
+34c39
+<     sorted1 = ''.join(sorted(w1))
+---
+>     sorted1 = sorted(w1)
+36c41
+<     sorted2 = ''.join(sorted(w2))
+---
+>     sorted2 = sorted(w2)
+38,40c43,44
+<         print(f"{word1} and {word2} are anagrams!")
+<     else:
+<         print(f"{word1} and {word2} are not anagrams!")
+---
+>         return f"{word1} and {word2} are anagrams!"
+>     return f"{word1} and {word2} are not anagrams!"
