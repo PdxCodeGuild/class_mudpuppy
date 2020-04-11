@@ -10,7 +10,8 @@ with open(os.path.join(BASE, 'TheCalloftheWild.txt')) as book:
 
 
 def lower_and_split(contents):
-    results = ""
+    """ Looks at each character of contents and removes punctuation then returns a list of all words. """
+    results = ''
     contents = contents.lower()
     for char in contents:
         if char not in string.punctuation:
@@ -20,6 +21,7 @@ def lower_and_split(contents):
 
 
 def count_words(contents):
+    """ Creates a word_counts dictionary containing each word and how many times it was used. """
     results = lower_and_split(contents)
     word_counts = {}
     for word in results:
@@ -30,6 +32,7 @@ def count_words(contents):
 
 
 def top_10(word_counts):
+    """ Sorts the word_count dictionary and prints the top 10 used words and their counts. """
     words = list(word_counts.items()) # .items() returns a list of tuples
     words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
     for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
