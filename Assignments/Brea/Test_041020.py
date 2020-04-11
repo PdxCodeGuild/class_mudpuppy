@@ -1,16 +1,16 @@
 #Test Files, April 10th, 2020
 
-# input_sentence = 'the quick brown fox...'
+input_sentence = 'the quick brown fox...'
 
-# counter = {}
+counter = {}
 
-# for letter in input_sentence:
-#     print(letter)
-#     if letter in counter:
-#         counter[letter] = counter[letter] + 1     #adds to counter value within counter dictionary
-#     else: 
-#         counter[letter] = 1
-# print(counter)
+for letter in input_sentence:
+    print(letter)
+    if letter in counter:
+        counter[letter] = counter[letter] + 1     #adds to counter value within counter dictionary
+    else: 
+        counter[letter] = 1
+print(counter)
 
 #---------------------------
 #emotion_class_v2.py
