@@ -56,15 +56,17 @@ def find_followers(contents):
                 followers[word_pair] += 1
             else:
                 followers[word_pair] = 1
-    print_top_follwers(followers)
-    return followers
+    print_top_follwers(followers, user_word)
+    return followers, user_word
 
 
-def print_top_follwers(dict):
+def print_top_follwers(dict, user_word):
     """ Used in find_followers(), prints the top ten tuples. """
     dict = list(dict.items())
     dict.sort(key=lambda tup: tup[1], reverse=True)
-    print(dict[0][0])
+    if len(dict) == 0:
+        print('Did not find the word ' + bold(blue(user_word)))
+        return
     for i in range(min(10, len(dict))):
         print('The pair ' + bold(blue(dict[i][0][0])) + ' ' + bold(blue(dict[i][0][1])) + ' was mentioned ' + bold(blue(dict[i][1])) + ' times.')
 
