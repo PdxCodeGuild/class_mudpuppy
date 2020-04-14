@@ -27,7 +27,10 @@ def calc_ari(chars, words, sentences):
         13: {'ages': '17-18', 'grade_level':   '12th Grade'},
         14: {'ages': '18-22', 'grade_level':      'College'}
     }
-    print(f"The book is rated for ages {ari_scale[ari]['ages']} or a {ari_scale[ari]['grade_level']} reading level.")
+    print("-------------------------------------------------")
+    print(f"The ARI for The Call of the Wild is {ari}.")
+    print(f"This corresponds to a {ari_scale[ari]['grade_level']} level \nthat is suited for ages {ari_scale[ari]['ages']} years old. ")
+    print("-------------------------------------------------")
 
 
 def count_characters(text):
