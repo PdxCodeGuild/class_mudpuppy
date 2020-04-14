@@ -22,38 +22,37 @@ words_num = 0
 sent_num = 0
 
 def readability(char_num, words_num, sent_num):
-    ari_score = round((4.71 * (car_num / words_num)) + (0.5 * (words_num / sent_num)) - 21.43)
+    ari_score = round((4.71 * (char_num / words_num)) + (0.5 * (words_num / sent_num)) - 21.43)
     return ari_score
 
 import os
 print(os.path.abspath(__file__)) 
 BASE_dir = (os.path.dirname(os.path.abspath(__file__)))
-text_file = os.path.join(BASE_dir, 'the_time_machine.txt')
+text_file = os.path.join(BASE_dir, 'beautiful_and_damned.txt')
 
 with open(text_file) as f:
-    for line in f.readlines():
-        line = line.strip().split()
-        for index in line:
-            if index == '.':
+    for baseline in f.readlines():
+        line = baseline.strip().split()
+        for word in line:
+            if '.' in word:
                 sent_num += 1
     
-    for line in f.readlines():
+        line = baseline
         for punc in string.punctuation:
             line = line.replace(punc, '')
         line = line.strip().split()
-        for index in line:
-            if index == ' ':
-                word_num += 1
-    
-    for line in f.readlines():
-        line = line.strip().split()
+
+        words_num += len(line)
+
         for punc in string.punctuation:
-            line = line.replace(punc, '')
+            line = baseline.replace(punc, '')
         for index in line:
             line = line.replace(' ', '')
         for char in line:
             char_num +=1
 
-readability(char_num, words_num, sent_num)
+print(f"There are {char_num} characters, {words_num} words, and {sent_num} sentences.")
 
-print(f"The ARI for {file} is {ari_score}. This corresponds to a {ari_scale[ari_score][grade_level]} level of difficulty and is suitable for your typical {ari_scale[ari_score][ages]} year old")
+ari_score = readability(char_num, words_num, sent_num)
+
+print(f"The ARI for your text file is {ari_score}. This corresponds to a {ari_scale[ari_score]['grade_level']} level of difficulty and is suitable for your typical {ari_scale[ari_score]['ages']} year old")
