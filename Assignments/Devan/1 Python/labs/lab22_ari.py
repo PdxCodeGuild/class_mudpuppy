@@ -2,15 +2,17 @@ import os
 import string
 
 BASE = os.path.dirname(os.path.abspath(__file__))
+BOOK = "TheGettysburgAddress.txt"
 
-
-with open(os.path.join(BASE, 'TheCalloftheWild.txt')) as book:
+with open(os.path.join(BASE, BOOK)) as book:
     text = book.read().lower()
 
 
 
 def calc_ari(chars, words, sentences):
     ari = round(4.71*(chars/words)+0.5*(words/sentences)-21.43)
+    if ari > 14:
+        ari = 14
     ari_scale = {
          1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
          2: {'ages':   '6-7', 'grade_level':    '1st Grade'},
@@ -28,19 +30,18 @@ def calc_ari(chars, words, sentences):
         14: {'ages': '18-22', 'grade_level':      'College'}
     }
     print("-------------------------------------------------")
-    print(f"The ARI for The Call of the Wild is {ari}.")
+    print(f"The ARI for {BOOK} is {ari}.")
     print(f"This corresponds to a {ari_scale[ari]['grade_level']} level \nthat is suited for ages {ari_scale[ari]['ages']} years old. ")
     print("-------------------------------------------------")
 
 
 def count_characters(text):
-    results = ''
+    count = 0
     for char in text:
-        if char not in string.punctuation:
-            if char not in string.whitespace:
-                results += char
-    character_count = len(results)
-    return character_count
+        if char in string.ascii_letters:
+            count +=1
+    print(f'Chars: {count}')
+    return count
 
 
 def count_words(text):
@@ -50,12 +51,22 @@ def count_words(text):
             results += char
     results = results.split()
     word_count = len(results)
+    print(f'Words: {word_count}')
     return word_count
 
 
 def count_sentences(text):
-    sentence_count = text.count('.')
+    sentence_count = 0
+    for char in text:
+        if char in ".!?":
+            sentence_count += 1
+    print(f'Sentences: {sentence_count}')
     return sentence_count
+
+
+# def count_sentences(text):
+#     sentence_count = text.count('.')
+#     return sentence_count
 
 
 
