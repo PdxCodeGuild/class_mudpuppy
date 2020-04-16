@@ -24,32 +24,58 @@ final_contacts_list = [{'name': 'Ariana', 'food': 'apples', 'hobby': 'aardvarks'
 
 print(final_contacts_list)
 
-def create_contact(inpt_name, inpt_food, inpt_hobby):
-    create_dict = {}
-    create_dict['name'] = inpt_name
-    create_dict['food'] = inpt_food
-    create_dict['hobby'] = inpt_hobby
+# def create_contact(inpt_name, inpt_food, inpt_hobby):
+#     create_dict = {}
+#     create_dict['name'] = inpt_name
+#     create_dict['food'] = inpt_food
+#     create_dict['hobby'] = inpt_hobby
 
-    final_contacts_list.append(create_dict)
-    return create_dict
+#     final_contacts_list.append(create_dict)
+#     return create_dict
 
 # def retrieve_contact(inpt_name):
-#     for 
-#         print(f"{inpt_name}'s favorite food is {final_contacts_list[]} and their hobby is {final_contacts_list[]}.'")
-#     else:
-#         print("That user cannot be found in this contact list.")
+#     for dictionary in final_contacts_list:
+#         if inpt_name == dictionary['name']:
+#             print(dictionary)
+#             #print(f"{inpt_name}'s favorite food is {final_contacts_list[]} and their hobby is {final_contacts_list[]}.'")
+#         else:
+#             print("That user cannot be found in this contact list.")
 #     return inpt_name
-# print(final_contacts_list)
 
-def unpdate_contact(inpt_name, inpt_food, inpt_hobby):
-    
+# print(final_contacts_list[1]['name'])
 
-def delete_contact(inpt_name):
-    for i in range(len(final_contacts_list)):
-        if final_contacts_list[i]['name'] == inpt_name:
-            del final_contacts_list[i]
-    return inpt_name
+# def retrieve_contact(inpt_name):
+#     for piece in final_contacts_list:
+#         if inpt_name == final_contacts_list[piece]:
+#             print(piece)
+#     return piece
 
-update_contact('Diana')
+def update_contact(inpt_name):
+        user_input7 = input(f"Would you like to update {inpt_name}'s food or hobby? : ")
 
+        if user_input7 == 'food':
+            user_input8 = input(f"What is {inpt_name}'s new favorite food? : ") #not sure if I can use user_input8 twice on two lines
+            for dictionary in final_contacts_list:
+                if dictionary['name'] == inpt_name:
+                    dictionary['food'] = user_input8
+
+        if user_input7 == 'hobby':
+            user_input8 = input(f"What is {inpt_name}'s new hobby? : ")
+            for dictionary in final_contacts_list:
+                if dictionary['name'] == inpt_name:
+                    dictionary['hobby'] = user_input8
+        else:
+            print("That is not an option")
+
+        return inpt_name
+
+update_contact('Ben')
 print(final_contacts_list)
+
+# def delete_contact(inpt_name):
+#     for i in range(len(final_contacts_list)):
+#         if final_contacts_list[i]['name'] == inpt_name:
+#             del final_contacts_list[i]
+#     return inpt_name
+
+
