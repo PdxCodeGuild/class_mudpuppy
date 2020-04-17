@@ -27,7 +27,7 @@ Implement a CRUD REPL
 - **U**pdate a record: ask the user for the contact's name, then for which attribute of the user they'd like to update and the value of the attribute they'd like to set.
 - **D**elete a record: ask the user for the contact's name, remove the contact with the given name from the contact list.
 
-## Version 3
+## Version 3 (optional)
 
 When REPL loop finishes, write the updated contact info to the CSV file to be saved. I highly recommend saving a backup `contacts.csv` because you likely won't write it correctly the first time.
 
