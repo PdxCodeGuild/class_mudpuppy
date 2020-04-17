@@ -2,7 +2,6 @@
 
 def multiply_odds(num):
     """ Double every other element in the reversed list. """
-    # import pdb; pdb.set_trace()
     for n in range(0, len(num), 2):
         num[n] *= 2       # Double every other number.
     for n in range(len(num)):  # Subtract nine from numbers over nine.
@@ -18,6 +17,7 @@ def cc_validation(num):
     num.reverse()  # Reverse the digits.
     sum_num = multiply_odds(num)
     num = int(''.join(map(str, num)))
+    print(check_digit, sum_num, num, cc)
     if sum_num % 10 == check_digit:    # Compare digit 2 and check digit.
         print(f"{cc} is a valid credit card")
     else:
@@ -25,4 +25,4 @@ def cc_validation(num):
 
 
 
-cc_validation('4556737586899855')
+cc_validation('4574310529164973')
