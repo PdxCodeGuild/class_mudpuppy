@@ -1,7 +1,7 @@
 class Cat:
-    def __init__(self):
-        self.eyes = 1
-        self.color = 'orange'
+    def __init__(self, eyes, color):
+        self.eyes = eyes
+        self.color = color
         self.size = 'large'
         self.tiredness = 0
         self.hunger = 0
@@ -28,4 +28,10 @@ class Cat:
         elif self.eyes == 2:
             self.hunger += 2
 
+
+my_cat = Cat(1, 'orange')
+print(my_cat.tiredness, my_cat.hunger)
+my_cat.wander()
+my_cat.sleep()
+my_cat.eat()
 
