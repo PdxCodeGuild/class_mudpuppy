@@ -15,10 +15,10 @@ Convert the user's pennies into the maximum number of quarters, then the maximum
 # print("How many pennies do you have to start? ")
 # pennies = int(input(''))
 # print ("I'll convert quarters, nickles and dimes ")
-# quarters = ['5']
-# dimes = ['1']
-# nickels = ['0']
-# pennies_leftover = ['1']
+# quarters = [pennies // 25]
+# dimes = [pennies // 10]
+# nickels = [pennies // 5]
+# pennies_leftover = [pennies // 1]
 # print(f"That means you have {quarters} quarters, {dimes} dimes, {nickels} nickels, and {pennies_leftover} pennies. ")
 
 """
@@ -36,11 +36,19 @@ Have the user enter a dollar amount (1.36), convert this to the total in pennies
 In a while loop, let the user add or subtract a dollar amount to the current coin value, and then convert the resulting value into the smallest number of coins possible.
 
 """
-quarters = ['5']
-dimes = ['1']
-nickels = ['0']
-pennies_leftover = ['1']
-print(int(f"you have {quarters} quarters, {dimes} dimes, {nickels} nickels, and {pennies_leftover} pennies"))
+import decimal
+coin_value = float(int(10))
+dollar_amount = float(input('$'))
+print(dollar_amount)
+import math
+while coin_value > 10:
+    dollar_amount = coin_value // input
+print(dollar_amount)
+    
+
+
+
+
 
 
 
