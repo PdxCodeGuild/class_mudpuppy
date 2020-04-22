@@ -7,25 +7,31 @@ class ATM:
         self.balance = balance
         self.interest_rate = interest_rate
         self.transactions = []
+        self.transaction_id = 1
 
     def welcome(self):
         print('\nWelcome to the ATM.\nHow much money do you have? (ex. 1.75) ')
         self.balance = float(input('$ '))
+        self.transactions.append(f"ID:{self.transaction_id}     Start Balance: {self.balance}")
+        self.transaction_id += 1
 
     def check_balance(self):
         return self.balance
 
     def deposit(self, amount):
         self.balance += amount
-        self.transactions.append(f"Deposit: {amount}")
+        self.transactions.append(f"ID:{self.transaction_id}     Deposit: {amount}")
+        self.transaction_id += 1
 
     def withdraw(self, amount):
         self.balance -= amount
-        self.transactions.append(f"Withdraw: {amount}")
+        self.transactions.append(f"ID:{self.transaction_id}     Withdraw: {amount}")
+        self.transaction_id += 1
 
     def view_transactions(self):
         print("-----Transaction History-----")
         print("\n".join(self.transactions))
+        print("\nCurrent Balance: " + bold(green(self.check_balance())))
 
     def calc_interest(self):
         self.balance += self.balance * self.interest_rate
