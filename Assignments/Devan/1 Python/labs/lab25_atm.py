@@ -1,3 +1,5 @@
+from huepy import *
+
 currency = {'dollar': 100, 'quarter': 25, 'dime': 10, 'nickle': 5, 'penny': 1}
 
 class ATM:
@@ -7,8 +9,8 @@ class ATM:
         self.transactions = []
 
     def welcome(self):
-        print('Welcome to the change machine.\n')
-        self.balance = float(input('How much money do you have? (ex. 1.75) $'))
+        print('\nWelcome to the ATM.\nHow much money do you have? (ex. 1.75) ')
+        self.balance = float(input('$ '))
 
     def check_balance(self):
         return self.balance
@@ -47,13 +49,14 @@ class ATM:
         print('\nThank you! Bye!')
 
 atm = ATM()
+atm.welcome()
 
 while True:
-    print("\n\
+    print(yellow("\n\
 -------------------MENU-------------------\n\
 [1] Deposit      [2] Withdraw  [3] Balance\n\
 [4] Transactions [5] Interest  [6] Empty Acct\n\
-[0] Exit")
+[0] Exit"))
     try:
         command = int(input('Choose an option: '))
         if command > 6:
@@ -70,7 +73,7 @@ while True:
             amount = float(input(': '))
             atm.withdraw(amount)
         elif command == 3:
-            print(f'Your account balance is ${atm.check_balance()}')
+            print('Your account balance is $ ' + bold(green(atm.check_balance())))
         elif command == 4:
             atm.view_transactions()
         elif command == 5:
