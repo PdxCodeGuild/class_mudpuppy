@@ -4,6 +4,8 @@ class ATM:
         self.interest = interest
         self.transactions =[]
         # self.check_withdrawl = True
+    # def __repr__(self):
+    #     return f"balance:{self.balance}"
 
     def deposit_amount(self, deposit):
         self.balance += deposit
@@ -35,3 +37,23 @@ my_atm.withdrawl_amount(1200)
 ATM.deposit_amount(my_atm, 1200)
 print(my_atm.balance)
 my_atm.print_transaction()
+
+while True:
+    user_input = input("(D)eposit, (W)ithdrawl, (C)heck_balance, (H)istory? (Q)uit ")
+    if user_input == "D":
+        user_deposit =  int(input("How much would you like to deposit?: "))
+        my_atm.deposit_amount(user_deposit)
+    # print(user_deposit + my_atm.balance)
+    if user_input == "W":
+        user_withdrawl = int(input("How much would you like to withdraw? "))
+        my_atm.withdrawl_amount(user_withdrawl)
+    # print(user_withdrawl - my_atm.balance)
+    if user_input == "C":
+        print(my_atm.balance)
+    # print(user_balance)
+    if user_input == "H":
+        my_atm.transactions
+        my_atm.print_transaction()
+    # print(user_history)
+    if user_input == "Q":
+        break
