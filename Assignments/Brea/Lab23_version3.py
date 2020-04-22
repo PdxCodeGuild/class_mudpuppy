@@ -124,7 +124,3 @@ print(csv_str)
 
 with open('contacts_example2.csv', 'w') as f:
     csv_str = csv.writer(f)
-
-    
-
-
