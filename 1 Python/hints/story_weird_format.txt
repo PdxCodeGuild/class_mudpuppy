@@ -1,1 +1,0 @@
-	l1:I	l2:green	l1:do	l2:eggs	l1:not	l2:and	l1:like	l2:ham.
