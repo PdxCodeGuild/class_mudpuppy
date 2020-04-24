@@ -4,7 +4,6 @@ board = [[' ', '|', ' ', '|', ' '], #indexes[0][0,2,4]
         [' ', '|', ' ', '|', ' '],  #indexes[1][0,2,4]
         [' ', '|', ' ', '|', ' ']]  #indexes[2][0,2,4]
 
-    
 def print_board(ls1):
     ls2 = []
     ls2 = '\n'.join([''.join(inner_list) for inner_list in board])
