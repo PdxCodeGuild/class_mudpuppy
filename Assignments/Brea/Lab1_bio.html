@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab 1, Biography</title>
+    <style>
+        body {
+                background-color: lightgrey; 
+                
+            }
+            .sansserif {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .textwrap {
+                float: left;
+                margin: 10px;
+            }
+                
+            .title { 
+                text-align: center;
+                color: darkblue
+            }
+            #container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            img {
+                align: center;
+                float: left;
+                padding: 10px;
+                margin: 10px;
+                flex-shrink: 0; /* default 1 */
+            }
+            p {
+                text-align: center;
+                margin: 25px;
+            }
+            ul {
+                text-align: justify;
+                margin: 25px 25px 25px 50px;
+                padding: 20px 20px 20px 20px;
+                content: '>';
+            }
+            q { padding: 5px 20px 20px 30px;
+
+            }
+            #quotetitle {
+                text-align: left;
+                font-weight: bold;
+            }
+            /* {
+                outline: 1px solid red;
+            }*/
+
+            li:before {
+                content: '\1F3B5';
+                margin-left: -20px;
+                margin-right: 10px;
+            }
+            a {color: hotpink;
+            }
+
+    </style>
+  </head>
+
+  <body>
+    <h1 class="title">Diana Deutsch</h1>
+    <h2 class="title">The Queen of Auditory Illusions</h3>
+    <div id="container">
+        
+        <img class="textwrap" src="https://www.charliemccarron.com/wp/wp-content/uploads/2013/04/Diana-Deutsch-Musical-Illusions-Composer-Quest.jpg" alt="Diana at Her Finest" width="350" height="350" class="center">
+
+        <div id="text-container">
+        <p class="sansserif"><b>Diana Deutsch,</b> the <i>Queen</i> of Auditory Illusions, is a British-American psychologist who continues to pioneer the field of music psychology. Deutsch has discovered several auditory illusions that provide interesting ways of demonstrating humans' auditory perception of speech and music. Below is a list of auditory illusions associated with her research. A full list of Deutsch's auditory illusions can be found on her <a href="http://deutsch.ucsd.edu/psychology/pages.php?i=201" target="_blank">website</a>.</p>
+
+        <ul class="sansserif">
+            <li>Speech-to-Song Illusion</li>
+            <li>Tritone Paradox</li>
+            <li>Octave Illusion</li>
+            <li>Cambiata Illusion</li>
+            <li>Mysterious Melody</li>
+            <li>Phantom Words</li>
+        </ul>
+        <p id="quotetitle">Famous Words from Diana:</p>
+        <q>
+            All will be revealed when I explain what's happening...
+        </q>
+    </div>
+</div>  
+  </body>
+</html>

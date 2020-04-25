@@ -41,7 +41,7 @@ def retrieve_contact(inpt_name):
             return dictionary
             #print(f"{inpt_name}'s favorite food is {final_contacts_list[]} and their hobby is {final_contacts_list[]}.'")
     print("That user cannot be found in this contact list.")
-    return none
+    return None
     
 
 def update_contact(inpt_name):
