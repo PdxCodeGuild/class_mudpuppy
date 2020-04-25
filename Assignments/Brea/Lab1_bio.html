@@ -2,13 +2,14 @@
 <html>
   <head>
     <title>Lab 1, Biography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <style>
         body {
                 background-color: lightgrey; 
                 
             }
             .sansserif {
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: 'Nanum Gothic', sans-serif;
             }
             .textwrap {
                 float: left;
@@ -19,17 +20,35 @@
                 text-align: center;
                 color: darkblue
             }
+            
+            .video {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
             #container {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                flex-wrap: wrap;
+                align-items: center;
             }
             img {
-                align: center;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
                 float: left;
                 padding: 10px;
                 margin: 10px;
                 flex-shrink: 0; /* default 1 */
+            }
+            .rounded-corners {
+                border-radius: 45px;
+            }
+            .dotted {
+            border-top: 2px dotted black;
             }
             p {
                 text-align: center;
@@ -68,7 +87,9 @@
     <h2 class="title">The Queen of Auditory Illusions</h3>
     <div id="container">
         
-        <img class="textwrap" src="https://www.charliemccarron.com/wp/wp-content/uploads/2013/04/Diana-Deutsch-Musical-Illusions-Composer-Quest.jpg" alt="Diana at Her Finest" width="350" height="350" class="center">
+        <img class="textwrap rounded-corners" src="https://www.charliemccarron.com/wp/wp-content/uploads/2013/04/Diana-Deutsch-Musical-Illusions-Composer-Quest.jpg" alt="Diana at Her Finest" width="350" height="350" class="center">
+
+        <img class="textwrap rounded-corners" src="https://lh3.googleusercontent.com/proxy/y5lwnCvkVKvwEc_o5hEYuUp2qCKAVRmix9Ol7xfYKVg_tBN76kY0R7IAQSVLEJCDxaUdFvxeiYMeW-qa2enkWh9sOYM" alt="Diana at Her Finest" width="350" height="350" class="center">
 
         <div id="text-container">
         <p class="sansserif"><b>Diana Deutsch,</b> the <i>Queen</i> of Auditory Illusions, is a British-American psychologist who continues to pioneer the field of music psychology. Deutsch has discovered several auditory illusions that provide interesting ways of demonstrating humans' auditory perception of speech and music. Below is a list of auditory illusions associated with her research. A full list of Deutsch's auditory illusions can be found on her <a href="http://deutsch.ucsd.edu/psychology/pages.php?i=201" target="_blank">website</a>.</p>
@@ -81,10 +102,25 @@
             <li>Mysterious Melody</li>
             <li>Phantom Words</li>
         </ul>
-        <p id="quotetitle">Famous Words from Diana:</p>
+        <h3 id="quotetitle" class="sansserif">Famous Words from Diana:</h3>
         <q>
             All will be revealed when I explain what's happening...
         </q>
+        <br>
+        <br>
+        <q>
+            I quickly realized that the voice coming out of the speaker was my voice, not as speech, but as song.
+        </q>
+        <br>
+        <br>
+        <hr width=500px class="dotted">
+        <br>
+        <h3 class="sansserif"><i>Sometimes Behaves So Strangely...</i></h3>
+        <p class="sansserif">Perhaps Deutsch's most famous auditory illusion is the "Speech-to-Song-Illusion" by which a looped spoken phrase begins to sound as though it were sung after several repetitions. Deutsch discovered the illusion after editing audio files of her speaking and mistaking the singing voice she heard as a phantom! You can try it out for yourself in the video below.</p>
+        <br>
+        <br>
+        <iframe width="560" height="315" class="video" src="https://www.youtube.com/embed/hSlISI9kUFs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>>
+</iframe>
     </div>
 </div>  
   </body>
