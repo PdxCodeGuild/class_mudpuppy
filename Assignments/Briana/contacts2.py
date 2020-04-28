@@ -2,7 +2,6 @@ with open('contacts.csv', 'r') as file:
     lines = file.read().split('\n')
     # print(lines)
 
-# contact_list = ['name, address, phone number', 'Briana, 6755 se 83, (281)386-2111', 'Ayo, 4242 blueberry ln, (800)616-2839', 'Maron, 666 crimson blvd, (503)386-5959', 'Randall, 502 cereal st , (804)282-9999']
 
 contact_list = []
 
@@ -23,43 +22,60 @@ for i in range(1, len(lines)):
 
 # print(len(lines))
 
-####print(contact_list)
 
-# print(header)
-
-# print(keys)
-
-
-# Implement a CRUD REPL
-# Create a record: ask the user for each attribute, add a new contact to your contact list with the attributes that the user entered.
 user_input = input('Enter name, address, and phone number of contact you\'d like to add: \n ')
 
 keys2 = user_input.split(',') 
 
-print(keys2)
+# # print(keys2)
 
 contact2 = dict(zip(header, keys2))
 
-# split keys2
-# make into dict
-# zip on header
-# append onto contact list 
 
 contact_list.append(contact2)
 
 print(contact_list)
 
-# Retrieve a record: ask the user for the contact's name, find the user with the given name, and display their information
 
-retrieve = input('Enter contact, attribute, and value of attribute you\'d like to update: \n')
+# contact_list = list(contact_list.items())
 
-new_entry = retrieve.split(',')
-#larissa, address, portland dr
-#.get 
+# while True:
+#     user_word = input('Enter name of contact you\'d like to retreive: ')
+#     for name in contact_list:
+#         if name['name'] == user_word:
+#             print(name)
+#             print(name['name'])
+
+while True:
+
+    user_word = input('Enter name of contact you\'d like to retreive: ')
+    for dictionary in contact_list:
+        if dictionary['name'] == user_word:
+            print(dictionary)
+            print(dictionary['name'])
+
+            update_attribute = input('Which attribute would you like to update? ') 
+
+            new_attribute = input('What new value for this attribute would you like to set for ' + user_word + '? ')
+            dictionary[update_attribute] = new_attribute
+            print(dictionary)
+            print(new_attribute)
+            print(contact_list)
 
 
-#retrieve contact attribute with name and attribute
-#insert new attribute
+        delete_contact = input('Which contact would you like to delete: ')
 
-# Update a record: ask the user for the contact's name, then for which attribute of the user they'd like to update and the value of the attribute they'd like to set.
-# Delete a record: ask the user for the contact's name, remove the contact with the given name from the contact list.
+        # if dictionary['name'] == delete_contact:
+        #     # contact_list.pop(dict(dictionary))
+        #     # del contact_list[dictionary]
+        #     print(contact_list)
+        #     break
+        # contact_list.pop(dictionary)
+        # print(contact_list)
+
+        # if dictionary['name'] == delete_contact:
+        #     del contact_list[dictionary]
+        #     break
+
+        res = [i for i in contact_list if not (i['name'] == delete_contact)] 
+        print(res)
