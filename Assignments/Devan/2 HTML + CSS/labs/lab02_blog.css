@@ -4,13 +4,16 @@ body {
   background-color: #cdedf6;
 }
 /*--- navigation bar ---*/
-.navbar, .navbar-default {
+.navbar {
+  display: flex;
   background: none;
-  position: absolute;
+  position: relative;
   max-height: 5vh;
   z-index: 1;
 }
-
+.navbar-nav {
+  align-content: flex-end;
+}
 .nav-link,
 .navbar-brand {
   color: #cdedf6;
@@ -26,7 +29,7 @@ body {
 .nav-link:hover {
   color: #10a1b4;
 }
-.navbar-collapse {
+apse {
   justify-content: flex-end;
 }
 /* header section */
@@ -59,14 +62,14 @@ body {
   font-size: 1.3rem;
   line-height: 1.5;
 }
-.description button {
+.description #moreButton {
   border:1px solid #cdedf6;
   background:#10a1b4;
   border-radius: 10;
   color:#fff;
   margin-top: 100px;
 }
-.description button:hover {
+.description #moreButton:hover {
   border:1px solid #042a2b;
   background:#cdedf6;
   color:#042a2b;
