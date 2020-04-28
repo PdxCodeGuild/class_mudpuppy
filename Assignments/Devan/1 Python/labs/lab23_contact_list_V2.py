@@ -71,12 +71,17 @@ def delete_contact():
 
 
 def save_contacts(contacts, header):
-    with open('friends.csv', 'w') as f:
-        writer = csv.DictWriter(f, fieldnames=header)
-        writer.writeheader()
-        for person in contacts:
-            writer.writerow(person)
-    print("The file was saved as friends.csv")
+    print("Enter the new file name (ex. people.csv)")
+    new_file = input(": ")
+    if new_file[-4:] == ".csv":
+        with open(new_file, 'w') as f:
+            writer = csv.DictWriter(f, fieldnames=header)
+            writer.writeheader()
+            for person in contacts:
+                writer.writerow(person)
+        print(f"The file was saved as {new_file}")
+    else:
+        print("Not a vaild file name.")
 
 
 
