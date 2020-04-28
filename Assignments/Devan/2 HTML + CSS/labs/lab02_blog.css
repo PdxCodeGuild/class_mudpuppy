@@ -1,0 +1,92 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #cdedf6;
+}
+/*--- navigation bar ---*/
+.navbar, .navbar-default {
+  background: none;
+  position: absolute;
+  max-height: 5vh;
+  z-index: 1;
+}
+
+.nav-link,
+.navbar-brand {
+  color: #cdedf6;
+  cursor: pointer;
+}
+.navbar-brand {
+  position: relative;
+  max-height: 10vh;
+}
+.nav-link {
+  margin-right: 1em !important;
+}
+.nav-link:hover {
+  color: #10a1b4;
+}
+.navbar-collapse {
+  justify-content: flex-end;
+}
+/* header section */
+.header {
+  background-image: url('https://wallpaperaccess.com/full/128744.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.description {
+  left: 50%;
+  position: absolute;
+  top: 45%;
+  transform: translate(-50%, -55%);
+  text-align: center;
+}
+.description h1 {
+  color: #a8dadc;
+}
+.description p {
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+.description button {
+  border:1px solid #cdedf6;
+  background:#10a1b4;
+  border-radius: 10;
+  color:#fff;
+  margin-top: 100px;
+}
+.description button:hover {
+  border:1px solid #042a2b;
+  background:#cdedf6;
+  color:#042a2b;
+}
+/* blog post section */
+.features {
+  margin: 4em auto;
+  padding: 1em;
+  position: relative;
+}
+.feature-title {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.features img {
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 16px;
+}

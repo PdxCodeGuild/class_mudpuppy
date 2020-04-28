@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="lab02_blog.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Devan's Blog</title>
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- Nav Bar <-->
+  <div class="wrap">
+    <nav class="navbar transparent navbar-expand-md navbar-fixed-top">
+      <a class="navbar-brand" href="#">
+        <img src="static/img/nav-bar-logo.png" id="df-logo" alt="Logo"></a>
+      <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-navigation">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Landing Page -->
+    <header class="page-header header container-fluid">
+      <div class="overlay"></div>
+      <div class="description">
+        <h1>Devan Fischer</h1>
+        <p>I like to build things. I am currently learning full stack web development with the hopes of securing a job at a start-up company. This is my first attempt at making a personal blog. So, bear with me, as this could be a bumpy road.</p>
+        <button class="btn btn-outline-secondary btn-lg"><a href="#postSection"></a>Tell Me More!</button>
+      </div>
+    </header>
+
+    <!-- Blog Section -->
+    <div class="container features" id="postSection">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <h3 class="feature-title">Lorem ipsum</h3>
+          <img src="images/column-1.jpg" class="img-fluid">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <h3 class="feature-title">Lorem ipsum</h3>
+          <img src="images/column-2.jpg" class="img-fluid">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <h3 class="feature-title">Lorem ipsum</h3>
+          <img src="images/column-2.jpg" class="img-fluid">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="lab02_blog.js"></script>
+</body>
+
+</html>
