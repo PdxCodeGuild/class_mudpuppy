@@ -1,95 +1,99 @@
-body {
-  padding: 0;
+:root {
+  --light-blue: #cdedf6;
+  --medium-blue: #a8dadc;
+  --dark-blue: #10a1b4;
+}
+
+* {
+  font-family: 'Muli',
+    sans-serif;
   margin: 0;
-  background-color: #cdedf6;
+  padding: 0;
+  box-sizing: border-box;
 }
-/*--- navigation bar ---*/
-.navbar {
+
+body {}
+
+/* * navigation bar */
+
+header {
   display: flex;
-  background: none;
-  position: relative;
+  background-color: rgba(0, 0, 0, .6);
   max-height: 5vh;
-  z-index: 1;
+  align-items: center;
+  padding: 0 3%;
 }
-.navbar-nav {
+
+.nav-logo,
+.nav-links {
+  display: flex;
+}
+
+.nav-logo {
+  flex: 1;
+}
+
+.nav-logo:hover {
+  filter: opacity(60%);
+}
+
+.nav-links {
   align-content: flex-end;
+  list-style: none;
 }
-.nav-link,
-.navbar-brand {
-  color: #cdedf6;
-  cursor: pointer;
-}
-.navbar-brand {
-  position: relative;
-  max-height: 10vh;
-}
+
 .nav-link {
-  margin-right: 1em !important;
+  padding-left: 20px;
+  text-decoration: none;
+  color: var(--light-blue);
 }
+
 .nav-link:hover {
-  color: #10a1b4;
+  color: var(--dark-blue);
 }
-apse {
-  justify-content: flex-end;
-}
-/* header section */
-.header {
-  background-image: url('https://wallpaperaccess.com/full/128744.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-.overlay {
-  position: absolute;
-  min-height: 100%;
-  min-width: 100%;
-  left: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.6);
-}
-.description {
-  left: 50%;
-  position: absolute;
-  top: 45%;
-  transform: translate(-50%, -55%);
+
+/* * Landing Page */
+
+.landing-page {
+  height: 90vh;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 0 auto;
   text-align: center;
+  align-items: center;
+
 }
+
+.description {
+  padding-top: 20vh;
+}
+
 .description h1 {
-  color: #a8dadc;
+  font-size: 6rem;
+  letter-spacing: 1rem;
+  font-weight: 900;
 }
+
 .description p {
-  color: #fff;
-  font-size: 1.3rem;
-  line-height: 1.5;
+  padding-top: 30px;
+  width: 50%;
+  margin: auto;
+  font-size: 1rem;
 }
-.description #moreButton {
-  border:1px solid #cdedf6;
-  background:#10a1b4;
-  border-radius: 10;
-  color:#fff;
-  margin-top: 100px;
-}
-.description #moreButton:hover {
-  border:1px solid #042a2b;
-  background:#cdedf6;
-  color:#042a2b;
-}
-/* blog post section */
-.features {
-  margin: 4em auto;
-  padding: 1em;
+
+.cta {
   position: relative;
+  margin-top: 30vh;
 }
-.feature-title {
-  color: #333;
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-transform: uppercase;
+
+#moreButton {
+  text-decoration: none;
+  background-color: var(--dark-blue);
+  color: var(--light-blue);
+  border-radius: 50%;
+  padding: 15px;
 }
-.features img {
-  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  margin-bottom: 16px;
+
+.container {
+  background-color: red;
 }

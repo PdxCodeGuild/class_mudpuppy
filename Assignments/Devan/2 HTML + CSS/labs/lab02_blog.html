@@ -3,57 +3,57 @@
 
 <head>
   <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,900;1,200;1,400;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="lab02_blog.css">
 
   <title>Devan's Blog</title>
 </head>
 
 <body>
-  <!-- Nav Bar <-->
-  <div class="wrap">
-    <nav class="navbar">
-      <a class="navbar-brand" href="#">
-        <img src="static/img/nav-bar-logo.png" id="df-logo" alt="Logo"></a>
-      <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="main-navigation">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Blog Posts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
+
+  <!-- * Nav Bar -->
+  <header>
+    <div class="nav-logo">
+      <img src="images/nav-bar-logo.png" id="df-logo" alt="Logo"></a></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#">Home</a></li>
+        <li><a class="nav-link" href="#">Blog Posts</a></li>
+        <li><a class="nav-link" href="#">Contact</a></li>
+      </ul>
     </nav>
-    <!-- Landing Page -->
-    <header class="page-header header container-fluid">
-      <div class="overlay"></div>
+  </header>
+
+  <!-- * Landing Page -->
+  <main>
+    <section class="landing-page">
       <div class="description">
-        <h1>Devan Fischer</h1>
-        <p>I like to build things. I am currently learning full stack web development with the hopes of securing a job at a start-up company. This is my first attempt at making a personal blog. So, bear with me, as this could be a bumpy road.</p>
-        <a class="btn btn-outline-secondary btn-lg" href="#postSection" id="moreButton">Tell me more!</a>
+        <div class="intro-text">
+          <h1>Devan Fischer</h1>
+          <p>I like to build things. I am currently learning full stack web development with the hopes of securing a job
+            at a start-up company. This is my first attempt at making a personal blog. So, bear with me, as this could
+            be
+            a bumpy road.</p>
+        </div>
+        <div class="cta">
+          <a id="moreButton" href="#postSection">Tell me more!</a>
+        </div>
       </div>
-    </header>
+    </section>
 
-
-    <!-- Blog Section -->
+    <!-- * Blog Section -->
     <div class="container features" id="postSection">
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12">
           <h3 class="feature-title">Lorem ipsum</h3>
-          <img src="images/column-1.jpg" class="img-fluid">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+          <img src="images/python.jpg" class="img-fluid">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante
+            luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
         </div>
       </div>
     </div>
-  </div>
-  <script src="lab02_blog.js"></script>
+  </main>
 </body>
 
 </html>
