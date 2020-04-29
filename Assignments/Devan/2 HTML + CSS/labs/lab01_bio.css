@@ -1,11 +1,12 @@
-body{
+body {
   margin: 0;
   padding: 0;
-  background-image: url("static/brickwall.png");
+  background-image: url("images/brickwall.png");
   background-repeat: repeat;
   font-family: 'Open Sans';
 }
-.box{
+
+.box {
   width: 40%;
   background: rgba(0, 0, 0, 0.6);
   padding: 50px;
@@ -15,55 +16,64 @@ body{
   margin-top: 5%;
   color: white;
 }
-.box .portrait{
+
+.box .portrait {
   width: 300px;
   height: 300px;
 }
-.box h1{
+
+.box h1 {
   font-size: 40px;
   margin-bottom: -30px;
   font-weight: bold
 }
-.box h5{
+
+.box h5 {
   font-size: 15px;
   letter-spacing: 1px;
   font-style: italic;
   color: #ffec64;
 }
-.box h6{
+
+.box h6 {
   font-size: 14px;
   color: #ffec64;
   font-style: italic;
   margin-bottom: -5px;
   margin-top: 10px;
 }
-.box p{
+
+.box p {
   text-align: justify;
 }
-.box blockquote{
-    font-size: 12px;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 40px;
-    margin-right: 40px;
+
+.box blockquote {
+  font-size: 12px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-style: italic;
 }
+
 .box .myButton {
-	box-shadow: 0px 1px 0px 0px #fff6af;
-	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-	background-color:#ffec64;
-	border-radius:6px;
-	border:1px solid #ffaa22;
-	display:inline-block;
-	cursor:pointer;
-	color:#333333;
-	font-size:14px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffee66;
+  box-shadow: 0px 1px 0px 0px #fff6af;
+  background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  background-color: #ffec64;
+  border-radius: 6px;
+  border: 1px solid #ffaa22;
+  display: inline-block;
+  cursor: pointer;
+  color: #333333;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffee66;
   margin-top: 20px;
 }
+
 .box .myButton:hover {
-	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	background-color:#ffab23;
+  background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+  background-color: #ffab23;
 }
