@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML/CSS Jumble!</title>
+        <style>
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;      
+                flex-direction: column;
+                height: 120vh;
+            }
+            div {
+                display: flex;
+                justify-content: center;
+                color: white;
+                align-items: center;
+                background-color: blue;
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                border: 1px solid black;
+            }
+            .div-upper {
+                position: sticky;
+                top: 0;
+		    }
+            .div-mid {
+                position: sticky;
+                top: 50%;
+            }
+            .div-lower {
+                position: sticky;
+                bottom: 0;
+            }
+            .flex-start {
+                display: flex;
+                align-self: start;             
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>1</div>
+        <div class="div-upper">2</div>
+        <div class="div-upper flex-start">3</div>
+        <div>4</div>
+		<div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div class="div-mid">8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div class="div-lower flex-start">16</div>
+    </body>
+
+</html>
+
+
+
+
+
+
