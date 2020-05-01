@@ -1,8 +1,10 @@
-
-
 import math 
- 
-string = 'And I am alone a good deal just now John is kept in town very often by serious cases, and Jennie is good and lets me alone when I want her to. So I walk a little in the garden or down that lovely lane, sit on the porch under the roses, and lie down up here a good deal. I\'m getting really fond of the room in spite of the wallpaper. Perhaps because of the wallpaper. It dwells in my mind so!'
+
+with open('ari.csv', 'r') as file:
+    string = file.read()
+    print(string) 
+
+# string = 'And I am alone a good deal just now John is kept in town very often by serious cases, and Jennie is good and lets me alone when I want her to. So I walk a little in the garden or down that lovely lane, sit on the porch under the roses, and lie down up here a good deal. I\'m getting really fond of the room in spite of the wallpaper. Perhaps because of the wallpaper. It dwells in my mind so!'
  
 n_sentences = 0
 for char in string:
