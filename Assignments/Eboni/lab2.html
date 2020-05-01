@@ -7,6 +7,8 @@
     <style>
         * {
             font-family: 'Audiowide', Astigmatic;
+            font-size: large;
+            color:cornsilk
         }
     header {
         position: fixed;
@@ -32,12 +34,14 @@
         padding: 10px;
         color:rgb(18, 18, 77);
         font-size: 5rem;
-        animation-name: example;
-        animation-duration: 4s;
+        /* animation-name: border_animation; */
+        animation: border_animation 5s infinite;
     }
-    @keyframes example {
-        from{background-color: blue;}
-        to{background-color:cornsilk;}
+    @keyframes border_animation {
+        0%{border: 5px solid blue;}
+        25%{border: 5px solid cornsilk;}
+        50%{border: 5px solid crimson}
+        100%{border: 5px solid blue}
     }
     #marine-pic, #business-pic {
         object-fit: cover;
@@ -48,7 +52,7 @@
         margin-bottom: 20px;
     }
     .border-button {
-        outline: solid 5px rgba(41, 7, 7, 0.5);
+        outline: solid 7px rgba(6, 93, 165, 0.425);
         transition: outline 0.6s linear;
         margin: 0.5em;
     }
@@ -86,9 +90,9 @@
         <section class="card border-button">
             <img id ="marine-pic" class="card-img-top" src ="https://scontent-sea1-1.xx.fbcdn.net/v/t31.0-8/s960x960/16422695_10155027189594443_4995643853591654405_o.jpg?_nc_cat=104&_nc_sid=7aed08&_nc_ohc=WGsBU7924rkAX9Olxsd&_nc_ht=scontent-sea1-1.xx&_nc_tp=7&oh=d3bb3d60affcc2e3242e670f932adeb5&oe=5ECE5673">
             <h2 class="mx-auto" >fuckboi_chronicles pt.1</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A perferendis natus recusandae modi? Dolor harum, repellendus temporibus nostrum sit autem alias neque quos quam, commodi similique nemo quaerat minima repudiandae?</p>
+            <p>My friends call me a fuck boi as an inside joke because one time I dared myself to snort dirt.  I don't reccommend it all. As I always say..."never snort dirt, kids."</p>
             <h2 class="mx-auto">fuckboi_chronicles pt.2</h2>
-            <p class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed?v=7Xue-dOOLiY"></iframe></p>
+            <p class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7Xue-dOOLiY"></iframe></p>
         </section>
         <section class="card border-button">
            <img id="business-pic" class="card-img-top" src ="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/92136593_10158334389649443_9153632548335648768_n.jpg?_nc_cat=103&_nc_sid=85a577&_nc_ohc=uYOpe0q5he8AX_8tvmN&_nc_ht=scontent-sea1-1.xx&oh=f187a6b6665d7e450c0c36ec2f741e6b&oe=5ECF8C18">
