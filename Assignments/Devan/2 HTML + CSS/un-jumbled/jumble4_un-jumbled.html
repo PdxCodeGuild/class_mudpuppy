@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HTML/CSS Jumble!</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			height: 100vh;
+			overflow-y: hidden;
+			background: radial-gradient(transparent 40%, steelblue 90%),
+				linear-gradient(to bottom right, darkblue 30%, skyblue 40%, skyblue 60%, darkblue 70%);
+			color: white;
+		}
+
+		@media only screen and (max-width: 800px) {
+			body {
+				flex-direction: column;
+				justify-content: space-between;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				top: 0;
+				left: 0;
+				overflow-y: scroll;
+			}
+		}
+
+		div {
+			border: 3px solid green;
+			outline: 3px solid black;
+			margin: 20px;
+		}
+
+		.box {
+			min-width: 100px;
+			min-height: 100px;
+		}
+
+		.red {
+			background-color: red;
+		}
+
+		.blue {
+			background-color: blue;
+		}
+
+		.rounded {
+			border-radius: 10px;
+		}
+
+		.shadow {
+			transition-duration: 10s;
+			box-shadow: 5px 10px 8px 0 rgba(255, 255, 0, 0);
+		}
+
+		.shadow:hover {
+			transition-duration: .3s;
+			box-shadow: 5px 10px 8px 0 rgba(255, 255, 0, .8);
+		}
+
+		#container {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.inner {
+			background-color: white;
+		}
+
+
+		.inner>div {
+			visibility: hidden;
+		}
+
+		.inner:hover>div {
+			visibility: visible;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box blue rounded">1</div>
+	<div class="box red rounded">2</div>
+	<div class="box red">3</div>
+	<div class="box red shadow">4</div>
+
+	<div id="container">
+		<div class="inner">
+			<div class="blue box"></div>
+			<div class="blue box"></div>
+		</div>
+		<div class="inner">
+			<div class="red box"></div>
+			<div class="red box"></div>
+		</div>
+	</div>
+
+</body>
+
+</html>

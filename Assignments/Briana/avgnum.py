@@ -20,11 +20,29 @@
 
 # Version 2
 
-from statistics import mean
+# from statistics import mean
+# i = 1
+# nums = []
+# def avg(nums):
+#     return mean(nums)
+    
+# while True:
+
+#     user_input = input("Enter a bunch of numbers; Type 'done' to calculate average: ")
+#     if user_input == "done":
+#         print(avg(nums))
+#         break
+#     else:
+#         nums.append(int(user_input))
+#         i += 1
+  
+    
+Version 2 without 'mean' function:
+        
 i = 1
 nums = []
 def avg(nums):
-    return mean(nums)
+    return sum(nums) / len(nums)
     
 while True:
 
