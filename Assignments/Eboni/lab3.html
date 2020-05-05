@@ -7,9 +7,11 @@
             } */
             body {
                 display: flex;
-                background-color: darkslategray;
+                background-color:black;
                 min-height: 100vh;
                 margin: 0;
+                color:white;
+                font-size: larger;
 
             }
             #Initech_pic {
@@ -17,11 +19,13 @@
                 overflow: hidden;
                 height: 300px;
                 width: 100%;
-                margin: 0 auto;
+                margin: 0 1vw;
                 margin-bottom: 20px;
             }
             aside {
                 width: 30%;
+                line-height: 200%;
+
 
             }
             body > div {
@@ -31,15 +35,28 @@
 			}
             .container {
                 display: flex;
-                flex-direction: column;
-
+                flex-direction: row;
+                margin: 0 1vw;
+                
             }
+            .photo_container {
+                display: flex;
+                flex-direction: column;
+                margin: 0 1vw;
+            }
+            .row {
+                display: flex;
+                /* flex-direction: column; */
+                justify-content: space-evenly;
+            }
+
             header {
-                position: fixed;
-                top: 0;
-                width: 100vw;
-                z-index: 1;
-                height: 10vh;
+                text-align: left;
+                margin: 0vh 0;
+                padding: 10px;
+                color:white;
+                font-size: 3rem;
+                widows: 100vw;
             }
         </style>
     
@@ -51,8 +68,31 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem commodi molestias quam neque ipsam atque tempore, sit possimus! Repellat dignissimos amet voluptatibus totam ullam voluptates distinctio alias error doloribus!
         </aside>
         <main>
-            <div class="container"><div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, quia ut sit ipsum repellendus, eligendi libero vitae voluptate, distinctio delectus aliquam ab rerum porro deserunt voluptates ex perspiciatis repudiandae quibusdam.</div>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid quis unde id sunt, iure vero magnam quibusdam nesciunt. Ullam eius ducimus repudiandae quisquam distinctio veniam incidunt enim. Exercitationem, quia.
+            <header>
+                <h1>Initech</h1>
+            </header>
+            <div class="container">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, quia ut sit ipsum repellendus, eligendi libero vitae voluptate, distinctio delectus aliquam ab rerum porro deserunt voluptates ex perspiciatis repudiandae quibusdam.</div>
+            <div class="container">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam repellendus, libero eius aliquid eveniet esse impedit ipsum voluptas doloremque fugiat commodi, dolorum, repellat assumenda iusto atque fuga incidunt maxime accusantium?</div>
+            <div class="row">
+               <div class="photo_container">
+                   <img id="Initech_pic" class="card-img-top" src= "Initech.jpg">
+                   <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum veritatis officiis consectetur, facilis reiciendis, quam nesciunt, optio praesentium dicta odio velit adipisci ex. Autem magnam, sint optio nulla adipisci vero.</div> 
+                </div> 
+                <div class="photo_container">
+                    <img id="Initech_pic" class="card-img-top" src="Initech.jpg">
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique explicabo, mollitia accusamus nostrum, reiciendis officiis totam delectus praesentium magni quos asperiores impedit quasi dolorum fugiat rem beatae repellat amet consectetur?</div>
+                <!-- <div class="photo_container">
+                    <img id="Initech_pic" class="card-img-top" src="Initech.jpg">
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique explicabo, mollitia accusamus nostrum, reiciendis officiis totam delectus praesentium magni quos asperiores impedit quasi dolorum fugiat rem beatae repellat amet consectetur?</div> -->
+
+                   
+                    
+            </div>
+           
+            
+
         </main>
         
         
