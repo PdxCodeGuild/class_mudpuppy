@@ -17,3 +17,7 @@ For this challenge, you must watch the videos and unjumble the html files. Good 
 ## Jumble #4
 * [Video](https://www.youtube.com/watch?v=Ts_Xpu4Xqy0)
 * [File](files/jumble4_jumbled.html)
+
+## Jumble #4
+* [Video](https://www.youtube.com/watch?v=uxTBEbxiwI4)
+* [File](files/jumble5_jumbled.html)
