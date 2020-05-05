@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Monofett&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Monofett',
+                cursive;
+            font-size: xxx-large;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        body {
+            background: repeating-radial-gradient(black, white, grey 20%);
+            min-height: 100vh;
+            width: 100vw;
+        }
+
+        #outer-container,
+        #outer-container>div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .inner {
+            max-height: 90vh;
+            width: 40vw;
+            padding: 2%;
+        }
+
+        .column {
+            flex-direction: column;
+            border: 10px groove red;
+        }
+
+        .column div {
+            margin: 7.5% 0;
+        }
+
+        .row {
+            border: 10px groove blue;
+        }
+
+        .row div {
+            margin: 0 2.5%;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .orange {
+            color: orange;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .indigo {
+            color: indigo;
+        }
+
+        .violet {
+            color: violet;
+        }
+    </style>
+</head>
+
+<header>FLEXBOX JUMBLE</header>
+
+<body>
+    <div id="outer-container">
+        <div class="inner row">
+            <div class="red">RED</div>
+            <div class="orange">ORANGE</div>
+            <div class="yellow">YELLOW</div>
+            <div class="green">GREEN</div>
+            <div class="blue">BLUE</div>
+            <div class="indigo">INDIGO</div>
+            <div class="violet">VIOLET</div>
+        </div>
+        <div class="inner column">
+            <div class="red">RED</div>
+            <div class="orange">ORANGE</div>
+            <div class="yellow">YELLOW</div>
+            <div class="green">GREEN</div>
+            <div class="blue">BLUE</div>
+            <div class="indigo">INDIGO</div>
+            <div class="violet">VIOLET</div>
+        </div>
+    </div>
+</body>
+
+</html>
