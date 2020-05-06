@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>GRID TETRIS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        header {
+            background-color: grey;
+            font-family: 'Press Start 2P',
+                cursive;
+            font-size: xxx-large;
+            text-align: center;
+            animation: color-changer 10s infinite;
+        }
+
+        @keyframes color-changer {
+            0% {
+                color: #6DCAFF
+            }
+
+            25% {
+                color: #FFAB41
+            }
+
+            50% {
+                color: #BDFF6C
+            }
+
+            75% {
+                color: #F84AFF
+            }
+
+            100% {
+                color: #6DCAFF
+            }
+        }
+
+        body {
+            background-color: beige;
+            width: 100vw;
+        }
+
+        main {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #tetris {
+            width: 750px;
+            height: 750px;
+            background-color: grey;
+            border: 4px solid darkgray;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+
+        .tetromino {
+            height: 125px;
+            width: 125px;
+            outline: 2px solid black
+        }
+
+        .blue {
+            background-color: #6DCAFF;
+        }
+
+        .pink {
+            background-color: #F84AFF;
+        }
+
+        .orange {
+            background-color: #FFAB41;
+        }
+
+        .green {
+            background-color: #BDFF6C;
+        }
+    </style>
+</head>
+<header>
+    GRID TETRIS
+</header>
+
+<body>
+    <main>
+        <div id="tetris">
+            <!-- 1st row -->
+            <div class="no tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="green tetromino"></div>
+            <!-- 2nd row -->
+            <div class="no tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="green tetromino"></div>
+            <div class="green tetromino"></div>
+            <!-- 3rd row -->
+            <div class="no tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="blue tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="green tetromino"></div>
+            <div class="no tetromino"></div>
+            <!-- 4th row -->
+            <div class="no tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="blue tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="no tetromino"></div>
+            <!-- 5th row -->
+            <div class="orange tetromino"></div>
+            <div class="orange tetromino"></div>
+            <div class="blue tetromino"></div>
+            <div class="no tetromino"></div>
+            <div class="pink tetromino"></div>
+            <div class="no tetromino"></div>
+            <!-- 6th row -->
+            <div class="orange tetromino"></div>
+            <div class="orange tetromino"></div>
+            <div class="blue tetromino"></div>
+            <div class="pink tetromino"></div>
+            <div class="pink tetromino"></div>
+            <div class="pink tetromino"></div>
+        </div>
+    </main>
+</body>
+
+</html>
