@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Noto+Sans+JP:wght@500&family=Roboto:wght@100&display=swap" rel="stylesheet">
         <style>
             /* * {
                 outline: 3px solid red;
@@ -25,6 +27,7 @@
             aside {
                 width: 30%;
                 line-height: 200%;
+                margin: 1 1vw;
 
 
             }
@@ -39,19 +42,29 @@
                 margin: 0 1vw;
                 
             }
+            .last_container {
+                display: flex;
+                margin: 0 0vw;
+            }
             .photo_container {
                 display: flex;
                 flex-direction: column;
                 margin: 0 1vw;
+                max-width: 30%;
+            }
+            .row >.photo_container>img {
+                margin: 0 auto;
             }
             .row {
                 display: flex;
                 /* flex-direction: column; */
                 justify-content: space-evenly;
+                flex-flow: row-reverse;
+                margin: 0 1vw;
             }
 
             header {
-                text-align: left;
+                text-align: center;
                 margin: 0vh 0;
                 padding: 10px;
                 color:white;
@@ -64,7 +77,7 @@
 </head>
 <body>
         <aside>
-            <img id ="Initech_pic" class="card-img-top" src ="Initech.jpg">
+            <img id ="Initech_pic" class="card-img-top" src ="Initech_logo.jpg" style="width:250px;height:250px;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem commodi molestias quam neque ipsam atque tempore, sit possimus! Repellat dignissimos amet voluptatibus totam ullam voluptates distinctio alias error doloribus!
         </aside>
         <main>
@@ -77,20 +90,23 @@
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam repellendus, libero eius aliquid eveniet esse impedit ipsum voluptas doloremque fugiat commodi, dolorum, repellat assumenda iusto atque fuga incidunt maxime accusantium?</div>
             <div class="row">
                <div class="photo_container">
-                   <img id="Initech_pic" class="card-img-top" src= "Initech.jpg">
-                   <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum veritatis officiis consectetur, facilis reiciendis, quam nesciunt, optio praesentium dicta odio velit adipisci ex. Autem magnam, sint optio nulla adipisci vero.</div> 
+                   <img id="Initech_pic" class="card-img-top" src= "Initech_boss.jpg" style="width: 150px;height: 150px;">
+                   <div>"If I was born to money, I would be The Lord Scott Disick"</div> 
                 </div> 
                 <div class="photo_container">
-                    <img id="Initech_pic" class="card-img-top" src="Initech.jpg">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique explicabo, mollitia accusamus nostrum, reiciendis officiis totam delectus praesentium magni quos asperiores impedit quasi dolorum fugiat rem beatae repellat amet consectetur?</div>
-                <!-- <div class="photo_container">
-                    <img id="Initech_pic" class="card-img-top" src="Initech.jpg">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique explicabo, mollitia accusamus nostrum, reiciendis officiis totam delectus praesentium magni quos asperiores impedit quasi dolorum fugiat rem beatae repellat amet consectetur?</div> -->
-
-                   
-                    
+                    <img id="Initech_pic" class="card-img-top" src="Initech_stapler.jpg" style="width: 150px;height: 150px;">
+                    <div>"Stapler?
+                        -Milton"</div>
+                </div>
+                <div class="photo_container">
+                    <img id="Initech_pic" class="card-img-top" src="Initech_bobs.jpg" style="width: 150px;height: 150px;">
+                    <div>"At least your name isn't Michael Bolton
+                        -Samir and Michael"</div>
+                </div>
             </div>
-           
+            <div class="container">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, quia ut sit ipsum repellendus, eligendi libero vitae voluptate, distinctio delectus aliquam ab rerum porro deserunt voluptates ex perspiciatis repudiandae quibusdam.</div>
+        
             
 
         </main>
