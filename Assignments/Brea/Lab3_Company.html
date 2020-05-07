@@ -24,12 +24,21 @@
               margin: 5px 0px;
             }
             .card-image{
-              width: 450px;
+              max-height: 70%;
+              /* width: 450px;
               height: 450px;
-              align: center;
+              align: center; */
             }
-            .col {
-
+            .card.large {
+              height: 400px;
+            }
+            .card-content{
+              max-height: 30%;
+            }
+            .collection {
+              display: flex;
+              justify-content: left;
+              text-align: center;
             }
             .container {
                 width: 80%;
@@ -37,8 +46,35 @@
             .divider {
 
             }
+            h4 {
+              display: flex;
+              justify-content: center;
+              margin: 10px;
+            }
+            img {
+              display: flex;
+              align: center;
+            }
+            #image-map-container {
+              display: flex;
+              justify-content: center;
+            }
+            .logo-image {
+              width: 150px;
+              height: 150px;
+            }
             .section {
 
+            }
+            #social {
+              display: flex;
+              height: 360px;
+              align-items: center;
+            }
+            #social-logos {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
             }
             .row {
                 margin: 10px;
@@ -52,15 +88,10 @@
             }
             #social {
               display: flex;
-              justify-content: space-evenly;
-              flex-direction: row;
+              justify-content: space-around;
+              flex-direction: column;
             }
-            #social > img {
-              width: 100px;
-              height: 100px;
-              
-
-            }
+         
         </style>
     </head>
 
@@ -69,24 +100,41 @@
             <div class="nav-wrapper container cyan">
               <a href="#" class="brand-logo"><img src="AMTA_LOGO_NT_final.jpg" alt="AMTA Logo" height="75" width="50"></a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Education and Training</a></li>
+                <!-- <li><a href="sass.html">Education and Training</a></li>
                 <li><a href="badges.html">AMTA Policies</a></li>
-                <li><a href="collapsible.html">Member Resources</a></li>
+                <li><a href="https://netforum.avectra.com/eweb/shopping/shopping.aspx?site=amta2&cart=0&shopsearch=&shopsearchCat=Membership&">Join AMTA!</a></li> -->
               </ul>
             </div>
           </nav>
           <h3 class="center">The American Music Therapy Association</h3>
           <h5 class="center">Advocating for Music Therapy since 1998</h5>
 
+          <div class="collection">
+            <a href="https://www.musictherapy.org/about/musictherapy/" class="collection-item">About Music Therapy</a>
+            <a href="https://www.pacificu.edu/music-department/music-degrees/music-therapy/major-requirements" class="collection-item">Educational Programs</a>
+            <a href="https://www.musictherapy.org/research/factsheets/" class="collection-item">Clinical Populations</a>
+            <a href="https://www.musictherapy.org/research/" class="collection-item">Research Initiatives</a>
+            <a href="https://netforum.avectra.com/eweb/DynamicPage.aspx?Site=AMTA2&WebCode=Committees" class="collection-item">AMTA Committees</a>
+            <a href="https://www.cbmt.org/about/advocacy/state-task-forces-map/" class="collection-item">State Recognition</a>
+            <a href="https://www.musictherapy.org/events/amta_2020_conference/" class="collection-item">National Conference</a>
+            <a href="https://netforum.avectra.com/eweb/Shopping/Shopping.aspx?Cart=0&Site=AMTA2&" class="collection-item">AMTA Bookstore</a>
+          </div>
+                
+
         <div class="row">
         <div class="container video col s12 m8 l6">
             <iframe width="640" height="360" src="https://www.youtube.com/embed/PvyK3euKV2U" frameborder="5px" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <h4 class="center">Follow AMTA on Social Media!</h4>
+        
         <div id="social">
-          <img src="facebooklogo.png" alt="Facebook Logo">
-          <img src="twitterlogo2.png" alt="Twitter Logo" >
-          <img src="ig-logo-email.png" alt="Instagram Logo" >
+          <h4 class="center">Follow AMTA on Social Media!</h4>
+        <div id="social-logos">
+          <a href="https://www.facebook.com/AMTAInc/">
+              <img src="facebooklogo.png"  alt="Facebook Logo" class="z-depth-4 logo-image"> </a>
+          <a href="https://twitter.com/AMTAInc?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+            <img src="twitterlogo2.png"  alt="Twitter Logo" class="z-depth-4 logo-image"></a>
+          <a href="https://www.instagram.com/amtainc/?hl=en"> <img src="ig-logo-email.png"  alt="Instagram Logo" class="z-depth-4 logo-image"> </a>
+        </div>
         </div>
       </div>
 
@@ -99,7 +147,7 @@
 
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">What is music therapy?<i class="material-icons right">This is my explanation for card 1</i></span>
-              <p><a href="#">This is a link</a></p>
+              <p><a href="#">Click here to learn more about how music changes lives...</a></p>
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Changing lives through music...<i class="material-icons right">close</i></span>
@@ -116,7 +164,7 @@
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">How can I become a music therapist?<i class="material-icons right">more_vert</i></span>
-              <p><a href="https://www.cbmt.org/candidates/">More information on becoming an MT-BC</a></p>
+              <p><a href="https://www.cbmt.org/candidates/">Click here to view the pathways to becoming board-certified...</a></p>
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">What it takes to be a music therapist<i class="material-icons right">close</i></span>
@@ -132,7 +180,7 @@
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">What does the American Music Therapy Association do?<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
+              <p><a href="#">Find out how we support our members...</a></p>
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">AMTA Working for You<i class="material-icons right">close</i></span>
@@ -150,7 +198,7 @@
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Where is the future of music therapy headed?<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
+              <p><a href="#">Click here to see what lies in store for music therapy...</a></p>
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Music Therapy: An Innovative Career for the Future<i class="material-icons right">close</i></span>
@@ -163,11 +211,9 @@
         </div>
         <br>
         <br>
-        <hr>
-        <br>
-      <p>Click the image below to link to each regional association's website</p>>
-              <div.container>
+              <div.container id="image-map-container">
                 <!-- Image Map Generated by http://www.image-map.net/ -->
+
 <img src="Copy of AMTA Regions.png" usemap="#image-map">
 
 <map name="image-map">
@@ -180,8 +226,6 @@
     <area target="_blank" alt="New England Region" title="New England Region" href="https://www.musictherapynewengland.org/" coords="778,294,800,351,838,339,844,239" shape="poly">
 </map>
               </div.container>
-
-
         </div.container>
     <!-- <script type="text/javascript" src="materialize/js/materialize.min.js"></script> -->
     </body>
