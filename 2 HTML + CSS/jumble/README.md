@@ -25,3 +25,11 @@ For this challenge, you must watch the videos and unjumble the html files. Good 
 ## Jumble #6
 * [Video](https://www.youtube.com/watch?v=TPo5fnCzW1A)
 * [File](files/jumble6_jumbled.html)
+
+## Jumble #7
+* [Video](https://www.youtube.com/watch?v=4rdobKUI4BI)
+* [File](files/jumble7_jumbled.html)
+
+## Jumble #8
+* [Video](https://www.youtube.com/watch?v=3NhC-qhtcFI)
+* [File](files/jumble8_jumbled.html)
