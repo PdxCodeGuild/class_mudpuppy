@@ -18,7 +18,7 @@ For this challenge, you must watch the videos and unjumble the html files. Good 
 * [Video](https://www.youtube.com/watch?v=Ts_Xpu4Xqy0)
 * [File](files/jumble4_jumbled.html)
 
-## Jumble #5
+## Jumble #5 (note: this one must be viewed in firefox)
 * [Video](https://www.youtube.com/watch?v=uxTBEbxiwI4)
 * [File](files/jumble5_jumbled.html)
 
