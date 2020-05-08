@@ -18,10 +18,18 @@ For this challenge, you must watch the videos and unjumble the html files. Good 
 * [Video](https://www.youtube.com/watch?v=Ts_Xpu4Xqy0)
 * [File](files/jumble4_jumbled.html)
 
-## Jumble #5
+## Jumble #5 (note: this one must be viewed in firefox)
 * [Video](https://www.youtube.com/watch?v=uxTBEbxiwI4)
 * [File](files/jumble5_jumbled.html)
 
 ## Jumble #6
 * [Video](https://www.youtube.com/watch?v=TPo5fnCzW1A)
 * [File](files/jumble6_jumbled.html)
+
+## Jumble #7
+* [Video](https://www.youtube.com/watch?v=4rdobKUI4BI)
+* [File](files/jumble7_jumbled.html)
+
+## Jumble #8
+* [Video](https://www.youtube.com/watch?v=3NhC-qhtcFI)
+* [File](files/jumble8_jumbled.html)

@@ -12,9 +12,6 @@
   box-sizing: border-box;
 }
 
-body {}
-
-
 
 /* * navigation bar */
 
@@ -326,7 +323,6 @@ header {
 
 /* * Contact Section */
 
-.contact-section {}
 
 .contact-section h1 {
   text-transform: uppercase;
