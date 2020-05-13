@@ -1,9 +1,9 @@
-function randInt(upper) {
+function randRange(upper) {
 	return Math.floor(Math.random() * upper)
 }
 
 function randChoice(inString) {
-	return inString[randInt(inString.length)]
+	return inString[randRange(inString.length)]
 }
 let userInput = prompt("Give me a movie: ")
 let opinions = ['good', 'bad']
