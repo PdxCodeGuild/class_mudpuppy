@@ -1,0 +1,48 @@
+/* * {
+    outline: 3px  solid red;
+} */
+
+body {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url("card_files_pic.jpg");
+    align-items: center;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card > * {
+    margin: 20px;
+}
+main {
+    background-color: white;
+    width: 80vw;
+    margin: 0 auto;
+}
+img {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    align-content: center;
+}
+p{
+
+}
+section {
+    display: flex;
+    justify-content: space-around;
+}
+td {
+    margin: 5px;
+}
+th {
+    align-items: center;
+}
+
+.white-box {
+    background-color: white;
+    justify-content: center;
+    margin: 20px;
+}
