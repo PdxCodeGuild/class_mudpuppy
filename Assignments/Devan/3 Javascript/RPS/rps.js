@@ -7,10 +7,9 @@ function randChoice(inThing) {
 }
 
 let choices = ["rock", "paper", "scissors"]
-
 let computer = randChoice(choices)
-
 let player = randChoice(choices)
+
 console.log("computer: " + computer)
 console.log("player: " + player)
 
