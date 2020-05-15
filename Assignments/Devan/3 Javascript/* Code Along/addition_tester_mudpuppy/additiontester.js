@@ -9,15 +9,17 @@ let output = document.querySelector(".output")
 let userAnswer = document.querySelector(".user-answer")
 let enterButton = document.querySelector(".enter-button")
 
-let num1 = randInt(1, 50)
-let num2 = randInt(1, 50)
+let num1 = randInt(1, 5)
+let num2 = randInt(1, 5)
 mathProblem.innerText = `What is ${num1} + ${num2}? `
 
 
 enterButton.addEventListener("click", function () {
     if (parseInt(userAnswer.value) === num1 + num2) {
+        output.style.color = "green"
         output.innerText = "Correct!"
     } else {
+        output.style.color = "red"
         output.innerText = "What? Try again, you fool!!"
     }
     setTimeout(() => {
