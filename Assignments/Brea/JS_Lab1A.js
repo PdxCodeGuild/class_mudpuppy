@@ -31,7 +31,7 @@ if (keepGoing === 'y') keepGoing = prompt("Would you like to build the next part
 if (keepGoing === 'y') keepGoing = prompt("Would you like to build the next part of the story? (y/n): ")
     if (keepGoing === 'y') { // 3rd part of story
         let userPlace = prompt("Give me a type of car : ")
-        let userRhyme2 = prompt("Give me a noun that rhymes with your car : ")
+        let userRhyme2 = prompt("Give me a something that rhymes with your car : ")
 
         let output3 = `Would you like them in a ${userPlace}? \n
         Would you like them with a ${userRhyme2}? \n
