@@ -1,0 +1,21 @@
+lab-1.html: grading
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GRADING</title>
+</head>
+<body>
+    <script>
+        let user_grade = prompt("What is your grade?: ")
+            if (user_grade > 100) {alert("Good job, you got an A+!");}
+            else if (user_grade <= 100 && user_grade >= 90) {alert("Good job, you got an A!");}
+            else if (user_grade <= 90 && user_grade >= 80) {alert("Not bad, you got an B.");}
+            else if (user_grade <= 80 && user_grade >=70) {alert("That's average, you got a C.");}
+            else if (user_grade <= 70  && user_grade >= 60) {alert("Not very good, you got a D.");}
+            else {alert("You failed!");}
+    </script>
+</body>
+</html>

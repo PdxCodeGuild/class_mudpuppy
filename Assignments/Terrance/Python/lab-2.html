@@ -1,0 +1,24 @@
+lab-2.html: make change
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MAKE CHANGE</title>
+</head>
+<body>
+    <script>
+    alert("I have a change converter. How many pennies do you have?")
+    let userInput = parseInt(prompt ("I have a change converter. How many pennies do you have?"))
+
+    let quarters = Math.floor(userInput / 25)
+    let dimes = Math.floor(userInput / 10)
+    let nickels = Math.floor(userInput / 5)
+    let leftover_pennies = userInput % 25
+
+    alert(`That would equal ${quarters} quarters, ${dimes} dimes, ${nickels} nickels and ${leftover_pennies} pennies`)
+
+    </script>
+</body>
+</html>
