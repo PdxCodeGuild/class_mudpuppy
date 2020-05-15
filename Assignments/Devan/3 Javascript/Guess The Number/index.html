@@ -10,6 +10,12 @@
     <style>
         body {
             background-color: chocolate;
+            margin: 0 0 0 50%;
+            transform: translateX(-25%);
+        }
+
+        main>* {
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -18,6 +24,10 @@
 
     <main>
         <h1>Let's Play Guess the Number!</h1>
+        <div class="guess-between"></div>
+        <input class="user-guess" type="text">
+        <button class="submit-button">Submit</button>
+        <div class="hint-div">This is the hint</div>
     </main>
 
 
