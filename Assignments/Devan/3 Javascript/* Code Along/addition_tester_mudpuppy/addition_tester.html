@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Addition Test</title>
+
+	<style>
+		html {
+			background-color: darkgray;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+		}
+
+		main {
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<h1>Addition Test</h1>
+		<div class="math-problem"></div>
+		<input class="user-answer" type="text" autofocus="autofocus" onFocus="this.select()">
+		<button class="enter-button">Enter</button>
+		<div class="output"></div>
+	</main>
+
+	<script src="additiontester.js"></script>
+</body>
+
+</html>
