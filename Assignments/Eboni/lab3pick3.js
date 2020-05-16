@@ -24,6 +24,13 @@ let text
     else if (userInput.value == 'r' && computerGuess == 's') {
         text='You win'
     }
+    else if (userInput.value == 'p' && computerGuess == 'r') {
+        text=`You win again`
+    }
+
+    
+        
+
     
     
 
