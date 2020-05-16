@@ -21,7 +21,9 @@ function findDiff(correctNum, userGuess) {
 
 
 submitButton.addEventListener("click", function () {
-    if (lastGuess !== null) {
+    if (parseInt(userGuess.value) === correctNum) {
+        hintDiv.innerText = "Yay! You got it!"
+    } else if (lastGuess !== null) {
         let dGuess = findDiff(correctNum, userGuess.value)
         let dLastGuess = findDiff(correctNum, lastGuess)
         if (dGuess < dLastGuess) {
@@ -31,13 +33,10 @@ submitButton.addEventListener("click", function () {
         } else if (dGuess === dLastGuess) {
             hintDiv.innerText = "You entered the same number..."
         }
-    } else if (parseInt(userGuess.value) === correctNum) {
-        hintDiv.innerText = "Yay! You got it!"
     } else if (parseInt(userGuess.value) !== correctNum) {
         hintDiv.innerText = "Wrong"
         lastGuess = parseInt(userGuess.value)
     }
-
 })
 
 
