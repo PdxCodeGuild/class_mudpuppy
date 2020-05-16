@@ -21,15 +21,27 @@ function findDiff(correctNum, userGuess) {
 
 
 submitButton.addEventListener("click", function () {
+    if (lastGuess !== null) {
+        let dGuess = findDiff(correctNum, userGuess)
+        let dLastGuess = findDiff(correctNum, lastGuess)
+        if (dGuess < dLastGuess) {
+            hintDiv.innerText = "Warmer"
+        } else if (dGuess > dLastGuess) {
+            hintDiv.innerText = "Colder"
+        } else if (dGuess === dLastGuess) {
+            hintDiv.innerText = "You entered the same number..."
+        }
+    }
     if (parseInt(userGuess.value) === correctNum) {
         hintDiv.innerText = "Yay! You got it!"
-    } else if (parseInt(userGuess.value) < correctNum) {
-        hintDiv.innerText = "Higher"
-    } else if (parseInt(userGuess.value) > correctNum) {
-        hintDiv.innerText = "Lower"
+    } else if (parseInt(userGuess) !== correctNum) {
+        hintDiv.innerText = "Wrong"
+        lastGuess = userGuess.value
     }
-    let lastGuess = userGuess.value
+
 })
+
+
 
 userGuess.addEventListener("keyup", function (event) {
     if (event.keyCode == 13) {
@@ -37,13 +49,6 @@ userGuess.addEventListener("keyup", function (event) {
     }
 })
 
-if (lastGuess !== null) {
-    let aGuess = findDiff(correctNum, userGuess)
-    let aLastGuess = findDiff(correctNum, lastGuess)
-    if (aGuess < aLastGuess) {
-        hintDiv.innerText = "Warmer"
-    }
-}
 
 
 console.log(correctNum)
