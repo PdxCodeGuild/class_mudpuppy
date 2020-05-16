@@ -16,13 +16,13 @@ function randInt(lowerNum, upperNum) {
 }
 
 function findDiff(correctNum, userGuess) {
-    return Math.abs(correctNum - userGuess.value)
+    return Math.abs(correctNum - userGuess)
 }
 
 
 submitButton.addEventListener("click", function () {
     if (lastGuess !== null) {
-        let dGuess = findDiff(correctNum, userGuess)
+        let dGuess = findDiff(correctNum, userGuess.value)
         let dLastGuess = findDiff(correctNum, lastGuess)
         if (dGuess < dLastGuess) {
             hintDiv.innerText = "Warmer"
@@ -34,9 +34,9 @@ submitButton.addEventListener("click", function () {
     }
     if (parseInt(userGuess.value) === correctNum) {
         hintDiv.innerText = "Yay! You got it!"
-    } else if (parseInt(userGuess) !== correctNum) {
+    } else if (parseInt(userGuess.value) !== correctNum) {
         hintDiv.innerText = "Wrong"
-        lastGuess = userGuess.value
+        lastGuess = parseInt(userGuess.value)
     }
 
 })
