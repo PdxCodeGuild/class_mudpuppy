@@ -31,8 +31,7 @@ submitButton.addEventListener("click", function () {
         } else if (dGuess === dLastGuess) {
             hintDiv.innerText = "You entered the same number..."
         }
-    }
-    if (parseInt(userGuess.value) === correctNum) {
+    } else if (parseInt(userGuess.value) === correctNum) {
         hintDiv.innerText = "Yay! You got it!"
     } else if (parseInt(userGuess.value) !== correctNum) {
         hintDiv.innerText = "Wrong"
