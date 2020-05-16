@@ -1,0 +1,52 @@
+lab-3.html: 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UNIT CONVERTER</title>
+</head>
+<body>
+    <script>
+    var unitDict = {
+    "m": 1,
+    "ft": 0.3048,
+    "mi": 1609.34,
+    "km": 1000,
+    "yd": 0.9144,
+    "in": 0.0254
+    };
+    
+    alert("I have a unit converter! If you give me the unit you are using, I can convert it into meters for you!")
+    let userUnit = (prompt ("What unit are you using?"))
+    let userNumber = (prompt ("Enter the number of units."))
+
+    userNumber = parseInt(userNumber)
+
+    if (userUnit === "m") {
+    solution = unitDict["m"] * userNumber 
+    alert(solution);}
+
+    else if (userUnit === "ft") {
+    solution = unitDict["ft"] * userNumber 
+    alert(solution);}
+
+    else if (userUnit === "mi") {
+    solution = unitDict["mi"] * userNumber 
+    alert(solution);}
+
+    else if (userUnit ==="km") {
+    solution = unitDict["km"] * userNumber 
+    alert(solution);}
+
+    else if (userUnit === "yd") {
+    solution = unitDict["yd"] * userNumber 
+    alert(solution);}
+
+    else if (userUnit === "in") {
+    solution = unitDict["in"] * userNumber 
+    alert(solution);} 
+    </script>
+</body>
+</html>
