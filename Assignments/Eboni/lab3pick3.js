@@ -27,14 +27,6 @@ let text
     else if (userInput.value == 'p' && computerGuess == 'r') {
         text=`You win again`
     }
-
-    
-        
-
-    
-    
-
-    
 outputDiv.innerText = text + `\nThe computer guessed: ${computerGuess}`
 }
 
