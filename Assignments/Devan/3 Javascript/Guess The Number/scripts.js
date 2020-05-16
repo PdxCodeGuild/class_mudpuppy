@@ -37,6 +37,7 @@ submitButton.addEventListener("click", function () {
         hintDiv.innerText = "Wrong"
         lastGuess = parseInt(userGuess.value)
     }
+    lastGuess = userGuess.value
 })
 
 
