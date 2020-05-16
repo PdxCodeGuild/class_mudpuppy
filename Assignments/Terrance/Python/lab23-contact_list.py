@@ -3,15 +3,13 @@
 with open('contacts.csv', 'r') as file:
     lines = file.read().split('\n')
 
-#Once you've processed the file, your list of contacts will look something like this...
-
 list_of_lines = []
 for line in lines:
     line = (line.split(",")) # splits the line by commas
     list_of_lines.append(line) # appends lines to the list of lines
 
 headers = list_of_lines[0] # gets the list of lines (header) at the first index
-other_lines = list_of_lines[1:] # gets ever line after the first line or header
+other_lines = list_of_lines[1:] # gets every line after the first line or header
 
 contacts = []
 for line in other_lines:
