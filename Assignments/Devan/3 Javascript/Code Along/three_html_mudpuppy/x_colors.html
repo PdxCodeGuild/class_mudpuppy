@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<style>
+		body {
+			background-color: darkgray;
+			display: flex;
+			justify-content: center;
+			padding: auto 0;
+		}
+	</style>
+</head>
+
+<body>
+
+	<main>
+		<input type="text" class="user-input" placeholder="Choose a color">
+		<button class="submit-btn" type="submit">Submit</button>
+		<div class="x-holder"></div>
+	</main>
+
+	<script>
+		let xHolder = document.querySelector('.x-holder')
+		let submitBtn = document.querySelector('.submit-btn')
+		let userInput = document.querySelector('.user-input')
+
+		for (let i = 0; i < 10; i++) {
+			xHolder.innerText += 'x'
+			xHolder.style.fontSize = 'x-large'
+		}
+
+		submitBtn.addEventListener('click', function () {
+			xHolder.style.color = userInput.value
+		})
+	</script>
+</body>
+
+</html>
