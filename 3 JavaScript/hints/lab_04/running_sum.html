@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<input id="in-num" placeholder="Give me a number">
+		<button id="add-num">add</button>
+		<div id="num-holder"></div>
+		<script>
+			let inNum = document.querySelector("#in-num")
+			let addNum = document.querySelector("#add-num")
+			let numHolder = document.querySelector("#num-holder")
+			addNum.onclick = function() {
+				convertedNum = parseInt(inNum.value)
+				let newDiv = document.createElement("div")
+				if (numHolder.children.length === 0) newDiv.innerText = convertedNum
+				else {
+					let prevNum = parseInt(numHolder.children[numHolder.children.length - 1].innerText)
+					newDiv.innerText = convertedNum + prevNum
+				}
+				numHolder.appendChild(newDiv)	
+			}
+		</script>
+	</body>
+</html>
