@@ -15,27 +15,21 @@ enterBtn.addEventListener("click", function () {
 
 })
 
-removeBtn.addEventListener('click', function () {
-    var doneTTasks = completedList
-    for (var i = 0; i < doneTTasks.length; ++i) {
-        pass
-    }
-})
 
 
-var h_list_rel = {
+var listRel = {
     'todo': 'done',
     'done': 'todo'
 };
 
-function move(ot) {
+function move(taskItem) {
     try {
-        var oc = ot.parentNode;
-        var oc_id = oc.getAttribute("id");
-        var on_id = h_list_rel[oc_id];
-        var on = document.getElementById(on_id);
-        oc.removeChild(ot);
-        on.appendChild(ot);
+        var origList = taskItem.parentNode;
+        var origList_id = origList.getAttribute("id");
+        var newList_id = listRel[origList_id];
+        var newList = document.getElementById(newList_id);
+        origList.removeChild(taskItem);
+        newList.appendChild(taskItem);
     } catch (e) {
         alert('move : ' + e);
     }
