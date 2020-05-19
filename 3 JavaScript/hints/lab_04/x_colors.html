@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>X Colors</title>
+	</head>
+	<body>
+		<input id="choose-color" type="text" placeholder="choose-color">
+		<button id="change-color">Change the color</button>
+		<div id="x-holder"></div>
+		<script>
+			let xHolder = document.querySelector("#x-holder") // grabbing the div
+			let chooseColor = document.querySelector("#choose-color") // grabbing the input
+			let changeColor = document.querySelector("#change-color") // grabbing the button
+			for (let i=0; i<10; i++) { // runs 10 times
+				xHolder.innerText += 'x'  // adding an x
+			}
+			changeColor.onclick = function() { // every button click
+				xHolder.style.color = chooseColor.value // set the style based on what's in the input
+			}
+		</script>
+	</body>
+</html>
