@@ -11,15 +11,17 @@
 			let inNum = document.querySelector("#in-num")
 			let addNum = document.querySelector("#add-num")
 			let numHolder = document.querySelector("#num-holder")
-			addNum.onclick = function() {
-				convertedNum = parseInt(inNum.value)
-				let newDiv = document.createElement("div")
-				if (numHolder.children.length === 0) newDiv.innerText = convertedNum
-				else {
-					let prevNum = parseInt(numHolder.children[numHolder.children.length - 1].innerText)
-					newDiv.innerText = convertedNum + prevNum
+			addNum.onclick = function() { // when the button is clicked
+				convertedNum = parseInt(inNum.value) // change the value in the input from a string to a number
+				let newDiv = document.createElement("div") // create a new div
+				if (numHolder.children.length === 0) { // if numHolder doesn't have any other divs in it
+					newDiv.innerText = convertedNum // the first div will have the number from the input
 				}
-				numHolder.appendChild(newDiv)	
+				else {
+					let prevNum = parseInt(numHolder.children[numHolder.children.length - 1].innerText) // grab the value from the last div in numHolder
+					newDiv.innerText = convertedNum + prevNum // add that value to the number in the input box, and set the new div's inner text to that sum
+				}
+				numHolder.appendChild(newDiv) // add the new div inside of the div #num-holder
 			}
 		</script>
 	</body>
