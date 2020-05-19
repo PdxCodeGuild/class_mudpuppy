@@ -16,7 +16,10 @@ enterBtn.addEventListener("click", function () {
 })
 
 removeBtn.addEventListener('click', function () {
-
+    var doneTTasks = completedList
+    for (var i = 0; i < doneTTasks.length; ++i) {
+        pass
+    }
 })
 
 
