@@ -11,8 +11,14 @@ enterBtn.addEventListener("click", function () {
     todoTask.innerText = userInput.value;
     todoTask.setAttribute("onclick", "move(this);")
     todoList.appendChild(todoTask);
-    userInput.value = ''
+    userInput.value = '';
 
+})
+
+userInput.addEventListener('keyup', function (event) {
+    if (event.keyCode == 13) {
+        enterBtn.click()
+    }
 })
 
 
@@ -22,15 +28,22 @@ var listRel = {
     'done': 'todo'
 };
 
+function deleteTask(taskDel) {
+    var task = taskDel.parentNode;
+    var list = task.parentNode;
+    list.removeChild(task)
+}
+
 function move(taskItem) {
-    try {
+    // try
+    {
         var origList = taskItem.parentNode;
         var origList_id = origList.getAttribute("id");
         var newList_id = listRel[origList_id];
         var newList = document.getElementById(newList_id);
         origList.removeChild(taskItem);
         newList.appendChild(taskItem);
-    } catch (e) {
-        alert('move : ' + e);
-    }
+    } // catch (e) {
+    //     alert('move : ' + e);
+    // }
 }
