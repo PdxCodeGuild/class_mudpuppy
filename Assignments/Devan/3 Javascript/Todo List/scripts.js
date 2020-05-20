@@ -3,15 +3,17 @@ let enterBtn = document.querySelector('.enter-btn')
 let removeBtn = document.querySelector('.remove-btn')
 var todoList = document.querySelector('.todo-ul')
 var completedList = document.querySelector('.done-ul')
-
-
+let listRel = {
+    'todo': 'done',
+    'done': 'todo'
+}
 
 enterBtn.addEventListener("click", function () {
     var todoTask = document.createElement("li");
     todoTask.innerText = userInput.value;
     todoTask.setAttribute("onclick", "move(this);")
     todoList.appendChild(todoTask);
-    userInput.value = '';
+    userInput.value = ''
 
 })
 
@@ -20,13 +22,6 @@ userInput.addEventListener('keyup', function (event) {
         enterBtn.click()
     }
 })
-
-
-
-var listRel = {
-    'todo': 'done',
-    'done': 'todo'
-};
 
 function deleteTask(taskDel) {
     var task = taskDel.parentNode;
