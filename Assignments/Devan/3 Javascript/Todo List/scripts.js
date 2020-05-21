@@ -9,10 +9,21 @@ let listRel = {
 }
 
 enterBtn.addEventListener("click", function () {
-    var todoTask = document.createElement("li");
+    var taskDiv = document.createElement('div')
+    var deleteBtn = document.createElement('button')
+    var todoTask = document.createElement('li')
+
+    deleteBtn.classList.add('remove-btn', 'close')
+    deleteBtn.innerHTML = '&times;'
+    deleteBtn.setAttribute("onclick", "deleteTask(this);")
+
     todoTask.innerText = userInput.value;
     todoTask.setAttribute("onclick", "move(this);")
-    todoList.appendChild(todoTask);
+
+    taskDiv.appendChild(deleteBtn);
+    taskDiv.appendChild(todoTask);
+    todoList.appendChild(taskDiv)
+
     userInput.value = ''
 
 })
@@ -30,15 +41,21 @@ function deleteTask(taskDel) {
 }
 
 function move(taskItem) {
-    // try
-    {
-        var origList = taskItem.parentNode;
+    try {
+        var taskDiv = taskItem.parentNode;
+        var origList = taskDiv.parentNode;
         var origList_id = origList.getAttribute("id");
         var newList_id = listRel[origList_id];
         var newList = document.getElementById(newList_id);
-        origList.removeChild(taskItem);
-        newList.appendChild(taskItem);
-    } // catch (e) {
-    //     alert('move : ' + e);
-    // }
+        origList.removeChild(taskDiv);
+        newList.appendChild(taskDiv);
+    } catch (e) {
+        alert('move : ' + e);
+    }
+}
+
+function clearDone() {
+    completedList.forEach(function (task) {
+        completedList.removeChild(task)
+    })
 }
