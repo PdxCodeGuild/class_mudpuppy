@@ -11,37 +11,39 @@
 </head>
 
 <body>
-    <main class="container">
-        <h1>Todo List</h1>
-        <input type="text" class="user-input" placeholder="Enter a task" autofocus>
-        <button class="enter-btn" type="button">Enter</button>
+    <main class="container mt-4">
 
-        <table>
-            <tr>
-                <td valign="top">
-                    <h3>Todo</h3>
-                    <ul class="todo-ul" id="todo">
-                        <div class="noselect">
-                            <button onclick="deleteTask(this);" type="button" class="close remove-btn">&times;</button>
-                            <li onclick=" move(this);">test Todo</li>
-                        </div>
-                    </ul>
-                </td>
-                <td width="100px">&nbsp;</td>
-                <td valign="top">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control user-input" placeholder="Enter a task..."
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-secondary enter-btn" type="button" id="button-addon2">Enter</button>
+            </div>
+        </div>
+        <hr>
 
-                    <h3>Done</h3>
-                    <ul id="done" class="done-ul">
-                        <div class="noselect">
-                            <button onclick="deleteTask(this);" type="button" class="close remove-btn">&times;</button>
-                            <li onclick=" move(this);">test Done</li>
-                        </div>
-                    </ul>
-                </td>
-                <button onclick="clearDone();" type="button" class="remove-btn">Clear
-                    Done</button>
-            </tr>
-        </table>
+        <div>
+            <h4>Not Completed</h4>
+            <ul class="todo-ul" id="todo">
+                <div class="noselect">
+                    <li onclick=" move(this);">test Todo</li>
+                    <button onclick="deleteTask(this);" type="button" class="close remove-btn">&times;</button>
+                </div>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Competed</h4>
+            <ul id="done" class="done-ul">
+                <div class="noselect">
+                    <li onclick=" move(this);">test Done</li>
+                    <button onclick="deleteTask(this);" type="button" class="close remove-btn">&times;</button>
+                </div>
+            </ul>
+        </div>
+
+        <button onclick="clearDone();" type="button" class="btn btn-danger remove-btn">Clear
+            Done</button>
 
     </main>
 

@@ -20,8 +20,8 @@ enterBtn.addEventListener("click", function () {
     todoTask.innerText = userInput.value;
     todoTask.setAttribute("onclick", "move(this);")
 
-    taskDiv.appendChild(deleteBtn);
     taskDiv.appendChild(todoTask);
+    taskDiv.appendChild(deleteBtn);
     todoList.appendChild(taskDiv)
 
     userInput.value = ''
