@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Lab 4: To Do List</title>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+    </head>
+
+    <style>
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-size: cover;
+            background-image: url("https://66.media.tumblr.com/af68a608d8a49a5775ec0d50929e2a16/tumblr_oyz00ySgoK1wa84xco1_540.jpg");
+            align-items: center;
+        }
+
+        button {
+            width: 120px;
+            height: 30px;
+            justify-content: space-between;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            justify-content: center;
+        }
+
+        .white-box {
+        display: flex;
+        background-color: white;
+        justify-content: space-between;
+        box-sizing: border-box;
+        border: solid black 5px;
+        margin: 20px;
+        padding: 20px;
+
+        }
+    </style>
+
+    <body>
+        <div class="white-box">
+        <div>
+            <h1>Summer To Do List</h1>
+            <p>Please input your item and tell me how you want to change the list...</p>
+        </div>
+        <div>
+            <input id="item-input">
+        </div>
+        <br>
+        <div>
+            <button id="add-item">Add This Item</button>
+            <button id="delete-item">Delete This Item</button>
+            <button id="complete-item">Complete This Item</button>
+        
+        </div>
+            <div>
+                <h4><u>Stuff Brea's Gotta Do</u></h4>
+            </div>
+            <div id="list-div">
+            </div>
+        </div>
+        <script src="JS_Lab4.js"></script>
+    </body>
+</html>
