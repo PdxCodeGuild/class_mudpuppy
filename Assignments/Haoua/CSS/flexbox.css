@@ -1,0 +1,201 @@
+/* CSS: FlexBOX */
+/* Flexible box: concept or feature that allows you to create and arrange elements easiy */
+/* Create alternative for floats; displays and box model */
+
+/* Components:
+
+Container: parent element; what is going to become the container for all of the items:
+typically used on a div or another container element
+
+Flex Items: images, links, spans
+
+We can use different properties to create different layouts.
+*/
+
+/* All pages using some form of css model */
+/* Mainly used to layout a website or different container
+
+Sidebar:
+Menu: 
+Content:
+Widgets
+
+Create one huge flex container and then create seperate items*/
+
+/* We won't need floats and padding it lets us do it naturally */
+
+-------------------------------
+/* Creating a flex container */
+/* 1. We use the display property */
+
+/* Step 1: Choose a container / parent element*/
+{
+    display: flex;
+    /* creates our flex container */
+    /* items go from in a row to being spaced out accordingly */
+}
+
+
+/* Flex Direction and Wrap: Properties of Flex Container */
+/* Step 2: Manipulation:
+Flex Direction: allows us to specify the direction or reverse the order using a special suffix */
+
+{
+    /* Specify row or column: row is the default value */
+    flex-direction: row;
+    flex-direction: column;
+
+     /* reverse  */
+    flex-direction: row-reverse;
+    flex-direction: column-reverse;
+
+}
+
+
+
+---------------------------
+/* Flex Wrap: moves it to new row or column to avoid using maximum space:
+Once  it gets to a certain length rap around*/
+
+{
+    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+    /* reverses the oreder */
+    flex-wrap: nowrap;
+    /* the default value */
+}
+
+
+
+
+--------------------------------------------
+/* Content Alignment */
+/* Horizontal Alignment: justify content
+Vertical Alignment */
+
+{
+    /* Flex start: Where the container starts (left), flex end, center */
+    justify-content: center;
+    /* centers all items in the middle
+     */
+     justify-content: flex-end;
+     /* moves to the end of container */
+     justify-content: space-between;
+     /* creates equal divisions to equally divide space */
+     /* equally on the same row */
+     /* if we want something stretched out */
+     justify-content: space-around;
+     /* creates spacing on all sides of the items (between flexbox and edges) */
+     /* if we want it more centered use space around */
+
+}
+
+
+/* Align Items: Default is set to stretch across the bottom of container */
+{
+    align-items: center;
+    /* move to the center and arranged vertically in between top and bottom */
+    align-items: flex-start;
+    /* Flex-start; keeps height of item the same without stretching: brings it to the top */
+    align-items: flex-end;
+    /* Flex end brings items to the bottom of the page */
+}
+
+
+/* BASELINE AND STRETCH: VALUES */
+
+/* Stretch aligns it all the way through from top to bottom */
+{
+    align-items: stretch;
+}
+
+/* Baseline: all items no matter the size are aligned to a baseline
+/* lets say we add inline styles: line-height : changes one size but they are all aligned on the same line
+Baseline: no matter size or font text, keeps them all on the same baseline
+ */
+{
+    justify content: center;
+}
+
+/* aligns everything to the center of the flexbox */
+
+
+
+
+
+
+-----------------
+
+/* Flex Item Order:
+Instead of adding to container we can add into items (if items have a style)
+style="order:1"  to the html*/
+/* Order allows us to put it in whichever position we want instead of using html */
+/* Once the website becomes interactive it will be more usefl */
+/* if we do not want to add a style class we can add our own class to each item */
+
+-------------------------------
+
+
+/* Flex Grow, Shrink, Basis
+
+Completely responsible for responsive power of flexbox:
+*/
+/* Flex Basis: minimum width of a flex item*/
+
+html document:
+<div class="container">
+    <div class="container-item" style="order: 4;
+    flex grow: 1;">A</div?
+
+{
+    /* every flex item is going to get the same amount of extra space if all are one */
+    /* Value of 1 is the default space */
+    /* Increases the size of the item */
+    /* The default value is zero but when we set it to one everything else is not taking up extra space */
+    /* When it grows it still takes up the same proportion of space */
+    /* When we shrink it goes back to default value of flex-shrink */
+    default is ZERO
+    flex-grow:1;
+    
+
+    /* defines the rate of shrinkage of every container item relative to the rest of the items */
+    /* default value is 1 not zero, shrink each item at the same rate as other items. Once we go under minimum width all the items look the same */
+    /* If you dont want something to shrink set the value to zzero */
+    /* If it goes below do not shrink the item */
+
+    /* if we want middle value to shrink 3 times as fast as everything else we replace one with a 3 */
+    flex-shrink: 1;
+
+
+
+    /* We want to make the entire page as responsive as possible regardless of the device */
+
+    flex-basis: 100px;
+}
+
+
+
+-----------
+"The flex property"
+/* Summarizes flex-grow, shrink and basis in one gow */
+/* instead of adding all the properties to each item we can sum it down */
+
+flex: grow shrink basis;
+flex: 1 1 100px;
+/* default value for basis is auto */
+
+
+
+---------------------------------
+/* Line item alignment:
+How to align each item: we can only align items vertically: */
+/* Align Self will override align-items property */ 
+
+align-self: flex-start;
+/* align them with the same values */
+/* aligned to the start of the container */
+align-self: center;
+
+align-self: flex-end;
+/*You can't use stretch and baseline on align-self  */
+-------------------------------------------------------------------------------------

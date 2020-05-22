@@ -1,0 +1,167 @@
+/* CSS: The Box Model */
+/* every element is surrounded by an invisible box:
+all the boxes are connected and what we can do is change the shapes of the boxes and layers in
+order to move things around in the website */
+
+/* Flexbox or grid is another layout feature */
+
+/*1.Layer Padding= space between content and the border: gives more room around content
+Doesn't move content around . Creates internal space*/
+
+/* 2. Border: seperates padding and margin: The divide or seperation line
+Invisible by default but we can change how it looks. Doesn't create any spacing unless you want it to */
+
+/* 3. Margin: is supposed to move the content around and give it space between other elements
+Margin is used for external space and elements. */
+/* --------------------------------------------------------------- */
+/* Changing Content Size: Using Box Model */
+/* Height and Width are the two main features in shaping content */
+
+/* Best units to use are px or absolute units for height
+and vw or % for width (relative):
+
+Height is difficult to determine but stays consistent;
+Width changes a lot so we need to use Relative units*/
+
+/* 1. give id to image */
+
+#about-us-image {
+    height: 300px;
+    /* Do not set everything to a constant value */
+
+    width: 60vw;
+    /* 60% would mean the same thing */
+}
+
+/* feature in chrome that allows you to see the different views */
+/* right click, click inspect, responsiveness chooses which device you want to see it on */
+/* responsive design gives you flexibility */
+
+
+ ------------------------
+
+
+ /* CSS Border: Manipulating the border */
+ /* main short hand that allows us to style everything at once */
+ body {
+     /* Every element has this box around it */
+     /* size is similar to changing the size of a px or em */
+     /* Syntax: */
+     border: size style color;
+     border: 2px;
+     /* many stiles you can use: solid, dotted, dash */
+     /* color can be anything hex, rgba */
+     border: 2px solid rgb(8, 13, 19);
+     /* changing the px increases or decreases the border thickness */
+    border: 10px dotted red;
+    /* dotted border */
+    border: 10px dashed red;
+    /* dashed border */
+    border: 10px double red;
+    /* commonly used for style */
+
+    }
+
+    /* if contents touch it means that there is no padding on the border */
+    
+-------------------------------------------------------
+    /* Margin and Padding */
+    /* Short-hand margin property */
+    /* How to add Margin and padding to all sides at the same time */
+/* 1. choose which box model layer we want to work with:  */
+{
+    padding: 20px;
+/* if we add one value it adds it to all sides
+/* gives space between image an border */
+/* border gets bigger */
+/* Adds space around the image */
+    margin: 40px;
+    /* everything around the image is pushed away from it */
+    /* it move the image or the selection around */
+    padding-right: 40px;
+    /* adds 40px of padding on the right side */
+    padding-top: 100px;
+    padding-bottom: 5px;
+
+    /* Short hand adding all the padding with different px */
+    /* first is top, second is right, then bottom, the left */
+    /* trbl */
+    padding: 100px 40px 5px 0px;
+
+    /* Margin adds space from other elements */
+    margin: 100px 40px 5px 10px;
+
+
+
+}
+
+
+
+{
+    /* top and bottom, left and right */
+    /* short hand to style two different sides at the same time  */
+    margin: 80px 40px;
+}
+
+----------------------------------------------
+/* float & Display */
+
+/* for both we need to understand inline and block */
+
+/* elements have different display types that describe the behavior of the element */
+
+/* block moves everything onto its own section or block i.e a P tag (it moves onto its own section after an image) */
+
+/* inline will keep it intact how it naturally occurs on the page i.e Span(used to contain some piece of content in an inline style)
+ */
+
+
+ /* FLOAT: a way to change the way the display types look.
+ Changes how the element floats on the page.
+ CHanges the content around the object that is floating as well */
+ {
+     float: right;
+     /* floats to the right and everything before it gets pushed up to fit the page */
+     /* Once you get more experience you can figure out where things will move */
+     
+ }
+
+
+ /* Display: a way of changing the display property that it naturally comes with */
+/* Changing a Span from inline to block */
+/* 1. Inline
+2. Block
+3. None */
+
+/* None: removes elememt amd the space for it */
+/* None is great for when you create interactive websites i.e hidding tokens etc */
+
+
+
+
+
+
+/* In-line block: Takes features from both inline and block elements and combines them together.
+Inline elements dopnt move anything stay in place
+/* Block moves them */
+
+{
+    display: inline;
+
+    display: inline block;
+    /* keeps everything in the same line but keeps blck level spacing */
+    /* kept on the same line but has spacing */
+    /* great for laying out grids */
+
+}
+
+
+/* Float Properties; left, right, inherit, none */
+
+/* Inherit: It will take the float property of the parent
+Allows you to layout multipe elements without specifying their float everytime
+
+
+float: none; leaves everything where it naturally occurs with its normal display
+
+/* Great for manipulation and making your website look good */

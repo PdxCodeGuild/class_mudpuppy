@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+          <label id="label" for="example">Let's submit some text</label>
+          <input id="example" type="text" name="text">
+        </div>
+
+
+        <div id="div-one">
+          <input id="submit" type="submit" value="Send"
+           accesskey="s">
+        </div>
+    </form>
+
+    <script>
+        let label = document.querySelector("#label");
+        let userInput = document.querySelector("#example");
+        let submit = document.querySelector("#submit");
+        let oldDiv = document.querySelector("#div-one");
+        
+        i = 0
+        while (i==0) {
+            
+            let newDiv = document.createElement("div");
+            let newSpan = document.createElement("span");
+            
+            newDiv.innertext = userInput.value;
+
+            console.log(userInput.value);
+            document.body.appendChild(newDiv);
+            alert(userInput.value)
+            
+            
+            
+
+        }
+
+        
+
+    
+    </script>
+    
+</body>
+</html>
