@@ -1,5 +1,5 @@
 
-# New Canvas Lab: Draw a Picture
+# Optional Canvas Lab: Draw a Picture
 
 ## Canvas in HTML
 
@@ -31,6 +31,8 @@ let h = 750;
 
 ## Drawing a Rectangle with ctx.rect()
 
+[MDN Docs for ctx.rect()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect)
+
 Let's draw a rectangle using the `rect` method.
 ```javascript
 // ctx.rect takes in the starting coordinates and dimensions of a rectangle
@@ -48,6 +50,14 @@ ctx.stroke(); // stroke() is a method; this line of code draws the black outline
 ![](canvas-rect.png)
 
 ## Drawing a Triangle with Path
+
+[MDN Docs for ctx.beginPath()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/beginPath)
+
+[MDN Docs for ctx.moveTo()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/moveTo)
+
+[MDN Docs for ctx.lineTo()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineTo)
+
+[MDN Docs for ctx.closePath()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/closePath)
 
 Now let's draw triangle inside the rectangle with a `path`.
 ```javascript
@@ -104,3 +114,47 @@ ctx.fillStyle = 'red'; // this is the mouth, so let's make it red
 ctx.fill();
 ctx.stroke();
 ```
+![](canvas-ellipse.png)
+
+## Create a Function to Draw Eyes
+
+We need to draw two eyes, so we can save some time by writing a `function` we can use twice.
+
+```javascript
+function drawEye(xPos) { // the eyes will be the exact same except for the x-coordinate, so lets give this function an xPos parameter
+
+    // eyeball
+    ctx.beginPath();
+    ctx.arc(xPos, 250, 50, 0, Math.PI); // notice this time the end angle value is half what it was before, this will give us a half circle
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    ctx.stroke;
+
+    // pupil
+    ctx.beginPath();
+    ctx.arc(xPos, 250, 25, 0, Math.PI); // another half circle
+    ctx.fillStyle = 'black';
+    ctx.fill();
+    ctx.stroke();
+};
+
+drawEye(275); // draw an eye with an xPos of 275
+drawEye(475); // draw an eye with an xPos of 475
+```
+
+# The Final Product
+![](canvas-smiley.png)
+
+Cool!  Now it's your turn.
+
+## Version 1
+
+Draw a picture using `ctx.rect()`, `ctx.moveTo()`, `ctx.lineTo()`, `ctx.beginPath()`, and `ctx.closePath()`.
+
+## Version 2
+
+Now add more shapes with `ctx.arc()` and `ctx.ellipse()`.
+
+## Optional
+
+Add animations with [requestAnimationFrame()](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame).
