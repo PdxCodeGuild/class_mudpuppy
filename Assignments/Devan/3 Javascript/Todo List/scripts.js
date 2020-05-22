@@ -3,8 +3,10 @@ let enterBtn = document.querySelector('.enter-btn')
 let removeBtn = document.querySelector('.remove-btn')
 var todoList = document.querySelector('.todo-ul')
 var completedList = document.querySelector('.done-ul')
-
-
+let listRel = {
+    'todo': 'done',
+    'done': 'todo'
+}
 
 enterBtn.addEventListener("click", function () {
     var todoTask = document.createElement("li");
@@ -15,28 +17,28 @@ enterBtn.addEventListener("click", function () {
 
 })
 
-removeBtn.addEventListener('click', function () {
-    var doneTTasks = completedList
-    for (var i = 0; i < doneTTasks.length; ++i) {
-        pass
+userInput.addEventListener('keyup', function (event) {
+    if (event.keyCode == 13) {
+        enterBtn.click()
     }
 })
 
+function deleteTask(taskDel) {
+    var task = taskDel.parentNode;
+    var list = task.parentNode;
+    list.removeChild(task)
+}
 
-var h_list_rel = {
-    'todo': 'done',
-    'done': 'todo'
-};
-
-function move(ot) {
-    try {
-        var oc = ot.parentNode;
-        var oc_id = oc.getAttribute("id");
-        var on_id = h_list_rel[oc_id];
-        var on = document.getElementById(on_id);
-        oc.removeChild(ot);
-        on.appendChild(ot);
-    } catch (e) {
-        alert('move : ' + e);
-    }
+function move(taskItem) {
+    // try
+    {
+        var origList = taskItem.parentNode;
+        var origList_id = origList.getAttribute("id");
+        var newList_id = listRel[origList_id];
+        var newList = document.getElementById(newList_id);
+        origList.removeChild(taskItem);
+        newList.appendChild(taskItem);
+    } // catch (e) {
+    //     alert('move : ' + e);
+    // }
 }

@@ -25,9 +25,8 @@
 <body>
     <main class="container">
         <h1>Todo List</h1>
-        <input type="text" class="user-input" placeholder="Enter a task">
+        <input type="text" class="user-input" placeholder="Enter a task" autofocus>
         <button class="enter-btn" type="button">Enter</button>
-        <button class="remove-btn" type="button">Remove</button>
 
         <table>
             <tr>
@@ -35,6 +34,12 @@
                     <h3>Todo</h3>
                     <ul class="todo-ul" id="todo">
 
+                        <li onclick=" move(this);">
+                            <button onclick="deleteTask(this);" type="button" class="close remove-btn">
+                                &times;
+                            </button>
+                            test
+                        </li>
                     </ul>
                 </td>
                 <td width="100px">&nbsp;</td>
