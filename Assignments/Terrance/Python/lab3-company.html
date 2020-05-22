@@ -1,0 +1,177 @@
+<!––
+Lab 3: Company
+    -->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style> 
+        body{display: flex;}
+        aside{background-color: rgb(225, 233, 241); width: 20%; display:flex; flex-direction: column;}
+        aside p{text-align: justify; margin: 7.5%; padding: 20px; outline: 3px solid black;}
+        main{background-color: lightslategray; width: 80%;}
+        main, aside{min-height: 100vh; outline: 3px solid black;}
+        .three-pix {display:flex; justify-content: space-around; outline: 3px solid black;}
+        .three-pix>.pic-name{margin: 3%; max-height: 80vh; align-self: center;}
+        .three-pix > .pic-name > img{max-width: 22vw;}
+        .two-pix > .pic-name > img{max-width: 35vw;}
+        h1{text-align: center; font-size: xxx-large; font-weight: bold;}
+        h2{text-align: center; font-size: x-large; font-weight: bold; margin-top: -2.5%;}
+        img{align-self: center; align-items: flex-start; outline: 3px solid black;}
+        .img-text {display: flex; flex-direction: column; outline:none; text-align: center;}
+        .img-container > img{max-width: 80%; margin: 10%;}
+        .img-container{display: flex; flex-direction: column;}
+        img:hover{box-shadow: 5px 10px #161616; transition-duration: .3s;}
+
+        .pete {position: absolute; top: 40px; left: 2.5vw; color: black; z-index: 1; font-size: xx-large; font-weight: bold;}
+        .al {position: absolute; top: 5px; left: 8.5vw; color: black; z-index: 1; font-size: xx-large; font-weight: bold;}
+        .all {position: absolute; top: 5px; left: 10px; color: black; z-index: 1; font-size: xx-large; font-weight: bold;}
+        .white-text{color: whitesmoke;}
+        .pic-name {position: relative;}  
+        .pic-name > p{text-align: justify;} 
+        
+        #pete_the_frenchie{width: 80%; margin: 10%; margin-top: 15%;}
+        #pete{outline: none; margin-top: -2.5%; padding: 0;}
+        #contact{outline: none; margin-top: 10%; padding: 0; font-size: large; font-weight: bold; text-align: center;}
+        #social-media{outline: none; margin-top: 2.5%; padding: 0; font-size: x-large; font-weight: bold; text-align: center;}
+
+        #why{outline: none; margin-bottom: 2.5%; padding: 0; font-size: x-large; font-weight: bold; text-align: center;}
+        a:link, a:visited{color:black}
+
+    </style>        
+    <title>French Bulldog Puppies</title>
+</head>
+<body>
+    <aside>
+        <div class="pic-name">
+            <span class="pete">Pete</span>
+        <img id= "pete_the_frenchie" src="https://i.pinimg.com/originals/92/5a/09/925a0913377f8ddf1b08c02c99b0d183.jpg">
+        <p id="pete">
+            "Hi guys I'm Pete, most people don't know this about me but I like watching video game speed runs".
+        </p>
+        </div>
+
+        <p id="why">
+            WHY BUY A FRENCHIE? 
+        </p>
+
+        <P>
+            French Bulldogs are one of the more popular dog breeds in the United States. Despite their name, they come from England, not France, and have been bred to be companion animals for several hundred years. Frenchies have the characteristic short muzzles of bulldogs, but are smaller than their traditional Bulldog counterparts. They are very playful and affectionate in nature, and love to be near their people. French Bulldogs, which tend to be no larger than 28 lbs. in adulthood, are adaptable to both small and large spaces, and are devoted pets to individuals and families.
+        </P>
+
+        <P>
+            The French Bulldog resembles a Bulldog in miniature, except for the large, erect “bat ears” that are the breed’s trademark feature. The head is large and square, with heavy wrinkles rolled above the extremely short nose. The body beneath the smooth, brilliant coat is compact and muscular.
+        </P>
+
+        <P>
+            The bright, affectionate Frenchie is a charmer. Dogs of few words, Frenchies don’t bark much—but their alertness makes them excellent watchdogs. They happily adapt to life with singles, couples, or families, and do not require a lot of outdoor exercise. They get on well with other animals and enjoy making new friends of the human variety. It is no wonder that city folk from Paris to Peoria swear by this vastly amusing and companionable breed.
+        </P>
+
+        <p>
+            The French Bulldog has the appearance of an active, intelligent, muscular dog of heavy bone, smooth coat, compactly built, and of medium or small structure. Expression alert, curious, and interested. Any alteration other than removal of dewclaws is considered mutilation and is a disqualification. Proportion and Symmetry – All points are well distributed and bear good relation one to the other; no feature being in such prominence from either excess or lack of quality that the animal appears poorly proportioned.
+        </p>
+
+        <P>
+            Want to connect with other people who love the same breed as much as you do? We have plenty of opportunities to get involved in your local community thanks to AKC Breed Clubs located in every state and more than 450 AKC Rescue Network groups across the country. The first specialty club to represent this breed was the French Bulldog Club of America and fanciers gave a specialty show at the Waldorf-Astoria in NYC in 1898. It was the first specialty show to be held in such quarters. Receiving serious press coverage, Frenchies were thrust into vogue, reaching a peak in 1913 with an entry of 100 at the Westminster Kennel Club. 
+        </P>
+
+        <p id="contact">
+            For more information and pricing, please contact us! (SERIOUS INQUIRIES ONLY) 
+        </p>
+        <p id="social-media">
+        <a href="https://www.akc.org/">Visit Us on Social!</a>
+        </p>
+
+    </aside>
+    <main>    
+        <section>
+            <h1>
+                French Bulldogs!
+            </h1>
+            <h2>
+                A PDX CodeGuild Company
+            </h2>
+            <div class= "img-container">
+                <div class="img-text">
+                    <div class="pic-name">
+                        <span class="al">Al</span>
+                        <img id="al_the_frenchie" src="http://www.frenchbulldogbreed.net/wp-content/uploads/2018/06/The-magnificent-appeal-of-rare-Blue-French-Bulldogs-01.jpg">
+                    </div>
+                    <p>
+                    "Greetings everyone. My friends call me Mr Burns but you can call me Al. I'm one of the most interesting men in the world because no one knows anything about me".
+                    </p>
+                </div>
+            </div>
+
+                <div class="three-pix">
+                    <div class="pic-name">
+                        <span class="all">Brea</span>                                   
+                        <img id="brea_the_frenchie" src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX8550191.jpg"> 
+                        <p>
+                        "Hello everyone, I'm Brea. I have a vast appreciation for fine music and I also enjoy teaching code in my free time. Hehe". 
+                        </p>
+                    </div>
+                    <div class="pic-name">
+                        <span class="all">Terrance</span>
+                        <img id="terrance_the_frenchie" src="https://i.pinimg.com/736x/5f/e8/5f/5fe85fe46ab7d7e52a7c7f57a36d0164.jpg">
+                        <p>
+                        "Greetings, I'm Terrance! My favorite food pairing is wine and cheese. I love to eat but it makes me really sleepy so I'm always tired".
+                        </p>
+                    </div>
+                    <div class="pic-name">
+                        <span class="all white-text">Racheal</span>
+                        <img id="racheal_the_frenchie" src="https://www.frenchbulldogbreed.net/wp-content/uploads/2020/01/black-frenchie-1024x768.jpg">
+                        <p>
+                        "Hi. My name is Rachael, I'm a little shy, especially on video calls. I really like to practice my code everyday and stay focused. I'm getting pretty good at it!"
+                        </p>
+                    </div>
+
+                </div>
+                        
+                <div class="three-pix">  
+                    <div class="pic-name">
+                        <span class="all">Eboni</span>            
+                        <img id= "eboni_the_frenchie" src="https://www.frenchbulldogbreed.net/wp-content/uploads/2018/06/Bringing-French-Bulldog-puppy-home-1.jpg">
+                        <p>
+                        "Hey guys, my name is Eboni and I'm from Chicago. I like sports, especially basketball. I really like Michael Jordan, played for the Chicago Bulls!"
+                        </p>
+                    </div>
+                    <div class="pic-name">
+                        <span class="all">Haoua</span>
+                        <img id= "haoua_the_frenchie" src="https://img0.etsystatic.com/059/0/6071694/il_570xN.734198492_p88p.jpg">
+                        <p>
+                        "Hello world! I'm Haoua, I'm pretty quiet too but I'll speak my mind when I need to. Most people don't know this about me but I'm a genius!"   
+                        </p>
+                    </div>
+                    <div class="pic-name">
+                        <span class="all">Briana</span>
+                        <img id= "briana_the_frenchie" src="https://frenchbullevard.com/wp-content/uploads/2017/05/merle-frenchie.jpg">
+                        <p>
+                        "What's up! Briana here. I'm pretty quiet around people that I don't know, but deep down inside, I like to get weird with my friends. HAHAHA. HA."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="two-pix three-pix">
+                    <div class="pic-name">
+                        <span class="all">Devan</span>
+                        <img id= "devan_the_frenchie" src="https://www.frenchbulldogbreed.net/wp-content/uploads/2019/09/french-bulldog-smart-1024x683.jpg">
+                        <p>
+                        "Howdy folks, my name is Devan. I'm super into technology, and it shows in my work. I make this stuff look easy and I'm always willing to help!"
+                        </p>
+                    </div>
+                    <div class="pic-name">
+                        <span class="all">Manny</span>
+                        <img id= "manny_the_frenchie" src="https://i.pinimg.com/originals/73/61/10/736110a47e7682f0b5b2aa22ccb4b670.jpg">
+                        <p>
+                        "Hi, My name is Manny and I really like to party-dance and I'm really smart! Wait, do you hear that music? Let's dance!"
+                        </p>
+                    </div>
+                </div>
+            </div>        
+            </section>
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,900;1,200;1,400;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="lab02_blog.css">
+
+  <title>Devan's Blog</title>
+</head>
+
+<body>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <!-- * Nav Bar -->
+  <header>
+    <div class="nav-logo">
+      <a href="#"><img src="images/my-logo.png" id="df-logo" alt="Logo"></a></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#">Contact</a></li>
+        <li><a class="nav-link" href="#postSection">Git Hub</a></li>
+        <li><a class="nav-link" href="#">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- * Landing Page -->
+    <section class="landing-page">
+      <div class="intro">
+        <div class="intro-text">
+          <h1>Hi, I'm Devan</h1>
+          <p>I like to build things. I am currently learning full stack web development
+            with the
+            hopes
+            of
+            securing a job
+            at a start-up company. This is my first attempt at making a personal blog. So, bear with me, as this could
+            be
+            a bumpy road.</p>
+          <div class="cta">
+            <a id="moreButton" href="#postSection">Tell me more!</a>
+          </div>
+        </div>
+        <img src="images/devan-portrait-transparent.png" class="landing-page-image" alt="Portrait of Devan">
+      </div>
+    </section>
+
+    <!-- SECTION - Tagline -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="content has-text-centered">
+            <h2 class="is-size-2">Here's some of the technologies I know.</h2>
+            <p class="is-size-4">This list will continue to grow</p>
+            <p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- * Blog Section -->
+    <div class="container" id="postSection">
+
+      <!--  Python Card -->
+      <div class="card">
+        <div class="card-info">
+          <div id="image-box"><img src="images/python.jpg" class="card-image"></div>
+          <h3 class="card-title">Learing Python</h3>
+          <p class="card-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio,
+            quis placerat ante
+            luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+          <div id="continue-button"><a href="#" class="continue-reading-button">Continue Reading</a></div>
+        </div>
+      </div>
+
+      <!--  HTML Card -->
+      <div class="card">
+        <div class="card-info">
+          <div id="image-box"><img src="images/html5.png" class="card-image">
+          </div>
+          <h3 class="card-title">Learing HTML</h3>
+          <p class="card-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio,
+            quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+          <div id="continue-button"><a href="#" class="continue-reading-button">Continue Reading</a></div>
+        </div>
+      </div>
+
+      <!--  CSS Card -->
+      <div class="card">
+        <div class="card-info">
+          <div id="image-box">
+            <img src="images/css.jpg" class="card-image">
+          </div>
+          <h3 class="card-title">Learing CSS</h3>
+          <p class="card-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio,
+            quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+          <div id="continue-button"><a href="#" class="continue-reading-button">Continue Reading</a></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- * Contact Section -->
+    <div class="contact-section">
+      <h1>Leave me a message</h1>
+      <form action="https://getform.io/f/68f26d29-9da2-4008-9b35-ad9d4ce17130" method="POST" class="contact">
+        Hi, my name is
+        <input type="text" name="name">
+        and you can email me at
+        <input type="email" name="email"><br>
+        Here's What I want you to know...<br>
+        <textarea name="message"></textarea>
+
+        <div>
+          <button id="moreButton" type="submit">Send Help!</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,98 @@
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+}
+
+
+.left-img {
+  background-image: url(/04_Blog-v2/static/img/cafe-background.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  z-index: -1;
+}
+
+#my-logo {
+  height: 3rem;
+  width: auto;
+}
+
+
+.menu-btn {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+
+}
+
+/* Blog Page */
+
+#post-card>h2>a {
+  text-decoration: none;
+  color: #444;
+}
+
+#post-card>h5 {
+  color: rgba(120, 120, 120, 0.336);
+  font-size: 1em;
+}
+
+#post-card p {
+  color: rgb(92, 92, 92);
+}
+
+/* Blog Detail */
+
+#post-img-container {
+  height: 60vh;
+  background-image: url(/04_Blog-v2/static/img/cafe-background.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#post-img-container h1 {
+  margin-top: auto;
+  color: white;
+  font-size: 70px;
+}
+
+
+/* Home Page */
+
+#landing-img {
+  width: 30rem;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+#landing-section {
+  height: 100vh;
+  width: 100%;
+}
+
+#intro-block {
+  height: 20em;
+  background-color: #ddd;
+  align-content: center;
+}
+
+#tech-box {
+  width: 100px;
+  height: 100px;
+  background-color: #ddd;
+}
+
+#tech-box>img {
+  width: 75px;
+  height: 75px;
+}

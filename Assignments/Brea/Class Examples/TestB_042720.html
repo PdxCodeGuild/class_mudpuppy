@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Blog!</title>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <header>
+            <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+              </ul>
+
+              <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </header>
+        <style>
+            * {
+                font-family: 'Manrope', sans-serif;
+            }
+            header {
+                position: fixed;
+                top: 0;
+                width: 100vw;
+                z-index: 1;
+                height: 10vh;
+            }
+            .nav{
+                background-color: lightblue;
+            }
+            #blog-title{
+                text-align: center;
+                margin: 5vh 0;
+            }
+            #frog-pic, #netflix-pic {
+                object-fit: cover;
+                overflow: hidden;
+                height: 100px;
+                width: 40%;
+                margin: 10px auto;
+            }
+            .card {
+                margin: 5vh 10 vh;
+                padding: 5 vh;
+            }
+            main {
+                margin-top: 10vh;
+            }
+        </style>
+        <main>
+            <h1 id="blog-title">Brea Does Stuff!</h1>
+            <section class ="card">
+                <img id="fog-pic" class="card-img-top" src="data:image/jpeg;base64,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">
+            </section>
+            <section class="card">
+                <h2>Found a Cool Frog!</h2>
+
+                <h2>Watched a New Show on Netflix</h2>
+                <p>
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                </p>
+            </section>
+        </main>
+    </body>
+</html>

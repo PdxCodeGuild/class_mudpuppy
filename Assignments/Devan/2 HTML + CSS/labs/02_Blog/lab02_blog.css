@@ -1,0 +1,420 @@
+:root {
+  --light-blue: #cdedf6;
+  --medium-blue: #a8dadc;
+  --dark-blue: #10a1b4;
+}
+
+* {
+  font-family: 'Muli',
+    sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* * navigation bar */
+
+header {
+  display: flex;
+  border-bottom: 1px solid #e3e0db;
+  height: 5vh;
+  align-items: center;
+  padding: 0 2%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nav-logo,
+.nav-links {
+  display: flex;
+}
+
+.nav-logo {
+  flex: 1;
+}
+
+#df-logo {
+  max-height: 4vh;
+  transition: 0.70s;
+  -webkit-transition: 0.70s;
+  -moz-transition: 0.70s;
+  -ms-transition: 0.70s;
+  -o-transition: 0.70s;
+}
+
+#df-logo:hover {
+  filter: opacity(60%);
+  transition: 0.70s;
+  -webkit-transition: 0.70s;
+  -moz-transition: 0.70s;
+  -ms-transition: 0.70s;
+  -o-transition: 0.70s;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.nav-links {
+  align-content: flex-end;
+  list-style: none;
+}
+
+.nav-link {
+  padding-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: semi-bold;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: var(--dark-blue);
+}
+
+/* * Landing Page */
+
+
+.landing-page {
+  height: 100vh;
+  width: 70%;
+  margin: 0 auto;
+  padding: 10% 2%;
+}
+
+
+.landing-page-image {
+  float: right;
+  height: 40vh;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 0.75rem grey);
+}
+
+
+.landing-page-image:hover {
+  filter: drop-shadow(0 0 1rem var(--dark-blue));
+
+}
+
+.intro {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.intro h1 {
+  font-size: 10vh;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px grey;
+}
+
+
+.intro p:hover,
+.intro h1:hover {
+  text-shadow: 2px 2px 4px var(--dark-blue);
+}
+
+.intro p {
+  font-size: 18px;
+  line-height: 2rem;
+  max-width: 60%;
+  margin-top: 5vh;
+  text-align: justify;
+  padding-left: 5%;
+  text-shadow: 2px 2px 4px grey;
+}
+
+.cta {
+  max-width: 100%;
+  margin-bottom: 2%;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#moreButton {
+  text-decoration: none;
+  background-color: var(--dark-blue);
+  filter: drop-shadow(0 0 0.75rem var(--dark-blue));
+  color: var(--light-blue);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#moreButton:hover {
+  filter: drop-shadow(0 0 0.75rem var(--medium-blue));
+}
+
+@media only screen and (max-width: 800px) {
+  .landing-page {
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .intro h1 {
+    font-size: 8vh;
+  }
+
+  .intro p {
+    font-size: 2vh;
+    max-width: 90%;
+    padding-left: 0;
+    margin: 20px auto;
+    text-shadow: none;
+  }
+
+  .landing-page-image {
+    border-radius: 0;
+    filter: none;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .intro h1 {
+    padding: 10vh 0;
+    font-size: 5vh;
+    text-align: center;
+  }
+
+  .intro p {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .landing-page-image {
+    overflow: hidden;
+  }
+
+  .landing-page-image:hover {
+    filter: none;
+  }
+}
+
+/* * Card Section */
+
+.container {
+  display: flex;
+  max-width: 90%;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
+
+
+.card {
+  background-color: var(--light-blue);
+  border: 1.5px solid black;
+  border-radius: 5%;
+  margin: 10% auto;
+  height: 60vh;
+  max-width: 25%;
+}
+
+
+#image-box {
+  height: 10%;
+  overflow: hidden;
+  position: relative;
+  top: -30px;
+  filter: drop-shadow(0 0 1rem var(--dark-blue));
+
+}
+
+
+
+#image-box:hover {
+  filter: drop-shadow(0 0 1rem var(--light-blue));
+
+}
+
+.card-image {
+  max-width: 90%;
+  max-height: 20rem;
+  border-radius: 3%;
+}
+
+.card-title {
+  padding: 10% 0;
+  font-size: 28px;
+  letter-spacing: 5px;
+}
+
+.card-info p {
+  width: 80%;
+  margin: auto;
+}
+
+#continue-button {
+  padding: 10% 0;
+}
+
+.continue-reading-button {
+  box-shadow: inset 0px 1px 0px 0px #fce2c1;
+  background: linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+  background-color: #ffc477;
+  border-radius: 6px;
+  border: 1px solid #eeb44f;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 7px 20px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #cc9f52;
+}
+
+.continue-reading-button:hover {
+  background: linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+  background-color: #fb9e25;
+}
+
+.continue-reading-button:active {
+  position: relative;
+  top: 1px;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    max-width: 90%;
+    margin-top: 20vh;
+  }
+
+  .card {
+    max-width: 100%;
+    margin-bottom: 20vh;
+  }
+
+  .card-info {
+    width: 90%;
+    margin: auto;
+  }
+
+  .card-title {
+    padding-top: 0px;
+  }
+
+  #image-box {
+    top: -50px;
+    filter: none;
+  }
+
+  #image-box:hover {
+    filter: none;
+  }
+}
+
+
+/* * Contact Section */
+
+
+.contact-section h1 {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+form.contact {
+  padding-top: 10%;
+  margin: 40px 20px 0 20px;
+  font-size: 28px;
+  line-height: 2;
+  text-align: center;
+}
+
+form.contact {
+  margin: 40px 20px 0 20px;
+  font-size: 28px;
+  line-height: 2;
+  text-align: center;
+}
+
+form.contact input,
+form.contact textarea {
+  width: 20%;
+  margin: 0 10px;
+  padding: 5px 10px;
+  font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  color: #444;
+  border: none;
+  border-bottom: 1px solid #444;
+}
+
+@media only screen and (max-width: 800px) {
+
+  form.contact input,
+  form.contact textarea {
+    display: block;
+    width: 80%;
+    margin: 0 auto 20px auto;
+  }
+}
+
+form.contact textarea {
+  display: block;
+  width: 40%;
+  height: 150px;
+  margin: 20px auto 0 auto;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 6px;
+}
+
+@media only screen and (max-width: 800px) {
+  form.contact textarea {
+    width: 80%;
+  }
+}
+
+/* * Scroll to top button */
+
+#myBtn {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: lightcoral;
+  /* Set a background color */
+  color: white;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 10px;
+  /* Some padding */
+  border-radius: 10px;
+  /* Rounded corners */
+  font-size: 18px;
+  /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555;
+  /* Add a dark-grey background on hover */
+}

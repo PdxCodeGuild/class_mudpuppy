@@ -1,0 +1,181 @@
+/* * Scroll to top button */
+
+#myBtn {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: rgb(255, 140, 0);
+  /* Set a background color */
+  color: white;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 10px;
+  /* Some padding */
+  border-radius: 10px;
+  /* Rounded corners */
+  font-size: 18px;
+  /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: rgb(38, 38, 38);
+  /* Add a dark-grey background on hover */
+}
+
+/* * Header */
+.brand-logo {
+  max-height: 40px;
+  filter: invert();
+  margin-top: 10px;
+}
+
+#landing_header {
+  padding: 100px 0;
+  font-size: 100px;
+}
+
+#landing_button {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* * sizes */
+
+.is-medium {
+  padding: 9rem 0;
+}
+
+
+/* * Parallax */
+.parallax-container {
+  height: 95vh;
+}
+
+.short-parallax {
+  height: 50vh !important;
+}
+
+.blend img {
+  filter: contrast();
+  filter: grayscale();
+  max-height: fit-content;
+  width: auto;
+}
+
+.blend {
+  width: auto;
+  background-color: rgba(70, 70, 70, 0.6);
+  mix-blend-mode: multiply;
+}
+
+/* SECTION Contact Form */
+.contact-section h1 {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+form.contact {
+  padding-top: 5%;
+  margin: 40px 20px 0 20px;
+  line-height: 2;
+  text-align: center;
+}
+
+form.contact {
+  margin: 40px 20px 0 20px;
+  line-height: 2;
+  text-align: center;
+}
+
+form.contact input,
+form.contact textarea {
+  width: 30% !important;
+  margin: 0 10px;
+  padding: 5px 10px;
+  font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  color: #444;
+  border: none;
+  border-bottom: 1px solid #444;
+}
+
+#submit-button {
+  margin: 10px 0;
+}
+
+@media only screen and (max-width: 800px) {
+
+  form.contact input,
+  form.contact textarea {
+    display: block;
+    width: 80% !important;
+    margin: 0 auto 20px auto !important;
+  }
+}
+
+form.contact textarea {
+  display: block;
+  width: 80% !important;
+  height: 150px;
+  margin: 20px auto 0 auto;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 6px;
+}
+
+@media only screen and (max-width: 800px) {
+  form.contact textarea {
+    width: 80%;
+  }
+}
+
+
+/* * Tech Boxes */
+
+.tech-box {
+  height: 75px;
+  width: 75px;
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.tech-box img {
+  opacity: .8;
+}
+
+
+.is-grey {
+  background-color: rgb(232, 232, 232);
+}
+
+.is-medium {
+  height: 40vh;
+}
+
+
+
+/* Blog Page */
+
+.side-nav {
+  background-image: url(../img/blog-cafe.jpg);
+  background-size: cover;
+  background-color: #444;
+  height: 100vh;
+  overflow: hidden;
+}

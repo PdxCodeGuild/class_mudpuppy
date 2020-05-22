@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number Game</title>
+
+
+    <style>
+        body {
+            background-color: chocolate;
+            margin: 0 0 0 50%;
+            transform: translateX(-25%);
+        }
+
+        main>* {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <h1>Let's Play Guess the Number!</h1>
+        <div class="guess-between"></div>
+        <input class="user-guess" type="text" autofocus="autofocus" onFocus="this.select()">
+        <button class="submit-button">Submit</button>
+        <div class="hint-div">This is the hint</div>
+    </main>
+
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

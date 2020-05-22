@@ -1,4 +1,4 @@
-
+from huepy import *
 data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
 
 
@@ -35,8 +35,10 @@ def draw_chart(data):
                 row += ("X")
             else:
                 row += " "
-        print(*row)
-    print(*data)
+        print(*(orange(x) for x in [*row]))
+    print(*(red(x) for x in [*data]))
+    # print(red(*data))
+    # print('data', '=', (*data))
 
 def make_it_rain(data):
     water = 0
