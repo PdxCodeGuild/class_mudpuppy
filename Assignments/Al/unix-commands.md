@@ -4,7 +4,7 @@ List files
 
 Change directory
 
-> cd <directory>
+> cd \<directory\>
 
 Change directory to your home folder, no matter where you are
 
