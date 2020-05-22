@@ -27,9 +27,11 @@ let w = 750;
 let h = 750;
 ```
 
-## Drawing a Rectangle
+# Simple Shapes: Rectanges and Lines
 
-Let's draw a rectangle using the the `rect` method.
+## Drawing a Rectangle with ctx.rect()
+
+Let's draw a rectangle using the `rect` method.
 ```javascript
 // ctx.rect takes in the starting coordinates and dimensions of a rectangle
 ctx.rect(250, 200, 250, 350); // ctx.rect(x, y, width, height)
@@ -44,3 +46,61 @@ ctx.stroke(); // stroke() is a method; this line of code draws the black outline
 ```
 
 ![](canvas-rect.png)
+
+## Drawing a Triangle with Path
+
+Now let's draw triangle inside the rectangle with a `path`.
+```javascript
+ctx.beginPath(); // first, call beginPath() to start a new path
+ctx.moveTo(175, 525); // imagine the path is being drawn by a pencil; moveTo says pick up the pencil and put it down here, at these (x, y) coordinates
+ctx.lineTo(375, 225); // draw a line from the previous coordinates to this point
+ctx.lineTo(575, 525); // then to this point
+ctx.closePath(); // finally, closePath will take us back to where we started
+ctx.fillStyle = 'yellow';
+ctx.fill();
+ctx.stroke();
+```
+
+![](canvas-tri.png)
+
+# Drawing a Smiley? with Arc and Ellipse
+
+## Drawing a Circle With ctx.arc()
+
+[MDN Docs for ctx.arc()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc)
+
+Now, on a new canvas we can draw a perfect circle with `arc`.  Let's use it to draw the face.
+```javascript
+// ctx.arc takes in the dimensions of a circle
+// ctx.arc(x, y, radius, start angle, end angle)
+ctx.arc(375, 375, 300, 0, 2 * Math.PI)
+// x and y are the center of the arc
+// the radius is a vector from (x, y) to the starting point of the arc
+// the start and end angle are in radians
+// 360° = 2 * π in radians
+ctx.fillstyle = 'yellow' // let's give it a yellow face
+ctx.fill(); // fill in the yellow
+ctx.lineWidth = 5; // let's give it a thick outline
+ctx.stroke(); // stroke the outline of the face
+```
+![](canvas-arc.png)
+
+## Drawing an Ellipse with ctx.ellipse()
+
+[MDN Docs for ctx.ellipse()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/ellipse)
+
+Let's give this face a mouth with `ellipse`, which can create longer round shapes.
+```javascript
+ctx.beginPath(); // start a new path from the last arc
+// ctx.ellipse() takes in the dimensions of the ellipse
+// ctx.ellipse(x, y, x radius, y radius, rotation, start angle, end angle)
+ctx.ellipse(375, 450, 225, 85, 0, 0, 2 * Math.PI);
+// x and y function the same as in an arc, they are the coordinates of the center of the ellipse
+// x radius is the horizontal radius
+// y radius is the vertical radius
+// rotation (radians) can be used to tilt the ellipse (we're not tilting the ellipse by using 0)
+// start and end angle (radians) function the same as in an arc
+ctx.fillStyle = 'red'; // this is the mouth, so let's make it red
+ctx.fill();
+ctx.stroke();
+```
