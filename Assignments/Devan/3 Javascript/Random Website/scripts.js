@@ -1,23 +1,23 @@
-function readFile(file) {
-    var f = new XMLHttpRequest();
-    f.open("GET", file, false);
-    f.onreadystatechange = function () {
-        if (f.readyState === 4) {
-            if (f.status === 200 || f.status == 0) {
-                var res = f.responseText;
-                sitesArr = res.split('\n');
-                return sitesArr
-            }
-        }
-    }
-    f.send(null);
-}
-readFile('./addicting-sites.txt');
+// NOTE Getting the list of sites from a JSON file
+fetch("./addicting_sites.json").then(function (res) {
+    return res.json()
+}).then(function (data) {
+    sitesArr = data
+    console.log(sitesArr)
+    // FIXME sitesArr is not being returned
+    return sitesArr
+}).catch(function (error) {
+    console.error("Couldn't retreive the data");
+    console.error(error)
+})
 
-function randomSite(sitesArr) {
-    return sitesArr[Math.floor(Math.random() * sitesArr.length)]
-}
 
+// NOTE Getting a random index of sites array
+// BUG sitesArr is not defined
+let randomSite = sitesArr[Math.floor(Math.random() * sitesArr.length)];
+
+
+// NOTE Setting up a countdown timer that shows a button
 function startTimer(duration, display) {
     var timer = duration,
         seconds;
@@ -27,15 +27,21 @@ function startTimer(duration, display) {
         display.textContent = seconds;
 
         if (--timer < 0) {
-            // timer = duration;
             clearInterval(timerInterval)
-            window.location.replace(randomSite(sitesArr))
+            display.textContent = ''
+            redirectBtn = document.createElement("button")
+            redirectBtn.classList.add('btn', 'btn-danger')
+            redirectBtn.setAttribute('onclick', 'window.location.replace(randomSite)')
+            redirectBtn.innerText = randomSite
+            display.appendChild(redirectBtn)
         }
     }, 1000);
 }
 
+
+// NOTE Starting the timer
 window.onload = function () {
     var fiveSeconds = 5
     display = document.querySelector('#countdown-timer');
     startTimer(fiveSeconds, display);
-};
+}
