@@ -1,0 +1,136 @@
+/* Text Manipulation */
+
+/* Changing how text looks */
+/* Things that you can change no matter the font */
+/* sizing or bolding would not apply because it is based on the font itself */
+
+/* Text decoration: does not rely on font, allows you to change the lining of the text */
+.link {
+    /* by default it is underline */
+    /* Below removes the underline in our links */
+    text-decoration: none;
+    /* Link with line underneath */
+    text-decoration: underline;
+    /* Strike-out */
+    text-decoration: line-through;
+/* line on top of text */
+    text-decoration: overline;
+}
+
+/* Text transform: Doesn't matter whatt the font is  */
+.link {
+    /* Make every word capitalize */
+    text-transform: capitalize ;
+    /* all lowercase */
+    text-transform: lowercase;
+    /* all uppercase */
+    text-transform: uppercase;
+
+}
+2:21:01
+
+
+/* Text Align: */
+
+.link {
+    /* left, right, center, and justify */
+    /* centered text */
+    /* list items do not move decorations to center */
+    text-align: center;
+    /* Takes all of the text to fit in the same width */
+    /* sets lines to same strength */
+    /* great for big bodies of text; streamlines everythng */
+    text-align: justify;
+
+}
+
+
+
+/* ----------------- */
+/* Font Size, Weight, and Style */
+body {
+    /* responsive design */
+    /* 1.25 more than standard font size */
+    /* 2em is relative and makes everything consistent */
+    font-size: 1.25em;
+    /* sets everything consistently, all sizes are the same except for headers */
+    font-size: 40px;
+}
+
+/* Font Weight: decides the bolding of a text (ranges from 0 to infinite, most fonts only accept 800-900) */
+/* Won't show change if you make them big */
+body {
+    /* nothing happens when vaue is at 0; most fonts only accept certain values */
+    /* Go up in 100s from 100s */
+    font-weight: 0;
+    /* Highest you should go typically */
+    /* Depending on the font it will change what the text looks like */
+    font-weight: 800;
+    /* Standard bolding */
+    font-weight: 400;
+
+
+}
+
+/* Font style is for italizing */
+/* Add a span tag to the text you want to change, add a class */
+
+.italics {
+    /* changes back to normal state or doesn't do anything */
+    font-style: normal;
+    font-style: italic;
+    /* More italicizing */
+    /* not extremely noticible */
+    font-style: oblique;
+
+}
+
+/* ------------------ */
+/* Font-Family: A collection of fonts that have similar features */
+/* Serif: small lines at the end of some letters, many academic papers use serif
+Papers, Essays, Journals (anything printed out physically) (very hard to read on comPuter)
+*/
+
+ /* Sans- Serif: Don't have lines at the end: very clean and easier to use
+ News websites, wordpress, google, fb use sans-serif fonts because they are much easier to read */
+/* easier on the eye */
+ /* mono-space: all characters have the same width and take up the same amount of space:
+ courier new*/
+
+
+ .italics {
+     font-family: sans-serif;
+     /* we can specify specific font */
+     /* We can add many layers */
+     /* If times new roman is not available use serif */
+     /* Need to be seperated with a comma */
+     font-family: "Times New Roman", serif;
+ }
+
+
+
+ /* -------------------------------- */
+ /* Uding external fonts */
+ /* If we pull over too much information it slows down our website */
+ /* Common to include two fonts */
+ /* copy link tag above stylesheet: <link href="https://fonts.googleapis.com/css2?family=Gotu&family=Raleway:wght@200&display=swap" rel="stylesheet">*/
+
+ .italics {
+     /* Allows us to use the first font */
+     font-family: "Raleway", sans-serif;
+     /* Add on title and sub */
+
+ }
+
+ #title {
+     font-family: "Gotu", sans-serif;
+ }
+
+ #subtitle {
+     font-family: "Gotu", sans-serif;
+
+
+ }
+
+ /* What if this fails or servers or down? it'll go to sans-serif */
+/* Add sans-serif as an alternate by adding a coma */

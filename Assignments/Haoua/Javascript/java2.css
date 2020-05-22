@@ -1,0 +1,152 @@
+body {
+    
+
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: .5em dotted red;
+    width:10vw;
+    height:40h;
+    background-color: #222;
+    padding: 1em;
+}
+
+#keys {
+    padding-top: 1em;
+}
+#clear-b {
+    width: 3.5em;
+    height: 1.5em;
+}
+
+#parenthesis1 {
+    width: 3.5em;
+    height: 1.5em;
+}
+
+#parenthesis2 {
+    width: 3.5em;
+    height: 1.5em;
+}
+
+#precent {
+    width: 3.5em;
+    height: 1.5em;
+}
+
+#divide {
+    width: 3.5em;
+    height: 1.5em;
+}
+
+#seven {
+    width: 3.5em;
+    height: 2em;
+
+}
+
+#eight {
+    width: 3.5em;
+    height: 2em;
+}
+
+#nine {
+    width: 3.5em;
+    height: 2em;
+}
+
+#four {
+    width: 3.5em;
+    height: 2em;
+}
+
+#decimal {
+    width: 3.5em;
+    height: 1.5em;
+}
+
+#equal {
+    width: 3.5em;
+    height: 1.5em;
+}
+
+#multiply {
+    width: 3.5em;
+    height: 1.5em;
+}
+
+#add {
+    width: 3.5em;
+    height: 1.5em;
+}
+
+
+#six {
+    width: 3.5em;
+    height: 2em;
+}
+
+#five {
+    width: 3.5em;
+    height: 2em;
+}
+
+#two {
+    width: 3.5em;
+    height: 2em;
+
+}
+
+#three {
+    width: 3.5em;
+    height: 2em;
+
+    
+}
+
+#zero {
+    width: 3.5em;
+    height: 1.5em;
+
+}
+
+
+#subtract {
+    width: 3.5em;
+    height: 1.5em;
+
+}
+
+#one {
+    width: 3.5em;
+    height: 2em;
+
+}
+
+input {
+    
+        width: 10.5em;
+        height: 1em;
+    
+
+}
+
+#backspace {
+        
+    width: 3.5em;
+    height: 1.5em;
+
+}
+
+#input input{
+    background-color: #bccd95;
+}
+
+#numbers {
+    padding-top: 1em;
+    /* margin-top: 1em; */
+    /* border: .1em dashed greenyellow; */
+}

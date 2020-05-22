@@ -1,0 +1,603 @@
+/* What makes a website stand out, works hand and hand with html */
+/* .css format */
+
+/* easiest way to test properties */
+/* Makes the body background red */
+body {
+    background: red;
+}
+
+/* CSS Selectors: grabs information from html so that we can edit it*/
+
+/* Element Selector: select the tag name */
+    /* You can select entire elements without any special characters */
+    /* Selects every element with that tag name */
+    /* It ranks on the bottom of the specificity scale */
+    p {
+        color: blue;
+    }
+
+
+/* Class Selector: we assign a class value */
+    /* Allows us to get real specific with what we want to change */
+    /* Changes all elements with the same class name */
+    /* Can be used with any and all elements with that class */
+   /* Can be used multiple times and is selrected with a (.) symbol. */
+    
+   .aclass {
+        color: blue;
+    }
+
+/* ----------------------------------------------------------------- */
+
+/* ID Selector */
+/* This is used to select elements with a certain ID name */
+/* Can be used on any and all elements with that ID */
+/* Unlike classes. It can only be used on one element at a time 
+and is selected with the #symbol. It is possible to use more than once. */
+
+#sometext {
+    color: orange;
+}
+
+
+
+/* CLASS & ID in HTML */
+/* How to add classes and ids to our document html*/
+/* Now edit in html */
+
+.title {
+    color: red;
+
+
+}
+
+
+.subtitle {
+    color: pink;
+
+}
+
+
+#contact {
+    color: yellow;
+
+}
+
+
+/* Specitivity and when to use selectors */
+/* Right now we are just assuming that they all work in a similar way */
+/* Specitivity is the concept that different selectors are more powerful than others */
+/* The more powerful and more specific selector would over power the other one */
+/* Check it out on W3 schools */
+
+/* 1, create an element selector */
+/* Both want to change the color of the about me portion */
+/* Element selectors are less powerful than the class */
+/* Class will always overrrie element tag */
+/* Two more powerful ones */
+/* class overrides header */
+
+/* headers are the least specific  */
+h2 {
+    color:red;
+
+}
+
+.subtitle {
+    color: blue;
+}
+
+/* id overrides class */
+#services {
+    color: green;
+
+}
+
+/* We don't need css to do inline styling which is the most powerful */
+/* Requires the style attribute in html */
+/* This will override everything */
+
+
+/* the difference between class and id */
+/* class is meant to be used multiple times; like a blueprint */
+/* An id is supposed to be used for only one single element */
+/* if there is only one item of that type use id */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Psuedo selectors */
+/* Usually only visible when something is done on your website */
+
+/* when we hover over it it turns red */
+h2:hover {
+    color: red;
+}
+
+/* first child and last child */
+/* makes the first item on the list blue */
+li: first-child {
+    color: steelblue;
+}
+
+/* makes the last item on the list steelblue */
+li: last child {
+    color: steelblue;
+}
+/* Which number we want to style */
+/* every second element in the li will be styled blue */
+li:nth-child(2) {
+    color: blue;
+
+}
+
+/* Last selector */
+/* something with only one child inside of it i.e (one bullet on the list */
+/* for every element with one child add the color purple */
+li: only child{
+    color: purple;
+}
+
+/* Nothing happens because there are no tds with one child */
+td:only-child {
+    color: purple;
+}
+
+/* Specific t certain elements */
+/* a tag or link tag */
+/* we can create psuedo selectors for these */
+/* ?give it an id(google link) */
+
+/* The way a link looks before and after you visit it */
+#google-link: link {
+    color: blue;
+}
+
+#google-link:visited {
+    color: red;
+
+}
+
+/* /* Advanced Selectors  */
+/* Not used commonly  */
+
+/* Basic Advanced Selectors */
+/* These can contain multiple attributes */
+
+/* Adjacent Sibling Selector: selects every element that directly follows another */
+/* 1.How to set it up: apply styles to every anchor tag after h2 */
+h2 + a {
+    color: red;
+    /* no psuedo selector but we can add it */
+    /* these follow each other no matter where they are */
+}
+
+/* general sibling combinator */
+/* Looks for every element that comes after one that has the same parent */
+/* ?every button after text area that has the same parent */
+/* it must be directly proceeded and under the same parent. */
+textarea ~ button {
+    color: purple;
+
+}
+
+textarea + button {
+    color: purple;
+
+}
+
+/* The child selector: most basic one */
+/* Every single child of a certain element */
+
+/* every single li inside of a ul */
+ul > li {
+    color: blue;
+    /* specifity rules are at play */
+}
+
+/* Descendant selector */
+/* i.e creating an li and adding an ordered list inside of list item inside of ul */
+/* create a list item using li */
+/* 1. the parent: ul */
+ul li {
+    /* all lis inside will be green */
+    /* any li that goes up to a ul (parent) */
+    color: green;
+}
+
+/* Attribute Selectors */
+/* We can add attributes to any elements: i.e src, etc */
+/* We can select certain elements  */
+/* start off with tag name */
+/* allows us to select every element that has a certain attribute */
+h2[attr=value]
+
+h2[class=subtite] {
+    color: blue;
+}
+
+/* select two images in one go */
+/* they both start in the same path because in same flder */
+/* direct equating to change use a carrot */
+/* When it starts at this information but everything after this does not matter */
+img[src^="../img/"] {
+    /* Makes both images covered in black */
+    border: 10[x solid black;]
+
+}
+/* Make sure source attribute ends with this signal */
+img[src$="../img/"] {
+
+}
+
+/* If it contains this attribute anywhere in the value, as long as it contains this it'll be there */
+
+img[src*="../img/"]
+
+
+/* More complicated selectors */
+
+/* White space attribute:
+add multiple class to something in html */
+/* They will be seperated by some white space: only for some attributes */
+h2[class~= article-subtitle] {
+    /* adds a green background to the about me section with this class included */
+    background: green;
+    
+
+}
+
+/* Main attribute selector */
+/* find every h2 where class is directly equal to article-subtitle (it has to start ith it) */
+h2[class|= article-subtitle] {
+    /* adds a green background to the about me section with this class included */
+    background: green;
+    /* create multiple elements followed by an id */
+/* subtitle-2096
+   subtitle - 1000
+   subtitle - 3000 */
+
+
+
+
+
+
+
+
+
+/* What are properties? */
+/* Learn Selectors before properties */
+
+/* contained within selectors and define how css is used */
+/* properties give selectors the changes */
+
+/* 1. ALWAYS NEED A COLON AFTER PROPERTIES (what's changing */
+/* 2. VALUE is the guideline (gives it the change) */
+/* 3. MUST USE SEMI-COLON */
+
+
+
+
+/* CSS GEMERAL RULE: */
+/* HOW do properties and selectors work together */
+
+/* 1. Each has curly brace */
+/* each has italized text */
+
+/* Always 4 parts to your selector:
+The selector
+The braces (block)
+Properties */
+
+/* selector defines element you are trying to target */
+/* All do something different */
+selector {
+    /* once you define something you have to define a style */
+    /* property looks ike */
+    property: value;
+    /* value has to match the property */
+    property2: value2;
+    property3: value3;
+
+}
+
+
+
+
+
+/* Coloring: Color our website in a way that makes it look modern and appeaing to users */
+
+/* Color Property: There are different types of colors */
+/* 3 different types of colors:
+1. CSS Color Code: given a name and color
+2. RGB Code: much easier
+3. 
+ */
+
+ /* 1.Hex Code: You can use any color picker */
+ /* Ranges from 0-9 : 16 possible combinations */
+ /* 0-9, a-f */
+
+ /* #000000: hash tag and 6 digits:
+ Made up of red green or blue
+ first pairs= amount of red
+ second = amount of green
+ third = amount of blue
+
+ 00 = no red
+ 00 = no green
+ ff = all blue 
+ 
+ black is all 000000
+ 
+ It is much easier to work with RGB codes*/
+
+
+ /* rgb:
+ 1. 255 is the maximum
+ 2. When desgining websites use a color picker because it is much easier to decide.
+ Gives you a much more hands on experience.
+
+
+
+/* ------------------- */
+
+ /* Coloring Text */
+
+/* 1. Add an ID to title because there is only one of them */
+/* 2. Add classes to paragraph texts because we have more than one */
+/* 3. Add classes to the list for convenience (li's) */
+/* 4. Add a class to our link */
+/* 5. Add classes to input  */
+/* 6. Add subtitle class to our subtitles */
+
+
+/* Styling text */
+/* Style header */
+/* 1. select  it */
+#title {
+    color: steelblue;
+    /* or copy hex or rgb code of a color you like */
+    /* Instead of using hex code add and rgb */
+    color: rgb(186, 133, 9)
+    /* if we want to change the amount of blues, reds, or greens in a color */
+
+}
+
+/* higher Hierarchies should have darker colors than lower hierarchy */
+
+.subtitle {
+    color: rgb(186, 133, 9)
+}
+
+
+
+/* ------------------ */
+
+
+/* Background Colors */
+/* Without layout background doesn't really look that good. */
+/* Which selector should we use? */
+/* All text is included in our body tag so we should use element selector */
+
+/* Typically element selectors go at the top of the page (they go first in css)*/
+
+body {
+
+    background: red;
+    /* Now our entire site will be styled as red */
+    /* Typically recommend something light */
+    background: rgb(180, 10, 90)
+}
+
+/* -------- */
+
+
+
+/* Images & URL Backgrounds */
+
+/*We need to link to an image */
+/* 1. WE need is an image (we can use images from the internat using urls) */
+/* 1.1 Copy image address */
+/* 1.2 Add image to the page */
+
+body {
+    /* url function finds image and sets it */
+    /* Adds it to website */
+    background: url("image adddress_");
+    /* This is not the only type of url we can use, we can also use our server path*/
+
+    background: url(".../img/");
+    /* We can also use specific values */
+
+    background-image: url("image url)");
+
+    /* we can also use background color  */
+    background-color: rgb(180, 10, 90);
+
+
+}
+
+/* Other Background Properties */
+/* background size  */
+/* Background repeat */
+
+/* 1. background repeat */
+
+#service-image {
+    height: 400px;
+    width: 70%;
+
+    background: url("...img");
+    /* If we don't want a repeat: */
+    background-repeat: no-repeat;
+    /* default setting */
+    background-repeat: repeat;
+
+    background-color: steelblue;
+
+
+/* first vaue is the height then width with space */
+    background-size: 50px 100px;
+    /* it continues to repeat */
+    /* to fix this */
+    background-size: cover;
+    /* makes the quality ugly */
+    /* creates on image on the size */
+
+    /* We can also use contain: it tries to resize it */
+    background-size: contain;
+
+
+
+
+
+    /* ------ */
+
+    /* obacity and transperancy */
+
+    /* a or alpha is our color */
+body {
+    /* alpha is transperancy or obacity 1 = fully visible 0 is transparent */
+    background: rgba(204, 229, 255, 0.4 );
+    /* Easier to change obacity than to change the color everytime */
+    /* if we add opacity we can completly change the wa it looks */
+/* Value must be between 0-1 */
+}
+
+
+
+/* ---- */
+
+/* Gradients */
+/* transition between two colors */
+/* You can put hopwever many colors you want */
+
+/* radial gradients (circular) */
+/* linear gradient (smooth transition, left to right or diaganolly */
+
+/* linear */
+#service-image {
+    height: 400px;
+    width: 70%;
+    /* We want gradient move to the right side */
+    /* We can do rgba or rgb */
+    background: linear-gradient(to right, red, blue, green , steelblue);
+    background-size: cover;
+
+/* Diaganol */
+#service-image {
+    height: 400px;
+    width: 70%;
+    /* We want gradient move to the right side */
+    /* We can do rgba or rgb */
+    background: linear-gradient(to bottom right, rgb(94, 25, 200), rgba(94, 25, 255, .5);
+    background-size: cover;
+
+/* Angles */
+#service-image {
+    height: 400px;
+    width: 70%;
+    /* We want gradient move to the right side */
+    /* We can do rgba or rgb */
+    background: linear-gradient(160deg, rgb(94, 25, 200), rgba(94, 25, 255, .5);
+    background-size: cover;
+
+/* Radial gradients */
+/* Allows us to define the proportion */
+/* Cammot do background size; will not work */
+
+#service-image {
+    height: 400px;
+    width: 70%;
+    /* We want gradient move to the right side */
+    /* We can do rgba or rgb */
+    /* We can add more than two colors */
+    /* Smallest precentage at start and largest at the end */
+    /* We can add a circle to change the shape of the colors */
+    background: radial-gradient(circle, red 20%, 45% blue, 70% green)
+
+
+
+#service-image {
+    height: 400px;
+    width: 70%;
+
+    background: url("...img");
+    /* If we don't want a repeat: */
+    background-repeat: no-repeat;
+    /* default setting */
+    background-repeat: repeat;
+
+    background-color: steelblue;
+    
+
+    1:53:42 (youtube video)
+
+
+    /* --------------------------------- */
+
+    /* Types of Units */
+    /* Absolute units and Relative units */
+
+    cm, mm, inch = absolute (not dependent on anything else) (aren't affected by anything around them)
+    relative = relative to the parent, no matter how small we make it it will take up that space no matter what (great for responsive websites)
+
+
+/* /* Pixels: are relatively skilled  but absolute*/
+/* DPI calculates the resolution (anything with low DPI, adjusts the amount of pixels in the vide) */
+/* Pixels do not appear the same in high resolution vs low resolution */
+/* Gives an absolute illusion, when we are using pixels they are considered absolute */
+
+body {
+    /* If you measure the font you will get 2cm */
+    font-size: 2cm;
+
+}
+
+/* pt: points: absolute value */
+
+/* pc: is a lot bigger (12 points): absolute value */
+
+
+
+/* relative units */
+/* percentage: relative unit takes up a percentage of the parent value */
+
+/* em, size relative to the current font size */
+/* double everything based on standard font size */
+
+body {
+    font-size: 2em
+}
+
+/* viewport: is the body's width and height: allow us to work with viewport in an easy way */
+/* View width: */
+/* view height:  */
+/*increasing the width to 70 of the total view port  */
+/* Can set more than 100 */
+height= 400vh; 
+/* 400 times the size of the viewport */
+width= 70vw
+
+
+/* If we want very specific view (only on the phone or specific phone) use pixels, it'll cause a problem based on devices */
+/* use relative units vs absolute units so that we can use it only any device */
+
+
+
+/* ------------------------------------------- */
+
+

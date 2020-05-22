@@ -1,0 +1,358 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /* flex: 1 1 10em; */
+    cursor: context-menu;
+
+
+
+
+
+
+}
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    background: rgb(252, 252, 54);
+    justify-items: space-evenly;
+    /* align-content: center; */
+    
+    /* justify-content: space-evenly; */
+
+}
+
+.navigation{
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    flex: wrap;
+    margin:0;
+    padding: 0;
+    flex-direction: row;
+
+    padding-left: 0em;
+  
+    /* justify-content: flex-start; */
+    align-items: center;
+    justify-content: space-between;
+    flex: 1 1 100%;
+    
+    
+
+    
+}
+
+
+.navigation ul button {
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* allows button to be but on the complete end of the parent */
+    /* this is the reason why you stayed up */
+    justify-content: center;
+    /* margin-left: 1em;
+    margin-right: 1em; */
+    /* order: 6; */
+    background:  black;
+    cursor: pointer;
+    margin-right: .3em;
+    /* width: 6em;
+    height: 3em; */
+    text-align: center;
+    align-items: center;
+    color: white;
+    text-decoration-line: none;
+
+}
+
+.navigation ul .active4 button {
+    /* padding-bottom: 1.2em; */
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation a {
+    text-decoration-line: none;
+    
+}
+
+
+.button button{
+    width: 4em;
+    color: floralwhite;
+    
+    /* display: flex; */
+    flex: 1 1 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* allows button to be but on the complete end of the parent */
+    /* this is the reason why you stayed up */
+    justify-content: flex-end;
+     /* margin-left: 1em; */
+    margin-right: 1em; 
+    order: 6;
+    background: fuchsia;
+    cursor: pointer;
+
+
+
+}
+
+
+
+.navigation ol {
+    list-style-type: none;
+    flex-direction: row;
+    margin: 1em;
+    /* margin-left: -10em; */
+    padding: 0 0 0 0;
+    /* border: 1em solid green; */
+    justify-content: flex-start;
+    justify-items:flex-start;
+
+}
+
+.navigation nav ul{
+    
+    /* box-sizing: border-box; */
+    display: flex;
+
+    /* width: 40em; */
+    
+    /* display: fl; */
+    list-style-type: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* justify-content: flex-start; */
+    /* border: .5em solid red; */
+    /* justify-content:flex-start; */ 
+    flex: 1 1 100%;
+    /* margin-left: 4em; */
+    /* justify-content: space-evenly; */
+    
+    /* justify-content: flex-end; *
+    fle/
+    /* padding: 0;
+    margin: 0; */
+    
+    /* margin: 50px; */
+    /* float: right;
+    text-align: center;
+    width: 45% */
+    /* flex: 1 1 100%; */
+    
+
+
+
+}
+
+.logo img{
+    width: 30px;
+    /* margin-left: 0; */
+    margin-top: .5em; 
+    margin-right: .8em; 
+    /* flex: space-evenly; */
+    justify-content: center;
+    /* text-align: justify */
+
+
+}
+
+.logo b{
+    color: #7734EA;
+    justify-content: space-evenly;
+    /* text-align: center; */
+    padding: 0;
+    border: 0;
+
+}
+
+/* 
+.order1 {
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    text-overflow: ellipsis;
+    
+} */
+
+.logo {
+    order: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+   margin: 0;
+   padding: 0;
+   align-self: center;
+
+
+}
+
+
+.container ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex: 1 1 100%;
+
+}
+
+
+
+.body p{
+    display: flex;
+    /* border: .2em dashed white; */
+    justify-content: center;
+    /* padding: .3em; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 15%;
+    text-align:center;
+    /* justify-content: space-evenly; */
+    text-overflow: ellipsis;
+    padding: 0;
+    margin: 0;
+    /* justify-items: space-evenly; */
+}
+
+
+
+
+.body:nth-child(1) .order1:nth-child(1)
+{
+    background: #006FFF;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1 1 100%;
+    height: 100%;
+    
+    justify-content:center;
+    /* justify-content: space-around;   */
+      /* justify-content: space-evenly; */
+
+}
+
+.body:nth-child(1) .order2:nth-child(2)
+{
+    background: #13F4EF;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1 1 100%;
+    height: 100%;
+    
+    justify-content: center;
+    
+}
+
+.body:nth-child(1) .order3:nth-child(3)
+{
+    background: #68FF00;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1 1 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.body:nth-child(1) .order4:nth-child(4)
+{
+    background:#FAFF00;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1 1 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.body:nth-child(1) .order5:nth-child(5)
+{
+    background: #FF00FF;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1 1 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.body:nth-child(1) .order6:nth-child(6)
+{
+    background: #FFBF00;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1 1 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.body li {
+    border: .5em dotted white;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    justify-content: center;
+    margin: 1em;
+    
+}
+
+.body {
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* border: .05em solid blue; */
+    background: black;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding: 0;
+    align-items: center;
+    /* margin: 0em 15em; */
+    align-self: center;
+
+}
+
+.heading {
+    background: rgb(0, 0, 0);
+    color: white;
+    
+    text-align: center;
+    text-decoration-line: underline;
+    flex: 1 1 100%;
+    padding: 1em;
+    margin: 2em;
+    
+
+}

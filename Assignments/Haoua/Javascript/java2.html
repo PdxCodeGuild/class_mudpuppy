@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="C:\Users\hdogo\Desktop\pdxcodeguild\Javascript\java2.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculate</h1>
+    <div id="start-div">Start Calculating</div>
+    <!-- <input id="intro-div" type="text">Enter an equation< -->
+    <div id="main" name="fr">
+        <div id="input" name="t2"><input id="intro-div" type="text"></div>
+        <div id="keys">
+            <div id="operand">
+                <input id="clear-b" onclick='c("")' type="button" value="C">
+                <input type="button" onclick='v("(")' id="parenthesis1" value="(">
+                <input type="button" onclick='v(")")' id="parenthesis2" value=")">
+                <input type="button" onclick='v("%")' id="precent" value="%">
+                <input type="button" onclick='v("/")' id="divide" value="÷">
+                <input type="button" onclick='v("*")' id="multiply" value="X">
+                <input type="button" onclick='v(".")' id="decimal" value=".">
+                <input type="button" onclick='v(" ")' id="backspace" value="bks">
+                <input type="button" onclick='v("+")' id="add" value="+">
+
+                <input type="button" onclick='v("-")' id="subtract" value="-">
+                <input type="button" onclick='e()' id="equal" value="=">
+                <input type="button" onclick='v("0")' id="zero" value="0">
+
+            </div>
+
+            <div id ="numbers">
+                <input type="button" onclick='v("9")' id="nine" value="9">
+
+                <input type="button" onclick='v("8")' id="eight" value="8">
+                <input type="button" onclick='v("7")' id="seven" value="7">
+                <input type="button" onclick='v("6")' id="six" value="6">
+                <input type="button" onclick='v("5")' id="five" value="5">
+                <input type="button" onclick='v("4")' id="four" value="4">
+        <!-- <input type="button" onclick="" id="subtract">-</input type="button" onclick=""> -->
+                <input type="button" onclick="myFunc()" id="one" value="1">
+                <input type="button" onclick='v("2")' id="two" value="2">
+                <input type="button" onclick='v("3")' id="three" value="3">
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <script src="lab2.js"></script>
+</body>
+</html>

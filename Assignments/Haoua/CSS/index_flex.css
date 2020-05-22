@@ -1,0 +1,31 @@
+.container{
+    /* tells document we are using flexbox so we can use flexbox rules */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* The three line above align the pink square */
+    background-color: silver;
+    height: 500px;
+    width: 100px;
+
+}
+
+/* How to center text  */
+/* Each element can contain other elementss */
+#add_flex {
+    /* These three align the text using flexbox */
+    /* This is primarily what we are going to use  */
+    /* flexbox is more automatic */
+    /* grid gives you very fine controls on a page: this many pixels for this many (very detailed */
+    
+    display:flex;
+    justify-content:center;
+    align-items: center;
+
+    background: hotpink;
+    width: 100px;
+    height: 100px;
+}
+
+/* We can mix flexbox and css grid but it can be messy but it is very power for creating nice layouts */
+/* Flexbox froggy */
