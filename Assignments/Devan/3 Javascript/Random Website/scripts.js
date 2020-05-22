@@ -1,4 +1,18 @@
-let sitesArr = ["https://www.thechive.com", "https://www.reddit.com", "https://www.attackofthecute.com", "https://www.zergnet.com", "https://www.lifehacker.com", "https://www.thisiswhyimbroke.com", "https://www.dearblankpleaseblank.com", "https://www.iwastesomuchtime.com", "https://www.fmylife.com", "https://www.oddee.com", "https://www.pinterest.com", "https://www.failblog.com", "https://www.overstock.com", "https://www.fark.com", "https://www.uncrate.com", "https://www.shitbrix.com", "https://www.2leep.com", "https://www.wonderhowto.com", "https://www.peopleofwalmart.com", "https://www.despair.com", "https://www.popcap.com", "https://www.youtube.com", "https://www.ebay.com", "https://www.facebook.com"]
+function readFile(file) {
+    var f = new XMLHttpRequest();
+    f.open("GET", file, false);
+    f.onreadystatechange = function () {
+        if (f.readyState === 4) {
+            if (f.status === 200 || f.status == 0) {
+                var res = f.responseText;
+                sitesArr = res.split('\n');
+                return sitesArr
+            }
+        }
+    }
+    f.send(null);
+}
+readFile('./addicting-sites.txt');
 
 function randomSite(sitesArr) {
     return sitesArr[Math.floor(Math.random() * sitesArr.length)]
