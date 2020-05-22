@@ -41,3 +41,7 @@ Tell git to push your files and history online (the first time you run git push)
 Tell git to push your files and history online
 
 > git push
+
+Make a directory called python
+
+> mkdir python
