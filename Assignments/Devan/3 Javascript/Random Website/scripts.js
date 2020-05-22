@@ -1,3 +1,6 @@
+let sitesArrTwo = ["https://www.thechive.com", "https://www.reddit.com", "https://www.attackofthecute.com", "https://www.zergnet.com", "https://www.lifehacker.com", "https://www.thisiswhyimbroke.com", "https://www.dearblankpleaseblank.com", "https://www.iwastesomuchtime.com", "https://www.fmylife.com", "https://www.oddee.com", "https://www.pinterest.com", "https://www.failblog.com", "https://www.overstock.com", "https://www.fark.com", "https://www.uncrate.com", "https://www.shitbrix.com", "https://www.2leep.com", "https://www.wonderhowto.com", "https://www.peopleofwalmart.com", "https://www.despair.com", "https://www.popcap.com", "https://www.youtube.com", "https://www.ebay.com", "https://www.facebook.com"]
+
+
 function readFile(file) {
     var f = new XMLHttpRequest();
     f.open("GET", file, false);
@@ -20,19 +23,16 @@ function randomSite(sitesArr) {
 
 function startTimer(duration, display) {
     var timer = duration,
-        minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
+        seconds;
+    var timerInterval = setInterval(function () {
         seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-
         display.textContent = seconds;
 
         if (--timer < 0) {
-            window.location.replace(randomSite(sitesArr))
             // timer = duration;
+            clearInterval(timerInterval)
+            window.location.replace(randomSite(sitesArr))
         }
     }, 1000);
 }
