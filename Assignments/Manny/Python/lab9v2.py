@@ -5,4 +5,4 @@ var2 = input('what are the units ')
 
 formula = int(var1) * units[var2]
 
-print(f"{var1} {var2} is {formula} meters")
+print(f"{var1} is {formula} in {units[var2]}")

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>TO DO LIST</title>
+	</head>
+	<body>
+		<input id="Task" type="text" placeholder="task">
+		<button id="add-button">Add item</button>
+	
+		<div id="x-holder"></div>
+<script>
+			
+	// create div 
+
+	let task = document.querySelector("#Task")
+	let xHolder = document.querySelector("#x-holder") // grabbing the div
+	let addButton = document.querySelector("#add-button") //add button
+	addButton.onclick = function() {
+		let newDiv = document.createElement("div") 
+		let newButton1 = document.createElement("button")
+		newButton1.innerText = "Done" 
+		let newButton2 = document.createElement("button")
+		newButton2.innerText = "Delete"
+		let newSpan = document.createElement("span")
+		newSpan.innerText = task.value 
+		newDiv.appendChild(newSpan)
+		newDiv.appendChild(newButton1) 
+		newDiv.appendChild(newButton2) 
+		xHolder.appendChild(newDiv)
+		newButton1.onclick = function() {
+			newDiv = newDiv.style.backgroundColor = "green"
+			}
+			
+	}
+			
+			
+		
+			
+</script>
+	</body>
+</html>
