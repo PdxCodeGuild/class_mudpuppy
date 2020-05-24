@@ -1,27 +1,49 @@
 
-
-import random # we will be using the random func for computer nums
-winning_nums = [9,44,4,9,13,7,24] # winning nums 
-
-wins = 0
-losses = 0
+import random
 
 def pick6():
-    comp_6 = [] 
-    for _ in range(0, 6):
-        comp_6.append(random.randint(0, 99))
-    return comp_6   #creating function to pick 6 
-for i in range(100_000):    
-    compnums = pick6()
-
+    ticket = []
+    for _ in range(6):
+        ticket.append(random.choice(range(1100))),
     
-    for i in range(6):
-        if winning_nums[i] == compnums[i]:
-            
-            wins += 1 
-        else:
-            
-            losses += 1
+    return ticket
 
-print(f"The computer won {wins} this many times and lost {losses} this many times ")
-var = var1 #test line 
+def num_matches(user_ticket, winning_ticket):
+    matches = 0
+    for i in range(len(user_ticket)):
+        if user_ticket[i] == winning_ticket[i]:
+            matches += 1
+    
+    return matches 
+
+def get_winnings(matches):
+    if matches == 0:
+        return 0
+    if matches == 1:
+        return 4
+    elif matches == 2:
+        return 7
+    elif matches == 3:
+        return 100
+    elif matches == 4:
+        return 50000
+    elif matches == 5:
+        return 1000000
+    elif matches == 6:
+        return 25000000
+    else:
+        print('Error')
+
+winning_ticket = pick6()
+    
+balance = 0 
+
+for i in range(100000):
+    user_ticket = pick6()
+    balance -= 2 
+
+    matches = num_matches(user_ticket, winning_ticket)
+    
+    balance += get_winnings(matches)
+
+print (balance)
