@@ -8,72 +8,41 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Lab 4 | Todo List</title>
-
-
-    <style>
-        li {
-            text-decoration-style: none;
-            list-style: none;
-        }
-
-        .done-ul>div>li {
-            text-decoration: line-through;
-        }
-
-        ul>div {
-            display: flex;
-        }
-
-        .noselect {
-            -webkit-touch-callout: none;
-            /* iOS Safari */
-            -webkit-user-select: none;
-            /* Safari */
-            -khtml-user-select: none;
-            /* Konqueror HTML */
-            -moz-user-select: none;
-            /* Old versions of Firefox */
-            -ms-user-select: none;
-            /* Internet Explorer/Edge */
-            user-select: none;
-            /* Non-prefixed version, currently
-        supported by Chrome, Edge, Opera and Firefox */
-        }
-    </style>
 </head>
 
 <body>
-    <main class="container">
-        <h1>Todo List</h1>
-        <input type="text" class="user-input" placeholder="Enter a task" autofocus>
-        <button class="enter-btn" type="button">Enter</button>
+    <main class="container p-5 mt-4">
 
-        <table>
-            <tr>
-                <td valign="top">
-                    <h3>Todo</h3>
-                    <ul class="todo-ul" id="todo">
-                        <div>
-                            <button onclick="deleteTask(this);" type="button" class="close remove-btn">&times;</button>
-                            <li onclick=" move(this);">test Todo</li>
-                        </div>
-                    </ul>
-                </td>
-                <td width="100px">&nbsp;</td>
-                <td valign="top">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control user-input" placeholder="Enter a task...">
+            <div class="input-group-append">
+                <button class="btn btn-secondary enter-btn" type="button" id="button-addon2">Enter</button>
+            </div>
+        </div>
+        <hr>
 
-                    <h3>Done</h3>
-                    <ul id="done" class="done-ul">
-                        <div>
-                            <button onclick="deleteTask(this);" type="button" class="close remove-btn">&times;</button>
-                            <li onclick=" move(this);">test Done</li>
-                        </div>
-                    </ul>
-                    <button onclick="clearDone();" type="button" class="remove-btn">Clear
-                        Done</button>
-                </td>
-            </tr>
-        </table>
+        <div class="noselect">
+            <h4>Not Completed</h4>
+            <ul class="todo-ul" id="todo">
+                <div class="noselect">
+                    <li onclick=" move(this);">test Todo</li>
+                    <button onclick="deleteTask(this);" type="button" class="close remove-btn">&times;</button>
+                </div>
+            </ul>
+        </div>
+
+        <div class="noselect">
+            <h4>Competed</h4>
+            <ul id="done" class="done-ul">
+                <div class="noselect">
+                    <li onclick=" move(this);">test Done</li>
+                    <button onclick="deleteTask(this);" type="button" class="close remove-btn">&times;</button>
+                </div>
+            </ul>
+        </div>
+
+        <button onclick="clearDone();" type="button" class="btn btn-danger remove-btn">Clear
+            Done</button>
 
     </main>
 

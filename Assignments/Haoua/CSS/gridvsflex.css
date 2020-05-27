@@ -1,0 +1,100 @@
+Grid vs Flexbox
+
+What is it? : a display type that allows us to work with our layout and css in a different way.
+Complete alternatives for layout in css.
+
+Differences? :
+
+The grid system is more manual. You can control your container in a much easier way with a lot more tools.
+Grid system focuses on width and height to create a grid.
+/* provides tools for columns and rows */ 
+
+Flexbox mainly focuses on width.
+
+------------------------------------------------------------
+
+CREATING A GRID:
+
+1. display: grid;
+/* sets up grid container in container */
+
+TEMPLATE COLUMNS AND ROWS:
+
+1. rows
+2. columns
+/* We can specify the numbers of rows we want manually */
+/* Two special properties we can use */
+
+Sets up the grid to start off with a certain amount of rows and columns, then we can specify the size of each row or column.
+We can create alternating boxes with alternating sizes
+
+grid-template-columns:10px 50px 10px; 
+/* all we have to do is tell the number of sizes */
+/* setting up 3 columns, each number is by the pixel */
+/* Doing something like this would really mess up the grid */
+grid-template-rows:50px 250px;
+/* The numbers do not need to be the same */
+/* Makes first row a lot smaller than bigger row */
+/* Not an efficient way to create a nice looking grid */
+grid-template-colum: auto auto auto;
+/* Auto: if we set all rows to auto it divides space evenly between the three no matter the size */
+/* create numbers and rows that you want but use auto. */
+------------------------------------------------------------------------------------------------------
+
+Justify & Align grid:
+
+Justify content property: justifies it on the horizontal access and not the vertical.
+{
+    justify-content: space-around;
+    /* For now lets consider these two the same */
+    justify-content: space-evenly;
+    /* all items are spaced evenly, before and between and after */
+    justify-content: start;
+    /* template is ignored and everything is aligned to the left */
+    justify content: center;
+    justify-content: end;
+    /* template is ignored and everything is aligned to the right side of the grid */
+}
+
+
+/* You can use both justify-content and align content */
+/* /* align content: */
+{
+    align-content: space-evenly;
+    align-content: space-around;
+    align-content: end;
+    align-content: start;
+    align-content: center;
+    align-content: space-between;
+    /* we have space between each one (none before or after top and bottom items) */
+}
+
+-------------------------
+Row and Column Gaps:
+
+You can completely change the way a grid looks by creating spacing.
+Creates a hierarchy that is easy on the eyes.
+
+1. Column Gaps:
+
+{
+    /* only takes one value because we are giving each column a gap between them */
+    /* You can see that items are more spaced out */
+    grid-column-gap:150px;
+
+    grid-row-gap:300px;
+    /* specifies gap between rows, more obvious */
+
+    /* allows us to pass in two values: row first then column*/
+    grid-gap: 300px 150px;
+    /* short-hand method */
+    /* creates a gap that allows you to specify */
+
+}
+
+-----------------------------------
+How to rearrange & resize items based on starting and ending points:
+
+1. go to grid container in html file 
+2. 
+4:34:44

@@ -1,0 +1,38 @@
+
+
+#logo {
+    padding:-1em;
+    
+}
+
+#carousel {
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    /* padding-top: -100em; */
+
+}
+
+
+.carousel-item {
+    height: 38em;
+}
+.caption {
+    align-self: center;
+}
+
+hr{
+    background-color: gray;
+}
+
+#button {
+    margin-bottom: 1em;
+}
+
+footer {
+    background-color: white;
+    height: 10vh;
+    padding:0;
+    margin: 0;
+
+}

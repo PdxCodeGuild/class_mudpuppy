@@ -1,0 +1,251 @@
+<main>
+    <article>
+        <section>
+            <aside>
+                This content is on the page and is related to the user but is not directly 
+                related
+            </aside>
+
+        </section>
+    </article>
+</main>
+
+h1 is the hierarchial formatting for headers when you want to use them inside of each other
+
+    h2
+        h3
+ * The purpose of these tags are to make the file as readable as possible.
+
+Search Engines:
+Tags are great for search engine optimization: if your site has good search engines sites like google can just read through it and see the structure of your website
+Google uses this information to display your website better.
+
+<!-- Links: links your website to other websites on the internet
+You can link to files or images even pdfs -->
+<a href="https://" must be very specific about location></a>
+<a href="" target="_blank" tells browser to open up link in a new tab.>
+</a>
+
+<a href="page2.html">Page2</a> 
+<!-- if the file you want is in the same directory as your project you can just use the above -->
+
+
+
+<!-- IMAGES: USING IMAGES ON A WEBSITE -->
+<img src="location of the image" alt="eat grapes">
+
+<!-- Keeping Aspect Ratio for images using fractions-->
+
+<!-- Linking an image -->
+<a href="link to something">
+    <img width="" src="" alt="">
+</a>
+
+
+<!-- Iframes and Videos -->
+
+<!-- including a normal video onto website -->
+<body>
+    <video src="location of the video" controls></video>
+      <!-- width and height adjust the size of videos -->
+
+    <video src="location of the video" poster="thumb.jpg" controls></video>
+    <!-- allows us to use thumb picture as a thumbnail -->
+
+    <video src="location of the video" autoplay controls></video>
+<!-- auto plays -->
+    <video src="location of the video" loop autoplay controls></video>
+<!-- loops back around -->
+
+
+<!-- Youtube Videos Embedding -->
+1. Click Share, Embedd on Youtube.
+2. Gives us an iframe that lets us peek into other websites
+
+
+<!--Lists:
+Different Types of list we can define
+ -->
+ <ul>
+     <li>Beyonce</li>
+     <li><a href="#">Apples</a></li>
+
+ </ul>
+
+ <!-- ordered list -->
+ <ol type="1">
+     <li></li>
+ </ol>
+
+ <ol type="A"></ol>
+ <ol type="i"n>roman numerals</ol>
+ <!-- We can also embedd lists within each other -->
+
+
+ <!-- description list -->
+ <dl>
+     <dt>apples</dt>
+     <dd> - They are red</dd> 
+     <dt>oranges</dt>
+     <dd>- they are orange</dd>
+ </dl>
+
+
+
+ <!-- Tables in HTML: We can create tables in html and layout information -->
+<!-- We need to use the html table tag -->
+<!-- Define table head and body -->
+<table>
+    <thead>
+    <!-- Captions is the title of the table -->
+        <caption>List of Numbers</caption>
+
+        <!-- Table rows and table Headers below -->
+            <tr>
+                <th>four</th>
+                <th>five</th>
+                <th>six</th>
+            </tr>
+    </thead>
+<!-- Table rows and table description -->
+    <tbody>
+    <tr>
+        <td>four</td>
+        <td>five</td>
+        <td>six</td>
+    </tr>
+<!-- Table rows and table descriptions-->
+    
+    <tr>
+        <td>one</td>
+        <td>two</td>
+        <td>three</td>
+    </tr>
+
+
+    <!-- Allows column to take up the space of two columns instead of one -->
+    <tr>
+        <td colspan="2">one</td> 
+        <td>two</td>
+        <td>three</td>
+    </tr>
+</table>
+
+</body>
+
+
+<!-- Container/Wrapper tag that stores all of the htmls -->
+<!-- Uses two basic ways to display elements are Block and Inline Elements
+
+Block elements = take up the entire width of the page
+Inline elements = only take the same that they need
+
+Different tags display differently.
+
+Example: Paragraphs vs Links:
+<a href="#">Link1</a> 
+<a href="#"Link2</a>
+The above are inline, they can sit next to each other
+
+<hr>
+
+<p>Paragraph1</p>
+<p>Paragraph2</p>
+
+is a block display, no matter how small we make the text they will never be on the same line
+They take up the enter width of the page
+
+-->
+<body>
+
+    <!-- Is a block container: will always be on different lines -->
+    <div>div1</div> 
+    <div>div2</div>
+
+    <!-- Inline containesr: a bit more specific than div -->
+    <span>span1</span> 
+    <span>span2</span>
+
+</body>
+
+
+<!-- Using imput forms: just because there is a textbox doesn't mean we will collect information, we need javascript for that -->
+<body>
+
+    <!-- create a textbox -->
+    <input type="text"/>
+
+    <!-- create password with dots no letters-->
+    <input type="password"/> 
+
+    <!-- text automatically included -->
+    <input type="text" value="Enter your username"/>
+
+    <!-- Huge block we can input text = text area -->
+    <!-- instead of one single line -->
+    <!-- It can be resized -->
+    <!-- We can give a specifed number of rows or cols -->
+    <textarea rows="10" cols="30">
+        <!-- Entering a default text -->
+        Enter a paragraph
+    </textarea>
+
+    <!-- Different input types we can accept -->
+    <input type="date" />
+
+    <input type="email"/>
+
+    <input type="range"/>
+
+    <input type="file"/>
+
+    <input type="checkbox"/>
+
+
+    <input type="radio"/>
+
+    <!-- Submit button -->
+    <input type="submit"/>
+
+
+</body>
+
+
+<!-- form is a wrapper for user input -->
+<body>
+    <form>
+        <input type="submit" />
+    </form>
+</body>
+
+
+
+
+<!-- iFrame: embedding a website onto yours -->
+<!-- We can also give this a width and height attribute -->
+<!-- We can also control the borders using frameborder -->
+<!-- Many big websites restrict others from embedding their website onto yours as an iframe -->
+<!-- Someone elses website could pose as another persons website -->
+<iframe src="website we want to embedd" frameborder="0">Sorry</iframe>
+
+
+
+
+
+<!-- Meta Tags: data about data:There are more than the ones listed below -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- A search engine can use this information to see where your page can sit in page rankings
+        160 characters is good, after 200 it is ignored or penalized -->
+        <meta name="description" content="Your Description">
+
+        <meta name="author" content="Mike">
+
+        <!-- Most search engines dont care about ketword  -->
+        <meta name="keywords" content="HTML, Tutorial, Giraffe Academy">
+
+        <!-- Display on different devices -->
+        <!-- Controls display on different devices -->
+        <!-- width allows it to be the size of the device width -->
+        <meta name="viewport" content="width=device-with, initial-scale=1.0"

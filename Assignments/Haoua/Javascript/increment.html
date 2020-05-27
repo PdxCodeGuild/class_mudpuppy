@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="num-input" placeholder="Give me a num">
+    <button id="num-button">Add</button>
+    <div id="div-holder"></div>
+
+
+
+    <script>
+        let numInput = document.querySelector("#num-input")
+        let numButton = document.querySelector("#num-button")
+        let divHolder= document.querySelector("#div-holder")
+
+        const digitRegex = /^\d+$/
+
+        numButton.onclick = function () {
+            if (digitRegex.test(numInput.value)) {
+                let newDiv = document.createElement("div")
+                let newSpan = document.createElement("span")
+                let newButton = document.createElement("button")
+
+                newButton.innerText = "+"
+                newSpan.innerText = numInput.value
+
+                newDiv.appendChild(newSpan)
+                newSpan.appendChild(newButton)
+                j
+
+            
+            }
+        }
+    
+    
+    </script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="enter-input">
+    <div id="container"></div>
+
+    <script>
+        let container = document.querySelector("#container")
+        let enterInput = document.querSelector("#enter-input")
+        enterInput.onkeydown = function(event) { //runs everytime key goes down
+            //13 represents enter
+            console.log(event) //always console.log the event
+            if (event.keycode == 13) { // if the key has the proper keycode than do an alert
+                alert(enterInput.value)
+                container.appendChild(enterInput)
+            }
+        }
+    
+    </script>
+    
+</body>
+</html>

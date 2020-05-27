@@ -12,7 +12,7 @@ enterBtn.addEventListener("click", function () {
     var taskDiv = document.createElement('div')
     var deleteBtn = document.createElement('button')
     var todoTask = document.createElement('li')
-
+    taskDiv.classList.add('noselect')
     deleteBtn.classList.add('remove-btn', 'close')
     deleteBtn.innerHTML = '&times;'
     deleteBtn.setAttribute("onclick", "deleteTask(this);")
@@ -20,8 +20,8 @@ enterBtn.addEventListener("click", function () {
     todoTask.innerText = userInput.value;
     todoTask.setAttribute("onclick", "move(this);")
 
-    taskDiv.appendChild(deleteBtn);
     taskDiv.appendChild(todoTask);
+    taskDiv.appendChild(deleteBtn);
     todoList.appendChild(taskDiv)
 
     userInput.value = ''
@@ -55,7 +55,5 @@ function move(taskItem) {
 }
 
 function clearDone() {
-    completedList.forEach(function (task) {
-        completedList.removeChild(task)
-    })
+    completedList.innerHTML = '';
 }

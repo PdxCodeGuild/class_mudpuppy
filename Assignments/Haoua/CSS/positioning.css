@@ -1,0 +1,59 @@
+/* Flebox is used to organize position */
+/* Grid is also a way to position things in css */
+/* Z index is used a lot in animations and the mobile index */
+
+
+/* Positioning properties */
+
+/* 1. Static is the default */
+/* 2. Relative moves the position relative to the current location */
+/* 3. Absolute: Positioning relative to the parent element */
+/* 4. Fixed: is relative to what the user can see on the screen up to the viewport */
+/* 5. Sticky: leaves everything where it is and it sticks it to the top of every bage */
+/* 6. Inherit is the same positioning of it's parent */
+
+/* (set left and right to zero and bottom to auto) */
+margin: 0 auto;
+
+/* Learn how to inspect the code in a webpage */ (developer console)
+
+/* div with class positioned */
+.positioned{
+    /* We won't see this on the website because it is the default and doesnt do anything */
+    position: static;
+    /* Nothing will happen because we have to give it parameters */
+    position: relative; 
+    /* These are the parameters */
+    /* You can also specify negatives */
+    top: 30px;
+    left: 30px;
+
+}
+
+.positioned {
+    /* Pulls element out of flow of document */
+    /* spot for second element is gone, and other documents take up the space */
+    position: absolute;
+    /* Where ever the body is, we are moving it relative to it's nearest ancestor that has been set */
+    top: 30px;
+    left: 60px;
+    /* Helps us create menus on a webpage */
+    /* Paced relative to the body tag */
+    /* If we put a position on body it will do it relative to that positon */
+
+
+}
+
+/* Go into p tag and  */
+p:nth-of-type(1) {
+    z-index:1 moves this paragraph forward
+
+}
+
+/* fixed is relative to the viewport */
+/* pull it out of document flow and keep it reative t the viewpoint */
+/* These all go inside the position attribte */
+/* Sticky: it won't start at the top but it will stay there  */
+
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    <style>
+        #color-div {
+            width: 100px;
+            height: 100px;
+            border: 5px solid black;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="color-div"></div>
+        <script>
+            let colorDiv = document.querySelector('#color-div') //selecting the div
+            // function setColorBlue () {  //creating the function
+            //     colorDiv.style.backgroundColor = 'blue' //setting the background color when the function runs
+            // }
+            function setColor(inColor) {  //creating the function
+                colorDiv.style.backgroundColor = inColor //setting the background color when the function runs
+            }
+            setColorBlue()
+            setTimeOut(() => setColor('green'), 4000)  //will wait 4000 ms (i.e., 4 sec) before running the setColorBlue function, the => puts the function on a call stack, makes sure the timing gap runs before the color changes
+            </script>
+    </body>
+</html>

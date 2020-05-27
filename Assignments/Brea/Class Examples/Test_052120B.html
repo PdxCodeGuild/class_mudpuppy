@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <input id="unencoded-input">
+        <button id="encode-button">encode!</button>
+        <div id="output-div"></div>
+        <script>
+            let alphabet = 'abcdefghijklmnopqrstuvwxyz'
+            let ouputDiv = document.querySelector("#output-div")
+            let encodeButton = document.querySelector("#encode-button")
+            let unencodedInput = document.querySelector("unencoded-input")
+            encodeButton.onclick = function() {
+                let numArr = []
+            let unencoed = unencodedInput.value
+
+            for (let i=0; i<unencoded.length; i++) {
+                let letter = unencoded[i]
+                let num = alphabet.indexOf(letter)
+                nuArr.push(num)
+            }
+
+            encoded = ''
+            for (let i=0; i<numArr.length; i++) {
+                let num = numArr[i]     //
+                let index = (num + 13) % alphabet.length
+                encoded += alphabet(index)
+            }
+            outputDiv.innerTeext = encoded
+        </script>
+    </body>
+</html>

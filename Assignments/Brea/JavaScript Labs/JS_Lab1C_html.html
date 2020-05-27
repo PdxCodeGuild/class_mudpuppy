@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Lab 1C</title>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+            font-family: 'Heebo', sans-serif;
+            background-size: cover;
+        }
+            h1 {
+                text-align: center;
+            }
+            .num-button {
+                align-self: center;
+                color: green;
+
+               .button {
+                display: inline-block;
+                padding: 15px 25px;
+                font-size: 24px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #fff;
+                background-color: #4CAF50;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 9px #999;
+                }
+
+                .button:hover {background-color: #3e8e41}
+
+                .button:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+                }
+            }
+            #prompt {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body style= "background-image: url('https://66.media.tumblr.com/1aa7bc112af51e1caf31d6350ec91615/tumblr_omaasz4enq1qb5t88o1_540.jpg');">
+        <h1><b>JavaScript Lab 1C: Average Numbers</b></h1>
+        <div class="card-panel teal lighten-2">
+        <div id="prompt"></div>  <!--  will display the prompt -->
+        <br>
+        <input id="num-input"></div> <!--  will take in the user's answer -->
+        <button class="num-button">Add This Number</button>
+        <br>
+        <br>
+        <div id="num-average"></div>  <!--  will display feedback -->
+        </div>
+        <script src="JS_Lab1C.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    </body>
+</html>

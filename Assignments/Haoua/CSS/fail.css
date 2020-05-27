@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: sans-serif; */
+
+}
+
+body {
+    background-image: url("pic1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+/* .container{
+    width: 100%;
+    height: 100%;
+    background: #42455a
+} */
+
+.navigation{
+    background-color: rgba(70,102,255, .7);
+    margin: auto;
+    
+}
+
+.navigation ul{
+    display: inline-flex;
+    margin: 50px;
+    /* float: right;
+    text-align: center;
+    width: 45% */
+    
+
+}
+
+.navigation ul li{
+    list-style: none;
+    margin:0 20px;
+    color: #b2b1b1;
+    cursor: pointer;
+
+}
+
+.logo img{
+    width: 30px;
+    margin-top: -7px;
+    margin-right: 48px;
+
+
+}
+
+.active a{
+    color:yellow;
+}
+
+.signup{
+    top: 35px;
+    right: 80px;
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #fd00da, #19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box,
+
+}
+
+.signup span{
+    display: block;
+    padding: 8px 22px;
+
+}
+
+.banner {
+    width: 25%;
+    height: 45%;
+    top: 25%;
+    
+    position: absolute;
+    color:red;
+    background-color: rgba(57, 255, 20, .9);
+    padding-left: 20px;
+    padding-top: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.app {
+    width: 25%;
+    float: left;
+
+}
+
+.app h1{
+    font-size: 70px;
+    width: 400px;
+    position: relative;
+    /* margin-left: 100px; */
+
+
+}
+
+.app h2{
+    width: 650px;
+    font-size: 20px;
+    margin: 30px 0 30px 40px;
+    line-height: 25px;
+    color: #919191;
+    position: relative;
+}
+
+.pic{
+    width: 75%;
+    float: right;
+
+}
+
+.pic img{
+    width: 100%;
+    margin-top: -20px;
+    padding-left: 50px;
+
+
+}
+
+/* .main{
+    background-image: url("C:\Users\hdogo\Desktop\pdxcodeguild\HTML\pic1.jpg");
+    background-repeat: no-repeat; 
+} */
+
+
+.quick {
+   
+    left:0;
+    bottom: 0;
+    margin:auto;
+    position: absolute;
+    /* background: linear-gradient(to right, #db1bf6, #19d7f8); */
+    background-color:rgba(255, 110, 199, 0.8) ;
+    width: 100%;
+    
+}
+
+.quick ul {
+    display: inline-flex;
+    margin: 10px auto;
+    text-align: center;
+    text-size-adjust: 10;
+    
+    
+}
+
+.quick ul li {
+    list-style-type: none;
+    margin: 0 25px;
+    cursor: pointer;
+    align-items: stretch;
+    padding-right: 20em;
+    
+
+}
+
