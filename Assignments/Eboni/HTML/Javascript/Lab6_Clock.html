@@ -8,15 +8,44 @@
 <body>
     <h2>Clock</h2>
     <p id = "demo"></p>
+    <p id = "stopwatch">0</p>
+    <ol id = "save-list"></ol>
+
+    <button id = "Start">Start</button>
+    <button id = "Lap">Lap</button>
 
     <script>
         var myClock = setInterval(myTimer, 1000);
+        let Start = document.querySelector("#Start");
+        let stopwatch = document.querySelector("#stopwatch");
+        let saveList = document.querySelector("#save-list")
+        let time = new Date();
+        time.setHours(0,0,0,0)
+        stopwatch.innerText = time.toLocaleTimeString();
+
+        function timerDate() {
+            newTime = time.getTime()+ 1000;
+            time.setTime(newTime);
+            stopwatch.innerText = time.toLocaleTimeString();
+
+        }
+    
 
         function myTimer() {
             var d = new Date();
             document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+            Start.onclick = function() {
+                setInterval(timerDate, 1000)
+            }
+        Lap.onclick = function() {
+            let timerDate = document.createElement("li")
+            timerDate.innerText = stopwatch.innerText;
+            saveList.appendChild(timerDate)
+        }
         }
 
+        
+    myTimer()
     </script>
     
 </body>
