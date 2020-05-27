@@ -7,8 +7,8 @@
 </head>
 <body>
     <div id="prompt"></div>
-        <input onclick="function (event)" type="text"  id="user" name="item" placeholder="What would you like to do? (Add, Remove or Complete a task?)">
-        <ol id="list-title"><p id="list-title">To do list</p>
+        <input id="user" name="item" placeholder="What would you like to do? (Add, Remove or Complete a task?)">
+        <ol id="list-title">To do list
             <li id="list-item1" class="list-items">Buy Snacks</li>
             <li id="list-item2" class="list-items">Complete Python Labs</li>
             <li id="list-item3" class="list-items">Rename Html Labs</li>
@@ -18,21 +18,27 @@
         <button type="button" id="submit-button">submit</button>
 
     <script>
-        let button = document.querySelector("#button")
-        let title = document.querySelector("#list-title")
-        let userInput = document.querySelector("#prompt")
-        let list = document.querySelector("ul")
+        let button = document.querySelector("#submit-button")
+        
+        let div = document.querySelector("#prompt")
+
+        let list = document.querySelector("#list-title")
+
         let snacks = document.querySelector("#list-item1")
         let python = document.querySelector("#list-item2")
-        let html = docume7889nt.querySelector("#list-item3")
+        let html = document.querySelector("#list-item3")
         let invites = document.querySelector("#list-item4")
-        let clear = document.querySelector("#clear-button")
+        //let clear = document.querySelector("#clear-button")
         let userAdd = document.querySelector("#user")
 
-        let newItem = document.createElement("li")
+        let newItem = list.createElement("li")
         //list.appendChild(newItem)
-        newItem.innerText = userAdd
-        list.appendChild(newItem)
+        button.onclick = function() {
+            let newItem = list.createElement("li");
+            newItem.innerText = userAdd.value;
+            list.appendChild(newItem);
+        }
+     
 
         
 
