@@ -14,21 +14,24 @@
 		let saveList = document.querySelector("#save-list")
 		let animals = ['dog', 'cat', 'mouse', 'bird', 'mudpuppy']
 		function randRange(inNum) {
+			// give a random num between zero and inNum - 1
 			return Math.floor(Math.random() * inNum)
 		}
 		function randChoice(inArr) {
+			// randomly choose from an array or string
 			randIndex = randRange(inArr.length);
 			return inArr[randIndex]
 		}
 		function setAnimal() {
+			// set the inner text of the top div to a random choice from the animals array
 			output.innerText = randChoice(animals);
 		}
-		setAnimal();
-		setInterval(setAnimal, 2000);
+		setAnimal(); // start out by setting a random animal
+		setInterval(setAnimal, 2000); // set a random animal every 2 seconds
 		saveBtn.onclick = function() {
-			let animal = document.createElement("li");
-			animal.innerText = output.innerText;
-			saveList.appendChild(animal);
+			let animal = document.createElement("li"); // create a new li
+			animal.innerText = output.innerText; // the li should have the same inner text as the output div
+			saveList.appendChild(animal); // put the li inside the ol so that the user can see the li
 		}
 	</script>
 	</body>
