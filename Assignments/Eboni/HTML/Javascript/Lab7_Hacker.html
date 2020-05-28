@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker</title>
+</head>
+<body>
+    <!-- <textarea id="input" name="hackerLab" rows="4" cols ="50"></textarea> -->
+    <div id = "Pete"></div>
+
+    <script>
+        // var input = document.getElementById('input')
+        // input.addEventListener('keypress', stopText, false);
+
+        let Pete = document.querySelector("#Pete")
+
+        let hack = "lorem ipsum etc";
+
+        document.body.onkeydown = function() {
+             Pete.innerText += hack
+        }
+
+
+        // function stopText() {
+        //     var text = evt.text;
+        //     if (text !=0) {
+        //         if (text < 97 || text > 122) {
+        //             evt.preventDefault();
+
+        //         }
+        //     }
+        // }
+            
+
+    </script>
+    
+</body>
+</html>
