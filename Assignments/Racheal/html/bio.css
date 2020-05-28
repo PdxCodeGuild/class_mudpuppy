@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(00, 00, 255);
+    /* background: rgb(206, 206, 212); */
+}
+
+h1 {
+    background-color: white;
+    color: navy
+    /* text-align: center; */
+    margin: auto;
+}
+
+/* body {
+    background-color: rgb(00,00,255);
+} */
+
+.header {
+    color: white;
+    background-color: navy;
+}
+
+
+.quote {
+    color: navy;
+    background-color: white;
+}
+
+.locations {
+    color:navy;
+    float: left
+}
+
+.personal_life {
+    color:navy;
+    float: right
+    
+}
+/* body {
+    background-color: rgb(100,22,30);
+    background: rgb(100,22,30);
+    color: blue;
+
+}
+
+head {
+    background-color: green;
