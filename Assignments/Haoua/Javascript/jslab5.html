@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <p> Welcome to my website</p>
+    </div>
+
+    <div id="new">
+
+    </div>
+
+    <script>
+        //let num = Math.floor(Math.random() * list.length);
+
+        let div = document.querySelector("#new")
+
+        let list = [
+        "https://nayapdx.org/",
+        "https://irco.org/",
+        "https://www.girlsontherunpdx.org/",
+        "https://www.selfenhancement.org/",
+        ];
+        
+        //for (i=0, i<list.length, i++) {
+        function myFunc() {
+            let rnum = Math.floor(Math.random() * list.length);
+            //window.location = list[rnum];
+        //for (let i=0; i<list.length; i++){
+            window.location.href = list[rnum]
+        }
+
+        setInterval(myFunc, 5000)
+
+        let countown = 5;
+        let timer = setInterval(function() {
+            if (countdown <= 0) {
+                clearInterval(timer);
+            }
+
+            document.querySelector()
+        })
+        
+
+        
+        //}
+        //let rnum = Math.floor(Math.random() * list.length);
+        //window.location = list[rnum];
+
+    </script>
+    
+</body>
+</html>
