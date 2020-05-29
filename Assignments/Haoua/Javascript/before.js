@@ -51,30 +51,16 @@
     <script>
         let empty = document.querySelector("#clear")
         let date = document.querySelector("#date")
-
+        
         let complete = querySelector("#com-button")
-        //let userChoice = prompt("What would you like to do Remove or Complete?")
-        
-        arr = [];
-        
+        let userChoice = prompt("What would you like to do Remove or Complete?")
+        arr = []
         let button = document.querySelector("#submit-button");
         
         let divContainer = document.querySelector("#container");
-      
-        let list = document.querySelector("#list-title");
-        list.addEventListener("click", function(event) {
-            let element = event.target;
-            const elementJOB = event.target.attributes.job.value; //delete or complete
-            
-            if (elementJOB == "complete") {
-                completeToDo(element);
-            }
-            else if (elementJOB == "delete") {
-                
-            }
-        });
 
-        
+        let list = document.querySelector("#list-title");
+
         let snacks = document.querySelector("#list-item1");
         let python = document.querySelector("#list-item2");
         let html = document.querySelector("#list-item3");
@@ -82,81 +68,6 @@
         //let clear = document.querySelector("#clear-button")
         let userAdd = document.querySelector("#user");
         let deleted = document.querySelector("#dlt-button")
-        
-        const comp ="fa fa-check-circle";
-        const incomp = "fa fa-circle-thin";
-        const lineThrough="lineThrough";
-
-       
-
-
-        function Add(toDo, id, done, trash) {
-            if (trash) { return; }
-            const COMPLETED = done ? comp : incomp;
-            const LINE = done ? lineThrough: "";
-            //let list = document.querySelector("#list-title");
-            const text = <li id="text">
-                <i class="fa ${COMPLETED}" job="complete" id="${id}" aria-hidden="true"></i>
-                <p id="text ${LINE}"> ${toDo} </p>
-                <i class="fa fa-minus-circle" job="delete" id="${id}" aria-hidden="true"></i>
-            
-            </li>
-
-            const position = "beforeend";
-
-                list.insertAjacentHTML(position,text);
-
-            }
-
-        Add(userAdd.value)
-        let arrTwo = []
-        let id = 0; //everytime we add a new item to the list we need to increment by 1
-
-        
-        document.addEventListener("keyup", function(event){
-            if (event.keyCode == 13) {
-                let toDo = userAdd.value;
-                if (toDo){
-                    Add(toDo, id, false, false);
-                    arrTwo.push(
-                        {
-                            name: toDo,
-                            id: id,
-                            done: false,
-                            trash: false
-
-                        }
-                    )
-
-                    userAdd.value = "";
-                    id++;
-                }
-            }
-        });
-
-        element.classList
-
-        function completeToDo(  ) {
-            element.classList.toggle(comp); //if in class, remove it
-            element.cassList.toggle(incomp); //if not in class, add it
-            element.parentNode.querySelector("#text").classList.toggle(lineThrough)
-            arrTwo[element.id].done = arrTwo[element.id].done ? false: true;
-        }
-
-        function removeToDo(element) {
-            element.parentNode.parentNode.removeChild(element.parentNode);
-            arrTwo[element.id].trash = true;
-        }
-
-
-
-        //let snacks = document.querySelector("#list-item1");
-        //let python = document.querySelector("#list-item2");
-        //let html = document.querySelector("#list-item3");
-        //let invites = document.querySelector("#list-item4");
-        //let clear = document.querySelector("#clear-button")
-       // let userAdd = document.querySelector("#user");
-        //let deleted = document.querySelector("#dlt-button")
         
         arr.push(snacks.innerText, python.innerText, html.innerText, invites.innerText)
         
@@ -193,25 +104,3 @@
        //     }
          
         //}
-        
-
-     
-
-        
-
-
-    
-
-
-
-
-
-        
-        
-     
-
-
-    </script>
-    
-</body>
-</html>

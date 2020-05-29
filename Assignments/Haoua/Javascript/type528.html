@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 2px solid black;
+
+        }
+
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500">
+
+    </canvas>
+    <script>
+        let cnv = document.querySelector("canvas");
+        let ctx = cnv.getContext("2d");
+        let width = cnv.width;
+        let height = cnv.height;
+        console.log(width, height);
+
+        let ball = {
+            x: 50,
+            y: height-50,
+            radius: 50,
+            color: "blue",
+
+            //making ball move
+            vy: -1, //makes the velocity -1
+            vx: 1,
+        }
+
+        function draw() {
+            ctx.clearRect(0,0,width,height)
+            ctx.fillStyle = "rgba(255,255,255,.02)"
+            ctx.fillRect(0,0, width, height) //use either clearRect or fillRect 
+
+            ctx.beginPath();
+    
+            ctx.arc(ball.x, ball.y, ball.radius, 0.2*Math.PI) // draws the circle
+            ctx.fillSttyle = ball.color; //choose the color
+            ctx.fill(); //fill in the ball
+            //ctx.clearReact() clears everything
+            ball.x = ball.x + ball.vx; //move the ball left
+            ball.y = ball.y + ball.vy; //move the ball up or down
+            setTimeout(draw, 2000); //wait then after two seconds run again
+
+
+            if (ball.x > width || ball.y < 0) {
+                alert("Out of Bounds")
+            }
+            else {
+                requestAnimationFrame(draw); //happens much faster than setTimeout 
+
+            }
+            ///requestAnimationFrame(draw); //happens much faster than setTimeout 
+        }
+
+        draw();
+
+        ctx.beginPath();
+        ctx.arc(ball.x, ball.y, ball.radius, 0.2*Math.PI) // draws the circle
+        ctx.fillSttyle = ball.color; //choose the color
+        ctx.fill(); //fill in the ball
+        //ctx.clearReact() clears everything
+    </script>
+</body>
+</html>
