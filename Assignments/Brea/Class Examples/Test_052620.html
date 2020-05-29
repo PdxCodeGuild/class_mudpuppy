@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="output">
+
+        </div>
+        <button od="save-btn">Save</button>
+        <ol id="save-list">
+            <li></li>
+            <li></li>
+        </ol>
+        <script>
+            let output = document.querySelector("#output")
+            let saveBtn = document.querySelector("#save-btn")
+            let saveList = document.querySelector("#save-list")
+            let animals = ['dog', 'cat', 'mouse', 'bird']
+
+            function randRange(inNum) {
+                return Math.floor(Math.random() * inNum)
+            }
+
+            function randChoice(inArr) {
+                randIndex = randRange(inArr.length)
+                return inArr[randIndex]
+            }
+
+            function setAnimal () {
+                output.innerText = randChoice(animals);
+            }
+
+            setAnimal();
+
+            setInterval(setAnimal, 2000);
+
+            setBtn.onclick = function() {
+                var animal = document.createElement("li");
+                animal.innerText = output.innerText;
+                saveList.appendChild(animal);
+            }
+
+</script>
+    </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="num">0</divid>
+        <script>
+            let num = document.querySelector("#num")
+            document.body.onkeydown = function () {
+                newNum = praseInt(num.innerText) + 1;
+                num.innerText = newNum;
+            }
+        </script>
+    </body>
+
+</html>
