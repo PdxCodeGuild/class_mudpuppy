@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			canvas {
+				border: 2px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width="500" height="500"></canvas>
+		<script>
+			let cnv = document.querySelector("canvas");
+			let ctx = cnv.getContext("2d"); // allows 2d drawing
+			let width = cnv.width;
+			let height = cnv.height;
+			let ball = { // info about our ball
+					x: 50,
+					y: height - 50,
+					radius: 50,
+					color: 'blue',
+					vx: 1,
+					vy: -1,
+			}
+			function draw() {
+				ctx.fillStyle = "rgba(255, 255, 255, .1)";
+				ctx.fillRect(0, 0, width, height);
+				ctx.beginPath(); // start drawing
+				ctx.arc(ball.x, ball.y, ball.radius, 0, 2*Math.PI); // draw a circle
+				ctx.fillStyle = ball.color; // choose the color
+				ctx.fill(); // fill the ball
+				
+				ball.x = ball.x + ball.vx; // move the ball right/left
+				ball.y = ball.y + ball.vy; // move the ball up/down
+				if (ball.x > width || ball.y < 0) { // 
+					alert("Out of bounds!")
+				} else {
+					requestAnimationFrame(draw);
+				};
+			}
+			draw();
+			
+		</script>
+	</body>
+</html>
