@@ -1,87 +1,31 @@
+alert("Welcome to Lab2")
 
-var x
-x=document.getElementById("intro-div").innerHTML
+while (true) {
+    let listOne = []
+    let userInput = prompt("Please enter a social media platform, expletive, random sound, second random sound (IN THAT ORDER! Separate using spaces only) : ").toLowerCase();
+    // console.log(userInput)
 
-function myFunc() {
-    x=x+"1"
-    document.getElementById("intro-div").innerHTML=x;
-    return x
+    // let listOne = []
+    listOne.push(userInput.split(" "))
+    // console.log(listOne)
+    let social = listOne[0];
+    let socialm = social[0];
+    let expletive = social[1];
+    let random = social[2];
+    let randomTwo = social[3]
+    console.log(social);
+    console.log(social[0])
+// alert(social);
+
+    let lengthAns = social.length;
+    // alert(`You submitted ${lengthAns} answers`);
+
+    if (userInput ==='done') {
+        alert("Thanks for playing!")
+        break
+    }
+    else {
+        alert(`You submitted ${lengthAns} answers`);
+        alert(`All for the ${socialm}\nBitches love \' ${socialm}\nOh wait ${expletive}\n${random}\n${randomTwo}`)
+    }
 }
-function f2()
-{
-    x=x+"2"
-    document.getElementById("intro-div").innerHTML=x;
-    return x
-}
-function f3()
-{
-x=x+"3"
-document.fr.t2.value=x
-return x
-}
-function f4()
-{
-x=x+"4"
-document.fr.t2.value=x
-return x
-}
-function f5()
-{
-x=x+"5"
-document.fr.t2.value=x
-return x
-}
-function f6()
-{
-x=x+"6"
-document.fr.t2.value=x
-return x
-}
-function f7()
-{
-x=x+"7"
-document.fr.t2.value=x
-return x
-}
-function f8()
-{
-x=x+"8"
-document.fr.t2.value=x
-return x
-}
-function f9()
-{
-x=x+"9"
-document.fr.t2.value=x
-return x
-}
-function add()
-{
-x=x+"+"
-document.fr.t2.value=x
-return x
-}
-function prod()
-{
-x=x+"*"
-document.fr.t2.value=x
-return x
-}
-function divi()
-{
-x=x+"/"
-document.fr.t2.value=x
-return x
-}
-function subs()
-{
-x=x+"-"
-document.fr.t2.value=x
-return x
-}
-function result()
-{
-document.fr.t1.value=eval(x)
-}
-</script>
-Adding form tag :

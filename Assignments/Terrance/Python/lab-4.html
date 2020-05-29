@@ -1,0 +1,34 @@
+lab-4.html:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+    <input id="list-item" placeholder="Give me an item to add">
+    <button id="add-item">add</button>
+    <div id="list-holder"></div>
+    <script>
+        let listItem = document.querySelector("#list-item")
+        let addItem = document.querySelector("#add-item")
+        let listHolder = document.querySelector("#list-holder")
+
+        addItem.onclick = function() { // when the button is clicked
+            let newDiv = document.createElement("div") // create a new div
+            newDiv.innerText = listItem.value
+            console.log(this)
+            
+            newDiv.onclick = function() {
+            // newDiv.parentNode.removeChild(this)
+                this.style.textDecoration="line-through"
+            }
+            
+            listHolder.appendChild(newDiv) // add the new div inside of the div #num-holder
+        }
+    </script>
+
+    
+</body>
+</html>

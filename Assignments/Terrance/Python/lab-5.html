@@ -1,0 +1,36 @@
+lab-5.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Random Redirector</title>
+</head>
+<body>
+        <h1>Random Redirector</h1>
+        <div id="countdown">5</div>
+        
+<script>
+        function randChoice(in_string) {
+                let randZeroOne = Math.random();
+                let randZeroLen = randZeroOne * in_string.length;
+                let randIndex = Math.floor(randZeroLen);
+                return in_string[randIndex];
+        }
+        let countdown = document.querySelector('#countdown')
+        function setRedirectPage() {
+		
+        let linksArray = ["https://github.com/PdxCodeGuild/class_mudpuppy/blob/master/3%20JavaScript/js_py/password_gen/password_gen.html", "https://github.com/PdxCodeGuild/class_mudpuppy/blob/master/3%20JavaScript/labs/lab05-random_redirector.md", "https://github.com/PdxCodeGuild/class_mudpuppy/blob/master/3%20JavaScript/hints/lab_05/color_change.html", "https://github.com/PdxCodeGuild/class_mudpuppy/blob/master/3%20JavaScript/js_py/password_gen/password_gen.py", "https://github.com/PdxCodeGuild/class_mudpuppy"];
+
+        console.log(randChoice(linksArray))
+        window.location.href = randChoice(linksArray)
+        }
+
+        function decrement(){countdown.innerText -= 1}
+        setInterval(decrement, 1000)
+
+		setTimeout(setRedirectPage, 5000) 
+
+</script>
+</body>
+</html>
