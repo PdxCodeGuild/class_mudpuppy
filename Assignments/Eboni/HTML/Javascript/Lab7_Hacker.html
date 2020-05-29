@@ -12,18 +12,45 @@
 </head>
 <body>
     <!-- <textarea id="input" name="hackerLab" rows="4" cols ="50"></textarea> -->
-    <div id = "Pete"></div>
+    <pre id = "Pete"></pre>
+
+    <pre id = "Lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae? Totam
+    labore, ratione perferendis 
+    dicta fugit iure beatae animi 
+    similique doloremque, maxime 
+    aliquid consequatur ab voluptas quasi, modi nisi vitae? 
+    Lorem ipsum dolor sit amet, 
+    consectetur adipisicing elit. 
+    Vitae, ipsum? Sapiente impedit debitis, minus quam aperiam ad itaque ducimus 
+    deserunt officiis inventore consequatur rem vero error est nisi voluptate? Nemo.</pre>
+
+    
 
     <script>
         // var input = document.getElementById('input')
         // input.addEventListener('keypress', stopText, false);
 
-        let Pete = document.querySelector("#Pete")
+        let Pete = document.querySelector("#Pete");
 
-        let hack = "lorem ipsum etc";
+        let Lorem = document.querySelector("#Lorem");
+
+        let hack = Lorem.innerText;
+
+        Lorem.innerText = "";
+
+
+
+        // let hack = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, eveniet consequuntur? Fuga, officiis, non quae sapiente blanditiis distinctio sequi consectetur perspiciatis voluptatum, consequatur repellat magni tempora debitis sunt nemo tenetur.  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime laborum quidem eveniet quo eum voluptatem recusandae rerum, distinctio repellat dolor doloribus. Ad dolorum sapiente qui ullam quibusdam cum quod distinctio!";
+        
+        let counter = 0; 
 
         document.body.onkeydown = function() {
-             Pete.innerText += hack
+             Pete.innerText += hack[counter]
+             counter ++;
+
+
+             
+
         }
 
 
