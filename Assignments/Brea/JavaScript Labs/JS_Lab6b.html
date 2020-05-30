@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Lab 6B: Stopwatch</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Rosario&display=swap" rel="stylesheet">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js">
+            
+        </script>
+
+        <meta charset="utf-8">
+
+        <style>
+            body {
+                font-family: 'Courier Prime', monospace;
+
+                background-image: url("https://66.media.tumblr.com/ea77bb68c255326915198f48b6db7155/tumblr_puikbeaAdO1tn7avwo1_1280.png");
+
+                background-color: #cccccc;
+                height: 500px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+            }
+            div {
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Brea's Stopwatch</h2>
+        <button id="start">Start</button>
+        <button id="lap">Lap</button>
+        <button id="stop">Stop</button>
+
+        <div id="time-display">
+
+        </div>
+
+        <div id="lap-display">
+
+        </div>
+        
+        <script>
+            let startBtn = document.querySelector("#start");
+            let lapBtn = document.querySelector("#lap");
+            let stopBtn = document.querySelector("#stop");
+            let d;
+            let timeInterval;
+
+            startBtn.onclick = function() {
+                timeUpdate();
+                timeInterval = setInterval(msMoment, 250);
+                console.log('hello');
+            }
+
+            for (i=0; i<10; i++) {
+            lapBtn.onclick = function() {
+                let lapNum = i;
+                document.getElementById("lap-display").innerHTMl = timeUpdate();
+                
+                    
+            }
+                `${lapNum} ran for ${d.getHours()}hrs:${d.getMinutes()}mins:${d.getSeconds()}secs:${d.getMilliseconds()}ms`; //list by lap number in lap div within an ordered list
+            }
+
+            stopBtn.onclick = function() {
+                document.getElementById("lap-display").innerHTML = clearTimeout(timeInterval);
+            }
+
+            function timeUpdate() { //gets a snapshot slice of the time
+                d = new Date();
+
+                d.setHours(0, 0, 0, 0);        
+            }
+
+            function msMoment(timeUpdate) {
+                let nextMs = d.getTime() + 250;
+                d.setTime(nextMs)
+                document.getElementById("time-display").innerHTML = `Time's been running for ${d.getHours()}hrs:${d.getMinutes()}mins:${d.getSeconds()}secs:${d.getMilliseconds()}ms`;
+            }
+
+        </script>
+    </body>
+</html>
