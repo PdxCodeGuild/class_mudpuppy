@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Rosario&display=swap" rel="stylesheet">
+        <style>
+            body {
+                display: flex;
+                font-family: 'Courier Prime', monospace;
+                background-image: url("https://yourdesk.files.wordpress.com/2011/05/11-typewriter.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                color: white;
+                align-items: center;
+                flex-direction: column;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Write the Next Great American Novel</h1>
+        <br>
+        <br>
+        <textarea id="typing" rows="25" cols="100"></textarea>
+
+        <script>
+            let typingSp = document.querySelector("#typing")
+            let hackerText = "All work and no play makes Brea a dull girl. \n"
+
+            seenText = ''
+            let counter = 0
+            typingSp.addEventListener('keydown', function(e) {
+                e.preventDefault();
+                typingSp.innerText = seenText
+                seenText += (hackerText[counter])
+                counter ++
+                counter %= hackerText.length
+            })
+
+        </script>
+    </body>
+</html>

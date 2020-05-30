@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        background-color: black;
+    }
+
+    /* #counter-div {
+        width: 100px;
+        height: 100px;
+        border: 5px whitesmoke;
+    } */
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="rando-button">Random Regenerator</button>
+    
+    <script>
+        var websites =["https://www.facebook.com/",
+        "https://www.instagram.com/","https://twitter.com/","https://www.youtube.com/"  ];
+
+        function randomWebsite() {
+            return websites[Math.floor(Math.random()*4)]
+            
+        }
+
+        function redirector() {
+            location = randomWebsite()
+        
+        }
+        let randoButton= document.querySelector("#rando-button")
+
+        
+        randoButton.onclick = function() {
+            // location = randomWebsite()
+
+    
+
+            setTimeout(redirector, 4000)
+        // let counterDiv = document.querySelector('#counter-div')
+
+        // function setCounterDiv() {
+
+        }
+        
+        
+        
+        // console.log(randomWebsite())
+    </script>
+</body>
+
+</html>

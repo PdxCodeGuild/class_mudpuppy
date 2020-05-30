@@ -7,6 +7,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+
     <link rel="stylesheet" type="text/css" href="C:\Users\hdogo\Desktop\pdxcodeguild\CSS\lab3.css">
 
 
@@ -19,6 +22,8 @@
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>''' -->
    
 <!-- Bootstrap CSS -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
     <script src="https://kit.fontawesome.com/fce092eeca.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
@@ -29,8 +34,8 @@
   </head>
 
 
-<body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<body class="body"data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-white">
 
         <a href="#" alt="idk" class="navbar-brand">Haoua Dogo</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
@@ -40,44 +45,77 @@
             <ul class="navbar-nav ml-auto"> 
 
                 <li class="nav-item">
+                    <!-- May or may not make Resume visible from drop down menu -->
                     <a href="#" alt="idk" class="nav-link">Resume</a>
                 </li>
     
                 <li>
-                    <a href="#" alt="idk" class="nav-link">Portfolio</a>
-                </li>
+                    <!-- insert iframes of portfolio section -->
+                    <div class="btn-group">
+                        <a href="#" alt="idk" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Web Development</a>
+                            <a class="dropdown-item" href="#">Software Development</a>
+                            <a class="dropdown-item" href="#">AI/VR</a>
+                            <a class="dropdown-item" href="#">Graphics</a>
+                            <a class="dropdown-item" href="#">SEO/Social Media Management</a>
+
+                        </div>
+                    </div>
     
                 <li>
-                    <a href="#" alt="idk" class="nav-link">Services</a>
+                    <div class="btn-group">
+                        <a href="#" alt="idk" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Web Development</a>
+                            <a class="dropdown-item" href="#">Software Development</a>
+                            <a class="dropdown-item" href="#">AI/VR</a>
+                            <a class="dropdown-item" href="#">Graphics</a>
+                            <a class="dropdown-item" href="#">SEO/Social Media Management</a>
+                        </div>
+
+                    </div>
+                
                 </li>
 
                 <li>
-                    <a href="#" alt="idk" class="nav-link">Contact Me</a>
+                    <div class="btn-group">
+                        <a href="#" alt="idk" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Me</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Email</a>
+                                <a class="dropdown-item" href="#">Phone</a>
+                                <a class="dropdown-item" href="#">Form</a>
+                            </div>
+                    </div>
                 </li>
     
             </ul>
+
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                
+            </form>
         </div>
 
     </nav>
 
     
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
- 
     <div id="slide"class="carousel slide" data-ride="carousel">
-        <ul class="carousel-indicators">
+        <ol class="carousel-indicators">
             <li data-target="#slide" data-slide-to="0"class="active"></li>
             <li data-target="#slide" data-slide-to="1" c></li>
             <li data-target="#slide" data-slide-to="2"></li>
             <!-- <li data-target="#slides" data-slide-to="0"></li> -->
-        </ul>
+        </ol>
 
-        <div class="carousel slide" id="carousel">
+        <div class="carousel-inner" id="carousel">
             <div class="carousel-item active">
+                
+                
                 <img src="cuter.jpg" width="100%" height="100%">
                 <div class="carousel-caption"id="caption">
                     <h1 class="display-2">Haoua Dogo</h1>
@@ -112,10 +150,271 @@
                 
             </div>
 
+
+            <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" ></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#slide" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" ></span>
+                <span class="sr-only">Next</span>
+            </a>
+
         </div>
         
     </div>
+    <!-- Jumbotron -->
+
+    <div class="container-fluid">
+        <div class="row jumbotron text-center">
+            <div class="col-12">
+                <p class="lead">Web Design, App Development, Machine Learning</p>
+            </div>
+
+            <div class="col-12">
+                <a href="#"><button type="button" class="btn btn-outline-secondary btn-lg">About Me</button></a>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">Why Choose Us? </h1>
+                
+            </div>
+            <hr>
+            <div class="col-12">
+                <p class="lead">Start your project Today! Whether you want a cool website, app or program; We've got you taken care of.
+                     Navigate the website to get a first hand experience of what we can create.</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- Two Column Section -->
+    <div class="container-fluid padding">
+        <div class="row text-center padding">
+            <div class="col-4" id="pros">
+                <!-- <h3>Reliable</h3>
+                <i class="fas fa-handshake fa-2x"></i>
+                <p>some bs about reliability.</p> -->
+            </div>
+            <div class="col-4" id="pros1">
+                <h3>Reliable</h3>
+                <i class="fas fa-handshake fa-2x"></i>
+                <p>some bs about reliability.</p>
+            </div>
+
+            <div class="col-4" id="pros2">
+                <h3>Secure</h3>
+                <i class="fas fa-shield-alt fa-2x"></i>                
+                <p>some bs about security.</p>
+            </div>
+
+            <div class="col-4" id="pros3">
+                <h3>Innovative</h3>
+
+                <i class="fas fa-cogs fa-2x"></i>
+                <p>some bs about innovation.</p>
+            </div>
+
+            
+        </div>
 
 
-    </body>
-    </html>
+        <hr class="my-4">
+        
+    </div>
+
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-md-12 col-lg-6">
+                <h2>Who am I?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maiores soluta architecto expedita reprehenderit id cupiditate, asperiores dolores modi dicta, voluptate voluptatem placeat dignissimos dolorem distinctio! Facilis sunt molestiae voluptatum!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, molestias maxime? Sequi vero animi fugit neque et unde ad reiciendis temporibus nemo dolore, incidunt dignissimos. Ipsa commodi nesciunt officia itaque.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet nisi sed qui officia illum a, porro aspernatur quae velit nostrum ut quo asperiores, consequatur similique, suscipit deleniti quas eveniet nobis!</p>
+            
+                <br>
+                <a id="button" href="#" class="btn btn-primary">Learn More</a>
+            </div>
+
+            <div class="col-lg-6">
+                <img id="image" src="metoo.jpg"class="img-fluid">
+            </div>
+
+        </div>
+    </div>
+
+    <hr class="my-4">
+
+
+    <figure>
+        <div class="fixed-wrap">
+            <div id="fixed">
+
+            </div>
+        </div>
+    </figure>
+
+
+
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">Meet the Team</h1>
+                <hr>
+            </div>
+            <!-- <hr> -->
+        </div>
+    </div>
+
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="meet6.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Haoua Dogo</h4>
+                        <p class="card-text">Hot girl summer</p>
+                        <a href="#" class="btn btn-outline-secondary">Contact Haoua</a>
+                    
+                    
+                    </div>
+                
+                
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="meet3.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Yemi Alade</h4>
+                        <p class="card-text">Yemi Alade is an Nigerian Pop Artist</p>
+                        <a href="#" class="btn btn-outline-secondary">Contact Yemi</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="meet5.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Racheal Nakhabala</h4>
+                        <p class="card-text">She mad disrespectful </p>
+                        <a href="#" class="btn btn-outline-secondary">Contact Racheal</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container-fluid padding">
+            <div class="row padding">
+                <div class="col-lg-12" id="mission">
+                    <br>
+                    <h2>Our Mission</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maiores soluta architecto expedita reprehenderit id cupiditate, asperiores dolores modi dicta, voluptate voluptatem placeat dignissimos dolorem distinctio! Facilis sunt molestiae voluptatum!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, molestias maxime? Sequi vero animi fugit neque et unde ad reiciendis temporibus nemo dolore, incidunt dignissimos. Ipsa commodi nesciunt officia itaque.</p>
+                    <br>
+                 
+                </div>
+
+                <br>
+
+                <div class="col-sm-4" id="stupid">
+                    <img src="metoo.jpg"class="img-fluid" id="mission-img" >
+                </div>
+
+                
+                <div class="col-sm-4" id="stupid2">
+                    <img src="meet1.jpg"class="img-fluid" id="mission-img" >
+                </div>
+
+                
+                <div class="col-sm-4" id="stupid3">
+                    <img src="meet2.jpg"class="img-fluid" id="mission-img" >
+                </div>
+    
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="container-fluid padding">
+            <div class="row text-center padding">
+                <div class="col-lg-12 social padding" id="connect">
+                    <div class="connect-title"><h2>Connect</h2></div>
+                    <iframe src="https://www.instagram.com/evesessentials/"></iframe>
+                    <iframe src="https://getbootstrap.com/docs/4.0/components/alerts/"></iframe>
+                    <iframe src="https://fontawesome.com/how-to-use/on-the-web/styling/sizing-icons"></iframe>
+                </div>
+
+                <br>
+
+                <div class="col-lg-12 social padding" id="social">
+                    <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#"><i class="fab fa-google-plus fa-2x"></i></a>
+                    <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+
+                
+                
+                
+                </div>
+            </div>
+            
+        </div>
+
+    <footer class="page-footer font-small blue pt-4">
+        <div class="container-fluid padding text-center text-md-left">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <hr class="light">
+                    <img id="logo" width="65" height="35" src="logo.jpg">
+                    <hr class="light">
+                    <p>971-340-5242</p>
+                    <p>evesessentials@gmail.com</p>
+                    <p> Street name</p>
+                    <p> City, State, 000000</p>
+                </div>
+
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h3>Our hours</h3>
+                    <hr class="light">
+                    <p>Monday - Friday: 9am - 5pm</p>
+                    <p>Saturday - Sunday: 9am - 9:05am</p>
+
+                </div>
+
+
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h3>Service Areas</h3>
+                    <hr class="light">
+                    <p> City, State, 000000</p>
+                    <p> City, State, 000000</p>
+                    <p> City, State, 000000</p>
+
+                 
+
+                </div>
+                <hr class="light">
+                <div class="col-12" id="trademark">
+                    <!-- <hr class="light"> -->
+                    <h5>&copy; Haouadogo.com</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

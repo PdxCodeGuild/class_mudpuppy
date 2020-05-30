@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Rosario&display=swap" rel="stylesheet">
+
+        <meta charset="utf-8">
+        <title>JavaScript Lab 6A: Clock</title>
+        <!-- <header>JavaScript Lab 6A: Clock</header> -->
+        <style>
+            body {
+                font-family: 'Courier Prime', monospace;
+                background-image: url("https://66.media.tumblr.com/0e3e2656e58e7fe1ac62d23efc9b8816/tumblr_pksjjdQcgn1u0iu4ro1_400.jpg");
+                color: white;
+            }
+            div {
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Brea's Clock</h2>
+        <button id="military-time">I want military time</button>
+        <button id="standard-time">I want standard time</button>
+        <div id="#time-display">
+        </div>
+        <!-- <h2>Brea's Stopwatch</h2>
+        <div>
+            
+        </div> -->
+        <script>
+            let militaryTime = document.querySelector("#military-time")
+            let standardTime = document.querySelector("#standard-time")
+
+            militaryTime.onclick = function() {timeUpdate();
+            setInterval(timeUpdate, 2000);}
+
+            standardTime.onclick = function() {stanTimeUpdate();
+            setInterval(stanTimeUpdate, 2000);}
+
+            //write function to get current time from new Date(), parse the time information from new Date ()
+            function newDate() {
+                dateInfo = new Date();
+                
+                return {
+                    nowHr: dateInfo.getHours(),
+                    nowMin: dateInfo.getMinutes(),
+                    nowSec: dateInfo.getSeconds()
+                }
+            }
+    
+            //write function to update the timeString with setInterval, pass updated time string into a sentence
+            function timeUpdate() {
+                let d = newDate();
+                document.getElementById("#time-display").innerHTML = `The current time is ${d.nowHr} hours, ${d.nowMin} minutes, and ${d.nowSec} seconds`
+            }
+
+            function stanTimeUpdate() {
+                let d = newDate();
+                let stanHr = parseInt(d.nowHr)
+
+                if (d.nowHr > 11) {
+                    let stanHrList = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+                    stanHr = parseInt(d.nowHr)
+
+                    i = (stanHr - 12)
+
+                    stanHrStr = stanHrList[i]
+
+                    document.getElementById("#time-display").innerHTML = `The current time is ${stanHrStr} hours, ${d.nowMin} minutes, and ${d.nowSec} seconds`
+                } else {
+                    document.getElementById("#time-display").innerHTML = `The current time is ${stanHrStr} hours, ${d.nowMin} minutes, and ${d.nowSec} seconds`
+                }       
+            }
+        </script>
+    </body>
+</html>

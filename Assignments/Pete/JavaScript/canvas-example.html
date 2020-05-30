@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        canvas {
+            border: 2px solid black;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="750" height="750"></canvas>
+    <script>
+        cnv = document.querySelector('canvas');
+        ctx = cnv.getContext('2d');
+
+        let w = 750;
+        let h = 750;
+
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(750, 750);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.rect(200, 250, 150, 400);
+        ctx.stroke();
+        ctx.fillStyle = 'orange';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(200, 250);
+        ctx.lineTo(275, 150);
+        ctx.lineTo(350, 250)
+        ctx.fillStyle = 'blue';
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(375, 375, 150, 0, 2 * Math.PI);
+        ctx.fillStyle = 'red';
+        ctx.fill();
+        ctx.lineWidth = 5;
+        ctx.stroke();
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+lab-7.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hacker Typer</title>
+</head>
+<body>
+        <h1>Hacker Typer</h1>
+        <textarea id="text"></textarea>
+        <div id="changeText"></div>
+        
+<script>
+    let script = ["Cuvée", "comes", "home", "in", "two", "more", "weeks!",];
+
+    let text = document.querySelector("#text");
+    let changeText = document.querySelector("#changeText");
+    let activeIndex = 0;
+
+    text.onkeydown = function() {
+        let newText = changeText.innerText + script[activeIndex] + "&nbsp"
+        changeText.innerHTML = newText;
+        activeIndex += 1 
+        activeIndex = activeIndex % script.length
+    }
+
+</script>
+</body>
+</html>

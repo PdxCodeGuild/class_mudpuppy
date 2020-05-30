@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+        <style>
+            canvas {
+                border: 2px solid black;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <canvas width="500" height="500"></canvas>
+        <script>
+            let cnv = document.querySelector("canvas");
+            let ctx = cnv.getContext("2d"); //allows 2D printing
+            let width = cnv.width;
+            let height = cnv.height;
+            let ball = {
+                x: width/10, //where the exact center of the ball falls in x axis
+                y: height - 50,    //where center of ball is on y axis, between number that is between canvas' max height dimensions
+
+                radius: 25,
+                color: 'blue',
+                vx: 1,
+                vy: -1,  //allows ball to go up in canvas
+            }
+
+            function draw() {
+            ctx.fillStyle = "rgba(255, 0, 0, .02)" //leaves semi-opaque (98% see through in a [alpha] channel) trail behind ball
+            ctx.clearRect(0, 0, width, height); //clears the screen so it looks like an animation
+            ctx.beginPath(); //start drawing
+            ctx.arc(ball.x, ball.y, ball.radius, 0, 2*Math.PI); //draw a circle
+            ctx.fillStyle = ball.color; //choose the color
+            ctx.fill(); //fill the ball
+            ball.x = ball.x + ball.vx;  //move the ball right or left
+            ball.y = ball.y + ball.vy; //move the ball up or down
+            setTimeout(draw, 2000); //wait, and then after two seconds run the named function, telling the function to do itself again
+            if (ball.x > width || ball.y < 0) { // checks if ball is too far right OR too far up, then tell us that the ball is out of bounds
+                alert("Out of bounds!")
+                
+            } else {
+                requestAnimationFrame(draw);    //moves frames at same time computer monitor refreshes??
+            }
+            }
+            draw()  //runs the function
+        </script>
+
+    </body>
+</html>

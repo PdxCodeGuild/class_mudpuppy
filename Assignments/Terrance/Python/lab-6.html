@@ -1,0 +1,49 @@
+lab-6.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+</head>
+<body>
+        <h1>Clock</h1>
+        <div id="real_time"></div>
+        <div id="date"></div>
+        <button id="start">Start</button>
+        <button id="lap">Lap</button>
+        <div id="lap-div"></div>
+        
+<script>
+    let real_time = document.querySelector("#real_time")
+    let date = document.querySelector("#date")
+    let start = document.querySelector("#start")
+    let lap = document.querySelector("#lap")
+    var d;
+    let lapDiv = document.querySelector("#lap-div")
+
+    function addTime (){
+        let newTime = d.getTime() + 1000
+        d.setTime(newTime)
+        date.innerText = d
+        console.log(d)
+    }
+    function upDateTime(){
+       real_time.innerText = new Date() 
+    }
+    start.onclick = function () {
+        d = new Date();
+        d.setHours(0,0,0,0)
+        setInterval(addTime, 1000);
+        console.log(d)
+    }
+    lap.onclick = function () {
+        lapDiv.innerHTML += date.innerText;
+        lapDiv.innerHTML += "<br>"
+    }
+    upDateTime();
+    setInterval(upDateTime, 1000);
+
+</script>
+</body>
+</html>

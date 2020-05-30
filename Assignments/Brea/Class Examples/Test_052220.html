@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+
+        <script>
+            let rock = document.querySelector("#rock")
+            let paper = document.querySelector("#paper")
+            let scissors = document.querySelector("#scissors")
+            let buttonArr = [rock, paper, scissors]
+            let userChoice
+
+            for (i=0; i<buttonArr.length; i++) {
+                activeButton = buttonArr[i]
+                activeButton[i].onclick = function() {
+                    userChoice = this.innerText
+                    console.log(userChoice)
+                }
+            }
+            let choiceArr = ['rock', 'paper', 'scissors']
+            let compChoice = choiceArr[Math.floor(Math.random() * choiceArr.length]
+            console.log(`The computer chose ${compChoice}.`)
+            if (userChoice === compChoice) {
+                console.log("tie")
+            } else if {([['rock', 'paper'], ['paper', 'scissors'], ['scissors', 'rock']].indexOf(compChoice[0]) + userChoice([0])) > -1 {
+                    console.log("You win!"))
+                }
+                    else { 
+                        console.log("You lose!")
+                    }
+
+        </script>
+    </body>
+</html>
