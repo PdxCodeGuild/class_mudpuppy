@@ -92,7 +92,7 @@ def myfunc(ari):
         age = (ari_scale[14]["ages"])
 
     if ari//14 == 1/14:
-        print(f"The ARI for this Text is {ari} This corresponds to a {ari1} level of difficulty that is suitable for an average person  years old.")
+        print(f"The ARI for this Text is {ari} This corresponds to a {ari[1]} level of difficulty that is suitable for an average person  years old.")
 
     elif ari/14 == 2/14:
         print(f"The ARI for this Text is {ari} This corresponds to a {grade} level of difficulty that is suitable for an average person {age} years old.")

@@ -15,6 +15,25 @@
     </div>
 
     <script>
+
+        let countdown = 5;
+
+        let timer = setInterval(function() {
+            if (countdown <= 0) {
+                clearInterval(timer);
+            
+
+                document.querySelector("#new").innerText = "Time is up!!";
+            }
+
+            else {
+                document.querySelector("#new").innerText = countdown + "seconds left";
+            
+            }
+            countdown -=1;
+        
+        }, 1000);
+
         //let num = Math.floor(Math.random() * list.length);
 
         let div = document.querySelector("#new")
@@ -27,23 +46,21 @@
         ];
         
         //for (i=0, i<list.length, i++) {
-        function myFunc() {
+ 
+
+        window.setTimeout(function() {
             let rnum = Math.floor(Math.random() * list.length);
             //window.location = list[rnum];
         //for (let i=0; i<list.length; i++){
-            window.location.href = list[rnum]
-        }
+            window.location.href = list[rnum];
 
-        setInterval(myFunc, 5000)
+        }, 4950)
 
-        let countown = 5;
-        let timer = setInterval(function() {
-            if (countdown <= 0) {
-                clearInterval(timer);
-            }
+        
 
-            document.querySelector()
-        })
+
+
+
         
 
         
