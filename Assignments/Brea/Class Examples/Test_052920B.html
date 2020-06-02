@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <script>
+                function drawSky() {
+                    ctx.fillStyle = skyCol; //fill in with css
+                    ctx.fillRect(0, 0, w, h)
+                }
+
+                function drawStars() {
+                    for (let i=0l i<200; i++) {
+                        ctx.beginPath();
+                        let x = Math.random() * w;
+                        let y = Math.random() * h;
+                        let r = Math.random() * 3; //gives random radius to each star
+                        ctx.arc(x, y, 3, 0, 2*Math.PI);
+                        ctx.fill();
+                    }
+                }
+
+                function drawMountain(x, y) { //x/y are going to be the peak of the mountain
+                    ctx.beginPath();
+                    ctx.moveTo(x, y);   //starts at peak and moves to the bottoms
+                    ctx.lineTo(x, h); 
+                    ctx.lineTo(x - Math.abs(h - y), h);
+                    ctx.lineTo(x + Math.abs(h - y), h);
+                    ctx.closePath();
+                    ctx.fillStyle = mountCol;
+                    ctx.fill();
+                    ctx.lineWidth = 3;
+                    ctx.stroke();
+
+                    ctx.beginPath();    //drawing the snow caps onto the moutains
+                    ctx.moveTo(x, y);
+                    ctx.lineTo(x - 100, y + 100); //want snow to start 100px below the peak
+                    ctx.closePath();
+                    ctx.fillStyle = "white";
+                    ctx.fill();
+                    ctx.stroke();
+                }
+
+                function drawMoon(x, y) {
+                    ctx.beginPath();
+                    ctx.arc(x, y, 100, 0, 2*Math.PI);
+                    ctx.fillStyle = moonCol;
+                    ctx.fill();
+
+                    let grd = ctx.createRadialGradient(x, y, 0, x, y, 150);
+                    grd.addColorStop(0, 'rgba(255, 255, 255, 0.5)')
+                    grd.addColorStop(1, 'rgba(255, 255, 255, 0');
+                    ctx.fillStyle = grd;
+                    ctx.arc(x, y, 150, 0, 2*Math.PI);
+                    ctx.fill()
+                }
+
+                function animLoop() {
+                    drawSky();
+                    drawStars();
+                    drawMoon();
+                    drawMountain(w - 250, 300);
+                }
+              animLoop()
+                
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<style>
+			#box {
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	<script>
+		let box = document.querySelector("#box"); // selecting the div
+		let url = "http://52.38.209.198:8000/randstuff/"; // the website that gives a random color
+		console.log('a'); // run first
+		function getRand() {
+			console.log('b'); // run third
+			axios.get(url) // axios is ajax is getting json
+			.then(function(response) { // runs once we get a response
+				box.style.backgroundColor = response.data.color; // changing the color
+				console.log('c'); // run fifth
+			})
+			console.log('d'); // run fourth
+		}
+		console.log('e'); // run second
+		getRand();
+		setInterval(getRand, 1000);
+	</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			canvas {
+				border: 2px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width="500" height="500"></canvas>
+	<script>
+		let cnv = document.querySelector("canvas");
+		let ctx = cnv.getContext("2d");
+		let size = 50;
+		ctx.fillRect(500 /2, 500 / 2, size, size);
+		function increaseSize() {
+			ctx.clearRect(0, 0, 500, 500);
+			console.log("running");
+			size += 1;
+			size %= 250;
+			ctx.fillRect(500 /2, 500 / 2, size, size);
+			requestAnimationFrame(increaseSize);
+		}
+		increaseSize();
+		
+	</script>
+	</body>
+</html>

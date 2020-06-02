@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            canvas {
+                border: 2px solid black;
+            }
+        </style>
+    </head>
+
+    <body>
+            <canvas width="500" height="500"></canvas>
+            <script>
+                let cnv = document.querySelector("canvas");
+                let ctx = cnv.getContext("2d");
+                let size = 50;
+                ctx.fillRect(500 /2, 500 /2, size, size); //first two numbers are where the object is, the 2nd two numbers are the size
+
+                function increaseSize() {
+                    console.log("running");
+                    ctx.clearRect(0, 0, 500, 500)
+                    size +=1;
+                    size %= 250;    //if the computer can subtract 250, then subtract 250
+                    ctx.fillRect(500 /2, 500 /2, size, size);
+                    requestAnimationFram(increaseSize); //will run at 50 frames/sec, good for ppl to see on their monitors. doesn't run when we go to another window tab
+                     
+                }
+                increaseSize();
+
+            </script>
+    </body>
+</html>
