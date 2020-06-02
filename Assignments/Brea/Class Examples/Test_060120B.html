@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            #box {
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+
+        </div>
+        <script>
+            let box = document.querySelector("#box");   //selecting the div
+            let url = "http://52.38.209.198:8000/randstuff/";   //the website that gives a random color
+            console.log('a');   //run first, one time
+            function getRand() { 
+                console.log('b'); //runs third, runs multiple times bc it's within the setInterval
+                axios.get(url)  //axios is ajax getting jason
+                function changeColor(request) {
+                    box.style.backgroundColor = response.data.color; //changing the color
+                }
+                .then(function() {  //runs once we get the response from the server
+                    console.log(response.data);
+                    axios.get(url);
+                    then.(changeColor);
+                    box.style.backgroundColor = response.data.color;    
+                    console.log('c');   //runs fifth, after we've talked to the server
+                })
+                console.log('d');   //runs fourth
+            }
+            console.log('e');   //runs second, one time
+            getRand();
+            setInterval(getRand, 1000); //sets the rate at which the getRand function runs
+        </script>
+    </body>
+</html>
