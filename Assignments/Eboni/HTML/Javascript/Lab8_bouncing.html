@@ -20,24 +20,51 @@
         let width = cnv.width;
         let height = cnv.height;
         let ball = {
-            x:50,
-            y:height-500,
+            // radius: 4,
+            px: Math.random()*width,
+            py: Math.random()*height,
+            vx: (2*Math.random()-1)*10,
+            vy:(2*Math.random()-1)*10,
+
+        //     x:50,
+        //     y:height-500,
             radius: 50,
             color: 'orange',
-            vx: 1,
-            vy: -1,
+            // vx: 1,
+            // vy: -1,
         }
 
         function draw() {
             ctx.beginPath();
-            ctx.clearRect(0,0,300,150);
-            ctx.arc(ball.x, ball.y, ball.radius, 0, 2*Math.PI);
+            ctx.clearRect(0,0,500,500);
+            ctx.arc(ball.px, ball.py, ball.radius, 0, 2*Math.PI);
             ctx.fillStyle = ball.color;
             ctx.fill();
+            ball.px = ball.px + ball.vx;
+            ball.py = ball.py + ball.vy;
+            if (ball.px > width) {
+                // ball.px = width;
+                ball.vx = ball.vx *-1;
+            }
+            if (ball.px < 0)    {
+                // ball.px = width;
+                ball.vx = ball.vx *-1;
+            }
+            if (ball.py > height){
+                // ball.py = height;
+                ball.vy = ball.vy *-1;
+            }
+            if (ball.py < 0) {
+                // ball.py = height;
+                ball.vy = ball.vy *-1;
+            }
 
+            
+                requestAnimationFrame(draw);
+            
+        
         }
         draw()
-            
     </script>
     
 </body>
