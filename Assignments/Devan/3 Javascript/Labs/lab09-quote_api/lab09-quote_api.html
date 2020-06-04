@@ -11,7 +11,8 @@
             align-items: center;
             justify-content: center;
         }
-        .quote-box {
+        #quote-box {
+            position: relative;
             width: 50vw;
             height: 50vh;
             background-color: lemonchiffon;
@@ -19,14 +20,24 @@
             border-radius: 20px;
             text-align: center;
             padding: 15px;
+        }
+        #quote-body {
             font-size: x-large;
+        }
+        #quote-author {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: larger;
+            font-style: italic;
         }
     </style>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <main>
-        <div class="quote-box">
+        <div id="quote-box">
             <div id="quote-date"></div>
             <div id="quote-body"></div>
             <div id="quote-author"></div>

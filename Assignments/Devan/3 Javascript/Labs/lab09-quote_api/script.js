@@ -1,5 +1,5 @@
 let url = 'https://favqs.com/api/';
-let quoteBox = document.querySelector('.quote-box');
+let quoteBox = document.querySelector('#quote-box')
 let quoteBoxBody = document.querySelector('#quote-body')
 let quoteBoxDate = document.querySelector('#quote-date')
 let quoteBoxAuthor = document.querySelector('#quote-author')
@@ -14,9 +14,9 @@ function getDailyQuote() {
             var qBody = quote.body
             var qAuthor = quote.author
 
-            quoteBoxBody.innerText = qBody
             quoteBoxAuthor.innerText = qAuthor
             quoteBoxBody.innerText = qBody
+            quoteBoxBody.innerHTML = "&quot;" + qBody + "&quot;"
             
             console.log(data)
 
