@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            canvas {
+                border: 2px solid mediumaquamarine;
+            }
+            #cnv {
+
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="cnv" width="500" height="500"></canvas>
+        <canvas id="cnv2" width="500" height="500"></canvas>
+        <script>
+            let cnv = document.querySelector("#cnv");
+            let ctx = cnv.getContext("2d")
+            const oneSecond = 1000;
+            let ctx.fillStyle = "DarkGoldenRod"
+            let xPos = 0;
+            let yPos = 0;
+            let width = 50;
+            let height = 50;
+            let ctx.fillRect(xPos, yPos, width, height);
+            let xVel = 2;   //rate is 2px for every animation frame
+            let yVel = 2.1;
+
+            function moveRect() {
+                xPos += xVel;   //ch
+                yPos += yVel;
+                ctx.clearRect(0, 0, 500, 500);
+                ctx.fillRect(xPos, yPos, width, height);
+                if (xPos + height < 500 || xPos < 0) {
+                    xVel *= -1;
+                }
+                if (yPos + height > 500 || yPos < 0) {
+                    yVel *= -1;
+                }
+
+                requestAnimationFrame(moveRect);
+            }
+            // setInterval(moveRect, oneSec/5);
+            moveRect();
+        </script>
+    </body>
+</html>
