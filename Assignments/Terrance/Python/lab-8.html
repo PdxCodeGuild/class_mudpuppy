@@ -1,0 +1,56 @@
+lab-8.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bouncing Ball</title>
+    <style>
+        canvas {
+                border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bouncing Ball</h1>
+    <canvas width="500" height="500">
+    
+    </canvas>
+
+    <script>
+        const canvas = document.querySelector("canvas");
+        const ctx = canvas.getContext('2d');
+              
+        let ball = {
+            radius: 4,
+            px: Math.random()*canvas.width,
+            py: Math.random()*canvas.height,
+            vx: (2*Math.random()-1) * 5,
+            vy: (2*Math.random()-1) * 5,
+            ay: .05
+        };
+        
+    function moveBall() {
+        ctx.clearRect(0,0,500,500);
+        ctx.beginPath();
+        ctx.arc(ball.px, ball.py, ball.radius, 0, 2 * Math.PI, false);
+        ctx.fillStyle = 'blue';
+
+        ctx.fill();
+        ball.px += ball.vx; // changing position
+        ball.py += ball.vy; 
+        ball.vy += ball.ay; // changing the gravity
+        if (ball.px + ball.vx > 500 || ball.px + ball.vx < 0) {
+            ball.vx *= -.5;
+        }
+        if (ball.py + ball.vy > 500 || ball.py + ball.vy < 0) {
+            ball.vy *= -.5;
+        }
+        
+        requestAnimationFrame(moveBall); // loop for function
+    }
+    moveBall() // setInterval(moveBall, 250); 
+    
+    </script>
+</body>
+</html>
