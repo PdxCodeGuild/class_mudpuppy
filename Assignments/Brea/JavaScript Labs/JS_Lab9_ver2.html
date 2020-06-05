@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inika&display=swap" rel="stylesheet">
+        <style>
+            body {
+                /* background-image: url("https://66.media.tumblr.com/6b42daf4411c7eb1cadc7b9942c58625/c9cb2c5c9c814e5c-9d/s540x810/623a7b84221ae6510fd0a9e0124794f962f1da4c.jpg"); */
+                background-repeat: space;
+                background-size: auto;
+                font-family: 'Inika', serif;
+            }
+            #quote-text {
+                display: flexbox;
+                justify-content: space-evenly;
+                flex-direction: row;
+                width: 500px;
+                height: 250px;
+                margin: 20px;
+                padding: 10px;
+                border: 2px solid black;
+                background-color: white;
+            }
+        </style>
+
+        <body>
+            <div id="user-input">What word would you like to find a quote about?</div>
+            <button id="search">Search</button>
+            <input id="tag"></input>
+            <div id="quote-text"></div>
+            <script>
+                let tag = document.querySelector("#tag")
+                let search = document.querySelector("#search")
+                let quoteText = document.querySelector("#quote-text");
+                let url = "https://favqs.com/api/qotd";
+                search.onclick = function() {
+                    axios ({
+                        method: 'get',
+                        url: `https://favqs.com/api/quotes/`,
+                        params: {
+                            type: 'tags',
+                            filter: tag.value
+                        },
+                        headers: {
+                            Authorization: 'Token token=thisissecret'
+                        }
+                    }).then(function(response) {
+                        console.log(response)
+                        quoteText.innerText = `Here's a quote about ${tag.value}: \n
+                        ${response.data.quotes[0].body}`
+                    });
+                }
+            </script>
+        </body>
+    </head>
+</html>
