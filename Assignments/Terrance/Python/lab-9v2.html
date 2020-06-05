@@ -1,0 +1,49 @@
+lab-9v2.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Random Quote</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="quote"></div>
+    <div id="author"></div>
+    <script>
+        let quoteDiv = document.querySelector("#quote");
+        let authorDiv = document.querySelector("#author");
+        let quoteID = 3;
+        // axios.get("https://favqs.com/api/qotd/").then(
+        //     function(response){console.log(response)
+        //     quoteDiv.innerText = response.data.quote.body;
+        //     authorDiv.innerText = response.data.quote.author;
+        //     })
+        axios({
+            method: 'get',
+            url: "https://favqs.com/api/quotes/" + quoteID,
+            headers: {
+            Authorization: ""
+            } 
+        })
+        .then(function(response){console.log(response)
+            quoteDiv.innerText = response.data.body;
+            authorDiv.innerText = response.data.author;
+            })
+
+/*
+// GET request for remote image in node.js
+axios({
+  method: 'get',
+  url: 'http://bit.ly/2mTM3nY',
+  responseType: 'stream'
+})
+  .then(function (response) {
+    response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+  });
+*/
+    </script>
+</body>
+</html>
