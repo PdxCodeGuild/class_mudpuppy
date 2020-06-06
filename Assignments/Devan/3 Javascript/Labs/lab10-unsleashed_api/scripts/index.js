@@ -8,8 +8,8 @@ require('dotenv').config()
 let API_ID = process.env.API_ID
 let API_KEY = process.env.API_KEY
 
-/* NOTE: Definging search params, they still need to be
-        added to the axios method and the urlParam */
+/* NOTE: Defining search params, they still need to be
+added to the axios method and the urlParam */
 
 let ORDER_STATUS = 'Parked'
 let PAGE_SIZE = 2
@@ -34,8 +34,8 @@ function getSalesOrders() {
         },
     }).then(function (response) {
         console.log(Object.keys(response))
-        var salesOrders = response.data.Items // NOTE: An array of the orders
-        var orderLines = salesOrders[0].SalesOrderLines // NOTE: The firt index of salesOrders, a array of the sales lines
+        var salesOrders = response.data.Items // NOTE: An array of the filtered sales orders
+        var orderLines = salesOrders[0].SalesOrderLines // NOTE: An array of the sales lines from the 1st index of salesOrders
         console.log(salesOrders)
         orderLines.forEach(line => {
             if (line.Product.ProductCode === 'HB-VF-01') {
