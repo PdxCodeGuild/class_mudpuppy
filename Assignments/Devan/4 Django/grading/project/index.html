@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <main>
+        <div id="response-div"></div>
+    </main>
+
+    <script>
+        let url = "http://127.0.0.1:8000/grading/"
+        let resDiv = document.querySelector("#response-div")
+
+
+        axios({
+            url: url,
+            method: "GET",
+            params: {
+                grade: 85,
+            }
+        }).then(function (res) {
+            resDiv.innerText = res.data.grade
+        })
+
+        /*
+        let url = 'https://favqs.com/api/';
+        let quoteBox = document.querySelector('#quote-box')
+        let quoteBoxBody = document.querySelector('#quote-body')
+        let quoteBoxDate = document.querySelector('#quote-date')
+        let quoteBoxAuthor = document.querySelector('#quote-author')
+
+
+        function getDailyQuote() {
+            let dailyQuote = url + 'qotd'
+            axios.get(dailyQuote)
+                .then(function (res) {
+                    var data = res.data
+                    var quote = data.quote
+                    var qBody = quote.body
+                    var qAuthor = quote.author
+
+                    quoteBoxAuthor.innerText = qAuthor
+                    quoteBoxBody.innerText = qBody
+                    quoteBoxBody.innerHTML = "&quot;" + qBody + "&quot;"
+
+                    console.log(data)
+
+
+                })
+        }
+
+        getDailyQuote()
+        */
+    </script>
+</body>
+
+</html>
