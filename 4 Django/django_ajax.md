@@ -48,7 +48,7 @@ project
 
 The first confusing thing is that it made a folder called `project`, and inside of that folder is another folder called `project`. This can be very confusing.
 
-To make this a little cleaner, let's use the `mv` (move) command, which can move or rename files:
+To make this a little cleaner, let's use the `mv` (move) command, which can move or rename files. We can rename the parent folder to `grading`, and keep the child folder as `project`:
 
 ``` mv project grading ```
 
@@ -69,6 +69,8 @@ For this lab, we should only have to edit two files, `settings.py` and `urls.py`
 
 ## Part 3
 ### Configuring `settings.py`
+
+Let's open the folder with a text editor (for example, vscode). Now we can use our editor to change the files.
 
 I will add comments to make it clear which lines I am changing.
 
