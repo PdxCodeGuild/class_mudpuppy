@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    </head>
+    <body>
+        <h1 id="author"></h1>
+        <ul id="quote-output"></ul>
+        <script>
+            let quoteOutput = document.querySelector("#quote-output");
+            let authorStr = "james+baldwin"
+            axios ({
+                method: 'get',
+                url: 'https://favqs.com/api/quotes/?filter=${author}&type=author',
+                params: {
+                    type: 'author',
+                    filter: authorStr;
+                },
+                headers: {
+                    Authorization: Token token="(security token key thing, don't push to github)",
+                }
+            }).then(function(response) {
+                console.log(response);
+            })
+        </script>
+    </body>
+</html>

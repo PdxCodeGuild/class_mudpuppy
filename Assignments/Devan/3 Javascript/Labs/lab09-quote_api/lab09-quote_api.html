@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote</title>
+    <style>
+        main {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #quote-box {
+            position: relative;
+            width: 50vw;
+            height: 50vh;
+            background-color: lemonchiffon;
+            border: 3px solid chocolate;
+            border-radius: 20px;
+            text-align: center;
+            padding: 15px;
+        }
+        #quote-body {
+            font-size: x-large;
+        }
+        #quote-author {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: larger;
+            font-style: italic;
+        }
+    </style>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <main>
+        <div id="quote-box">
+            <div id="quote-date"></div>
+            <div id="quote-body"></div>
+            <div id="quote-author"></div>
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

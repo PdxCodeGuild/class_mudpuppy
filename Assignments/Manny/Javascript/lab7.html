@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Pelota</title>
+
+    <style>
+        canvas {
+            border: 2px solid pink;
+        }
+    </style>
+
+</head>
+<body>
+    <canvas width = "500" height = "500"></canvas>
+    <script>
+        let cnv = document.querySelector("canvas")
+        let ctx = cnv.getContext("2d");
+        let width = cnv.width;
+        let height = cnv.height;
+        let ball = {
+            px: Math.random()*width,
+            py: Math.random()*height,
+            vx: (2*Math.random()-1)*10,
+            vy:(2*Math.random()-1)*10,
+
+     
+            radius: 150,
+            color: 'cyan',
+           
+}
+
+        function pelota() {
+            ctx.beginPath();
+            ctx.clearRect(0,0,500,500);
+            ctx.arc(ball.px, ball.py, ball.radius, 0, 2*Math.PI);
+            ctx.fillStyle = ball.color;
+            ctx.fill();
+            ball.px = ball.px + ball.vx;
+            ball.py = ball.py + ball.vy;
+            if (ball.px > width) {
+                
+                ball.vx = ball.vx *-.5;
+            }
+            if (ball.px < 0)    {
+        
+                ball.vx = ball.vx *-2;
+            }
+            if (ball.py > height){
+            
+                ball.vy = ball.vy *-2;
+            }
+            if (ball.py < 0) {
+                
+                ball.vy = ball.vy *-2;
+            }
+
+            
+                requestAnimationFrame();
+}
+pelota()
+    </script>
+    
+</body>
+</html>

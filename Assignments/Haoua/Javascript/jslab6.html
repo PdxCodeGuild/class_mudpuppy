@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://use.fontawesome.com/0208a2bb23.js"></script>
 </head>
 <body>
     <div id="yonce">The time is :
@@ -14,23 +15,170 @@
 
     </div>
 
-    <button id="start">START</button>
+    <div id ="div">
+
+    </div>
+
+    <button id="start">
+        <i class="fa fa-play" aria-hidden="true"></i>
+    </button>
+
+
+    <button id="stop">
+        <i class="fa fa-pause" aria-hidden="true"></i>
+    </button>
+
+    <button id="refresh">
+        <i class="fa fa-refresh" aria-hidden="true"></i>
+
+    </button>
+
+    <button id="save">
+        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+    </button>
 
 
 
     <script>
-        let increment = setInterval(myFunc, 1000)
+    //-------------------Version 1-------- //
+        
+        
+        //let increment = setInterval(myFunc, 1000)
 
-        function myFunc() {
-            let date = new Date();
-            document.querySelector("#new").innerHTML = date
-        }
+        //function myFunc() {
+            //let date = new Date();
+           // document.querySelector("#new").innerHTML = date
+       // }
         //----------------Version 2----------------
+        let laps = [];
+        let save = document.querySelector("#save")
+        let start = document.querySelector("#start")
+        let stopper = document.querySelector("#stop")
+        let refresh = document.querySelector("#refresh")
+        let display = document.querySelector("#new")
+        let pause = 0;
+        let run = 0;
 
+        let newDiv = document.querySelector("#div")
+
+
+        var notStarted;
+        var interval;
+
+        var sTime;
+
+
+        var stTime;
+        var uTime;
+
+
+
+        start.onclick = function startWatch() {
+            if (!run) {
+            
+                stTime = new Date().getTime();
+                interval = setInterval(showTime, 1)
+                pause = 0;
+                run = 1;
+
+                display.innerText = showTime();
+                
+            }
+
+            
+        }
+
+
+        stopper.onclick = function stopWatch() {
+            
+           
+           
+
+            if (!notStarted) {
+
+            }
+
+            else if (!pause) {
+                clearInterval(interval);
+                sTime = notStarted;
+                pause = 1;
+                run = 0;
+                //laps.push(display.innerText)
+
+            }
+
+            else {
+                startWatch();
+            }
+
+            //laps.push(newDiv.innerText)
+        }
+
+        refresh.onclick = function restart() {
+            //laps.push(display.innerText)
+            clearInterval(interval);
+            sTime = 0;
+            notStarted = 0;
+            pause = 0;
+            run = 0;
+            display.innerText = "Start Timer!"
+
+        }
+
+
+     
+
+        function showTime() {
+            uTime = new Date().getTime();
+            if (sTime) {
+                notStarted = (uTime-stTime) + sTime;
+            }
+
+            else {
+                notStarted = uTime-stTime;
+            }
+            
+            
+            let hours = Math.floor((notStarted % (1000*60*60*24))/(1000*60*60));
+            let sec = Math.floor((notStarted % (1000 *60))/1000);
+            let mins = Math.floor((notStarted % (1000 * 60 *60))/(1000 * 60));
+            let milli = Math.floor((notStarted %(1000 * 60))/100);
+
+
+            hours = (hours<10) ? "0" + hours : hours;
+            mins= (mins<10) ? "0" + mins: mins;
+            milli= (milli < 100) ? (milli < 10)? "0" + milli: "0" + milli : milli;
+            sec = (sec<10) ? "0" + sec : sec;
+            display.innerText = hours + ":" + mins + ":" + sec + ":" + milli;
+            
+            //newDiv.innerText = display.innerText
+          
+    
+
+        }
         
 
-        
+        save.onclick = function () {
+            //var tag = document.createElement("div")
+            var lap = display.innerText;
+            var lapper = document.createTextNode(`${lap}`)
+            laps.push(lap)
+            newDiv.appendChild(lapper)
+            console.log(lap)
+            console.log(laps)
 
+            while (i=0, i<laps.length, i++) {
+                var create = document.createElement("div")
+                var lapper = document.createTextNode(`${lap}`)
+                newDiv.appendChild(create)
+                create.appendChild(lapper)
+                newDiv.appendChild(lapper)
+            }
+        
+        }
+        
+        //laps.push(newDiv.innerText)
+        
         
     </script>
 </body>

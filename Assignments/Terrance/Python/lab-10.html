@@ -1,0 +1,41 @@
+lab-10.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Any API</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+</head>
+<body>
+   <div id="first-name"></div>
+   <div id="last-name"></div>
+   <div id="dob-age"></div>
+   <div id="gender"></div>
+   <div id="email-address"></div>
+   <div id="phone"></div>
+    <script>
+    let firstName = document.querySelector("#first-name")
+    let lastName = document.querySelector("#last-name")
+    let dobAge = document.querySelector("#dob-age")
+    let gender = document.querySelector("#gender")
+    let emailAddress = document.querySelector("#email-address")
+    let phone = document.querySelector("#phone")
+        axios({
+            method: 'get',
+            url: "https://randomuser.me/api/",
+        })
+        .then(function(response){console.log(response)
+        let body = document.querySelector("body")
+        firstName.innerText = response.data.results[0].name.first
+        lastName.innerText = response.data.results[0].name.last
+        dobAge.innerText = response.data.results[0].dob.age
+        gender.innerText = response.data.results[0].gender
+        emailAddress.innerText = response.data.results[0].email
+        phone.innerText = response.data.results[0].phone
+            })
+
+    </script>
+</body>
+</html>
