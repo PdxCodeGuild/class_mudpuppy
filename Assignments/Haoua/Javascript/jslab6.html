@@ -33,6 +33,10 @@
 
     </button>
 
+    <button id="save">
+        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+    </button>
+
 
 
     <script>
@@ -46,7 +50,8 @@
            // document.querySelector("#new").innerHTML = date
        // }
         //----------------Version 2----------------
-        let laps = {}
+        let laps = [];
+        let save = document.querySelector("#save")
         let start = document.querySelector("#start")
         let stopper = document.querySelector("#stop")
         let refresh = document.querySelector("#refresh")
@@ -76,16 +81,18 @@
                 pause = 0;
                 run = 1;
 
-                display.innerText = (interval)
-                laps.push(interval)
+                display.innerText = showTime();
+                
             }
+
+            
         }
 
 
         stopper.onclick = function stopWatch() {
             
            
-            
+           
 
             if (!notStarted) {
 
@@ -96,6 +103,7 @@
                 sTime = notStarted;
                 pause = 1;
                 run = 0;
+                //laps.push(display.innerText)
 
             }
 
@@ -103,10 +111,11 @@
                 startWatch();
             }
 
-            
+            //laps.push(newDiv.innerText)
         }
 
         refresh.onclick = function restart() {
+            //laps.push(display.innerText)
             clearInterval(interval);
             sTime = 0;
             notStarted = 0;
@@ -115,6 +124,9 @@
             display.innerText = "Start Timer!"
 
         }
+
+
+     
 
         function showTime() {
             uTime = new Date().getTime();
@@ -134,16 +146,39 @@
 
 
             hours = (hours<10) ? "0" + hours : hours;
-            sec = (mins<10) ? "0" + sec: sec;
-            milli= (milli < 100) ? (milli < 10) ? "00" + milli : "0" + milli : milli;
+            mins= (mins<10) ? "0" + mins: mins;
+            milli= (milli < 100) ? (milli < 10)? "0" + milli: "0" + milli : milli;
+            sec = (sec<10) ? "0" + sec : sec;
             display.innerText = hours + ":" + mins + ":" + sec + ":" + milli;
             
-
-            newDiv.innerText = laps.value;
+            //newDiv.innerText = display.innerText
+          
+    
 
         }
         
 
+        save.onclick = function () {
+            //var tag = document.createElement("div")
+            var lap = display.innerText;
+            var lapper = document.createTextNode(`${lap}`)
+            laps.push(lap)
+            newDiv.appendChild(lapper)
+            console.log(lap)
+            console.log(laps)
+
+            while (i=0, i<laps.length, i++) {
+                var create = document.createElement("div")
+                var lapper = document.createTextNode(`${lap}`)
+                newDiv.appendChild(create)
+                create.appendChild(lapper)
+                newDiv.appendChild(lapper)
+            }
+        
+        }
+        
+        //laps.push(newDiv.innerText)
+        
         
     </script>
 </body>
