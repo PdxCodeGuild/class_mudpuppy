@@ -1,7 +1,12 @@
-function randRange(stuff) {
-    return Math.floor(Math.random() *stuff)
+function randRange(inNum) {
+    return Math.floor(Math.random() *inNum)
 }
 
+function randChoice(inArray) {  
+    let length = inArray.length
+    let randIndex = randRange (length)
+    return inArray [randIndex]
+}
 alert("Welcome to Rock, Paper, Scissors!!!")
 
 while (true) {
@@ -11,57 +16,55 @@ while (true) {
 
     let computer = randChoice(choices)
     console.log(computer)
-}
 
-if (user === computer) {
-    alert(tie)
-    console.log("you tied!")
-}
 
-if (user === "rock" ) {
-    if(computer === "scissors") {
-        alert("You picked rock and I picked scissors\n you win!")
+    if (user === computer) {
+        alert("tie")
+        console.log("you tied!")
+    }
+
+    if (user === "rock" ) {
+        if(computer === "scissors") {
+            alert("You picked rock and I picked scissors\n you win!")
+        }
+   
+        else if (computer === "paper") {
+            alert("You picked rock and I picked papers\n I win!")
+        }
+    }
+
+
+    if (user === "paper") {
+        if (computer === "scissors") {
+            alert("You picked paper and I picked scissors\n I win!")      
+        }
+    }
+
+
+    if (user === "paper") {
+        if (computer === "rock") {
+            alert("You picked paper and I picked rock\n you win!")      
+        }
+    }
+
+
+    if (user === "scissors") {
+        if (computer === "rock") {
+            alert("You picked scissors and I picked rock\n I win!")       
+        }
+    }
+
+    if (user === "scissors") {
+        if (computer === "paper") {
+            alert("You picked scissors and I picked paper\n you win!")      
+        }
+    }
+
+    if (user === "done") {
+        alert("Thanks for playing!")
+        break
     }
 }
-
-if (user === "rock") {
-    if (computer === "paper") {
-        alert("You picked rock and I picked papers\n I win!")
-    }
-}
-
-
-if (user === "paper") {
-    if (computer === "scissors") {
-        alert("You picked paper and I picked scissors\n I win!")      
-    }
-}
-
-
-if (user === "paper") {
-    if (computer === "rock") {
-        alert("You picked paper and I picked rock\n you win!")      
-    }
-}
-
-
-if (user === "scissors") {
-    if (computer === "rock") {
-        alert("You picked scissors and I picked rock\n I win!")       
-    }
-}
-
-if (user === "scissors") {
-    if (computer === "paper") {
-        alert("You picked scissors and I picked paper\n you win!")      
-    }
-}
-
-if (user === "done") {
-    alert("Thanks for playing!")
-    break
-}
-
 
 
 

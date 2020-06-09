@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <style>   
+            #hack{
+                width: 100vw; 
+                height: 100vh;
+
+            }
+
+        </style>
+	</head>
+	<body>
+		<div id="hack"><div>
+	<script>
+        let hack = document.querySelector("#hack");
+        let text = `import random 
+        print("Welcome to the Magic 8 Ball!")
+        
+        predictions1 = ["Don't count on it", "Easily", "It is certain", "It's lookin really good", "NAW"]
+        predictions2 = ["Try again later", "Better not tell you know", "IDK", "Who even knows", "Ask Jesus"]
+        predictions3 = ["Reply hazy", "In your dreams", "Duh", "My reply is no.", "YAS"]
+        
+        user = input("Ask the Magic 8 Ball a question : ")
+        
+        final = predictions1 + predictions2 + predictions3
+        final2 = print(random.choice(final))
+        
+        user2 = input("Want to keep going? : ")
+        user3 = user2.lower()
+        
+        response = ["yes", "yeah", "yas", "please"]
+        
+        while True:
+            if user3 in response:
+                input("Ask me a question : ")
+                print(random.choice(final))
+                user3 = input("Would you like to ask another question? : ")
+                continue
+            else:
+                print("Thank you for playing")
+                break`
+        let textArr = text.split("\n")
+        let counter = 0
+		document.body.onkeydown = function() {
+//			newNum = parseInt(num.innerText) + 1;
+//			num.innerText = newNum;
+            hack.innerHTML += textArr [counter]+ "&nbsp"
+            console.log (counter) 
+            counter++
+            if (counter >= textArr.length) {counter = 0}
+            
+		}
+	</script>
+	</body>
+</html>
+
+
+
+<!-- hack.innerText += "just"+" " -->

@@ -10,12 +10,12 @@ alert (" Welcome to Mad Libs")
 // Round and round
 // The wheels on the bus go round and round
 // All through the town
-let userInput = prmopt ("please enter a random noun, random verb, or random adjective to help fill in the blank ").toLowerCase();
+let userInput = prompt ("please enter a random noun, random verb, or random adjective to help fill in the blank ").toLowerCase();
 
 
-let adjective = input("Enter an adjective: ")
-let noun = input("Enter a noun: ")
-let verb = input("Enter a verb: ")
+let adjective = prompt("Enter an adjective: ")
+let noun = prompt("Enter a noun: ")
+let verb = prompt("Enter a verb: ")
 //  There was a farmer who had {noun},
 //  And Bingo was his name-o.
 //  B-I-N-G-O
