@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+        <style>
+            #lyrics {
+                display: flexbox;
+                justify-content: space-evenly;
+                flex-direction: row;
+                width: 500px;
+                height: 500px;
+                margin: 20px;
+                padding: 10px;
+                border: 2px solid black;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1></h1>
+        <div class="prompt">Give me a musical artist:</div>
+        <input id="artist-input"></input>
+        <br>
+        <div class="prompt">Give me one of their song titles:</div>
+        <input id="title-input"></input>
+        <button id="click-here">Search</button>
+        <div id="lyrics"></div>
+        <script>
+            
+            let titleInput = document.querySelector("#title-input")
+            let clickHere = document.querySelector("#click-here")
+            let lyrics = document.querySelector("#lyrics")
+            let url = "https://api.lyrics.ovh/v1/artist/title"
+            clickHere.onclick = function () {
+                axios ({
+                    method: 'get',
+                    url: url,
+                    params: {
+
+                    }
+                }).then(function(response) {
+                    lyrics.innerText = response.data.artist.title
+                })
+            }
+
+        </script>
+    </body>
+</html>
