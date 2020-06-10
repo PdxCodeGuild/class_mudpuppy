@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <!-- <input id="num-input" placeholder="Give me a num">
+		<button id="num-button">Add</button>
+        <div id="div-holder"></div> -->
+    <input id="todos-input">
+    <button id="todos-button">Add</button>
+    <ul id="todos-holder"></ul>
+<script>
+    let todosInput= document.querySelector("#todos-input")
+    let todosButton= document.querySelector("#todos-button")
+    let todosHolder= document.querySelector("#todos-holder")
+//numButton.onclick = function() { // when they click the button
+    todosButton.onclick = function() {
+        console.log(todosInput.value)
+
+        let newLi = document.createElement("li")
+        let newSpan = document.createElement("span")
+        let newButton = document.createElement("button")
+        newSpan.innerText=todosInput.value
+        newButton.innerText= "Done"
+        newLi.appendChild(newSpan)
+        newLi.appendChild(newButton) 
+        todosHolder.appendChild(newLi)
+       // newButton.onclick = function() {
+       //     numSpan = this.parentNode.firstChild
+       //     numSpan.innerText = parseInt(numSpan.innerText) + 1
+        newButton.onclick = function () {
+            todosSpan = this.parentNode.firstChild
+        //    object.style.textDecoration="underline"
+            todosSpan.style.textDecoration="line-through"
+        }
+    }
+
+</script>   
+</body>
+</html>

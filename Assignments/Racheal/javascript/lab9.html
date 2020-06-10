@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id= "body"></div>
+    <div id= "author"></div>
+    <script>
+        let body = document.querySelector ("#body")
+        let author = document.querySelector("#author")
+
+        axios.get("https://favqs.com/api/qotd")
+        .then(function (response) {
+            // handle success
+            console.log(response);
+            author.innerText = response.data.quote.author
+            body.innerText = response.data.quote.body
+          })
+    </script>
+    <!-- axios.get('/user?ID=12345')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  }); -->
+
+</body>
+</html>

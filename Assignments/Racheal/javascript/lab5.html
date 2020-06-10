@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <p> WELCOME! Please Wait to be Redirected.</p>
+    </div>
+
+    <div id="new">
+
+    </div>
+
+    <script>
+
+        let countdown = 5;
+
+        let timer = setInterval(function() {
+            if (countdown <= 0) {
+                clearInterval(timer);
+            
+
+                document.querySelector("#new").innerText = "Time is up!!";
+            }
+
+            else {
+                document.querySelector("#new").innerText = countdown + "seconds left";
+            
+            }
+            countdown -=1;
+        
+        }, 1000);
+
+        //let num = Math.floor(Math.random() * list.length);
+
+        let div = document.querySelector("#new")
+
+        let list = [
+        "https://www.nike.com/",
+        "https://www.adidas.com/us",
+        "https://www.newbalance.com/",
+        "https://www.reebok.com/us",
+        ];
+        
+        //for (i=0, i<list.length, i++) {
+ 
+
+        window.setTimeout(function() {
+            let rnum = Math.floor(Math.random() * list.length);
+            //window.location = list[rnum];
+        //for (let i=0; i<list.length; i++){
+            window.location.href = list[rnum];
+
+        }, 4950)
+
+        
+
+
+
+
+        
+
+        
+        //}
+        //let rnum = Math.floor(Math.random() * list.length);
+        //window.location = list[rnum];
+
+    </script>
+    
+</body>
+</html>
