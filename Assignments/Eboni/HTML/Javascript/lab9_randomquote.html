@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id = "author"></div>
+
+    <div id = "quote"></div>
+    <script>
+        let author = document.querySelector("#author");
+
+        let quote = document.querySelector("#quote");
+        let url = "https://favqs.com/api/qotd";
+            axios.get(url)
+                .then(function(response) {
+                console.log(response.data.quote.author)
+            author.innerText = response.data.quote.author
+
+            quote.innerText = response.data.quote.body
+         
+            })
+        
+    </script>
+</body>
+</html>

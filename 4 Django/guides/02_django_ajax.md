@@ -1,3 +1,10 @@
+[//]: # (
+    TODO:
+    * Make a separate pipenv file
+    * Link to that
+    * Advise pipenv use, for windows compatability
+)
+
 # Grading Lab with Django/Ajax
 
 ## Introduction

@@ -1,0 +1,13 @@
+{% if latest_question_list %}
+    <ul>
+        <li><a heref ="{% url 'polls:detail' question.id %}">{{ <question class="question_text"></question></a>
+        
+        </li>
+   
+
+</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

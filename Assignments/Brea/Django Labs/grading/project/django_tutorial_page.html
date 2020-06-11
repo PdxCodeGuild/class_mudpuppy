@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Baloo Tammudu 2', cursive;
+            }
+            #grade-ouput {
+                width: 200px;
+                height: 100px;
+                margin: 20px;
+                border: 2px solid black;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h1>Grade Check</h1>
+        <div id="prompt">Points please!</div>
+        <input id="grade-input"></input>
+        <br>
+        <button id="grade-button">How'd I do?</button>
+        <div id="grade-output"></div>
+        <script>
+            let gradeInput = document.querySelector("#grade-input")
+            let gradeButton = document.querySelector("#grade-button")
+            let gradeOutput = document.querySelector("#grade-output")
+            let url = "http://127.0.0.1:8000/grading/" //is this right?
+            gradeButton.onclick = function() {
+                axios ({
+                    method: 'get',
+                    url: url,
+                    params: {
+                        grade: gradeInput.value,
+                        sky: 'blue',
+                        
+                    },
+                }).then(function(response) {
+                    console.log(response)
+                    gradeOutput.innerText = `Your grade this semester is ${response.data.grade}`
+                })
+            }
+        </script>
+    </body>
+</html>
