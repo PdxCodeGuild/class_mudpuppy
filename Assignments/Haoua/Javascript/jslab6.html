@@ -161,7 +161,7 @@
         save.onclick = function () {
             //var tag = document.createElement("div")
             var lap = display.innerText;
-            var lapper = document.createTextNode(`${lap}`)
+            var lapper = document.createTextNode(`Lap: ${lap}\n\n`)
             laps.push(lap)
             newDiv.appendChild(lapper)
             console.log(lap)
@@ -169,7 +169,7 @@
 
             while (i=0, i<laps.length, i++) {
                 var create = document.createElement("div")
-                var lapper = document.createTextNode(`${lap}`)
+                var lapper = create.createTextNode(`${lap}\n\n`)
                 newDiv.appendChild(create)
                 create.appendChild(lapper)
                 newDiv.appendChild(lapper)
