@@ -111,7 +111,7 @@ urlpatterns = [
 ]
 ```
 
-Now let's pretend that you are hosting this site locally at `http://127.0.0.1:8000`. If you go to your internet browser, and at the top you type `http://127.0.0.1:8000/admin/`, then django will send your request to this `urls.py` file, and it'll parse the url path to deside to send you to the builtin admin site. If you go to `http://127.0.0.1:8000/emo/abc/`, then python will look at the first part of the url path, and it'll decide to send you to a file inside the directory `emo_app` called `emo_urls.py`. Django will send the remaining path, `abc/` to that file for processing. We don't have a `emo_urls.py` yet, so we'll have to make one.
+Now let's pretend that you are hosting this site locally at `http://127.0.0.1:8000`. If you go to your internet browser, and at the top you type `http://127.0.0.1:8000/admin/`, then django will send your request to this `urls.py` file, and it'll parse the url path to deside to send you to the builtin admin site. If you go to `http://127.0.0.1:8000/links/abc/`, then python will look at the first part of the url path, and it'll decide to send you to a file inside the directory `links_app` called `links_urls.py`. Django will send the remaining path, `abc/` to that file for processing. We don't have a `links_urls.py` yet, so we'll have to make one.
 
 ```python
 from django.urls import path, include
@@ -121,7 +121,7 @@ urlpatterns = [
        path('', views.index),
 ]
 ```
-This file is checking if there's nothing left after the initial `emo/` in the url path, and as long as that's true it's sending the user to the `index` function inside the `views.py` file. That file doesn't have that function in it, so let's add that function into `views.py`.
+This file is checking if there's nothing left after the initial `links/` in the url path, and as long as that's true it's sending the user to the `index` function inside the `views.py` file. That file doesn't have that function in it, so let's add that function into `views.py`.
 
 ```python
 from django.shortcuts import render
@@ -137,7 +137,7 @@ Now, in your pipenv environment, make sure that you are in the same directory as
 py manage.py runserver
 ```
 
-Now you should be able to go to [http://127.0.0.1:8000/emo/](http://127.0.0.1:8000/links/) and see "hello".
+Now you should be able to go to [http://127.0.0.1:8000/links/](http://127.0.0.1:8000/links/) and see "hello".
 
 ## Part 4: Using the Database<a name="using-database"></a>
 
@@ -265,6 +265,7 @@ Now this will add our links into the database. You can check the database using 
 
 This is your views.py:
 ```python
+from django.shortcuts import render
 from .models import Link
 
 def index(request):
@@ -292,7 +293,7 @@ The second function takes a new parameter, `in_slug`. We will see how to pass in
 Now let's add to the `links_urls.py` file:
 
 ```python
-app_name = "links_paths"
+app_name = "links_paths" # New line
 urlpatterns = [
     path('list/', views.index, name="index_path"), # Changed line
     path('l/<str:in_slug>/', views.link_slug, name="slug_path"), # New line
@@ -444,10 +445,22 @@ Now we can add to our custom command since we have to populate our comments as w
                                        ) # New line
 ```
 
+And we can add an import to the top:
+
+```python
+from django.core.management.base import BaseCommand
+from links_app.models import Link, Comment # Changed line
+from django.utils.text import slugify
+```
+
 Here we are grabbing our google link, and creating two comments that are associated with that link.
 
 
 Now we can change our `views.py`, since we actually have real comments:
+```python
+from django.shortcuts import render
+from .models import Link, Comment # Changed line
+```
 
 ```python
        comments = found_link.comment_set.all() # Changed line
@@ -468,8 +481,16 @@ def add_comment(request):
        )
        new_comment.save()
        link_slug = Link.objects.get(id=data['link']).slug
-       return HttpResponseRedirect(reverse('links:link_slug', args=[link_slug]))
+       return HttpResponseRedirect(reverse('links_paths:slug_path', args=[link_slug]))
 ```
+
+Also, add some imports:
+```python
+from django.shortcuts import render, reverse # Changed line
+from django.http import HttpResponseRedirect # New line
+from .models import Link, Comment
+```
+
 
 Here we are receiving a POST request and parsing the data. We can inject the relavent link's ID into the request, so that we know what link the user was looking at when they made the comment. If they were looking at the `google.com` link with an ID of `1`, we want to associate their comment with that link, and not the link to `avclub.com`.
 
@@ -478,25 +499,27 @@ We can put the info into our database by creating and saving an instance of our 
 Now let's add one more path to our `links_urls.py`:
 ```python
 urlpatterns = [
-    path('list/', views.link_list, name="link_list",),
-    path('s/<str:in_slug>/', views.link_slug, name="link_slug",),
-    path('comment/', views.add_comment, name="add_comment",), # New line
+    path('list/', views.index, name="index_path",),
+    path('s/<str:in_slug>/', views.link_slug, name="slug_path",),
+    path('comment/', views.add_comment, name="comment_path",), # New line
 ]
 ```
 
-And a 
+And add to our `slug.html`:
 ```html
-                </div>
-                {% endfor %}
-               <form method="POST" action="{% url 'links:add_comment' %}"> # New line
+               {% for comment in comments_template %}
+               <div class="comment-div">
+                       {{ comment.text }} # Changed line
+               </div>
+               {% endfor %}
+               <form method="POST" action="{% url 'links_paths:comment_path' %}"> # New line
                        {% csrf_token %} # New line
-                       <input type="hidden" name="link" value="{{found_link.id}}"></input> # New line
+                       <input type="hidden" name="link" value="{{found_link_template.id}}"></input> # New line
                        <textarea placeholder="Type your comment here" name="commenttext"></textarea> # New line
                        <button>submit</button> # New line
                <form> # New line
         </body>
  </html>
-
 ```
 
 Now we have a small form which can send the id of the link that we are looking at, and the text of the comment, which are the two things that we need to add a new comment to our database.
