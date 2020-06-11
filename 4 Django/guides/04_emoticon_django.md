@@ -277,7 +277,7 @@ Now we should be able to run the server and go to the site and see an emoticon w
 First, we need to add to our `index.html` file:
 ```html
        <body>
-               <h1>{{emoticon}}</h1>
+               <h1>{{emoticon_template_var}}</h1>
                <form method="POST" action="add/"> # New line
                        {% csrf_token %} # New line
                        <input type="text" placeholder=":" name="new"> # New line
