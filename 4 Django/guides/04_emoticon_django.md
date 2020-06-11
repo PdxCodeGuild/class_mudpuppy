@@ -111,7 +111,7 @@ urlpatterns = [
 
 Now let's pretend that you are hosting this site locally at `http://127.0.0.1:8000`. If you go to your internet browser, and at the top you type `http://127.0.0.1:8000/admin/`, then django will send your request to this `urls.py` file, and it'll parse the url path to deside to send you to the builtin admin site. If you go to `http://127.0.0.1:8000/emo/abc/`, then python will look at the first part of the url path, and it'll decide to send you to a file inside the directory `emo_app` called `emo_urls.py`. Django will send the remaining path, `abc/` to that file for processing. We don't have a `emo_urls.py` yet, so we'll have to make one.
 
-```emo_app/emo_urls.py
+```python
 from django.urls import path, include
 from . import views
 
