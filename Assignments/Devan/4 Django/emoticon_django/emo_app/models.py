@@ -1,22 +1,23 @@
 from django.db import models
 
 
-class Eye(models.Model):
+class FacePart(models.Model):
     char = models.CharField(max_length=1)
 
     def __str__(self):
         return self.char
 
-
-class Nose(models.Model):
-    char = models.CharField(max_length=1)
-
-    def __str__(self):
-        return self.char
+    class Meta:
+        abstract = True
 
 
-class Mouth(models.Model):
-    char = models.CharField(max_length=1)
+class Eye(FacePart):
+    pass
 
-    def __str__(self):
-        return self.char
+
+class Nose(FacePart):
+    pass
+
+
+class Mouth(FacePart):
+    pass

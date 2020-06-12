@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from django.http import HttpResponseRedirect
 from random import choice
 from .models import Eye, Nose, Mouth
@@ -28,4 +28,4 @@ def add(request):
     new_part_class = face_parts[data['type']]
     new_part = new_part_class(char=data['new'])
     new_part.save()
-    return HttpResponseRedirect('/emo/')
+    return HttpResponseRedirect(reverse('emo_paths:index_path'))
