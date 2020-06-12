@@ -111,8 +111,8 @@ urlpatterns = [
 
 Now let's pretend that you are hosting this site locally at `http://127.0.0.1:8000`. If you go to your internet browser, and at the top you type `http://127.0.0.1:8000/admin/`, then django will send your request to this `urls.py` file, and it'll parse the url path to deside to send you to the builtin admin site. If you go to `http://127.0.0.1:8000/emo/abc/`, then python will look at the first part of the url path, and it'll decide to send you to a file inside the directory `emo_app` called `emo_urls.py`. Django will send the remaining path, `abc/` to that file for processing. We don't have a `emo_urls.py` yet, so we'll have to make one.
 
-```emo_app/emo_urls.py
-from django.urls import path, include
+```python
+from django.urls import path
 from . import views
 
 urlpatterns = [
@@ -183,7 +183,7 @@ We also tell our models what they should look like when someone tries to convert
 
 Whenever you try to convert an eye, a nose, or a mouth into a string, each will run their `__str__` method, and will return their character.
 
-We could make our code more concise using a mixin, but we're not going to worry about that for now.
+We could make our code more concise using inheritance, but we're not going to worry about that for now.
 
 Because we are using the database, we need to tell django that our app, `emo_app`, is an installed app. We can do that in the `settings.py` file.
 
@@ -324,18 +324,21 @@ This is directing the `add/` part of the url path to go to a function in `views.
 
 ```python
 def add(request):
-	   print('dictionary:'.ljust(15), request.POST)
-	   print('raw:'.ljust(15), request.body)
-       data = request.POST
-       face_parts = {
-                       'eye': Eye,
-                       'nose': Nose,
-                       'mouth': Mouth,
-       }
-       new_part_class = face_parts[data['type']]
-       new_part = new_part_class(char=data['new'])
-       new_part.save()
-       return HttpResponseRedirect('/emo/')
+      print('*' * 80)
+      print('dictionary:'.ljust(15), request.POST)
+      print('*' * 80)
+      print('raw:'.ljust(15), request.body)
+      print('*' * 80)
+      data = request.POST
+      face_parts = {
+                      'eye': Eye,
+                      'nose': Nose,
+                      'mouth': Mouth,
+      }
+      new_part_class = face_parts[data['type']]
+      new_part = new_part_class(char=data['new'])
+      new_part.save()
+      return HttpResponseRedirect('/emo/')
 ```
 You should be able to add to the database by adding a character and pushing the button. Because we just added the lines of code in the `add` function that prints out info from the request, we can see the raw request and the request structured in a dictionary. It should appear where we ran `py manage.py runserver`.
 
@@ -347,4 +350,78 @@ Great job!
 
 ## Part 7: Refactoring<a name="receiving-post"></a>
 
-Not Yet Written
+Here's the better `models.py` using inheritance:
+
+```python
+from django.db import models
+
+class FacePart(models.Model):
+    char = models.CharField(max_length=1)
+    def __str__(self):
+           return self.char
+
+    class Meta:
+        abstract = True # Tell django that this is an abstract class
+
+class Eye(FacePart):
+    pass
+
+class Nose(FacePart):
+    pass
+
+class Mouth(FacePart):
+    pass
+```
+
+An abstract class is a class that cannot be instantiated. If a class is a blueprint, an abstract class is a blueprint for a prototype that isn't worth making. If a class is a recipe to make a pizza, and an instance of the class is a pizza, an abstract class might be instructions to make a baked pizza-dough pizza bottom. The baked pizza dough is an important component of the pizza, but you would never want to create that by itself.
+
+The other important thing to do is to use django's reverse url lookup whenever possible. The first step is to give the `emo_urls.py` file a nickname, and then give every path in that file a nickname, too. That should look like this:
+
+```python
+from django.urls import path, include
+from . import views
+
+app_name = 'emo_paths' # New line
+urlpatterns = [
+       path('', views.index, name='index_path'), # Changed line
+       path('add/', views.add, name='add_path'), # Changed line
+]
+```
+
+Now we can tell django to automagically generate urls and place them in the right places. We will use this in `views.py` and `index.html`. First, `views.py`:
+
+```python
+from django.shortcuts import render, reverse # Changed line
+from django.http import HttpResponseRedirect
+from random import choice
+from .models import Eye, Nose, Mouth
+```
+```python
+    new_part = new_part_class(char=data['new'])
+    new_part.save()
+    return HttpResponseRedirect(reverse('emo_paths:index_path')) # Changed line
+```
+
+Now, we are telling django to look for the specific path inside of `emo_urls.py`, and django can figure out that the full path to get there is `emo/`.
+
+We can also do something similar in html:
+```html
+               <h1>{{emoticon_template_var}}</h1>
+               <form method="POST" action="{% url 'emo_paths:add_path' %}"> # Changed line
+                       {% csrf_token %}
+                       <input type="text" placeholder=":" name="new">
+                       <input type="hidden" name="type" value="eye">
+                       <button>submit</button>
+               </form>
+               <form method="POST" action="{% url 'emo_paths:add_path' %}"> # Changed line
+                       {% csrf_token %}
+                       <input type="text" placeholder="-" name="new">
+                       <input type="hidden" name="type" value="nose">
+                       <button>submit</button>
+               </form>
+               <form method="POST" action="{% url 'emo_paths:add_path' %}"> # Changed line
+                       {% csrf_token %}
+                       <input type="text" placeholder=")" name="new">
+                       <input type="hidden" name="type" value="mouth">
+                       <button>submit</button>
+```

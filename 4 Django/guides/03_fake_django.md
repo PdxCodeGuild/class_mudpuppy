@@ -79,7 +79,7 @@ def hello_world():
     contacts = ( # New line
         ('Al', 'Nachos', 'Dark Souls'), # New line
         ('Pete', 'Sushi', 'New Vegas'), # New line
-        ('Matthew', 'Veggie Burger', 'Halo'), # New line
+        ('Eboni', 'Ramen, 'Assassin's Creed III'), # New line
     ) # New line
 
     contact = random.choice(contacts) # New line
@@ -116,7 +116,7 @@ Let's offload the contact info into a CSV file. First, we can delete some lines 
     # contacts = ( # Removed line
         # ('Al', 'Nachos', 'Dark Souls'), # Removed line
         # ('Pete', 'Sushi', 'New Vegas'), # Removed line
-        # ('Matthew', 'Veggie Burger', 'Halo'), # Removed line
+        # ('Eboni', 'Ramen', 'Assassin's Creed III'), # Removed line
     # ) # Removed line
 
     # contact = random.choice(contacts) # Removed line
@@ -127,7 +127,7 @@ Also, delete the `import random` line near the top. Now we can make a file calle
 ```csv
 Al,Nachos,Dark Souls
 Pete,Sushi,New Vegas
-Matthew,Veggie Burger,Halo
+Eboni,Ramen,Assassin's Creed III
 ```
 
 And a file called `contacts.py` that looks like this:
@@ -193,7 +193,7 @@ Now imagine our csv looks like this:
 ```csv
 Al,Nachos,Dark Souls
 Pete,Sushi,New Vegas
-Matthew,Veggie Burger,Halo
+Eboni,Ramen,Assassin's Creed III
 Al,Soup,Tetris
 ```
 
@@ -202,7 +202,7 @@ We have two people named `Al`, so we're never going to pull out the second one. 
 ```csv
 1,Al,Nachos,Dark Souls
 2,Pete,Sushi,New Vegas
-3,Matthew,Veggie Burger,Halo
+3,Eboni,Ramen,Assassin's Creed III
 4,Al,Soup,Tetris
 ```
 Because we added a new column to the CSV we're going to need to increment a bunch of the indecies we use to look up information. We can also add a new function:
