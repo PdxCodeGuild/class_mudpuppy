@@ -324,21 +324,21 @@ This is directing the `add/` part of the url path to go to a function in `views.
 
 ```python
 def add(request):
-	   print('*' * 80)
-	   print('dictionary:'.ljust(15), request.POST)
-	   print('*' * 80)
-	   print('raw:'.ljust(15), request.body)
-	   print('*' * 80)
-       data = request.POST
-       face_parts = {
-                       'eye': Eye,
-                       'nose': Nose,
-                       'mouth': Mouth,
-       }
-       new_part_class = face_parts[data['type']]
-       new_part = new_part_class(char=data['new'])
-       new_part.save()
-       return HttpResponseRedirect('/emo/')
+      print('*' * 80)
+      print('dictionary:'.ljust(15), request.POST)
+      print('*' * 80)
+      print('raw:'.ljust(15), request.body)
+      print('*' * 80)
+      data = request.POST
+      face_parts = {
+                      'eye': Eye,
+                      'nose': Nose,
+                      'mouth': Mouth,
+      }
+      new_part_class = face_parts[data['type']]
+      new_part = new_part_class(char=data['new'])
+      new_part.save()
+      return HttpResponseRedirect('/emo/')
 ```
 You should be able to add to the database by adding a character and pushing the button. Because we just added the lines of code in the `add` function that prints out info from the request, we can see the raw request and the request structured in a dictionary. It should appear where we ran `py manage.py runserver`.
 
