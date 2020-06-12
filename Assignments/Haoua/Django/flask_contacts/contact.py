@@ -8,8 +8,10 @@ class Contact:
 
     @staticmethod
     def find_contact(search_name):
+        print(search_name)
         with open('contact.csv', 'r') as f:
             for line in f.readlines():
+                print(line)
                 line = line.split(',')
                 if search_name.lower() == line[0].lower():
                     return Contact(

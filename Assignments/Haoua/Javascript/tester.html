@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			canvas {
+				border: 2px solid MediumAquamarine;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="cnv" width="500" height="500"></canvas>
+	<script>
+		let cnv = document.querySelector("#cnv");
+    let ctx = cnv.getContext("2d");
+    
+    ctx.beginPath();
+
+    const oneSecond = 1000;
+    
+    ctx.fillStyle = "DarkGoldenRod";
+    let a = 95;
+    let b = 50;
+    let c = 40;
+    let xVel = 1;
+		let yVel = .8;
+
+    ctx.arc(a,b,c,0,2*Math.PI, false)
+    
+    ctx.fill()
+    
+
+
+		function moveRect() {
+		
+			ctx.clear();
+			ctx.fillRect();
+			if (xPos + width > 500 || xPos < 0) { // '||' means 'or'
+				xVel *= -1;
+			}
+			if (yPos + height > 500 || yPos < 0) {
+				yVel *= -1;
+			}
+			requestAnimationFrame(moveRect);
+		}
+		//setInterval(moveRect, oneSecond/5);
+		moveRect();
+
+	</script>
+	</body>
+</html>
