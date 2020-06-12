@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        
+        body {
+            background: green;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        
+        }
+        
+        #hack{
+            width:50%;
+            height:50%;
+            display: flex;
+            flex-wrap: wrap;
+            color: red;
+        }
+
+  
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="hacker"><pre id=hackerarea>Welcome</pre></div>
+    <script>
+        let hack = document.querySelector("#hackerarea");
+        let hackA = document.querySelector("#hacker");
+
+        let x = 0;
+        let chars = "ABCDEFGHIJKLMNOPQRSTUV";
+        let length = chars.length;
+
+
+        document.body.onkeydown = function() {
+            let random = Math.floor(Math.random() * length)
+
+            newText = (`${(hack.innerText)}\t ${chars[random]}${chars[random]}`);
+            hack.innerText = newText;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>
