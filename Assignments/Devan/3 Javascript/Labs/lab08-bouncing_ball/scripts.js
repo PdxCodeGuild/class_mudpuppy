@@ -4,7 +4,7 @@ let width = ballBox.width;
 let height = ballBox.height;
 
 let ball = {
-    radius: 20,
+    radius: 5,
     px: Math.random()*width,
     py: Math.random()*height,
     vx: (2*Math.random()-1)*10,
@@ -28,14 +28,13 @@ function mainLoop() {
     drawBall();
     // check if it hit a boundary
     if (ball.px > ballBox.width - ball.radius || ball.px < ball.radius) {
-        ball.vx = ball.vx * -.9
+        ball.vx = ball.vx * -.99
     }
     if (ball.py > ballBox.height - ball.radius || ball.py <= ball.radius) {
-        ball.vy = ball.vy * -.9
+        ball.vy = ball.vy * -.99
     }
-
-
     // draw the ball
     window.requestAnimationFrame(mainLoop);
 }
+
 setTimeout(mainLoop, 1000)
