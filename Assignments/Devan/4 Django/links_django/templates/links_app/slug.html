@@ -20,8 +20,14 @@
                <h4>Comments</h4>
                {% for comment in comments_template %}
                <div class="comment-div">
-                       {{ comment }}
+                       {{ comment.text }}
                </div>
                {% endfor %}
+                <form method="POST" action="{% url 'links_paths:comment_path' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="link" value="{{found_link_template.id}}"></input>
+                        <textarea placeholder="Type your comment here" name="commenttext"></textarea>
+                        <button>submit</button>
+               <form>
        </body>
 </html>
