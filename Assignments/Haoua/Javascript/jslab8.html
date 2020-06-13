@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style> 
+        canvas {
+            border: 2px solid red;
+            
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <canvas id="canvas" width="500" height ="500">
+      
+    </canvas>
+
+    <script>
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+        ctx.beginpath();
+        const oneSecond = 1000;
+        ctx.fillStyle = 'green';
+        
+        let radius = 4;
+        let px = Math.random()*width;
+        let py = Math.random()*height;
+        let vx = (2*Math.random()-1)*10;
+        let vy = (2*Math.random()-1)*10;
+        let width = 50;
+        let height = 50;
+
+        
+        //ctx.beginPath();
+        //ctx.arc(ball.px, ball.py, ball.radius, 0, 2 * Math.PI, false);
+        
+        //ctx.stroke();
+        ctx.fillRect(px, py, radius, 0, 2 * Math.PI, false);
+        //ctx.closePath()
+
+
+
+        function moveRect () {
+            px += xVel;
+            py += yVel;
+            ctx.clearRect(0,0,500,500)
+            ctx.fillRect(px,py,width,height)
+            if (px +width > 500 || px <0) {
+                vx *=-1;
+
+            }
+
+            if (py + height > 500 || py < 0) {
+                vy *= -1;
+            }
+
+            requestAnimationFrame(moveRect);
+
+            
+        }
+
+        moveRect();
+
+
+
+    </script>
+</body>
+</html>
+

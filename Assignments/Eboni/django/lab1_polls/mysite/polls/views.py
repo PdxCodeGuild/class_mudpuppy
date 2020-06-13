@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 
-from .models import Question
+from .models import Question, Choice
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
@@ -16,6 +16,7 @@ def vote(request, question_id):
     else:
         selected_choice.votes += 1
         selected_choice.save()
+        return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -32,6 +33,5 @@ def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/results.html', {'question': question})
 
-def vote(request, question_id):
-    return HttpResponse("Youre' voting on %s.")
+
 # Create your views here.
