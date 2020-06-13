@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>{{emoticon_template_var}}</h1>
+    <form method="POST" action="{% url 'emo_paths:add_path' %}">
+        {% csrf_token %}
+        <input type="text" placeholder=":" name="new">
+        <input type="hidden" name="type" value="eye">
+        <button>submit</button>
+    </form>
+    <form method="POST" action="{% url 'emo_paths:add_path' %}">
+        {% csrf_token %}
+        <input type="text" placeholder="-" name="new">
+        <input type="hidden" name="type" value="nose">
+        <button>submit</button>
+    </form>
+    <form method="POST" action="{% url 'emo_paths:add_path' %}">
+        {% csrf_token %}
+        <input type="text" placeholder=")" name="new">
+        <input type="hidden" name="type" value="mouth">
+        <button>submit</button>
+    </form>
+</body>
+</html>
