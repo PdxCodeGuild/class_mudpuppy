@@ -15,10 +15,9 @@
        <body>
 
             <ul class="todo-list">
-                        <h1> Todo List!!!! </h1>
                {% for task in all_todos_template %}
                     <li>
-                        <input type="checkbox" name="done" value={{task.done}}>
+                        <input type="checkbox" name="done" {% if task.done %} checked {% endif %}>
                         {{task.todo}}
                     </li>
                {% endfor %}
