@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+       <head>
+               <meta charset="utf-8">
+               <style>
+                       .todo-list {
+                                       border: 2px solid chocolate;
+                                       background-color: lemonchiffon;
+                                       margin: 100px;
+                                       padding: 10px;
+                                       list-style: none;
+                       }
+               </style>
+       </head>
+       <body>
+
+            <ul class="todo-list">
+                        <h1> Todo List!!!! </h1>
+               {% for task in all_todos_template %}
+                    <li>
+                        <input type="checkbox" name="done" value={{task.done}}>
+                        {{task.todo}}
+                    </li>
+               {% endfor %}
+            </ul>
+       </body>
+</html>
