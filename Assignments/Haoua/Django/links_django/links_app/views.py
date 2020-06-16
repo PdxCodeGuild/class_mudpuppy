@@ -1,8 +1,6 @@
-from django.shortcuts import render, reverse
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, reverse # Changed line
+from django.http import HttpResponseRedirect # New line
 from .models import Link, Comment
-
-# Create your views here.
 
 def index(request):
     all_links = Link.objects.all()
@@ -15,15 +13,14 @@ def link_slug(request, in_slug):
     found_link = Link.objects.get(slug=in_slug)
     comments = found_link.comment_set.all()
     context = {
-        'found_link_template': found_link,
-        'comments_template': comments,
+        'found_link': found_link,
     }
     return render(request, 'links_app/slug.html', context)
 
 def add_comment(request):
     data = request.POST
-    new_comment = Comment (
-        link_id = data['link'],
+    new_comment = Comment(
+        ink_id = data['link'],
         text = data['commenttext'],
     )
     new_comment.save()
