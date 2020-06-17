@@ -1,0 +1,6 @@
+<h1>{{ question }}</h1>
+<ul>
+{% for choice in question_text %}
+    <li>{{ choice.choice_text }}</li>
+{% enfor %}
+</ul>
