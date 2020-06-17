@@ -9,7 +9,7 @@ class Link(models.Model):
     link = models.CharField(max_length=128)
 
     def __str__(self):
-        return self.slug[:10]
+        return self.slug
 
     def __repr__(self):
         return self.slug[:10]
@@ -20,4 +20,4 @@ class Comment(models.Model):
     text = models.TextField()
 
     def __str__(self):
-        return self.link, self.text
+        return self.link.id, self.text
