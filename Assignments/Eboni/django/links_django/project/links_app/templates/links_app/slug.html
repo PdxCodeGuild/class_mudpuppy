@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .comment-div {
+            border: 2px solid black;
+            background-color: lemonchiffon;
+            margin: 20px;
+            padding: 5px;
+        }
+        .comment-div:hover {
+            border: 2px solid blue;
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="https://{{found_link_template.link}}">{{found_link_template.name}}</a></h1>
+    <h4>Comments</h4>
+    {% for comment in comments_template %}
+    <div class="comment-div">
+        {{ comment.text }}
+    </div>
+    {% endfor %}
+    <form method="POST" action="{% url 'links_paths:comment_path' %}">
+        {% csrf_token %}
+        <input type="hidden" name="link" value="{{found_link_template.id}}"></input>
+        <textarea placeholder="Type your comment here" name="commenttext"></textarea>
+        <button>submit</button>
+    </form>
+
+
+    
+</body>
+</html>

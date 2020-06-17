@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/todo_index.css" %}">
+    <title>Lab 4 | Todo List</title>
+</head>
+
+<body>
+    <main class="container p-5 mt-4">
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control user-input" placeholder="Enter a task...">
+            <div class="input-group-append">
+                <button class="btn btn-secondary enter-btn" type="button" id="button-addon2">Enter</button>
+            </div>
+        </div>
+        <hr>
+
+        <div class="noselect">
+            <h4>Not Completed</h4>
+            <ul class="todo-ul" id="todo">
+                        {% for task in all_todos_template %}
+                                <div class="noselect">
+                                        <li onclick=" move(this);">{{task.todo}}</li>
+                                        <button onclick="deleteTask(this);" type="button" class="close remove-btn">&times;</button>
+                                </div>
+                        {% endfor %}
+            </ul>
+        </div>
+
+        <div class="noselect">
+            <h4>Competed</h4>
+            <ul id="done" class="done-ul">
+                <div class="noselect">
+                    <li onclick=" move(this);">test Done</li>
+                    <button onclick="deleteTask(this);" type="button" class="close remove-btn">&times;</button>
+                </div>
+            </ul>
+        </div>
+
+        <button onclick="clearDone();" type="button" class="btn btn-danger remove-btn">Clear
+            Done</button>
+
+    </main>
+
+    <script src="{% static "js/todo_index.js" %}"></script>
+</body>
+
+</html>

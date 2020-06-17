@@ -1,0 +1,49 @@
+body {
+    height: 100vh;
+    background-attachment: fixed;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(330deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+ul {
+    padding-inline-start: 0;
+}
+
+ul>div {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.7);
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+li {
+    text-decoration-style: none;
+    list-style: none;
+    cursor: pointer;
+}
+
+.done-ul>div>li {
+    text-decoration: line-through;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+supported by Chrome, Edge, Opera and Firefox */
+}
+
+.close {
+    color: red;
+}
