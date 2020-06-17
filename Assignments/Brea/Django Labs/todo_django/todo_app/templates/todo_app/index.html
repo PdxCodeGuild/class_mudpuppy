@@ -8,17 +8,23 @@
     </head>
 
     <body>
-        <h1>Brea's To Do App</h1>
-        <p>
+        <h1>Brea's To Do List</h1>
 
-        </p>
-        <input>
-        <button></button>
-        <form method="POST" action="">
+        <form method="POST" action="{% url 'todo_app:add_item' %}">
             {% csrf_token %}
-            <input type="" name="" value="">
             <textarea placeholder="Type your to do item here" name="todo_text"></textarea>
+            <button type='submit'>Submit</button>     
         </form>
-        <button>Submit</button>
+       
+        <div class="list">
+            <ul>
+            {% for item in list_items_dict %}
+            <div class="list-item">
+                <li>{{ item.todo_text }}</li>
+                <p>{{ item.create_date }}</p>
+            </div>
+            {% endfor %}
+            </ul>
+        </div>
     </body>
 </html>
