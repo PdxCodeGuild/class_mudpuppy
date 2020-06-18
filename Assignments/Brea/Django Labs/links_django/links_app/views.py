@@ -28,4 +28,4 @@ def add_comment(request):
     )
     new_comment.save()
     link_slug = Link.objects.get(id=data['link']).slug
-    return HttpResponseRedirect(reverse('links_paths:slug_path', args=[link_slug]))
+    return HttpResponseRedirect(reverse('links_paths:slug_path', args=[link_slug]))     #refreshes what the user sees
