@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <style>
+       .list-holder {
+           border: 4px solid black;
+           margin: 50px;
+           padding: 20px;
+       }
+   </style>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <form method="POST" action="/add/">
+        {% csrf_token %}
+        <input type="text" name="add_item" placeholder="add item">
+        <button>submit</button>   
+
+        {% for item in list_template_var %}
+            <div class="list-holder">  
+            {{ item.item_text }}
+            </div>
+        {% endfor %}
+    </form>
+    
+</body>
+</html>
