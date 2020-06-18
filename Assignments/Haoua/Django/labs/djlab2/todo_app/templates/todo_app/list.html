@@ -9,13 +9,15 @@
     <h3>To Do list</h3>
 
 
-    <form>
-        {{form}}
+    <form method="POST" action="/">
+        {% csrf_token %}
+        {{form.item}}
         <input type="submit" name="Create Item">
     </form>
-    {% for item in items %}
+    {% for thing in items %}
         <div>
-            <p>{{item}}</p>
+            <p>{{thing}}</p>
+            <!-- <p>{{form}}</p> -->
         </div>
 
     {% endfor %}
