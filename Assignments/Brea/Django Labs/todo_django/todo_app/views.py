@@ -1,6 +1,7 @@
 from django.shortcuts import render, reverse
 from .models import ToDoItems
 from django.http import HttpResponse, HttpResponseRedirect
+from datetime import datetime
 
 def index(request):
     list_items = ToDoItems.objects.all()
@@ -25,19 +26,12 @@ def add_item(request):
     return HttpResponseRedirect(reverse('todo_app:list_item')) 
 
 def complete_item(request):
+    print(request.body)
+    print(request.POST['todo_text'])    #from the user inputting the item to be marked as complete
+    found_todo = ToDoItems.objects.get(todo_text = request.POST['todo_text'])   #pulled from the database after the user submitted the item to be marked as complete
+    found_todo.completed_bool = True
+    found_todo.complete_date = datetime.now()
+    found_todo.save()
+    print(found_todo.todo_text)
+    return HttpResponseRedirect(reverse('todo_app:list_item')) 
     # change the Boolean value to True, activate the completed date, and show the list item as a strikethrough (or remove things)
-    pass
-
-def strike_item(request):
-    pass
-    # make a function that does a strikethrough when completed_bool = True
-    # pull something from the database, 
-    # path('l/<str:in_slug>/', views.link_slug, name="slug_path"),
-    #def link_slug(request, in_slug):
-    # found_link = Link.objects.get(slug=in_slug)
-    # comments = found_link.comment_set.all()
-    # context = {
-    #     'found_link_template': found_link,
-    #     'comments_template': comments,
-    # }
-    # return render(request, 'links_app/slug.html', context)

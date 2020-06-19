@@ -9,16 +9,27 @@
     <h3>To Do list</h3>
 
 
-    <form>
-        {{form}}
+    <form method="POST" action="/">
+        {% csrf_token %}
+        {{form.item}}
         <input type="submit" name="Create Item">
     </form>
-    {% for item in items %}
+    {% for thing in items %}
         <div>
-            <p>{{item}}</p>
+            <a href="{% url 'update_item' thing.id %}">Update</a>
+            <a href="{% url 'delete_item' thing.id %}">Delete</a>
+            
+            {% if thing.complete == True %}
+            <strike>{{thing}}</strike>
+            
+            {% else %}
+            <span>{{thing}}</span>
+            
+            {% endif %}
         </div>
-
     {% endfor %}
+
+   
     
 </body>
 </html>
