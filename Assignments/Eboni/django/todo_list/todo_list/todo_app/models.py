@@ -5,7 +5,7 @@ from django.db import models
 class TodoItem(models.Model):
     item_text = models.CharField(max_length=200)
     created_date = models.DateTimeField('date created', auto_now_add = True)
-    complete_date = models.DateTimeField('date completed',auto_now = True) 
+    complete_date = models.DateTimeField('date completed', null= True, blank= True) 
     item_complete = models.BooleanField(default=False)
     
 
