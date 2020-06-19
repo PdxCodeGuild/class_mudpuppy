@@ -16,11 +16,20 @@
     </form>
     {% for thing in items %}
         <div>
-            <p>{{thing}}</p>
-            <!-- <p>{{form}}</p> -->
+            <a href="{% url 'update_item' thing.id %}">Update</a>
+            <a href="{% url 'delete_item' thing.id %}">Delete</a>
+            
+            {% if thing.complete == True %}
+            <strike>{{thing}}</strike>
+            
+            {% else %}
+            <span>{{thing}}</span>
+            
+            {% endif %}
         </div>
-
     {% endfor %}
+
+   
     
 </body>
 </html>
