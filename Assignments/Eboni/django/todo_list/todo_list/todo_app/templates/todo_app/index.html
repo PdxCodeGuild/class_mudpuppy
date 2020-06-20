@@ -15,14 +15,23 @@
     <form method="POST" action="/add/">
         {% csrf_token %}
         <input type="text" name="add_item" placeholder="add item">
-        <button>submit</button>   
-
+        <button>submit</button> 
+    </form>
+ 
         {% for item in list_template_var %}
             <div class="list-holder">  
             {{ item.item_text }}
+            {{ item.created_date }}
+            {% if item.item_complete %}
+            {% endif %}
+            <a href="{% url 'todo:new_delete' id=item.id %}"><button>complete</button></a>
             </div>
         {% endfor %}
-    </form>
     
+   <form method="POST" action="/delete/">
+        {% csrf_token %}
+        <input type="text" name="delete_item" placeholder="mark as complete">
+        <button>submit</button>
+    </form>
 </body>
 </html>
