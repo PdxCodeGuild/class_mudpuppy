@@ -4,6 +4,8 @@ from links_app.models import Link, Comment # Changed line
 from django.utils.text import slugify
 
 
+
+
 class Link(models.Model):
 
     name = models.CharField(max_length=128)

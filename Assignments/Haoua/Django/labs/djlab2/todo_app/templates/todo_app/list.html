@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>To Do list</h3>
+
+
+    <form method="POST" action="/">
+        {% csrf_token %}
+        {{form.item}}
+        <input type="submit" name="Create Item">
+    </form>
+    {% for thing in items %}
+        <div>
+            <a href="{% url 'update_item' thing.id %}">Update</a>
+            <a href="{% url 'delete_item' thing.id %}">Delete</a>
+            
+            {% if thing.complete == True %}
+            <strike>{{thing}}</strike>
+            
+            {% else %}
+            <span>{{thing}}</span>
+            
+            {% endif %}
+        </div>
+    {% endfor %}
+
+   
+    
+</body>
+</html>
