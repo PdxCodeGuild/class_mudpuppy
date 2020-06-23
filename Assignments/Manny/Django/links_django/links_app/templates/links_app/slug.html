@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+       <head>
+               <meta charset="utf-8">
+               <style>
+                       .comment-div {
+                               border: 2px solid black;
+                               background-color: lemonchiffon;
+                               margin: 20px;
+                               padding: 5px;
+                       }
+                       .comment-div:hover {
+                               border: 2px solid blue;
+                               background-color: coral;
+                       }
+               </style>
+       </head>
+       <body>
+               <h1><a href="https://{{found_link_template.link}}">{{found_link_template.name}}</a></h1>
+               <h4>Comments</h4>
+               {% for comment in comments_template %}
+               <div class="comment-div">
+                       {{ comment }}
+               </div>
+               {% endfor %}
+       </body>
+</html>
