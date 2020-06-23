@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta char="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Sumana&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Sumana', serif;
+                background-image: url("https://66.media.tumblr.com/7bedb8f9efcf297b50b62a60e97add90/tumblr_oa5ib7q6Qz1v05rsfo1_540.jpg");
+                background-size: cover;
+                color: white;
+            }
+            button {
+                margin: 20px;
+                padding: 10px;
+            }
+            div {
+                margin: 20px;
+                padding: 10px;
+            }
+            form {
+                margin: 20px;
+                padding: 10px;
+            }
+            h1 {
+                margin: 20px;
+                padding: 10px;
+            }       
+        </style>
+    </head>
+
+    <body>
+        <br>
+        <br>
+        <br>
+        <h1>Do you need a URL shortened?</h1>
+        <form method="POST" action="{% url 'url_shortener:index' %}">
+            {% csrf_token %}
+            <input name="user_url" type="text">
+            <button type="submit">Shorten!</button>
+        </form>
+        <div>
+            <p>Your new, improved, shortened url is: <a href={% REDIRECT %}> http://www.brea.url/{{url_data.short_url}}</a>
+            </p>
+            <hr>
+
+        </div>
+    </body>
+</html>
