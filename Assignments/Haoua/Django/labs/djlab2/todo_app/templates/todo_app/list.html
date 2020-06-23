@@ -3,12 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/0208a2bb23.js"></script>
     <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: green;
+            height: 100vh;
+            weight: 100vw;
+            padding: 0;
+            margin: .3px;
+            border: 10px greenyellow dashed;
+           
+
+        }
+        h2 {
+            background-color: yellow;
+            align-items:center;
+            align-content: center;
+            text-align: center;
+        }
+        
+
+            
+
+        h3 { background-color: yellow;
+            text-align: center;
+          
+        
+        }
+
+        div {
+            font-size: large;
+            color: yellow;
+        }
+       
+        strike {
+            color: yellow;
+        }
+        input {
+            width: 31.5vh;
+            margin: 1px;
+
+        }
+    
+    
+        
+    </style>
 </head>
 <body>
+    
     <h3>To Do list</h3>
+    <h2 id="date"></h2>
 
-
+    <script>
+        var d = new Date();
+        document.getElementById("date").innerHTML= d;
+    </script>
     <form method="POST" action="/">
         {% csrf_token %}
         {{form.item}}
@@ -16,14 +68,20 @@
     </form>
     {% for thing in items %}
         <div>
-            <a href="{% url 'update_item' thing.id %}">Update</a>
-            <a href="{% url 'delete_item' thing.id %}">Delete</a>
+            <a href="{% url 'update_item' thing.id %}">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+            </a>
+
+            <a href="{% url 'delete_item' thing.id %}">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
             
             {% if thing.complete == True %}
             <strike>{{thing}}</strike>
             
             {% else %}
-            <span>{{thing}}</span>
+            <div>{{thing}}</div>
             
             {% endif %}
         </div>
