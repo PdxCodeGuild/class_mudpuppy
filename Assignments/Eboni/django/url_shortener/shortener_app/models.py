@@ -1,0 +1,9 @@
+from django.db import models
+
+
+
+# Create your models here.
+
+class Code(models.Model):
+    first_code = models.CharField(max_length=100)
+    second_code = models.CharField(max_length=100)

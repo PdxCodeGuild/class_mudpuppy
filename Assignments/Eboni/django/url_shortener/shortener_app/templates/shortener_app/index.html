@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{shortener_template_var}}</h1>
+    <form method="POST" action="test/">
+
+        {% csrf_token %}
+        <input type="text" placeholder="enter url" name="new">
+        <input type="hidden" name="type" value="url">
+        <button>submit</button>
+    </form>
+</body>
+</html>
