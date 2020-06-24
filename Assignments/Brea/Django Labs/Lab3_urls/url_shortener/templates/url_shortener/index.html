@@ -40,10 +40,13 @@
             <button type="submit">Shorten!</button>
         </form>
         <div>
-            <p>Your new, improved, shortened url is: <a href={% REDIRECT %}> http://www.brea.url/{{url_data.short_url}}</a>
+            {% if url_data %}
+            <p>Your new, improved, shortened url is: <a href="/urlshort/r/{{url_data.short_url}}"> http://{{url_data.short_url}}</a>
             </p>
-            <hr>
 
+            <p>Your new, improved, shortened url is: <a href="{% url 'url_shortener:redirect' url_data.short_url %}"> http://{{url_data.short_url}}</a> 
+            </p>
+            {% endif %}
         </div>
     </body>
 </html>

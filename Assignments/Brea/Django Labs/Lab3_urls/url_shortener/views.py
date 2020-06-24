@@ -1,5 +1,5 @@
 from django.shortcuts import render     #render mashes up a context dictionary and the html file to make html of http response variables show up on my browser
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 import random
 import string
 from .models import Urls
@@ -28,6 +28,7 @@ def index(request):
         }
     return render(request, "url_shortener/index.html", context)
 
-def redirect_url(request, short_url):
+def redirect_url(request, short_url_param):
     #look at link_slug function in links lab guide
-    #     
+    redirect_link = Urls.objects.get(short_url=short_url_param)
+    return HttpResponseRedirect(f'http://{redirect_link.org_url}')

@@ -346,7 +346,7 @@ class Command(BaseCommand):
        help = 'Populates the Database'
 
        def handle(self, *args, **options):
-               author1 = Author.objects.get_or_create(last_name='Tolkein', first_name='J.', middle1='R.', middle2='R.')[0]
+               author1 = Author.objects.get_or_create(last_name='Tolkien', first_name='J.', middle1='R.', middle2='R.')[0]
                author2 = Author.objects.get_or_create(last_name='Machado', first_name='Carmen', middle1='Maria')[0]
                books = (
                        ('The Lord of the Rings', datetime.strptime('29-07-1954', '%d-%m-%Y'), author1),
