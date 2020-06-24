@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import URL
+import string
+import random
 
 
-def IndexView(self):
-    template_name = 'url_shortener/index.html'
+def index(request):
+    return HttpResponse('test')
 
-    return HttpResponse(template_name)
+
+# Create your views here.
