@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<style>
+			.newDiv {
+				display: flex;
+				flex-direction: column;
+				justify-self: space-between;
+				margin: 100px;
+				list-style-type: lower-alpha;
+
+			}
+		</style>
+	</head>
+	<body>
+		
+		<h1 id="author">hi</h1>
+		<ul id="quote-output">hiya</ul>
+
+		<ol id="new-div"></ol>
+		<input type="submit">
+
+
+		<script>
+			let quoteOutput = document.querySelector("#quote-output");
+			let authorStr = document.querySelector("#author");
+			let newDiv = document.querySelector("#new-div");
+		/*FT
+		axios({
+			method: 'get',
+			url: `https://favqs.com/api/quotes/?filter=${authorStr}&type=author`,
+			headers: {
+				Authorization: "Token token=ca29750c8b4c93e8da2b297b3f7e7616",
+			}
+		*/
+			axios({
+				method: 'get',
+				url: "https://favqs.com/api/quotes/",
+				params: {
+					type: 'tag',
+					filter: 'love',
+					
+				},
+				headers: {
+					Authorization: "Token token=b228f093c4e8cacaba81d31e015eaa15",
+				},
+			
+			})
+
+			.then(function(response) {
+				
+				
+				let quotes = response.data.quotes
+
+				for (i=0; i < quotes.length; i++) {
+					console.log(quotes[i])
+					let quote = quotes[i]
+					let author = quote.author
+					let string = quote.body
+
+					
+					let create = document.createElement("li");
+					let authors = document.createTextNode("\n" + author + ":" + "	" + string )
+
+					//let creater = document.createElement("li")
+					//let quoters = document.createTextNode("\n	" + string + "\n")
+
+					newDiv.appendChild(create)
+					create.appendChild(authors)
+
+					//newDiv.appendChild(quoters)
+
+					
+
+				}
+
+				
+
+
+
+				//let keys = (Object.keys(response));
+			
+				//let	data = (keys[0]);
+				//alert(data[2]) //just prints out letters d.a.t for data, dont use
+				//let some = Object.keys(keys)
+				//alert(Object.keys(some))
+
+				//alert(response[some])
+				
+				
+				//for (data in response) {
+				//	alert(data)
+				//}
+
+				//for (i in response) {
+				//	alert(response[i])
+				//}
+
+
+				//for (i=0; for i<response.length; i++);
+
+
+				
+			})
+
+	
+
+			
+			
+
+
+		
+		</script>
+	</body>
+</html>
