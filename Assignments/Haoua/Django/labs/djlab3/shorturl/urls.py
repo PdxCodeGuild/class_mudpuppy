@@ -1,4 +1,4 @@
-"""todo URL Configuration
+"""shorturl URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todo/', include('todo_app.todoapp_urls')),
+    path('short/', include('shorturl_app.urls')),
 ]

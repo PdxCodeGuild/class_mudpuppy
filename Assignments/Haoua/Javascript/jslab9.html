@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box {
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        var box = document.getElementById("box")
+        var url = "https://favqs.com/api/qotd"
+        console.log('a');
+
+        function getRand() {
+            console.log('b');
+            axios.get(url)
+            .then
+        }
+
+        alert(getRand.quote)
+    </script>
+</body>
+</html>
+
+
