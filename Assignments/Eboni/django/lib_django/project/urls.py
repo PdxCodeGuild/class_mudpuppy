@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('lib/', include('library.lib_urls')),
+    path('calc/', include('calc.calc_urls')),
 ]
