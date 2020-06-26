@@ -5,6 +5,7 @@ from .views import index
 
 urlpatterns = [
     path('', views.index),
+    path('short/', views.short, name='short_url')
 
 
 ]
