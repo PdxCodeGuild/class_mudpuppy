@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <h3>Checkout or return</h3>
+    <form method="POST" action="{% url 'lib:new_checkout' %}">
+        {% csrf_token %}
+        <input type='hidden' name='book_pk' value='{{book.pk}}'>
+        <input type='text' placeholder='name' name='name'>
+        <button type='submit'>submit</button>
+    </form>
+    <ul>
+        {% for checkout in book.checkout_set.all %}
+            <li>
+                {{ checkout.timestamp }}
+                {% if checkout.checkout %}
+                    checked out 
+                {% else %}
+                    returned
+                {% endif %}
+                by {{ checkout.user }}
+
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
