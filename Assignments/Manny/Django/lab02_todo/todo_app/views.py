@@ -9,4 +9,3 @@ def index(request):
         "todos" : todos
     }
     return render(request, "todo_app/index.html", context)    
-
