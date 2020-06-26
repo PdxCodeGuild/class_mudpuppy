@@ -20,4 +20,6 @@ We need a social media site for cats. Cats should:
 * User profiles
 * Chat system
 
-![Here's my wireframe](catmeet.png)
+## Wireframe
+
+![Wireframe for catmeet.com](catmeet.png)
