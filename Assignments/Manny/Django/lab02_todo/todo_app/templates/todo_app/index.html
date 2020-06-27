@@ -9,5 +9,10 @@
     {% for todo in todos %}
     <div>{{todo}}</div>
     {% endfor %}
+    <form method="POST" action="add/"> 
+        {% csrf_token %}
+        <input type="text" placeholder="add task here" name="task"> 
+        <button>submit</button> 
+</form> 
 </body>
 </html>
