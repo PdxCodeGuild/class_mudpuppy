@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Authors</h1>
+    <ul>
+        {% for author in authors %}
+            <li><a href="{% url 'lib:author_detail' author.id %}">{{ author.name_formatted }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

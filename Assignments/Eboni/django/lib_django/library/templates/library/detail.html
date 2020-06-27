@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>{{ author.name_formatted }}</h1>
+    <ul>
+        {% for book in author.book_set.all %}
+            <li><a href="{% url 'lib:checkout_page' book.pk %}">{{ book.title }} -- {{ book.publish_date }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
