@@ -9,29 +9,10 @@
     {% for todo in todos %}
     <div>{{todo}}</div>
     {% endfor %}
-    <form method="POST" action="add/"> # New line
-        {% csrf_token %} # New line
-        <input type="text" placeholder=":" name="new"> # New line
-        <input type="hidden" name="type" value="task"> # New line
-        <button>submit</button> # New line
-</form> # New line
-<form method="POST" action="add/"> # New line
-        {% csrf_token %} # New line
-        <input type="text" placeholder="-" name="new"> # New line
-        <input type="hidden" name="type" value="created"> # New line
-        <button>submit</button> # New line
-</form> # New line
-<form method="POST" action="add/"> # New line
-        {% csrf_token %} # New line
-        <input type="text" placeholder=")" name="new"> # New line
-        <input type="hidden" name="type" value="mod"> # New line
-        <button>submit</button> # New line
-</form> # New line
-<form method="POST" action="add/"> # New line
-    {% csrf_token %} # New line
-    <input type="text" placeholder=")" name="new"> # New line
-    <input type="hidden" name="type" value="mod"> # New line
-    <button>submit</button> # New line
-</form> # New line
+    <form method="POST" action="add/"> 
+        {% csrf_token %}
+        <input type="text" placeholder="add task here" name="task"> 
+        <button>submit</button> 
+</form> 
 </body>
 </html>
