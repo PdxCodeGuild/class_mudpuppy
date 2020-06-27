@@ -44,6 +44,7 @@ Music Tags
 Non-Music Tags
     - ID
     - Song Title
+    - Popularity
     - Arousal (high vs. low)
     - Emotional Ratings (1-7 for how they express the following emotions)
         - Happy
@@ -54,7 +55,7 @@ Non-Music Tags
         - Brave
         - Challenging
         - Nostalgic
-    - Culture (?)
+    - Comments about cultural content
     - Lyrical Theme Tags
     
 ## Schedule
