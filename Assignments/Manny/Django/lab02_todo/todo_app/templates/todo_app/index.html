@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+.strikethrough {text-decoration: line-through;}
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     {% for todo in todos %}
-    <div>{{todo}}</div>
+    <div {% if todo.completed %} class="strikethrough" {% endif %}>{{todo}}</div>
+    <form method= POST action='strikethrough/'>
+        {% csrf_token %}
+        <button>completed</button>
+        <input type='hidden'name='id' value='{{todo.id}}'>
+    </form>
     {% endfor %}
+    
     <form method="POST" action="add/"> 
         {% csrf_token %}
         <input type="text" placeholder="add task here" name="task"> 
