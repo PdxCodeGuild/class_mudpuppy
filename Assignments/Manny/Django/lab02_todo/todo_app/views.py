@@ -22,6 +22,5 @@ def strikethrough(request):
     donetodo = ToDo.objects.get(id=id)
     donetodo.complete = True
     donetodo.save()
-    #found_link = Link.objects.get(slug=in_slug)
     return HttpResponseRedirect(reverse("mandados:indexo"))
     
