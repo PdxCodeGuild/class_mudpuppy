@@ -10,7 +10,7 @@
 </head>
 <body>
     {% for todo in todos %}
-    <div {% if todo.completed %} class="strikethrough" {% endif %}>{{todo}}</div>
+    <div {% if todo.complete %} class="strikethrough" {% endif %}>{{todo}}</div>
     <form method= POST action='strikethrough/'>
         {% csrf_token %}
         <button>completed</button>
