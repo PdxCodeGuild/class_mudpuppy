@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500&display=swap" rel="stylesheet">
+        <header>
+
+        </header>
+        <style>
+            body {
+                font-family: 'Darker Grotesque', sans-serif;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Song Input</h1>
+        <form method="POST" action="{% url 'capstone:add_song' %}">
+            {% csrf_token %}
+            <textarea placeholder="Song Title" name="song_name"></textarea>
+            <br>
+            <textarea placeholder="Artist" name="artist_name"></textarea>
+            <br>
+            <textarea placeholder="Year Released" name="release_year"></textarea>
+            <br>
+            <textarea placeholder="Spotify Link" name="spotify_link"></textarea>
+            <br>
+            <textarea placeholder="Chords Link" name="chords_link"></textarea>
+            <br>
+            <textarea placeholder="Info Link" name="info_link"></textarea>
+            <br>
+            <button type='submit'>Submit Song</button>
+        </form>
+        
+        <ul>
+        {% for song in song_list_dict %}
+        <div class="song-list"></div>
+        <li><a href="{{ song.spotify_link }}"> {{ song.song_name }}</a></li>
+        </ul>
+        {% endfor %}
+        </div>
+    </body>
+</html>
