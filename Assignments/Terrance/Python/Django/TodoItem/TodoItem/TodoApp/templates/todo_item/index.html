@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>Todo Item</h1>
+    <form action="{% url 'toapp:index' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="todo_text" value="mytext"/>
+        <button type="submit">add todo</button>
+    </form>
+
+    <form action="{% url 'toapp:complete' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="todo_text" value="mytext"/>
+        <button type="submit">completed todo</button>
+    </form>
+
+    {% for todo in ToDos %}
+    <div>{{todo.description_text}}</div>
+    <div>{{todo.created_date}}</div>
+    <div>{{todo.completed_date}}</div>
+    <div>{{todo.completed}}</div>
+    {% endfor %}
+    
+</body>
+</html>
