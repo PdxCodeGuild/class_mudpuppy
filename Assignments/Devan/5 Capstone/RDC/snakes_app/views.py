@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def index(request):
     all_snakes = Snake.objects.all()
+    print(all_snakes[0].picture.url)
     context = {
         'all_snakes_template': all_snakes,
     }

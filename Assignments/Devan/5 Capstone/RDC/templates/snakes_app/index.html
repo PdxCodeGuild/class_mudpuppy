@@ -14,7 +14,7 @@
        <body>
                {% for snake in all_snakes_template %}
                        <div class="snake-card">
-                           <img src={{snake.picture}} alt="" srcset="">
+                           <img src='{{snake.picture.url}}' alt="" srcset="">
                                <h2>{{snake.name}}</h2>
                                <h4>{{snake.hatched_on}}</h4>
                        </div>
