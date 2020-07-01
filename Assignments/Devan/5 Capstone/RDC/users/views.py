@@ -8,7 +8,7 @@ def login(request):
     password = request.POST['password']
     user = auth(request, username=username, password=password)
     _login(request, user)
-    return HttpResponseRedirect(reverse('notes_app:index'))
+    return HttpResponseRedirect(reverse('snakes_paths:index'))
 
 def logout(request):
     _logout(request)
@@ -20,10 +20,10 @@ def register(request):
     password = request.POST['password']
     new_user = User.objects.create_user(username, email, password)
     _login(request, new_user)
-    return HttpResponseRedirect(reverse('notes_app:index'))
+    return HttpResponseRedirect(reverse('snakes_paths:index'))
 
 def rl_page(request):
-    next_place = request.GET.get('next', reverse('notes_app:index'))
+    next_place = request.GET.get('next', reverse('snakes_paths:index'))
     context = {
         'next': next_place,
     }
