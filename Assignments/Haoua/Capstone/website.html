@@ -29,40 +29,143 @@
         #nav-item{
             color: white;
         }
+
+        #logo {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid rgb(0, 162, 255);
+            color: white;
+            background-color: black;
+            font-size: xx-small;
+            justify-content: center;
+            margin: 0;
+            padding: 1em;
+            justify-items: center;
+            align-items: center;
+            width: 11.5vw;
+            height: 8em;
+        }
+/* 
+        .logo {
+            /* width: 20em;
+            height: 20em; */
+        #logo {
+            padding: .5em;
+            
+        }
+
+        #logoo {
+            font-size: 4.5vmax;
+          
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            
+        }
+
+        #title {
+            padding: 0;
+            margin: 0;
+            font-style: bold;
+            font-size: 12%;
+         
+        }
+
+        #slogan {
+            padding: 0;
+            margin: 0;
+            font-size: 12%;
+            font-style: italic;
+        }
     </style>
 
 </head>
 
 <body class="body" data-spy="scroll" data-target=".navbar" data-offset="50">
-    <nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-lg">
-        
-        <!-- logo -->
-        <a id="logo" ref="#" alt="Logo" class="navbar-brand">
-            <img id="pic_exposing" src="Exposing Racism.png" width="100px" height="100px">
-        </a>
+    <nav class="navbar fixed-top navbar-expand-sm bg-light navbar-light">
 
+        <!-- logo -->
+        <div class="container-fluid" id="logo">
+            <i class="fa fa-low-vision" id="logoo"></i>
+            <p id="title"><bold>Exposing Racism</bold></p>
+                <!-- <p id="slogan">Know better, be better</p> -->
+
+        </div>
+            <!-- <img id="pic_exposing" src="Exposing Racism.png" width="100px" height="100px"> -->
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <!-- navigation links -->
         <div class="collapse navbar-collapse" id="navbarMenu">
             
             <!-- Nav pills -->
-            <ul class="nav nav-pills ml-auto" role="tablist">
+            <ul class="nav nav-pills navbar-nav ml-auto" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#home" data-toggle="pill" alt="HOME">HOME
-
-                    </a>
+                    <a class="nav-link active" href="#home" data-toggle="pill" alt="HOME">HOME</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="#fired" data-toggle="pill" alt="Get em fired">Get 'Em Fired</a>
                 </li>
 
                 <li class="nav-item">
-                        <a class="nav-link active" href="#complaint" data-toggle="pill" alt="Complaint">Business Complaint</a>
+                    <a class="nav-link active" href="#complaint" data-toggle="pill" alt="Complaint">Business Complaint</a>
                 </li>
+
+
                 <!-- drop down navigations -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"></a>
+                    <a class="nav-link dropdown-toggle fade" data-toggle="pill dropdown" href="#">Login</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Sign in</a>
+                        <a class="dropdown-item" href="#">Sign up</a>
+
+                    </div>
+
+
                 </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">BLOG</a>
+                    <div class="dropdown-menu">
+            
+                        <a class="dropdown-item" href="#">Articles</a>
+                        <a class="dropdown-item" href="#">Write an article </a>
+
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">About Us</a>
+                    <div class="dropdown-menu">
+            
+                        <a class="dropdown-item" href="#">Our Mission</a>
+                        <a class="dropdown-item" href="#">Who Are We</a>
+                        <a class="dropdown-item" href="#">Our Story</a>
+
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown"href="#">Contact Us</a>
+                            <div class="dropdown-toggle">
+                                <a class="dropdown-item" href="#">EMAIL</a>
+                                <a class="dropdown-item" href="#">PHONE</a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa fa-facebook-square"></i>
+                                    <i class="fa fa-instagram"></i>
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+
+
+                </li>
+
             </ul>
 
 
