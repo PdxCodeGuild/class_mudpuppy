@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta char="utf-8">
+    <title>URL Shortener</title>
+</head>
+
+<body>
+
+    <h1>Enter a url to be shortened</h1>
+    <form method="POST" action="{% url 'url_shortener:index' %}">
+        {% csrf_token %}
+        <input name="orig_url" type="text">
+        <button type="submit">Enter</button>
+    </form>
+
+    <div>
+        This will show the new url
+    </div>
+</body>
+
+</html>
