@@ -4,10 +4,10 @@ from django.db import models
 class Song(models.Model):
     song_name = models.CharField(max_length=128)
     artist_name = models.CharField(max_length=128)
-    release_year = models.IntegerField()
-    spotify_link = models.URLField()
-    chords_link = models.URLField()
-    info_link = models.URLField()
+    release_year = models.IntegerField(null=True)
+    spotify_link = models.URLField(null=True)
+    chords_link = models.URLField(null=True)
+    info_link = models.URLField(null=True)
 
     # song_tags = models.ManyToManyField()
 

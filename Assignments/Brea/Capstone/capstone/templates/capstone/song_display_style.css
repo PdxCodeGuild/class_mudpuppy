@@ -1,0 +1,39 @@
+/* * {
+    outline: 3px  solid red;
+} */
+body {
+    background-color: darkslategray;
+    font-family: 'Oxygen', sans-serif;
+    color: white;
+}
+.divider {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info-tables {
+    padding: 10px;
+    margin: 15px;
+}
+#more-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 15px;
+}
+#song-info {
+    width: 100vw;
+    padding: 10px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+#spotify-player {
+
+}
+#tag-info {
+
+}
