@@ -114,6 +114,7 @@
                 </li>
 
 
+
                 <!-- drop down navigations -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle fade" data-toggle="pill dropdown" href="#">Login</a>
@@ -126,8 +127,20 @@
 
                 </li>
 
-
                 <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Posts</a>
+                        <div class="dropdown-menu">
+                
+                            <a class="dropdown-item" href="#">See what people have to say</a>
+                            <!-- if the user is logged in, create a tab called "create post"-->
+                            <!-- <a class="dropdown-item" href="#">Create post</a> -->
+    
+                        </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <!--create different apps and map this section to it -->
+            
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">BLOG</a>
                     <div class="dropdown-menu">
             
@@ -169,20 +182,112 @@
 
             <!-- navbar menu -->
         </div>
-
-
-        <div class="tab-content">
+        <!-- <div class="tab-content">
             <div class="tab-pane container active" id="home">
-                <!-- create different apps and map this section to it -->
+                <p>home stuff</p>
+                        create different apps and map this section to it -->
+            <!-- </div>
+        
+            <div class="tab-pane container fade" id="fired">
+                <p>fired</p>
+                            create different apps and map this section to it -->
+            <!-- </div>
+        </div> --> 
+
+
+    </nav> 
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div id="slide" class="carousel slide" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+                <li data-target="#slide" data-slide-to="0" class="active"></li>
+                <li data-target="#slide" data-slide-to="1"></li>
+                <li data-target="#slide" data-slide-to="2"></li>
+            </ol>
+
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="card mb-3" style="max-width:540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4" id="card-image">
+                            <img src="Exposing Racism.png" class="d-block w-100" alt="Blog Photo" id="photo-1">
+ 
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <!-- insert a variable for Blog so   that the most recent blogs are shown-->
+                                <h5 class="card-title">{{Blog Title}}</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi esse officiis fuga perferendis ipsa quis in quod quasi doloremque nulla ipsum distinctio voluptates quia laboriosam delectus minus, earum, dolorum quas?</p>
+                                  <!-- insert a variable for "" so   that the timelapse is shown-->
+                                <p class="card-text"><small class="text-muted">Last updated {{" " minutes ago}}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
             </div>
 
-            <div class="tab-pane container fade" id="fired">
-                    <!-- create different apps and map this section to it -->
+
+
+            <div class="carousel-item">
+                    <div class="card mb-3" style="max-width:540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4" id="card-image">
+                                <img src="abstract.jpg" class="d-block w-100" alt="Blog Photo" id="photo-1">
+     
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <!-- insert a variable for Blog so   that the most recent blogs are shown-->
+                                    <h5 class="card-title">{{Blog Title}}</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi esse officiis fuga perferendis ipsa quis in quod quasi doloremque nulla ipsum distinctio voluptates quia laboriosam delectus minus, earum, dolorum quas?</p>
+                                      <!-- insert a variable for "" so   that the timelapse is shown-->
+                                    <p class="card-text"><small class="text-muted">Last updated {{" " minutes ago}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                    <div class="card mb-3" style="max-width:540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4" id="card-image">
+                                <img src="abstract.jpg" class="d-block w-100" alt="Blog Photo" id="photo-1">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                        <!-- insert a variable for Blog so   that the most recent blogs are shown-->
+                                    <h5 class="card-title">{{Blog Title}}</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi esse officiis fuga perferendis ipsa quis in quod quasi doloremque nulla ipsum distinctio voluptates quia laboriosam delectus minus, earum, dolorum quas?</p>
+                                          <!-- insert a variable for "" so   that the timelapse is shown-->
+                                    <p class="card-text"><small class="text-muted">Last updated {{" " minutes ago}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#slide" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
         </div>
 
-
-    </nav>
+    </div>
     <script>
     </script>
 </body>
