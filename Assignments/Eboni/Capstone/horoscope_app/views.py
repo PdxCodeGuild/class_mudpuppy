@@ -7,6 +7,11 @@ def index(request):
         print(request.POST)
     return render(request, "horoscope_app/index.html") 
 
+def detail(request):
+    if request.method == "POST":
+        print(request.POST)
+    return render(request, "horoscope_app/detail.html")
+
 
 
 # Create your views here.
