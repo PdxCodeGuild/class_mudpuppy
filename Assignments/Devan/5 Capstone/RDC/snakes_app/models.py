@@ -1,5 +1,7 @@
+from django.core.files.storage import FileSystemStorage
 from django.db import models
-# Create your models here.
+
+fs = FileSystemStorage(location='snakes_app/media/photos')
 
 
 class Snake(models.Model):
@@ -25,7 +27,7 @@ class Snake(models.Model):
     feeding_on = models.CharField(max_length=3, choices=feeder_CHOICES, default='LFR')
     hatched_on = models.DateField()
     cost_in_dollars = models.FloatField()
-    picture = models.ImageField(upload_to='uploads/')
+    picture = models.ImageField(storage=fs)
 
     def __str__(self):
         return self.name
