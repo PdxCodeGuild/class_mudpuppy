@@ -1,4 +1,4 @@
-# Django Links Example
+# Django Library Walkthrough
 ## Table of contents
 1. [Introduction](#introduction)
 2. [Setting Up](#setup)
