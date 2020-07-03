@@ -1,47 +1,113 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" type="text/css" href="index_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
-        <header>
+</head>
 
-        </header>
-        <style>
-            body {
-                font-family: 'Darker Grotesque', sans-serif;
-            }
-        </style>
-    </head>
+<body>
+    <img class="responsive-img" id="banner" src="Aoede Placeholder Banner.png" alt="Aoede Banner">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html" target="_blank">Input Form</a></li>
+                <li><a href="search.html" target="_blank">Search</a></li>
+                <li><a href="song_display.html" target="_blank">Song Display</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <body>
+    <main>
         <h1>Song Input</h1>
-        <form method="POST" action="{% url 'capstone:add_song' %}">
-            {% csrf_token %}
-            <textarea placeholder="Song Title" name="song_name"></textarea>
-            <br>
-            <textarea placeholder="Artist" name="artist_name"></textarea>
-            <br>
-            <textarea placeholder="Year Released" name="release_year"></textarea>
-            <br>
-            <textarea placeholder="Spotify Link" name="spotify_link"></textarea>
-            <br>
-            <textarea placeholder="Chords Link" name="chords_link"></textarea>
-            <br>
-            <textarea placeholder="Info Link" name="info_link"></textarea>
-            <br>
-            <button type='submit'>Submit Song</button>
+        <p>Help make our Aoede database even more complete with your personal music expertise!</p>
+        <div class="row">
+            <form method="POST" action="{% url 'capstone:add_song' %}" class="col s12">
+                <h6>Song Information (Required)</h6>
+                <div class="row"></div>
+                <div class="input-field col s12">
+                    <div>
+                        <input class="col s12" placeholder="Song Title" name="song_name" id="song_name" type="text"
+                            class="validate">
+                        <label for="song_name">Song Title</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input class="col s6" placeholder="Release Year" name="release_year" id="release_year"
+                            type="text" class="validate">
+                        <label for="release_year">Release Year</label>
+                    </div>
+                    <div class="input-field col s6"></div>
+                    <input class="col s6" placeholder="Artist Name(s)" name="artist" id="artist" type="text"
+                        class="validate">
+                    <label for="artist">Artist Name(s)</label>
+                </div>
+        </div>
+
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <h6>Music Tags</h6>
+                <select multiple>
+                    <option value="" disabled selected>Choose up to 3 genres</option>
+                    <option value="1">Blues</option>
+                    <option value="2">W. Classical/Art</option>
+                    <option value="3">Country</option>
+                    <option value="4">Easy Listening</option>
+                    <option value="5">Electronic</option>
+                    <option value="6">Folk</option>
+                    <option value="7">Gospel/Soul</option>
+                    <option value="8">Hip-hop/Rap</option>
+                    <option value="9">Instrumental</option>
+                    <option value="10">Jazz</option>
+                    <option value="11">Latin</option>
+                    <option value="12">Metal/Hardcore</option>
+                    <option value="13">Musical/Broadway</option>
+                    <option value="14">Pop</option>
+                    <option value="15">Rhythm and Blues</option>
+                    <option value="16">Reggae</option>
+                    <option value="17">Rock</option>
+                    <option value="18">Non-Western Traditional</option>
+                    <option value="19">Other</option>
+                </select>
+                <label>Genre</label>
+            </div>
+            <div class="input-field col s6">
+                <h6>Non-Music Tags</h6>
+
+            </div>
+        </div>
         </form>
-        
-        <ul>
-        {% for song in song_list_dict %}
-        <div class="song-list"></div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+<!-- <ul> -->
+<!-- {% for song in song_list_dict %} -->
+<!-- <div class="song-list"></div>
         <li><a href="{{ song.spotify_link }}"> {{ song.song_name }}</a></li>
         </ul>
         {% endfor %}
-        </div>
-    </body>
-</html>
+        </div> -->
+<!-- {% csrf_token %}
+                <textarea placeholder="Song Title" name="song_name"></textarea>
+                <br>
+                <textarea placeholder="Artist" name="artist_name"></textarea>
+                <br>
+                <textarea placeholder="Year Released" name="release_year"></textarea>
+                <br>
+                <textarea placeholder="Spotify URL" name="spotify_link"></textarea>
+                <br>
+                <textarea placeholder="Chords Link" name="chords_link"></textarea>
+                <br>
+                <textarea placeholder="Wikipedia Link" name="info_link"></textarea>
+                <br>
+                <button type='submit'>Submit Song</button> -->
