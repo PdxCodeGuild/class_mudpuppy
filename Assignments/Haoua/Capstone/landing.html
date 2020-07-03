@@ -33,54 +33,64 @@
         #logo {
             display: flex;
             flex-direction:column;
-            border: 2% solid rgb(0, 162, 255);
+    
             color: white;
-            background-color: black;
+            /* background-color: white; */
             font-size: xx-small;
-            justify-content: space-around;
+            justify-content: center;
             margin: 0;
-            padding: 1em;
-            justify-items: center;
-            align-items: center;
-            width: 11.5vw;
-            height: 8vh;
-            flex: 1 1 .1%;
-            flex-wrap: wrap-reverse;
+            padding: 0;
+            /* justify-items: center;
+            align-items: center; */
+            /* width: 8vw;
+
+
+            height: 8vh; */
+            flex: 5 5 .1%;
+            /* flex-wrap: wrap; */
+            
         }
-/* 
+
+        /* add media queries for different device sizes  */
+/*eru
         .logo {
             /* width: 20em;
             height: 20em; */
    
         #logoo {
-            font-size: 4.5em;
+            font-size: 4.35vw;
+            justify-self: center;
+            background-color: black;
+            padding: 2px;
           
         }
 
-        p {
-            padding: 0;
-            margin: 0;
-            
-        }
+      
 
         #title {
             padding: 0;
             margin: 0;
             font-style: bold;
-            font-size: 12%;
+            font-size:.57vw ;
+            background-color: black;
+            padding: 2px;
+            
          
         }
 
-        #slogan {
-            padding: 0;
-            margin: 0;
-            font-size: 12%;
-            font-style: italic;
+            
+        #slide {
+            width:100vw;
+            height:50vh;
+            background-color: blue;
         }
 
-        #carousel {
-            width:25%;
-            height:25%;
+        #inner {
+            background-color: blue;
+        }
+
+        #jumbotron {
+            margin-top: 1em;
         }
     </style>
 
@@ -105,7 +115,10 @@
         <!-- navigation links -->
         <div class="collapse navbar-collapse" id="navbarMenu">
             
-            <!-- Nav pills -->
+            <!-- Nav pills / use badges instead
+                badge badge-primary into a tag class or <button type="button" class="btn btn-outline-primary">Primary</button>
+            
+            -->
             <ul class="nav nav-pills navbar-nav ml-auto" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" href="#home" data-toggle="pill" alt="HOME">HOME</a>
@@ -187,17 +200,10 @@
 
             <!-- navbar menu -->
         </div>
-        <!-- <div class="tab-content">
-            <div class="tab-pane container active" id="home">
-                <p>home stuff</p>
-                        create different apps and map this section to it -->
-            <!-- </div>
-        
-            <div class="tab-pane container fade" id="fired">
-                <p>fired</p>
-                            create different apps and map this section to it -->
-            <!-- </div>
-        </div> --> 
+
+
+
+
 
 
     </nav> 
@@ -208,9 +214,20 @@
     <br>
     <br>
     <br>
+    <div class="jumbotron jumbotron-fluid" id="jumbotron">
+        <div class="container-fluid padding">
+            <h1 class="display-6">Our Mission</h1>
+            <hr>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis incidunt, quo tempora nesciunt vero odio eum corrupti? Saepe a accusamus ducimus quae alias consectetur. Maxime amet et ipsum reiciendis temporibus?</p>
+        </div>
+
+        <div class="container">
+
+        </div>
+    </div>
 
         <!--make carousel a strip: width: 100% height: 25%-50%  -->
-    <div id="slide" class="carousel slide" data-ride="carousel" id="carousel">
+    <div id="slide" class="carousel slide" data-ride="carousel" >
 
         <ol class="carousel-indicators">
             <li data-target="#slide" data-slide-to="0" class="active"></li>
@@ -219,10 +236,10 @@
         </ol>
 
 
-        <div class="carousel-inner" >
+        <div class="carousel-inner" id="inner">
             <div class="carousel-item active">
                 <div class="card mb-3" style="max-width:400px;">
-                    <div class="row no-gutters">
+                    <div class="row no-gutters bg-dark">
                         <div class="col-md-4" id="card-image">
                             <img src="Exposing Racism.png" class="d-block w-100" alt="Blog Photo" id="photo-1">
  
