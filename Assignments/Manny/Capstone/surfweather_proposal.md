@@ -32,4 +32,6 @@ The app will pretty much ask a user to create a profile with the main intent of 
 ### Week 3
 
 * css tweaking
-* email notifications 
+* email notifications
+* user surf tracker???
+ 
