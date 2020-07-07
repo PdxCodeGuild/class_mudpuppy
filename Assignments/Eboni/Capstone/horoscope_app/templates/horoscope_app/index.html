@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>{{horoscope_template_var}}</h1>
-    <form method="POST" action="{% url 'horoscope_app:horoscope' %}">
+    <form method="POST" action="{% url 'horoscope_app:detail' %}">
         {% csrf_token %}
         <input type="date" placeholder="mm/dd/yy" name="new">
         <button>Enter</button>
