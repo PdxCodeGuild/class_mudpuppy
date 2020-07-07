@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+{% extends "main_app/base.html"}
+{%block content%}
+
+    <div class="jumbotron jumbotron-fluid" id="jumbotron">
+        <div class="container-fluid padding">
+            <h1 class="display-6">Our Mission</h1>
+            <hr>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis incidunt, quo tempora nesciunt vero odio eum corrupti? Saepe a accusamus ducimus quae alias consectetur. Maxime amet et ipsum reiciendis temporibus?</p>
+        </div>
+
+        <div class="container">
+
+        </div>
+    </div>
+
+        <!--make carousel a strip: width: 100% height: 25%-50%  -->
+    <div id="slide" class="carousel slide" data-ride="carousel" >
+
+        <ol class="carousel-indicators">
+            <li data-target="#slide" data-slide-to="0" class="active"></li>
+            <li data-target="#slide" data-slide-to="1"></li>
+            <li data-target="#slide" data-slide-to="2"></li>
+        </ol>
+
+
+        <div class="carousel-inner" id="inner">
+            <div class="carousel-item active">
+                <div class="card mb-3" style="max-width:400px;">
+                    <div class="row no-gutters bg-dark">
+                        <div class="col-md-4" id="card-image">
+                            <img src="Exposing Racism.png" class="d-block w-100" alt="Blog Photo" id="photo-1">
+ 
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <!-- insert a variable for Blog so   that the most recent blogs are shown-->
+                                <h5 class="card-title">{{Blog Title}}</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi esse officiis fuga perferendis ipsa quis in quod quasi doloremque nulla ipsum distinctio voluptates quia laboriosam delectus minus, earum, dolorum quas?</p>
+                                  <!-- insert a variable for "" so   that the timelapse is shown-->
+                                <p class="card-text"><small class="text-muted">Last updated {{" " minutes ago}}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+
+
+
+            <div class="carousel-item">
+                    <div class="card mb-3" style="max-width:400px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4" id="card-image">
+                                <img src="abstract.jpg" class="d-block w-100" alt="Blog Photo" id="photo-1">
+     
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <!-- insert a variable for Blog so   that the most recent blogs are shown-->
+                                    <h5 class="card-title">{{Blog Title}}</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi esse officiis fuga perferendis ipsa quis in quod quasi doloremque nulla ipsum distinctio voluptates quia laboriosam delectus minus, earum, dolorum quas?</p>
+                                      <!-- insert a variable for "" so   that the timelapse is shown-->
+                                    <p class="card-text"><small class="text-muted">Last updated {{" " minutes ago}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                    <div class="card mb-3" style="max-width:400px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4" id="card-image">
+                                <img src="abstract.jpg" class="d-block w-100" alt="Blog Photo" id="photo-1">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                        <!-- insert a variable for Blog so   that the most recent blogs are shown-->
+                                    <h5 class="card-title">{{Blog Title}}</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi esse officiis fuga perferendis ipsa quis in quod quasi doloremque nulla ipsum distinctio voluptates quia laboriosam delectus minus, earum, dolorum quas?</p>
+                                          <!-- insert a variable for "" so   that the timelapse is shown-->
+                                    <p class="card-text"><small class="text-muted">Last updated {{" " minutes ago}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#slide" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+        </div>
+
+    </div>
+{%endblock content%}

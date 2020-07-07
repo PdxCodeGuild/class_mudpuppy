@@ -66,3 +66,22 @@ Before I would ever release this app I would look into defamation suits and how 
 
     (In later versions I hope to also allow high school students and middle school students to review their schools and how they handle racism, bullying and ableism)
 
+
+#login goals:
+
+1. When user signs in, "Welcome back {User}"
+    1. if statement for the user to pull out the username from our database.
+    {%if usert%}
+        <title>Welcomeback user</title>
+        <p>Welcme user <p>
+
+    {% else %}
+        <title> Welcome! <title>
+        <p>welcome <p> or <h2> tag
+    {%end if%}
+
+2.Create an html document that inherits repeated information.
+
+Do no repeat code: everything that is repeated should be on one page: use template inheritance
+
+
