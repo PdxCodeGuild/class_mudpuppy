@@ -1,0 +1,12 @@
+/* * {
+    outline: 3px  solid red;
+    
+} */
+body {
+    background-color: darkslategray;
+    font-family: 'Oxygen', sans-serif;
+    color: white;
+}
+main {
+    margin: 10px;
+}

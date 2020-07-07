@@ -11,7 +11,12 @@ def index(request):
         text = random.choice(note_list)
         ).save()
     output = ''
-    for note in request.user.notes.all():
+    active_user = request.user
+    print(active_user.username)
+    notes_associated_with_user = active_user.notes_tacos.all()
+    print([note.text for note in notes_associated_with_user])
+    for note in notes_associated_with_user:
+    #for note in request.user.notes.all():
         output = output + note.text + '<br>'
     return HttpResponse(output)
 # Create your views here.
