@@ -11,16 +11,13 @@ This tutorial will help us use `pipenv`, which lets us organize the python files
 ## Part 1
 ### Using Pip
 
-`Pip` is an acronym for "pip installs packages". `Pip` can help us install python files that we can depend on. A good example of a package we've used is the `random.py` file. You have used this file whenever you've run any python like this:
+`Pip` is an acronym for "pip installs packages". `Pip` can help us install python files that we can depend on. A good example of a package we've used is the `pillow` package for image manipulation. `pillow` is a fork of `PIL`, which stands for Python Imaging Library. Someone took the `PIL` code, modified it, and released it under the name `pillow`. We imported stuff from `pillow` like this:
 
 ```python
-import random
-print(random.choice('abc'))
+from PIL import Image
 ```
 
-`random.py` automatically comes whenever you download python.
-
-If we want to use a package that doesn't automatically come with python, we can use `pip`. First, let's see what commands `pip` understands:
+If we want to download a new package to use, we can use `pip`. First, let's see what commands `pip` understands:
 
 ```
 py -m pip help

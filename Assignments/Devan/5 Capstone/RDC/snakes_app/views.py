@@ -1,5 +1,4 @@
-from django.shortcuts import render, reverse
-from django.http import HttpResponseRedirect
+from django.shortcuts import render
 from .models import Snake
 from django.contrib.auth.decorators import login_required
 import os
