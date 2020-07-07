@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="index_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -24,6 +25,15 @@
     </nav>
 
     <main>
+        <div class="input-field col s12">
+            <select>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <label>Materialize Select</label>
+          </div>
         <h1>Song Input</h1>
         <p>Help make our Aoede database even more complete with your personal music expertise!</p>
         <div class="row">
@@ -77,15 +87,53 @@
                     <option value="19">Other</option>
                 </select>
                 <label>Genre</label>
+                <form action="#">
+                    <p class="range-field">
+                        <p>Singability (1 = difficult, 7 = easy)</p>
+                      <input type="range" id="test5" min="1" max="7" />
+                    </p>
+                  </form>
+                  <form action="#">
+                    <p class="range-field">
+                        <p>Instrumental Playability (1 = difficult, 7 = easy)</p>
+                      <input type="range" id="test5" min="1" max="7" />
+                    </p>
+                  </form>
+                  <form action="#">
+                    <p class="range-field">
+                        <p>Repetition (1 = through composed, 7 = lots of repetition)</p>
+                      <input type="range" id="test5" min="1" max="7" />
+                    </p>
+                  </form>
             </div>
             <div class="input-field col s6">
                 <h6>Non-Music Tags</h6>
-
+                <form action="#">
+                    <p class="range-field">
+                        <p>Popularity (1 = almost unknown, 7 = very popular)</p>
+                      <input type="range" id="test5" min="1" max="7" />
+                    </p>
+                    <p class="range-field">
+                        <p>Arousal (1 = very low, 7 = very high)</p>
+                      <input type="range" id="test5" min="1" max="7" />
+                    </p>
+                  </form>
+                  <div class="input-field col s6">
+                    <input id="emotions" type="text" class="validate">
+                    <label for="last_name">Emotions </label>
+                  </div>
+           
             </div>
         </div>
         </form>
         </div>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+    </script>
 </body>
 
 </html>
