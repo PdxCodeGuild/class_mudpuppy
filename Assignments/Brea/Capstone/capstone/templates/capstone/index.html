@@ -25,47 +25,40 @@
     </nav>
 
     <main>
-        <div class="input-field col s12">
-            <select>
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
-            </select>
-            <label>Materialize Select</label>
-          </div>
-        <h1>Song Input</h1>
+        <h2>Song Input</h2>
         <p>Help make our Aoede database even more complete with your personal music expertise!</p>
-        <div class="row">
             <form method="POST" action="{% url 'capstone:add_song' %}" class="col s12">
-                <h6>Song Information (Required)</h6>
-                <div class="row"></div>
+                {% csrf_token %}
+                <h4>Song Information (Required)</h4>
+                <form>
                 <div class="input-field col s12">
                     <div>
-                        <input class="col s12" placeholder="Song Title" name="song_name" id="song_name" type="text"
-                            class="validate">
                         <label for="song_name">Song Title</label>
+                        <input class="" name="song_name" id="song_name" type="text"
+                            class="validate">
+                        <br>
+                        <div class="input-field">
+                            <label for="release_year">Release Year</label>
+                            <input class="" name="release_year" id="release_year"
+                                type="text" class="validate">
+                        <br>
+                            <div class="input-field"></div>
+                            <label for="artist">Artist Name(s)</label>
+                            <input class="" name="artist" id="artist" type="text"
+                                class="validate">
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input class="col s6" placeholder="Release Year" name="release_year" id="release_year"
-                            type="text" class="validate">
-                        <label for="release_year">Release Year</label>
-                    </div>
-                    <div class="input-field col s6"></div>
-                    <input class="col s6" placeholder="Artist Name(s)" name="artist" id="artist" type="text"
-                        class="validate">
-                    <label for="artist">Artist Name(s)</label>
-                </div>
+            </form>
         </div>
-
-        </div>
+                <h4>Extra Information</h4>
+                <p>If you'd like, rate the song above on the following musical and non-musical attributes...</p>
         <div class="row">
             <div class="input-field col s6">
-                <h6>Music Tags</h6>
+                <h5>Music Attributes</h5>
+                <p>Choose up to 3 genres this song embodies:</p>
                 <select multiple>
-                    <option value="" disabled selected>Choose up to 3 genres</option>
+                    <option value="" disabled selected>Click here for genres</option>
                     <option value="1">Blues</option>
                     <option value="2">W. Classical/Art</option>
                     <option value="3">Country</option>
@@ -79,83 +72,97 @@
                     <option value="11">Latin</option>
                     <option value="12">Metal/Hardcore</option>
                     <option value="13">Musical/Broadway</option>
-                    <option value="14">Pop</option>
+                    <option value="14">General Pop</option>
                     <option value="15">Rhythm and Blues</option>
                     <option value="16">Reggae</option>
                     <option value="17">Rock</option>
                     <option value="18">Non-Western Traditional</option>
                     <option value="19">Other</option>
                 </select>
-                <label>Genre</label>
-                <form action="#">
+ 
                     <p class="range-field">
-                        <p>Singability (1 = difficult, 7 = easy)</p>
-                      <input type="range" id="test5" min="1" max="7" />
+                    <p>Singability (1 = difficult, 7 = easy)</p>
+                    <input class="form-range active" type="range" id="singability" min="1" max="7" name="singability"/>
+                    <span class="thumb">
+                        <span class="value"></span>
+                    </span>
+                    <input class="form-hidden" type="hidden" id="singability2" value="false" name="singability2">
                     </p>
-                  </form>
-                  <form action="#">
+ 
                     <p class="range-field">
-                        <p>Instrumental Playability (1 = difficult, 7 = easy)</p>
-                      <input type="range" id="test5" min="1" max="7" />
+                    <p>Instrumental Playability (1 = easy, 7 = difficult)</p>
+                    <input class="form-range" type="range" id="playability" min="1" max="7" name="playability"/>
+                    <input class="form-hidden" type="hidden" id="playability2" value="false" name="playability2">
                     </p>
-                  </form>
-                  <form action="#">
+ 
                     <p class="range-field">
-                        <p>Repetition (1 = through composed, 7 = lots of repetition)</p>
-                      <input type="range" id="test5" min="1" max="7" />
+                    <p>Repetition (1 = through composed, 7 = lots of repetition)</p>
+                    <input class="form-range" type="range" id="repetition" min="1" max="7" name="repetition"/>
+                    <input class="form-hidden" type="hidden" id="repetition2" value="false" name="repetition2">
                     </p>
-                  </form>
+ 
+                    <p class="range-field">
+                    <p>Tempo (1 = very sloow, 7 = very fast)</p>
+                    <input class="form-range" type="range" id="tempo" min="1" max="7" name="tempo"/>
+                    <input class="form-hidden" type="hidden" id="tempo2" value="false" name="tempo2">
+                    </p>
             </div>
             <div class="input-field col s6">
-                <h6>Non-Music Tags</h6>
-                <form action="#">
+                <h5>Non-Music Attributes</h5>
+ 
                     <p class="range-field">
-                        <p>Popularity (1 = almost unknown, 7 = very popular)</p>
-                      <input type="range" id="test5" min="1" max="7" />
+                    <p>Popularity (1 = almost unknown, 7 = very popular)</p>
+                    <input class="form-range" type="range" id="popularity" min="1" max="7" name="ppularity"/>
+                    <input class="form-hidden" type="hidden" id="popularity2" value="false" name="popularity2">
                     </p>
+
                     <p class="range-field">
-                        <p>Arousal (1 = very low, 7 = very high)</p>
-                      <input type="range" id="test5" min="1" max="7" />
+                    <p>Arousal (1 = very low, 7 = very high)</p>
+                    <input class="form-range" type="range" id="arousal" min="1" max="7" name="arousal"/>
+                    <input class="form-hidden" type="hidden" id="arousal2" value="false" name="arousal2">
                     </p>
-                  </form>
-                  <div class="input-field col s6">
-                    <input id="emotions" type="text" class="validate">
-                    <label for="last_name">Emotions </label>
-                  </div>
-           
+
+                    <p class="range-field">
+                        <p>Emotional Valence (1 = negative, 7 = positive)</p>
+                        <input class="form-range" type="range" id="valence" min="1" max="7" name="valence"/>
+                        <input class="form-hidden" type="hidden" id="valence2" value="false" name="valence2">
+                    </p>
+                    
+                <div class="input-field col s12">
+                    <p>If you'd like, add a comment about the song's history or cultural significance:</p>
+                    <br>
+                    <div class="row">
+                        <form class="col s12">
+                        <div class="input-field">
+                          <textarea id="comment" name="comment" class="materialize-textarea"></textarea>
+                          <label for="comment">Type here</label>
+                        </div>
+                      </div>
+                    </form>
+                </div>
             </div>
         </div>
+        <button type='submit'>Submit</button>
         </form>
         </div>
     </main>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-  });
+        let options = {}
+
+        let ranges = document.querySelectorAll('.form-range')
+        let hiddens = document.querySelectorAll('.form-hidden')
+
+        for (let i=0; i<ranges.length; i++) {
+            ranges[i].onchange = function() {
+                hiddens[i].value = true
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, options);
+        });
     </script>
 </body>
 
 </html>
-
-<!-- <ul> -->
-<!-- {% for song in song_list_dict %} -->
-<!-- <div class="song-list"></div>
-        <li><a href="{{ song.spotify_link }}"> {{ song.song_name }}</a></li>
-        </ul>
-        {% endfor %}
-        </div> -->
-<!-- {% csrf_token %}
-                <textarea placeholder="Song Title" name="song_name"></textarea>
-                <br>
-                <textarea placeholder="Artist" name="artist_name"></textarea>
-                <br>
-                <textarea placeholder="Year Released" name="release_year"></textarea>
-                <br>
-                <textarea placeholder="Spotify URL" name="spotify_link"></textarea>
-                <br>
-                <textarea placeholder="Chords Link" name="chords_link"></textarea>
-                <br>
-                <textarea placeholder="Wikipedia Link" name="info_link"></textarea>
-                <br>
-                <button type='submit'>Submit Song</button> -->

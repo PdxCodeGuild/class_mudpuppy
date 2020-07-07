@@ -62,7 +62,7 @@ class Tags(models.Model):
     valence = models.IntegerField(null=True, blank=True)
     emotion = models.CharField(max_length=50,null=True, blank=True)
     theme = models.CharField(max_length=50, null=True, blank=True)
-    comments = models.TextField(null=True, blank=True)
+    comments = models.TextField(max_length=500, null=True, blank=True)
 
 class SongReview(models.Model):
     song = models.ForeignKey(Song, on_delete=models.PROTECT)
