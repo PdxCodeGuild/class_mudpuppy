@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create youmr views here.
 def home(request):
-    render(request,"landing.html")
+    return render(request,'main_app/landing.html')
+    
 
 
