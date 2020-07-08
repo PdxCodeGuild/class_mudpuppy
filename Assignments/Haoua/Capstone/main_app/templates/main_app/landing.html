@@ -1,10 +1,13 @@
-<!DOCTYPE html>
 
-{% extends "main_app/base.html"}
-{%block content%}
+{% extends "main_app/base.html" %}
 
+
+{% block content %}
+    <br>
+    <br>
+    
     <div class="jumbotron jumbotron-fluid" id="jumbotron">
-        <div class="container-fluid padding">
+        <div class="container-fluid">
             <h1 class="display-6">Our Mission</h1>
             <hr>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis incidunt, quo tempora nesciunt vero odio eum corrupti? Saepe a accusamus ducimus quae alias consectetur. Maxime amet et ipsum reiciendis temporibus?</p>
@@ -36,10 +39,9 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <!-- insert a variable for Blog so   that the most recent blogs are shown-->
-                                <h5 class="card-title">{{Blog Title}}</h5>
+                                
                                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi esse officiis fuga perferendis ipsa quis in quod quasi doloremque nulla ipsum distinctio voluptates quia laboriosam delectus minus, earum, dolorum quas?</p>
-                                  <!-- insert a variable for "" so   that the timelapse is shown-->
-                                <p class="card-text"><small class="text-muted">Last updated {{" " minutes ago}}</small></p>
+                                  <!-- insert a variable for "" so   that the timelapmedse is shown-->
                             </div>
                         </div>
                     </div>
@@ -59,10 +61,8 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <!-- insert a variable for Blog so   that the most recent blogs are shown-->
-                                    <h5 class="card-title">{{Blog Title}}</h5>
                                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi esse officiis fuga perferendis ipsa quis in quod quasi doloremque nulla ipsum distinctio voluptates quia laboriosam delectus minus, earum, dolorum quas?</p>
                                       <!-- insert a variable for "" so   that the timelapse is shown-->
-                                    <p class="card-text"><small class="text-muted">Last updated {{" " minutes ago}}</small></p>
                                 </div>
                             </div>
                         </div>
@@ -77,10 +77,8 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                         <!-- insert a variable for Blog so   that the most recent blogs are shown-->
-                                    <h5 class="card-title">{{Blog Title}}</h5>
                                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi esse officiis fuga perferendis ipsa quis in quod quasi doloremque nulla ipsum distinctio voluptates quia laboriosam delectus minus, earum, dolorum quas?</p>
                                           <!-- insert a variable for "" so   that the timelapse is shown-->
-                                    <p class="card-text"><small class="text-muted">Last updated {{" " minutes ago}}</small></p>
                                 </div>
                             </div>
                         </div>
@@ -99,4 +97,4 @@
         </div>
 
     </div>
-{%endblock content%}
+{% endblock content %}
