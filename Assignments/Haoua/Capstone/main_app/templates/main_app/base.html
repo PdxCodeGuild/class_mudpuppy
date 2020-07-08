@@ -27,10 +27,17 @@
 
     <style>
             body {
-                background-image: url('/home/student/Desktop/class_mudpuppy/Assignments/Haoua/Capstone/media/cover.jpg');
+                /* not working, find a way to use image with bootstrap*/
+                /* background-image: url('tester.jpg');
                 background-size: cover;
+                background-repeat:no-repeat;
+                background-position: center;
+                opacity: 1; */
+                background-color:rgba(4, 17, 4,1);
+
                
             }
+         
 
             #nav-item{
                 color: white;
@@ -97,6 +104,8 @@
     
             #jumbotron {
                 margin-top: .01em;
+ 
+                
             }
 
 
@@ -108,6 +117,7 @@
  
 </head>
 <body class="container-fluid" data-spy="scroll" data-target=".navbar" data-offset="50">
+    
     <nav class="navbar padding fixed-top navbar-expand-sm bg-light navbar-light">
     
             <!-- logo -->
@@ -146,10 +156,10 @@
     
                     <!-- drop down navigations -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle fade" data-toggle="pill dropdown" href="#">Login</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Login</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Sign in</a>
-                        <a class="dropdown-item" href="#">Sign up</a>
+                        <a class="dropdown-item" href="#">Create an Account</a>
     
                     </div>
     
@@ -225,7 +235,20 @@
     <br>
     <br>
     {%block content %}
-
+-
     {%endblock content %}
+
+    <div class="col-md-6">
+        <h2>What's new?</h2>
+        <p class="text-muted">Check out what've missed</p>
+        <ul class="list-group">
+            <li class="list-group-item">Announcements</li>
+            <li class="list-group-item">Posts</li>
+            <li class="list-group-item">New Business Complaints </li>
+            <li class="list-grou-item">BIPOC Businesses</li>
+        
+        </ul>
+    
+    </div>
 </body>
 </html>
