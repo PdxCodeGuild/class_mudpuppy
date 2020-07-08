@@ -1,26 +1,16 @@
-
-<!DOCTYPE html>
-<html>
-       <head>
-               <meta charset="utf-8">
-               <style>
-                       .snake-card {
-                                       border: 4px solid black;
-                                       margin: 50px;
-                                       padding: 20px;
-                       }
-
-               </style>
-       </head>
-       <body>
-               {% for snake in all_snakes_template %}
-                       <div class="snake-card">
-                                <img src='/{{ snake.picture.url }}' alt="Snake">
-                                <h2>{{snake.name}}</h2>
-                                <h4>{{snake.hatched_on}}</h4>
-                       </div>
-               {% endfor %}
-       </body>
-</html>
+{% extends "main/base.html" %}
 
 
+{% block title %}RDC - Ball Pythons{% endblock %}
+
+{% block content %}
+
+{% for snake in all_snakes_template %}
+<div class="snake-card">
+        <img src='/{{ snake.picture.url }}' alt="Snake">
+        <h2>{{snake.name}}</h2>
+        <h4>{{snake.hatched_on}}</h4>
+</div>
+{% endfor %}
+
+{% endblock %}
