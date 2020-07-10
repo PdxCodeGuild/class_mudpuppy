@@ -10,15 +10,28 @@ class Song(models.Model):
     song_name = models.CharField(max_length=128)
     artist = models.ManyToManyField(Artist)
     release_year = models.IntegerField(null=True, blank=True)
-    spotify_link = models.URLField(null=True, blank=True)
-    chords_link = models.URLField(null=True, blank=True)
-    info_link = models.URLField(null=True, blank=True)
+    # spotify_link = models.URLField(null=True, blank=True)
+    # chords_link = models.URLField(null=True, blank=True)
+    # info_link = models.URLField(null=True, blank=True)
 
+    tempo = models.IntegerField(null=True, blank=True)
+    singability = models.IntegerField(null=True, blank=True)
+    playability = models.IntegerField(null=True, blank=True)
+    repetition = models.IntegerField(null=True, blank=True)
+    # dynamics = models.IntegerField(null=True, blank=True)
+
+    arousal = models.IntegerField(null=True, blank=True)
+    popularity = models.IntegerField(null=True, blank=True)
+    valence = models.IntegerField(null=True, blank=True)
+    comments = models.TextField(max_length=500, null=True, blank=True)
+    # emotion = models.CharField(max_length=50,null=True, blank=True)
+    # theme = models.CharField(max_length=50, null=True, blank=True)
+    
 class Tags(models.Model):
-    class Modes(models.TextChoices):
-        Major = 'MJ', _('Major')
-        Minor = 'mn', _('Minor')
-        Other = 'Ot', _('Other')
+    # class Modes(models.TextChoices):
+    #     Major = 'MJ', _('Major')
+    #     Minor = 'mn', _('Minor')
+    #     Other = 'Ot', _('Other')
 
     class Genres(models.TextChoices):
         Blues = 'bls', _('Blues')
@@ -46,25 +59,13 @@ class Tags(models.Model):
         choices=Genres.choices,
         null=True, blank=True,)
     
-    mode = models.CharField(
-        max_length=5,
-        choices=Modes.choices,
-        null=True, blank=True,)
+    # mode = models.CharField(
+    #     max_length=5,
+    #     choices=Modes.choices,
+    #     null=True, blank=True,)
 
-    tempo = models.IntegerField(null=True, blank=True)
-    singability = models.IntegerField(null=True, blank=True)
-    playability = models.IntegerField(null=True, blank=True)
-    repetition = models.IntegerField(null=True, blank=True)
-    dynamics = models.IntegerField(null=True, blank=True)
-
-    arousal = models.IntegerField(null=True, blank=True)
-    popularity = models.IntegerField(null=True, blank=True)
-    valence = models.IntegerField(null=True, blank=True)
-    emotion = models.CharField(max_length=50,null=True, blank=True)
-    theme = models.CharField(max_length=50, null=True, blank=True)
-    comments = models.TextField(max_length=500, null=True, blank=True)
 
 class SongReview(models.Model):
     song = models.ForeignKey(Song, on_delete=models.PROTECT)
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
-
+    # user = models.ForeignKey(User, on_delete=models.PROTECT)
+    tag = models.ForeignKey(Tags, on_delete=models.PROTECT)

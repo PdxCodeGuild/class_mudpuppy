@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+
+
+{% block title %}RDC - Ball Pythons{% endblock %}
+
+{% block content %}
+
+{% for ball in all_balls_template %}
+<div class="snake-card">
+        <img src='{{ ball.picture.url }}' alt="{{ball.name}}">
+        <h4>{{ball.name}}</h4>
+        <h5>{{ball.hatched_on}}</h5>
+</div>
+{% endfor %}
+
+{% endblock %}
