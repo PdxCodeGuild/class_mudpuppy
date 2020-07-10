@@ -626,7 +626,7 @@ def checkout_page(request, book_pk): # New line
        }) # New line
 ```
 
-The `checkout_page` fuction is quite similar to the other functions. It uses the template `library/checkout.html`, which does not exist yet. Let's create that.
+The `checkout_page` fuction is quite similar to the other functions. It uses the template `library/templates/library/checkout.html`, which does not exist yet. Let's create that.
 
 Here is `library/checkout.html`:
 
