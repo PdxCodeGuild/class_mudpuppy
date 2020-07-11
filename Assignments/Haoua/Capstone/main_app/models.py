@@ -15,6 +15,21 @@ class Post(models.Model):
     fist = models.IntegerField()
     haha = models.IntegerField()
     angry = models.IntegerField()
+
+    def __str__(self):
+        self.author
+        self.title
+        self.content
+        self.date
+
+        return self.title
+
+    
+
+
+
+# class Comments(models.Model):
+    
     
 
 
