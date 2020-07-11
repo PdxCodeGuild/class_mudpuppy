@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request,'accounts/index.html')
     
-def sign_up(request):
+def register(request):
     context = {}
     form = UserCreationForm(request.POST or None)
     if request.method == "POST":
@@ -19,7 +19,7 @@ def sign_up(request):
             _login(request,user)
             return render(request,'main/index.html')
     context['form']=form
-    return render(request,'accounts/sign_up.html',context)
+    return render(request,'registration/register.html',context)
 
 
 
