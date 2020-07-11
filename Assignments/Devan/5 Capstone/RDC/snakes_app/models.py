@@ -1,7 +1,7 @@
 from django.core.files.storage import FileSystemStorage
 from django.db import models
 
-fs = FileSystemStorage(location='snakes_app/media/photos')
+fs = FileSystemStorage(location='snakes_app/media/img')
 
 
 class Snake(models.Model):
