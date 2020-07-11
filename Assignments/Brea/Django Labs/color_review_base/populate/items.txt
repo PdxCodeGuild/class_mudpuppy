@@ -1,0 +1,6 @@
+grass
+sky
+table
+chair
+salad
+orange
