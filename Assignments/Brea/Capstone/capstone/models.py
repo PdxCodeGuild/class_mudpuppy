@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Song(models.Model):
     song_name = models.CharField(max_length=100, null=True, blank=True)
     year = models.CharField(max_length=4, null=True, blank=True)
-    artist = models.CharField(max_length=32, null=True, blank=True)
+    artist = models.CharField(max_length=50, null=True, blank=True)
     highest_avg = models.ForeignKey('ReviewAvg', on_delete=models.PROTECT, related_name='songs', null=True) # the ForeignKey is the unique id related to a row as created by ReviewAvg, for the genre upvotes
 
     def __str__(self):
@@ -33,8 +33,9 @@ class Comment(models.Model):
     song = models.ForeignKey(Song, on_delete = models.PROTECT)
 
 class Review(models.Model):
-    song = models.ForeignKey(Song, on_delete=models.PROTECT, related_name='songs')
-    quality = models.ForeignKey(Quality, on_delete=models.PROTECT, related_name='songs')
+    song = models.ForeignKey(Song, on_delete=models.PROTECT, related_name='reviews')
+    quality = models.ForeignKey(Quality, on_delete=models.PROTECT, 
+    related_name='reviews_qualityname')
     score = models.IntegerField()
     # creates a Review that intersects the Song and Quality classes, with their given numeric score
 
