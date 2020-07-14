@@ -5,7 +5,7 @@ from .secrets import api_key, api_id
 from .models import Sign, Birthday
 import requests 
 import json
-import pytz
+from django.utils.timezone import make_aware
 
 def index(request):
     if request.method == "POST": 
@@ -21,7 +21,7 @@ def detail(request):
     day = int(date_list[2])
 
     date_object = datetime.strptime(date, "%Y-%m-%d")
-    date_object.replace(tzinfo=pytz.UTC)
+    date_object = make_aware(date_object)
     
 
     matched_horo = None
@@ -29,6 +29,9 @@ def detail(request):
         if sign.check_date(date_object):
             matched_horo = sign
             break
+    
+        
+        
 
     # print(date_object)
     '''

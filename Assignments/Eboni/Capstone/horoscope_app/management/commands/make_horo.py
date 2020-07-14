@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand
 from horoscope_app.models import Sign
 import csv
 from datetime import datetime
-import pytz
+from django.utils.timezone import make_aware
 
 
 
@@ -13,9 +13,9 @@ class Command(BaseCommand):
             csv_reader = csv.reader(f,delimiter=',' )
             for row in csv_reader:
                 lower = datetime.strptime(row[1]+'-UTC', "%Y-%m-%d-%Z")
-                lower.replace(tzinfo=pytz.UTC)
+                lower.replace = make_aware(lower.replace)
                 upper = datetime.strptime(row[2]+'-UTC', "%Y-%m-%d-%Z")
-                upper.replace(tzinfo=pytz.UTC)
+                upper.replace = make_aware(upper.replace)
                 Sign.objects.get_or_create(
                     sign = row[0],
                     lower_date = lower,
