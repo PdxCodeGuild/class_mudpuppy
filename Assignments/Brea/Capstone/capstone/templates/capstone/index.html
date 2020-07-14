@@ -80,7 +80,7 @@
                     <select multiple name="genre">
                         <option value="" disabled selected>Click here</option>
                         {% for choice in choices %}
-                        <option value="{{choice.0}}">{{choice.1}}</option>
+                        <option value="{{choice.id}}">{{choice.name}}</option>
                         {% endfor %}
                         
                     </select>
