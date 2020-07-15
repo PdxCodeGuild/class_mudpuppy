@@ -4,5 +4,6 @@ app_name = 'capstone'
 
 urlpatterns = [
     path('', views.index),
-    path('addsong/', views.index, name="add_song")
+    path('addsong/', views.add_song, name="add_song")
+    path('reviewsong/', views.index, name="review_song")
 ]

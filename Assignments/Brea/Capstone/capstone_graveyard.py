@@ -83,22 +83,26 @@ def add_song(request):
     new_song = Song(
         song_name = data['song_name'],
         release_year = data['release_year'],
-        # spotify_link = data['spotify_link'],
-        # chords_link = data['chords_link'],
-        # info_link = data['info_link'],
 
-        # genre = data['genre'],
-        tempo = data['tempo'],
-        singability = data['singability'],
-        playability = data['playability'],
-        repetition = data['repetition'],
-        arousal = data['arousal'],
-        popularity = data['popularity'],
-        valence = data['valence'],
-        comments = data['comment'],
-    )
+    #     # genre = data['genre'],
+    #     tempo = data['tempo'],
+    #     singability = data['singability'],
+    #     playability = data['playability'],
+    #     repetition = data['repetition'],
+    #     arousal = data['arousal'],
+    #     popularity = data['popularity'],
+    #     valence = data['valence'],
+    #     comments = data['comment'],
+    # )
     artists = data['artist']
     new_song.save()
+
+    new_rev = Review(
+        song_id=post_song_id,
+        quality_id=post_quality_id,
+        score=post_score,
+    )
+    new_rev.save()
 
     for artist in artists.split(';'):
         new_song.artist.add(
