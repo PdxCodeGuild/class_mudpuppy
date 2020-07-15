@@ -9,12 +9,12 @@ class Post(models.Model):
     content = models.TextField()
     date = models.DateTimeField(default=timezone.now())
 
-    # engagement and reactions
-    likes = models.IntegerField()
-    dislikes = models.IntegerField()
-    fist = models.IntegerField()
-    haha = models.IntegerField()
-    angry = models.IntegerField()
+    # engagement and reactions for a later date
+    # likes = models.IntegerField()
+    # dislikes = models.IntegerField()
+    # fist = models.IntegerField()
+    # haha = models.IntegerField()
+    # angry = models.IntegerField()
 
     def __str__(self):
         self.author
