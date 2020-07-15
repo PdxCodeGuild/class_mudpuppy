@@ -1,171 +1,55 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Song Display</title>
-    
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="song_display_style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
 
-    <body>
-        <img class= "responsive-img" id="banner" src="Aoede Placeholder Banner.png" alt="Aoede Banner">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Logo</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="index.html" target="_blank">Input Form</a></li>
-                    <li><a href="search.html" target="_blank">Search</a></li>
-                    <li><a href="song_display.html" target="_blank">Song Display</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div id="song-info">
-            <h4>{{SONG NAME}}</h4>
-            <h6>Artist(s): {{ARTIST NAMES}}</h6>
-            <p>Release Year: {{Release Year}}</p>
-            </div>
+<head>
+    <meta charset="utf-8">
+    <title>Song Display</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="song_display_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <img class="responsive-img" id="banner" src="Aoede Placeholder Banner.png" alt="Aoede Banner">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html" target="_blank">Input Form</a></li>
+                <li><a href="search.html" target="_blank">Search</a></li>
+                <li><a href="song_display.html" target="_blank">Song Display</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="song-info">
+        <h4>{{song.song_name}}</h4>
+        <h6>Artist(s): {{song.artist}}</h6>
+    </div>
+    </div>
+    <div>
+        <h5>Database Information</h5>
+        <div class="row" id="tag-info">
+            <p>Here's the information the Aoede community has contributed so far about this song. Want to make it
+                better? Click <a href="#">here</a> to improve our database!</p>
         </div>
 
-        <div class="row" id="more-info">
-            <div class= "col s6" id="spotify-player">
-                SPOTIFY PLAYER
-            </div>
-
-            <div class= "col s6">
-                <h5>More Information</h5>
-                <ul class="collapsible">
-                    <li>
-                      <div class="collapsible-header"><i class="material-icons">search</i>Wikipedia Links</div>
-                      <div class="collapsible-body"><span><a href="#">Lorem ipsum dolor sit amet.</a></span></div>
-                    </li>
-                    <li>
-                      <div class="collapsible-header"><i class="material-icons">music_note</i>Chords</div>
-                      <div class="collapsible-body"><span>Lorem Imsum. This is Brea testing out the chords! </span></div>
-                    </li>
-                  </ul>
-            </div>
-        </div>
-        <div class="divider"></div>
-        <div class="info-tables">
-            <h5>Database Information</h5>
-            <div class="row" id="tag-info">
-                <p>Here's the information the Aoede community has contributed so far about this song. Want to make it better? Click <a href="#">here</a> to improve our database!</p>
-                <table class= "col s6 highlight" id="music-tags">
-                    <thead>
-                    <tr>
-                        <th>Music Tag</th>
-                        <th>Rating</th>
-                        <th>Other Info</th>
-                    </tr>
-                    </thead>
-            
-                    <tbody>
-                    <tr>
-                        <td>Genre(s)</td>
-                        <td></td>
-                        <td>Rock, Bluegrass, Shoe Gazy</td>
-                    </tr>
-                    <tr>
-                        <td>Singability</td>
-                        <td>4.7</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Playability</td>
-                        <td>3.6</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Repetition</td>
-                        <td>2.9</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Dyanmic Variability</td>
-                        <td>3.6</td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <!-- <div class= "col s6" id="music-tags">
-                    <h6></h6>
-                    <ul>
-                        <li>Genre(s): {{Pop, Bluegrass}}</li>
-                        <li>Singability: #.#</li>
-                        <li>Playability: #.#</li>
-                        <li>Repetition: #.#</li>
-                        <li>Dynamic Variability: #.#</li>
-                    </ul>
-                </div> -->
-                <table class= "col s6 highlight" id="nonmusic-tags">
-                    <thead>
-                    <tr>
-                        <th>Non-Music Tag</th>
-                        <th>Rating</th>
-                        <th>Other Info</th>
-                    </tr>
-                    </thead>
-            
-                    <tbody>
-                    <tr>
-                        <td>Top Emotion Tags</td>
-                        <td></td>
-                        <td>Melancholy, Manic, Depressive</td>
-                    </tr>
-                    <tr>
-                        <td>Arousal</td>
-                        <td>4.6</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Mentions</td>
-                        <td></td>
-                        <td>Sex; Drugs; Rock and Roll</td>
-                    </tr>
-                    <tr>
-                    </tbody>
-                </table>
-                <!-- <div class= "col s6" id="nonmusic-tags">
-                    <ul>
-                        <li>Arousal: #.#</li>
-                        <li>Top Emotion Tags:</li>
-                            <ul>
-                                <li>Feeling 1</li>
-                                <li>Feeling 2</li>
-                                <li>Feeling 3</li>
-                            </ul>
-                            <li>Mentions:</li>
-                            <ul>
-                                <li>Sex</li>
-                                <li>Drugs</li>
-                                <li>Rock and Roll</li>
-                            </ul>
-                    </ul>
-                </div> -->
-            </div>
-        </div>
         <div class="divider"></div>
         <div>
-            <h5>Community Comments</h5>
-            <ul>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac sollicitudin metus. Sed auctor, neque eget suscipit commodo, eros nibh mattis felis, et semper justo.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae dignissim nunc. Nam ut diam et justo laoreet elementum id at eros. Praesent sit amet ipsum vitae massa suscipit luctus. Sed gravida arcu purus, vel efficitur arcu lobortis sed. Vivamus posuere at eros ac vulputate. Morbi id est pellentesque, elementum quam varius, pharetra leo. Duis vehicula, erat id ornare sollicitudin, arcu nulla consectetur nibh, at pulvinar lorem ante sed odio. Nullam feugiat quis diam vel faucibus. Nunc scelerisque elit nulla, id scelerisque magna placerat sed. Ut et hendrerit massa. Phasellus sagittis nisi in est molestie, ac sollicitudin lorem varius. Suspendisse.
+            <h5>Comments About {{song.song_name}}</h5>
+
                 </li>
             </ul>
         </div>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.collapsible');
-    var instances = M.Collapsible.init(elems, options);
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.collapsible');
+                var instances = M.Collapsible.init(elems, options);
         </script>
 
-    </body>
+</body>
+
 </html>
