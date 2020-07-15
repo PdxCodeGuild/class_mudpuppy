@@ -1,0 +1,33 @@
+<h1>Review a Color Descriptor</h1>
+<form method="POST" action="/colors/">
+    {% csrf_token %}
+    <label for="item">What item?</label>
+    <select name="item" id="item">
+        {% for item_iter in items_context %}
+            <option value="{{item_iter.id}}">{{item_iter}}</option>
+        {% endfor %}
+    </select>
+    <label for="color">What color?</label>
+    <select name="color" id="color">
+        {% for color_iter in colors_context %}
+            <option value="{{color_iter.id}}">{{color_iter}}</option>
+        {% endfor %}
+    </select>
+    <label for="score">What score?</label>
+    <select name="score" id="score">
+        {% for score_iter in scores_context %}
+            <option value="{{score_iter}}">{{score_iter}}</option>
+        {% endfor %}
+    </select>
+	<br />
+    <button>submit</button>
+</form>
+<h3>Highest Descriptors</h3>
+<ul>
+{% for item_iter in items_context %}
+    {% if item_iter.highest_avg %}
+        <li>{{item_iter}} -- {{item_iter.highest_avg.color}} with a score of {{item_iter.highest_avg.score|floatformat:"-2"}}</li>
+    {% endif %}
+{% endfor %}
+</ul>
+<h3>All Reviews</h3>

@@ -1,0 +1,6 @@
+migrations
+db.sqlite3
+*.swp
+*.swo
+*.swn
+*.swm

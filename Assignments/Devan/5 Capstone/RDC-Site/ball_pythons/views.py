@@ -7,7 +7,7 @@ import os
 
 
 
-# @login_required
+@login_required
 def index(request):
     path = settings.MEDIA_ROOT
     # img_list = os.listdir(path + '/ball_pythons/img')

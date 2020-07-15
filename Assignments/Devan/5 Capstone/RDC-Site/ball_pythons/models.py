@@ -4,6 +4,13 @@ import os
 from django.conf import settings
 
 
+class Genetic(models.Model):
+    gene = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.gene
+
+
 class BallPython(models.Model):
     gender_CHOICES = [
         ('M', 'Male'),
@@ -19,7 +26,7 @@ class BallPython(models.Model):
         ('FPR', 'F/T Pup Rat'),
         ('FSR', 'F/T Small Rat'),
     ]
-
+    morph = models.ManyToManyField(Genetic, related_name="ballpythons")
     name = models.CharField(max_length=128)
     gender = models.CharField(max_length=1, choices=gender_CHOICES)
     weight = models.FloatField(default=100)
@@ -31,3 +38,5 @@ class BallPython(models.Model):
 
     def __str__(self):
         return self.name
+
+
