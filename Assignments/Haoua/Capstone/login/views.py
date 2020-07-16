@@ -3,6 +3,7 @@ from django.contrib import messages
 # Create your views here. 
 
 from .forms import Register 
+from django.contrib.auth.decorators import login_required
 
 def signup(request):
     if request.method == 'POST':
@@ -22,4 +23,8 @@ def signup(request):
 
 
     return render(request, 'login/signup.html', {'form':form})
-    
+
+@login_required
+
+def account(request):
+    return render(request, 'login/account.html')

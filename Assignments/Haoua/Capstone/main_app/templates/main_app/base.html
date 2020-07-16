@@ -27,8 +27,8 @@
 
     <style>
             .row {
-                background-color: brown;
-                width: 50vw;
+               
+                width: 100vw;
             }
          
             #nav-item{
@@ -83,33 +83,16 @@
              
             }
     
-                
-            #slide {
-                width:50vw;
-                height:50vh;
-                background-color: blue;
-            }
+
     
-            #inner {
-                background-color: blue;
-            }
-    
-            #jumbotron {
-                margin-top: .01em;
- 
-                
-            }
+
             #containerbar {
                 background-color: white;
                 /* justify sidebar to the left */
 
             }
 
-            #sidebar {
-                margin: 50em;
-                padding: 1em;
-
-            }
+            
 
             
         </style>
@@ -155,7 +138,7 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Account</a>
                     <div class="dropdown-menu">
                         {% if user.is_authenticated%}
-                            <a class="dropdown-item" href="">Profile</a>
+                            <a class="dropdown-item" href="{%url 'account'%}">Profile</a>
 
                             <a class="dropdown-item" href="{%url 'logout' %}">Logout</a>
                         {%else%}
@@ -256,52 +239,15 @@
                         {%endfor%}
                     {% endif%}
 
-                    {%block content %}{%endblock content %}
-
                 </div>
             
-
-            
-            <!-- <div class="col-md-3"> -->
-                {% if user.is_authenticated%}
-                    <div id="sidebar" class="col">
-                        <div class="content-section">
-                            <h6 class="display-6">What you've missed</h6>
-                                <p class="muted-text">
-                                    <ul class="list-group">
-                                        <li class="list-group-item list-group-item-dark">Announcements</li>
-                                        <li class="list-group-item list-group-item-dark">Posts</li>
-                                        <li class="list-group-item list-group-item-dark">Business Complaints</li>
-                                        <li class="list-group-item list-group-item-dark">BIPOC Businesses</li>
-                
-                                    </ul>
-                                </p>
-                        </div>
-                    </div>
-
-                    <!-- </div> -->
-                
-                {%else%}
-                    <div class="col">
-                        <div class="content-section">
-                            <h6 class="display-6">What you've missed</h6>
-                                <p class="muted-text">
-                                    <ul class="list-group">
-                                        <!-- <li class="list-group-item list-group-item-dark">Announcements</li> -->
-                                        <li class="list-group-item list-group-item-dark">Business Complaints</li>
-                                        <li class="list-group-item list-group-item-dark">BIPOC Businesses</li>
-                
-                                    </ul>
-                                </p>
-                        </div>
-                    </div>
-                
-                {% endif %}
-
             </div>
+            <!-- <div class="col-md-3"> -->
+
         </div>
    
-    
+        {%block content%} {%endblock content%}
+
     
    
     </main>
