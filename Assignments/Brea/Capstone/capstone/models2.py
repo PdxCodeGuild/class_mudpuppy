@@ -18,22 +18,22 @@ class Review(models.Model):
 
     tempo = models.IntegerField()
 
-# class ReviewAvg(models.Model):
-#     song = models.ForeignKey(Song, on_delete=models.PROTECT, related_name='reviews_avg')
-#     tempo = models.ForeignKey(Review, on_delete=models.PROTECT, related_name='reviews_avg')
-#     score = models.FloatField()
-#     count = models.IntegerField()
+class ReviewAvg(models.Model):
+    song = models.ForeignKey(Song, on_delete=models.PROTECT, related_name='reviews_avg')
+    tempo = models.ForeignKey(Review, on_delete=models.PROTECT, related_name='reviews_avg')
+    score = models.FloatField()
+    count = models.IntegerField()
 
-#     def add_review(self, review):
-#         '''Adjust the score and count with a new quality review'''
-#         rev_total = self.tempo * self.count
-#         rev_total += review.tempo 
-#         self.count += 1
-#         self.score = rev_total / self.count
-#         self.save()
+    def add_review(self, review):
+        '''Adjust the score and count with a new quality review'''
+        rev_total = self.tempo * self.count
+        rev_total += review.tempo 
+        self.count += 1
+        self.score = rev_total / self.count
+        self.save()
 
-#     def reset_avg(self):
-#         '''Totally resets the average by looking at all available scores for a quality'''
-#         reviews = Review.objects.filger(song=self.song).filter(quality=self.tempo)
-#         count = len(reviews)
-#         agg = sum
+    def reset_avg(self):
+        '''Totally resets the average by looking at all available scores for a quality'''
+        reviews = Review.objects.filger(song=self.song).filter(quality=self.tempo)
+        count = len(reviews)
+        agg = sum

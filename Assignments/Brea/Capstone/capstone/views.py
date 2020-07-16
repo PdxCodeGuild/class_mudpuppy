@@ -26,13 +26,19 @@ def add_review(request):
 
     new_review = Review(
         song = new_song_input,
+        singability = int(data['singability']),
+        playability = int(data['playability']),
+        repetition = int(data['repetition']),
         tempo = int(data['tempo']),
+        popularity = int(data['popularity']),
+        arousal = int(data['arousal']),
+        valence = int(data['valence']),
         comment = data['comment'],
     )
     new_review.save()
 
-    # new_song_input.avg_review()
-    print(new_song_input.reviews)
+    # average_tempo = new_song_input.avg_review()
+    # print(new_song_input.reviews.all())
     return HttpResponse('It worked!')
 
 # def average_score(request, song_id):

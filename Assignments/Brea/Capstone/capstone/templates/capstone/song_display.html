@@ -2,19 +2,20 @@
 <html>
 
 <head>
+    {% load static %}
     <meta charset="utf-8">
     <title>Song Display</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="song_display_style.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'capstone/css/song_display_style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <img class="responsive-img" id="banner" src="Aoede Placeholder Banner.png" alt="Aoede Banner">
+    <img class="responsive-img" id="banner" src="{% static 'capstone/images/Aoede_Placeholder_Banner.png' %}"
+        alt="Aoede Banner">
     <nav>
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">Logo</a>
@@ -25,30 +26,45 @@
             </ul>
         </div>
     </nav>
-    <div id="song-info">
-        <h4>{{song.song_name}}</h4>
-        <h6>Artist(s): {{song.artist}}</h6>
-    </div>
-    </div>
-    <div>
-        <h5>Database Information</h5>
-        <div class="row" id="tag-info">
-            <p>Here's the information the Aoede community has contributed so far about this song. Want to make it
-                better? Click <a href="#">here</a> to improve our database!</p>
+    <main>
+        <div id="song-info">
+            <h4>{{song.song_name}}</h4>
+            <h6>Artist(s): {{song.artist}}</h6>
         </div>
-
-        <div class="divider"></div>
+        </div>
         <div>
-            <h5>Comments About {{song.song_name}}</h5>
+            <h5>Database Information</h5>
+            <div class="row" id="tag-info">
+                <p>Here's the information the Aoede community has contributed so far about this song. All scores are
+                    averages.</p>
+                <p>Singability: {{song.avg_singability}}</p>
+                <p>Playability: {{song.avg_playability}}</p>
+                <p>Repetition: {{song.avg_repetition}}</p>
+                <p>Tempo: {{song.avg_tempo}}</p>
+                <br>
+                <p>Popularity: {{song.avg_popularity}}</p>
+                <p>Arousal: {{song.avg_arousal}}</p>
+                <p>Valence: {{song.avg_valence}}</p>
+                <p>Want to make it better? Click <a href="#">here</a> to improve our database!</p>
+            </div>
 
-                </li>
-            </ul>
-        </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var elems = document.querySelectorAll('.collapsible');
-                var instances = M.Collapsible.init(elems, options);
-        </script>
+            <div class="divider"></div>
+            <div>
+                <h5>Comments About {{song.song_name}}</h5>
+                {% for review in song.reviews.all%}
+                {% if review.comment %}
+                <li>{{ review.comment }}</li>
+                {% endif %}
+                {% endfor %}
+                </ul>
+
+            </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems, options);
+    </script>
 
 </body>
 

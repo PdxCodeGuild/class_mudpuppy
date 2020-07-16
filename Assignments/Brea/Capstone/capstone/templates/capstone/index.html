@@ -2,37 +2,21 @@
 <html>
 
 <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="index_style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'capstone/css/index_style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
-        /* * {
-            outline: 3px solid red;
 
-        } */
-
-        body {
-            background-color: darkslategray;
-            font-family: 'Oxygen', sans-serif;
-            color: white;
-        }
-
-        main {
-            margin: 15px;
-        }
-
-        .range-field {
-
-        }
     </style>
 </head>
 
 <body>
-    <img class="responsive-img" id="banner" src="Aoede Placeholder Banner.png" alt="Aoede Banner">
+    <img class="responsive-img" id="banner" src="{% static 'capstone/images/Aoede_Placeholder_Banner.png' %}" alt="Aoede Banner">
     <nav>
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">Logo</a>
