@@ -90,6 +90,18 @@ class Song(models.Model):
         valence_avg = round((valence_sum / count), 2)
         return valence_avg
     
+    def genre_display(self):
+        genre_list = []
+        reviews = self.reviews.all()
+        for review in reviews:
+            genres = review.genre.all()
+            for genre in genres:
+                genre_list.append(genre.name)
+        #word count lab in Python, as a way to figure out how to pull out the three most common genres associated with a song
+        # genre_list.sort()
+            
+        return genre_list
+
     def comment_display(self):
         comments = self.reviews.all()
     
@@ -109,6 +121,8 @@ class Review(models.Model):
     popularity = models.IntegerField(null=True, blank=True)
     arousal = models.IntegerField(null=True, blank=True)
     valence = models.IntegerField(null=True, blank=True)
+
+    genre = models.ManyToManyField(Genre)
 
     comment = models.TextField(max_length=500, null=True, blank=True)
 
