@@ -12,9 +12,8 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.info-tables {
-    padding: 10px;
-    margin: 15px;
+main {
+    padding: 20px
 }
 #more-info {
     display: flex;
@@ -23,9 +22,6 @@ body {
     margin: 15px;
 }
 #song-info {
-    width: 100vw;
-    padding: 10px;
-    margin: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
