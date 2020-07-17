@@ -4,7 +4,11 @@
 
 
 {% block content %}
-    <style>
+    <style> 
+
+        body {
+            background-color: black;
+        }
         #sidebar{
             /* margin-left: 17em;
             margin-top: -2em;
@@ -29,7 +33,7 @@
             margin-right: -6em; */
             justify-content: center;
             background-color: blue;
-            margin-left: 1em;
+            margin-left: 0;
 
         }
 
@@ -105,39 +109,84 @@
                 <li data-target="#slide" data-slide-to="0" class="active"></li>
                 <li data-target="#slide" data-slide-to="1"></li>
                 <li data-target="#slide" data-slide-to="2"></li>
+                <li data-target="#slide" data-slide-to="4"></li>
+
             </ol>
 
 
-            <div class="carousel-inner" id="inner" style="max-height:195px; max-width: 700px;">
+            <div class="carousel-inner" id="inner" style="max-height:195px; max-width: 875px;">
                 <div class="carousel-item active" id="active "style="max-width:700px;max-height:195px;">
-                    <div class="card mb-2" style="max-width:100px;" id="card">
+                    
+           
+                    
+                    
+                    <div class="card text-center bg-white mb-3" style="max-width:195px;" id="card">
                         <div class="row no-gutters" id="gutters">
-                            <div class="col-md-2" id="card-image">
-                                <img src="{%static 'media/Exposing.png'%}" class="d-block w-100" alt="Blog Photo" id="photo"/>
+                            <div class="col-md-8" id="card-image">
+                                <img src="{%static 'media/cover.jpg'%}" class="d-block w-100" alt="Blog Photo" id="photo"/>
                                 
                             </div>
                             <div class="col-md-4">
                                 <div class="card-body">
                                 <!-- insert a variable for Blog so   that the most recent blogs are shown-->
                                 
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi esse officiis fuga perferendis ipsa quis in quod quasi doloremque nulla ipsum distinctio voluptates quia laboriosam delectus minus, earum, dolorum quas?</p>
                                   <!-- insert a variable for "" so   that the timelapmedse is shown-->
                                 </div>
                             </div>
                         </div>
                 
                     </div>
+
+
+
+
+                    <div class="carousel-caption d-block w-100 h-50">
+                        
+                        <h5 class="text-white"><bold>Checkout our Team!</bold></h5>
+                    </div>
                 </div>
 
 
 
+
+
+                <div class="carousel-item " id="active "style="max-width:700px;max-height:195px;">
+                    
+           
+                    
+                    
+                    <div class="card text-dark bg-white mb-2" style="max-width:100px;" id="card">
+                        <div class="row no-gutters" id="gutters">
+                            <div class="col-md-2" id="card-image">
+                                <img src="{%static 'media/Exposing.png'%}" class="d-block w-100" alt="Blog Photo" id="photo"/>
+                                    
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-body">
+                                    <!-- insert a variable for Blog so   that the most recent blogs are shown-->
+                                    
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi esse officiis fuga perferendis ipsa quis in quod quasi doloremque nulla ipsum distinctio voluptates quia laboriosam delectus minus, earum, dolorum quas?</p>
+                                      <!-- insert a variable for "" so   that the timelapmedse is shown-->
+                                </div>
+                            </div>
+                        </div>
+                    
+                        </div>
+    
+    
+                    
+                    </div>
+
+
             <!-- change carousel items on landing page to photos and cards for the blog page -->
                 <div class="carousel-item" id="active" style="max-width:700px;max-height:195px;">
+                    
                     <div class="card mb-2" style="max-width:100px" id="card">
                         <div class="row no-gutters" id="gutters"> 
                             <div class="col-md-2" id="card-image">
                                 <img src="{%static 'media/cover.jpg'%}" class="d-block w-100" alt="Blog Photo" id="photo-1"/>
-                                
+                  
                             </div>
 
                             <div class="col-md-4">
@@ -203,11 +252,11 @@
                        
                         <p class="muted-text" id="sidebarr">
                             <ul class="list-group">
-                                <li class="list-group-item list-group-item-info"><h6 class="display-6">What you've missed</h6></li>
+                                <li class="list-group-item list-group-item-primary"><h6 class="display-6">What you've missed</h6></li>
                                     <!-- <li class="list-group-item list-group-item-dark">Announcements</li> -->
-                                    <li class="list-group-item list-group-item-dark">Posts</li>
-                                    <li class="list-group-item list-group-item-dark">Business Complaints</li>
-                                    <li class="list-group-item list-group-item-dark">BIPOC Businesses</li>
+                                    <li class="list-group-item list-group-item-warning">Posts</li>
+                                    <li class="list-group-item list-group-item-warning">Business Complaints</li>
+                                    <li class="list-group-item list-group-item-warning">BIPOC Businesses</li>
         
                             </ul>
                         </p>
@@ -239,7 +288,7 @@
 
     
         
-    <div class="container-fluid jumbotron jumbotron-fluid" id="jumbotron">
+    <div class="container-fluid jumbotron jumbotron-fluid text-white bg-transparent" id="jumbotron">
         <div class="container-fluid">
             <h1 class="display-6">Our Mission</h1>
             <hr>

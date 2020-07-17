@@ -1,6 +1,6 @@
 
 {% extends "main_app/base.html" %}
-{%load tz%}
+
 {%load static %}
 
 
@@ -8,15 +8,23 @@
 
     <style>
         body {
-            display: flex;
+            
+            /* background:whitesmoke; */
+            
         }
+        .col {
+          
+        }
+        
         #sidebar{
-            /* margin-left: 17em;
-            margin-top: -2em;
-            padding-top: -3em; */
-            /* margin-top: -2.7em;
-            margin-left: 6.7em;
-            padding: 0; */
+            margin-left: 40em;
+            margin-top: -1em;
+            margin-right: -1em;
+            
+        
+        
+            padding: 0;
+            
             
 
         }
@@ -27,21 +35,37 @@
             
         }
         #sidebarr {
+       
+
             /* height: 5vh; */
         }
         #slide {
             /* margin-left: 1em;
             margin-right: -6em; */
+            /* justify-self: center;
             justify-content: center;
+            justify-items: center; */
+            
+            background-color: black;
+            padding:0;
+            margin: 0;
           
-            margin-left: 1em;
             
 
         }
 
+
+        #cardbody {
+            margin:.5em;
+            padding: .5em;
+        }
         img {
             width: 5vw;
             height: 35vh;
+            padding: 0;
+            margin: 0;
+            object-fit: cover;
+            
         }
 
         #card-image {
@@ -60,8 +84,8 @@
             
             padding: 0;
             margin: 0;
-            /* width: 100vw;
-            height: 75vh; */
+   
+
         }
 
         #gutters {
@@ -69,13 +93,16 @@
 
             padding: 0;
             margin: 0;
+            
+
         }
 
         #inner {
           
             padding: 0;
             margin: 0;
-
+            
+            
 
         }
 
@@ -88,137 +115,138 @@
 
 
         }
+        #row{
+            
+            margin: 0;
+            padding: 0;
+            
+          
+        }
     </style>
 
     
     
-    
-    <!-- <div class="container-fluid jumbotron jumbotron-fluid" id="jumbotron">
-        <div class="container-fluid">
-            <h1 class="display-6">Our Mission</h1>
-            <hr>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis incidunt, quo tempora nesciunt vero odio eum corrupti? Saepe a accusamus ducimus quae alias consectetur. Maxime amet et ipsum reiciendis temporibus?</p>
-        </div>
 
-        
-    </div> -->
-    <br>
-    <br>
-    <br>
-    <br>
+    
+    
     <br>
     
         <!--make carousel a strip: width: 100% height: 25%-50%  -->
-    <div class="row">
-        <div id="slide" class=" col-md-8 carousel slide" data-ride="carousel"  style="height: 90vh; width: 75vw;">
+    <div class="row" id="row" style="height: 70vh; width: 70vw;">
+        <div class="col">
+            <div id="slide" class="carousel slide" data-ride="carousel"  style="height: 77vh; width: 75vw;">
 
-            <ol class="carousel-indicators">
+                <ol class="carousel-indicators">
                 
-                <li data-target="#slide" data-slide-to="0" class="active"></li>
+                    <li data-target="#slide" data-slide-to="0" class="active"></li>
 
-                {%for blog in posts %}
+                    {%for blog in posts %}
                     
                     
-                    <li data-target="#slide" data-slide-to="{{blog.pk}}"></li>
-                {%endfor %}
-            </ol>
+                        <li data-target="#slide" data-slide-to="{{blog.pk}}"></li>
+                    {%endfor %}
+                </ol>
 
 
 
-            <div class="carousel-inner" id="inner">
-                <div class="carousel-item active" id="active">
+                <div class="carousel-inner" id="inner" style="max-height:65vh; max-width:80vw;">
+                    <div class="carousel-item active" id="active" style="max-height: 65vh; max-width:80vw;">
                     
 
-                    <div class="card text-white bg-primary mb-2" style="max-width:100vw;" id="card">
-                        <div class="row no-gutters" id="gutters">
-                            <div class="col-md-4" id="card-image">
-                                <img src="{%static 'main_app/static/media/default.png %}" class="d-block w-100" alt="Blog Photo" id="photo"/>
+                        <div class="card text-white bg-dark mb-3" style="max-width:100px;" id="card">
+                            <div class="row no-gutters" id="gutters">
+                                <img src="{%static 'media/cover.jpg' %}" class="card-img-top" alt="Blog Photo" id="img"/>
                             </div>
+                    
                         </div>
     
-    
-                        <div class="col-md-4">
-                            <div class="card-body">
+                
+                        <div class="card-body text-white text-wrap" id="cardbody">
                                     <!-- insert a variable for Blog so   that the most recent blogs are shown-->
-                                <a href="#"><h1 class="display-3">cftyf</h1></a>
-                                <small class="text-muted">
-                                    {% for blog in posts%}
-                                        {%if blog.pk == 1 %}:
-                                            <p>{{blog.date}}</p>
-                                        {%endif%}
-                                    {%endfor%}
-                                </small>
-                                <p class="card-text">uhuii</p>
+                            <a href="#"><h1 class="display-3">cftyf</h1></a>
+                            <small class="text-muted text-wrap">
+                                {% for blog in posts%}
+                                    {%if blog.pk == 1 %}:
+                                        <p>{{blog.date}}</p>
+                                    {%endif%}
+                                {%endfor%}
+                            </small>
+                            <p class="card-text">uhuii igdiug hh iguiagdygdyugduygyqgdyigqi</p>
                                       <!-- insert a variable for "" so   that the timelapmedse is shown-->
-                            </div>
                         </div>
                     </div>
+                    
+                
+                
+
+
+                    {%for blog in posts%}
+                        <div class="carousel-item" id="active">
+                    
+
+                            <div class="card text-white bg-dark mb-3" style="max-width:100vw;" id="card">
+                                <div class="row no-gutters" id="gutters">
+                                <!-- <div class="col-md-2" id="card-image"> -->
+                                    <img src="{%static 'media/cover.jpg' %}" class="card-img-top" alt="Blog Photo" id="img"/>
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="col-md-4"> -->
+                            <div class="card-body text-wrap"id="cardbody">
+                                <!-- insert a variable for Blog so   that the most recent blogs are shown-->
+                                <a href="#"><h1 class="display-3">{{blog.author}}</h1></a>
+                                <small class="text-muted">{{blog.date}}</small>
+                                <p class="card-text">{{blog.content}}</p>
+                                  <!-- insert a variable for "" so   that the timelapmedse is shown-->
+                            </div>
+                        </div>
+                    
+                    {%endfor %}
+                
+
+
+                    <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#slide" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only"></span>
+                    </a>
+                
                 </div>
 
-                {%for blog in posts%}
-                    <div class="carousel-item" id="active">
-                    
-
-                        <div class="card text-white bg-dark mb-6" style="max-width:100vw;" id="card">
-                            <div class="row no-gutters" id="gutters">
-                                <div class="col-md-2" id="card-image">
-                                    <img src="{%static 'main_app/static/media/cover.jpg'%}" class="d-block w-100" alt="Blog Photo" id="photo"/>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-4">
-                                <div class="card-body">
-                                <!-- insert a variable for Blog so   that the most recent blogs are shown-->
-                                    <a href="#"><h1 class="display-3">{{blog.author}}</h1></a>
-                                    <small class="text-muted">{{blog.date}}</small>
-                                    <p class="card-text">{{blog.content}}</p>
-                                  <!-- insert a variable for "" so   that the timelapmedse is shown-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {%endfor %}
-                
             </div>
-
         
 
-        
-            <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only"></span>
-            </a>
-            <a class="carousel-control-next" href="#slide" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only"></span>
-            </a>
-            
         
         </div>
-        <br>
     
+        
+        
 
     
         
         {% if user.is_authenticated%}
-                   
-            <div id="sidebar" class="col-md-2">
-                <div class="content-section ">
+            <div class="col">
+                <div id="sidebar" class="col-md-4">
+                    <div class="content-section ">
                        
-                    <p class="muted-text" id="sidebarr">
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-info"><h6 class="display-6">What you've missed</h6>
+                        <p class="muted-text" id="sidebarr">
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-info"><h6 class="display-6">What you've missed</h6>
                                     <!-- <li class="list-group-item list-group-item-dark">Announcements</li> -->
-                                <li class="list-group-item list-group-item-dark">Posts</li>
-                                <li class="list-group-item list-group-item-dark">Business Complaints</li>
-                                <li class="list-group-item list-group-item-dark">BIPOC Businesses</li>
-                            </li>
-                        </ul>
-                    </p>
+                                    <li class="list-group-item list-group-item-dark">Posts</li>
+                                    <li class="list-group-item list-group-item-dark">Business Complaints</li>
+                                    <li class="list-group-item list-group-item-dark">BIPOC Businesses</li>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
                 </div>
             </div>
-
+            
             <!-- </div> -->
         
         {%else%}
