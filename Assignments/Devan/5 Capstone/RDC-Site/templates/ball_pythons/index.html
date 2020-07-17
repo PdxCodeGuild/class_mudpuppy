@@ -5,6 +5,7 @@
 
 {% block content %}
 
+{% if all_balls_template %}
 {% for ball in all_balls_template %}
 <div class="snake-card">
         <img src='{{ ball.picture.url }}' alt="{{ball.name}}">
@@ -12,5 +13,8 @@
         <h5>{{ball.hatched_on}}</h5>
 </div>
 {% endfor %}
+{% else %}
+<p>There are no snakes available.</p>
+{% endif %}
 
 {% endblock %}
