@@ -4,7 +4,7 @@
 <head>
     {% load static %}
     <meta charset="utf-8">
-    <title>Song Display</title>
+    <title>Artist Display</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'capstone/css/song_display_style.css' %}">
@@ -34,47 +34,15 @@
         <div>
             <h5>Database Information</h5>
             <div class="row" id="tag-info">
-                <p>Here's the information the Aoede community has contributed so far about this song. All scores are
-                    averages on a 1 <i>(not that quality)</i> to 7 <i>(very much that quality)</i> scale.</p>
-                <div>
-                    <h6>Musical Qualities</h6>
-                    <div>
-                        <p>Singability: {{song.avg_singability}}</p>
-                        <p>Playability: {{song.avg_playability}}</p>
-                        <p>Repetition: {{song.avg_repetition}}</p>
-                        <p>Tempo: {{song.avg_tempo}}</p>
-                    </div>
-                    <div>
-                        <p>Top Genre(s) Associated with {{song.song_name}}:</p>
-                <ol>
-                    {% for item in song.genre_display %}
-                    <li>{{item}}</li>   
-                    {% endfor %} 
-                </ol>
-                    </div>
-                </div>
-                <div>
-                    <h6>Non-Musical Qualities</h6>
-                    <p>Popularity: {{song.avg_popularity}}</p>
-                    <p>Arousal: {{song.avg_arousal}}</p>
-                    <p>Valence: {{song.avg_valence}}</p>
-                
-                </div>
+                <p>Here's are the top songs that the Aoede community has suggested for {{ song.artist }}</p>
+                    <ol>
+                        {% for song in song.artist %}
+                        <li>{{song.song_name}}</li>
+                        {% endfor %}
+                    </ol>
                 <p>Want to make it better? Click <a href="{% url 'capstone:index' %}">here</a> to improve our database!</p>
             </div>
 
-
-            <div class="divider"></div>
-            <div>
-                <h5>Comments About {{song.song_name}}</h5>
-                {% for review in song.reviews.all%}
-                {% if review.comment %}
-                <li>{{ review.comment }}</li>
-                {% endif %}
-                {% endfor %}
-                </ul>
-
-            </div>
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', function () {

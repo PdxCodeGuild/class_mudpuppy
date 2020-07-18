@@ -91,16 +91,25 @@ class Song(models.Model):
         return valence_avg
     
     def genre_display(self):
+        genre_dict = {}
         genre_list = []
         reviews = self.reviews.all()
         for review in reviews:
             genres = review.genre.all()
             for genre in genres:
-                genre_list.append(genre.name)
-        #word count lab in Python, as a way to figure out how to pull out the three most common genres associated with a song
-        # genre_list.sort()
-            
-        return genre_list
+                if genre.name in genre_dict.keys():
+                    genre_dict[genre.name] = genre_dict[genre.name] + 1
+                else:
+                    genre_dict[genre.name] = 1
+                # genre_list.append(genre.name)
+        print('*' * 40)
+        song_genres = list(genre_dict.items())
+        song_genres.sort(key=lambda tup: tup[1], reverse=True)
+
+        for tup in song_genres:
+            genre_list.append(tup[0])
+        print(genre_list[:5])
+        return genre_list[:5]
 
     def comment_display(self):
         comments = self.reviews.all()

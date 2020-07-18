@@ -1,6 +1,6 @@
-* {
+/* * {
     outline: 3px  solid red;
-}
+} */
 body {
     background-color: darkslategray;
     font-family: 'Oxygen', sans-serif;
@@ -27,7 +27,7 @@ div {
 }
 #roles {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .square {

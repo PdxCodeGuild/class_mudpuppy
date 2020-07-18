@@ -22,7 +22,13 @@ with open(text_file) as f:
                 word_dict[word] = 1
     print(word_dict)
 
+def sort_by_index_one(tup):
+    return tup[0]
+
+
 words = list(word_dict.items()) # .items() returns a list of tuples
-words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
+words.sort(key=sort_by_index_one, reverse=True) #another way to run line 31
+# words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
 for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
     print(words[i])
+print(words[:10])
