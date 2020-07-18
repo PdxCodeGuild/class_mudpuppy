@@ -3,8 +3,30 @@
 {% block title %}RDC - Home{% endblock %}
 
 {% block content %}
-<div class="center-align vh-50">
-    <h1>Red Dirt Constrictors</h1>
-    <h3>We breed exotic morph ball pythons.</h3>
-</div>
+
+<div class="container wrapper">
+    <section class="center-align vh-50">
+        <h1>Red Dirt Constrictors</h1>
+        <h3>We breed exotic morph ball pythons.</h3>
+    </section>
+    <section class="cta center-align">
+        <h4>Have a look at our available Ball Pythons</h4>
+        <a class="waves-effect waves-light btn-large"><i class="material-icons right">cloud</i>Click Me!</a>
+    </section>
+    <section class="latest-balls">
+        <h5>Recently Added</h5>
+        {% if last_6_balls_template %}
+        {% for ball in last_6_balls_template %}
+        <div class="snake-card">
+            <img src='{{ ball.picture.url }}' alt="{{ball.name}}">
+            <h4>{{ball.name}}</h4>
+            <h5>{{ball.hatched_on}}</h5>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>There are no snakes available.</p>
+        {% endif %}
+    </section>
+
+</div> <!-- .wrapper -->
 {% endblock %}
