@@ -1,0 +1,111 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Suranna&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">   
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+            <title>Pacific NW Wine Tours</title>
+            <style>
+                h1 {text-align: center; font-family: 'Suranna', serif; margin-top: 3%; margin-bottom: 1%;}
+                h2 {text-indent: 2.5%; margin-bottom: 1.5%; font-family: 'PT Sans Narrow', sans-serif; font-weight: bold;}
+                h3 {text-align: center; margin-bottom: 1%; font-family: 'Anton', sans-serif;}
+                h4 {text-align: center; font-family: 'Suranna', serif; font-size:x-large;}
+                h5 {text-align: left; margin-bottom: 1%; font-family: 'PT Sans Narrow', sans-serif; font-weight: bold;}
+                body {background-color: rgb(66, 22, 43); border: 1px solid #ddd; border-radius: 4px; padding: 5px; margin: 5px; background-image: url('https://incadventures.com/wp-content/uploads/2013/09/Napa-Wine-Country.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-position: center;}
+                img {border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 350px; margin: 0 3%}
+                .img-container {display:flex; justify-content: center;}
+                section {margin-left: 5%; margin-right: 5%; margin-top: 1.5%;}
+                footer {text-align: center; font-family: 'Suranna', serif; font-size: xx-large; margin-top: 2%; margin-bottom: 3%;}
+                p {margin-bottom: 2%; text-align:justify}
+                .background {background-color: rgba(255,255,255,.2); max-width: 90%;}
+                .title_background {background-color: rgba(255,255,255,.2); max-width: 30%;}
+                .center {margin: 0 auto;}
+                .left {margin-left: 5%;}
+                .vineyard-link {margin-bottom: 2%; text-align:justify; color:black}
+            </style>
+    </head>
+    <body> 
+        <div class = "title_background center">     
+        <h1>PNW Wine Tours</h1>
+        <h3>Specializing in Fine Wine Tours</h3>
+        <h4>Est. 2020</h4>
+        </div> 
+
+        <div class = "background left">
+        <section>
+        <h2>About Us</h2>
+        <p>Pacific NW Wine Tours is a company.</p>       
+        </section>
+        </div>
+
+        <div class = "background left">
+        <section>
+        <h2>Why Choose PNW Wine Tours?</h2>
+        <p>This is where the marketing really comes into play...</p>
+        </section>
+        </div>
+    
+        <div class = "background left">
+        <section>
+
+        <h2>Wineries We Visit</h2>
+        {% for vineyard in Vineyards %}
+        <a class = "vineyard-link" href="/wine/vineyard/{{vineyard.id}}"><h5>{{vineyard.name}}</h5></a>
+        <div>{{vineyard.description}}</div>
+        <p>{{vineyard.location}}</p>
+        {% endfor %}
+        </section>
+        </div>
+
+        <div class = "background left">
+        <section>
+        <h2>FAQs</h2>
+        <p>This is where people can get common knowledge about the services we offer.</p>
+        </section>
+        </div>
+        <p><br></p>
+        
+        <div class = "title_background center"> 
+        <section>
+        <h3>Photo Gallery</h3>
+        <p>Here is a Collective Group of Pictures Taken from our Staff!</p>
+        </div>
+    
+        <div class= "img-container">
+        <img src= "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.MsE7R1w2fUnGTTEjl7oZDgHaE8%26pid%3DApi%26h%3D180%26p%3D0&f=1">
+
+        <img src= "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.3IDzLtXdJDW7Fr3tcvREOwHaE8%26pid%3DApi%26h%3D180%26p%3D0&f=1">
+
+        <img src= "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.AQXUshmwwDj7KGJX7PVVQAHaE7%26pid%3DApi&f=1">
+        </div>
+        </section>
+
+        <div class= "img-container">
+        <img src= "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.5UsRPe_MNPMiPZFFHlv9NgHaEc%26pid%3DApi&f=1">
+
+        <img src= "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.tSsXRZCIdt8r9pVB2fRDWQEsDh%26pid%3DApi%26h%3D180%26p%3D0&f=1">
+
+        <img src= "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.cJwm1NkZxEDxG7FSSIOLNQAAAA%26pid%3DApi&f=1">
+        </div>
+        </section>
+
+        <div class= "img-container">
+        <img src= "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.qtKs94FgdX1pF4E_no68mAHaF5%26pid%3DApi%26h%3D180%26p%3D0&f=1">
+
+        <img src= "https://www.treeisland.com/sites/default/files/styles/large/public/products/listing-images/rosellas01.jpg?itok=Q42ERpHD">
+
+        <img src= "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.wYIjGtqDlnZ6s0kq4Pl6bQHaE9%26pid%3DApi%26h%3D180%26p%3D0&f=1">
+        </div>
+        </section>
+
+        <div class = "title_background center"> 
+        <a href="/wine/contact/"><footer><strong>Click Here to Contact Us!</strong></footer></a>
+        </div>
+    </body>
+    </html>

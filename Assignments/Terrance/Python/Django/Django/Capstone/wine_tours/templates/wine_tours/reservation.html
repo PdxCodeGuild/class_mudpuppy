@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations</title>
+    <style>
+        h1 {border-style: solid; text-align: center; font-family: 'Suranna', serif; margin-top: 3%; margin-bottom: 1%;}
+        h2 {border-style: solid; text-align: center; font-family: 'Suranna', serif; margin-top: 3%; margin-bottom: 1%;}
+        .party_size {text-align: center; font-family: 'Suranna', serif}
+        .title_background {max-width: 20%; justify-content: center; margin: 0 auto}
+        .title_background2 {max-width: 10%; justify-content: center; margin: 2% auto}
+        body {background-color: rgb(150, 114, 131); border: 1px solid #ddd; border-radius: 4px; padding: 5px; margin: 5px;}
+    </style>
+</head>
+<body>
+
+    <div class= "title_background center"> 
+    <h1 id="title">Reservations</h1>
+    </div>
+
+    <div class= "party_size">
+        <form method="POST" action="/wine/receive/">
+            {% csrf_token %}
+            <input type="hidden" name="vineyard_id" value="{{vineyard.id}}">
+
+            <p>Please Select Your Party Size</p>
+            <input type="radio" id="size1" name="size" value="1">
+            <label for="size1">1</label><br>
+        
+            <input type="radio" id="size2" name="size" value="2">
+            <label for="size2">2</label><br>  
+        
+            <input type="radio" id="size3" name="size" value="3">
+            <label for="size3">3</label><br>  
+        
+            <input type="radio" id="size4" name="size" value="4">
+            <label for="size4">4</label><br>  
+        
+            <input type="radio" id="size5" name="size" value="5">
+            <label for="size5">5</label><br>  
+        
+            <input type="radio" id="size6" name="size" value="6">
+            <label for="size6">6</label><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+
+    <div class= "title_background2 center"> 
+    <h2 id ="footer"><a href="/wine/">Main Page</a></h2>
+    </div>
+
+</body>
+</html>
