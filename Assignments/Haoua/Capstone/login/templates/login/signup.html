@@ -1,0 +1,33 @@
+
+{% extends "login/base.html" %}
+
+{%load crispy_forms_tags%}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <div id="signup_content" class="content-section">
+        <form method="POST">
+            {% csrf_token%}
+            <fieldset class="form-group">
+                <legend class="border-bottom pt-2" id="legend">Want to expose racism? Register today!</legend>
+                
+                {{ form|crispy}}
+                
+            </fieldset>
+            
+            <div class="form-group">
+                <button id="signup_button" class="btn btn-outline-info" type="submit">Sign up</buttn>
+            </div>
+        </form>
+        <div class="alert-alert-info border-top pt-2" role="alert">
+            <small class="text-muted">
+                Have an account? <a id="signin_link" class="ml-1" href="{% url 'login' %}">Sign in</a>
+            </small>
+            <br>
+            <br>
+            
+        </div>
+    </div>
+{%endblock content%}

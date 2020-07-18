@@ -2,19 +2,19 @@
 <html>
 
 <head>
+    {% load static %}
     <meta charset="utf-8">
     <title>Aoede App</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="landing_style.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'capstone/css/landing_style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <img class= "responsive-img" id="banner" src="Aoede Placeholder Banner.png" alt="Aoede Banner">
+    <img class= "responsive-img" id="banner" src="{% static 'capstone/images/Aoede_Placeholder_Banner.png' %}" alt="Aoede Banner">
     <nav>
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">Logo</a>

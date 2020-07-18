@@ -1,64 +1,130 @@
 from django.db import models
-from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.models import User
 
 class Song(models.Model):
     song_name = models.CharField(max_length=100, null=True, blank=True)
-    year = models.CharField(max_length=4, null=True, blank=True)
     artist = models.CharField(max_length=50, null=True, blank=True)
-    highest_avg = models.ForeignKey('ReviewAvg', on_delete=models.PROTECT, related_name='songs', null=True) # the ForeignKey is the unique id related to a row as created by ReviewAvg, for the genre upvotes
 
     def __str__(self):
-        return self.name
+        return self.song_name
+    
+    def avg_singability(self):
+        reviews = self.reviews.all()  #related name to line 21
+        # make a workable average calculation for tempo, hopefully write in a way I can generalize it
+        count = 0
+        singability_sum = 0
+        for review in reviews:
+            if review.singability != None:
+                singability_sum += review.singability
+                count +=1
+        singability_avg = round((singability_sum / count), 2)
+        return singability_avg
 
-    def reset_highest(self):
-        self.highest_avg = max(self.reviews_avgs.all(), key=lambda review: review.score)
-        self.save()
-        # pulls the highest of all the review averages and saves it as itself
+    def avg_playability(self):
+        reviews = self.reviews.all()  #related name to line 21
+        # make a workable average calculation for tempo, hopefully write in a way I can generalize it
+        count = 0
+        playability_sum = 0
+        for review in reviews:
+            if review.playability != None:
+                playability_sum += review.playability
+                count +=1
+        playability_avg = round((playability_sum / count), 2)
+        return playability_avg
 
-class Quality(models.Model): #captures all 1-7 rating types
-    name = models.CharField(max_length=16)
+    def avg_tempo(self):
+        reviews = self.reviews.all()  #related name to line 21
+        # make a workable average calculation for tempo, hopefully write in a way I can generalize it
+        count = 0
+        tempo_sum = 0
+        for review in reviews:
+            if review.tempo != None:
+                tempo_sum += review.tempo
+                count +=1
+        tempo_avg = round((tempo_sum / count), 2)
+        return tempo_avg
 
-    def __str__(self):
-        return self.name
+    def avg_repetition(self):
+        reviews = self.reviews.all()  #related name to line 21
+        # make a workable average calculation for repetition, hopefully write in a way I can generalize it
+        count = 0
+        repetition_sum = 0
+        for review in reviews:
+            if review.repetition != None:
+                repetition_sum += review.repetition
+                count +=1
+        repetition_avg = round((repetition_sum / count), 2)
+        return repetition_avg
 
+    def avg_popularity(self):
+        reviews = self.reviews.all()  #related name to line 21
+        # make a workable average calculation for popularity, hopefully write in a way I can generalize it
+        count = 0
+        popularity_sum = 0
+        for review in reviews:
+            if review.popularity != None:
+                popularity_sum += review.popularity
+                count +=1
+        popularity_avg = round((popularity_sum / count), 2)
+        return popularity_avg
+    
+    def avg_arousal(self):
+        reviews = self.reviews.all()
+        count = 0
+        arousal_sum = 0
+        for review in reviews:
+            if review.arousal != None:
+                arousal_sum += review.arousal
+                count +=1
+        arousal_avg = round((arousal_sum / count), 2)
+        return arousal_avg
+    
+    def avg_valence(self):
+        reviews = self.reviews.all()  #related name to line 21
+        # make a workable average calculation for valence, hopefully write in a way I can generalize it
+        count = 0
+        valence_sum = 0
+        for review in reviews:
+            if review.valence != None:
+                valence_sum += review.valence
+                count +=1
+        valence_avg = round((valence_sum / count), 2)
+        return valence_avg
+    
+    def genre_display(self):
+        genre_list = []
+        reviews = self.reviews.all()
+        for review in reviews:
+            genres = review.genre.all()
+            for genre in genres:
+                genre_list.append(genre.name)
+        #word count lab in Python, as a way to figure out how to pull out the three most common genres associated with a song
+        # genre_list.sort()
+            
+        return genre_list
+
+    def comment_display(self):
+        comments = self.reviews.all()
+    
 class Genre(models.Model):
     name = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
 
-class Comment(models.Model):
-    comment = models.TextField(max_length=500, null=True, blank=True)
-    song = models.ForeignKey(Song, on_delete = models.PROTECT)
-
 class Review(models.Model):
     song = models.ForeignKey(Song, on_delete=models.PROTECT, related_name='reviews')
-    quality = models.ForeignKey(Quality, on_delete=models.PROTECT, 
-    related_name='reviews_qualityname')
-    score = models.IntegerField()
-    # creates a Review that intersects the Song and Quality classes, with their given numeric score
-
-class ReviewAvg(models.Model):
-    song = models.ForeignKey(Song, on_delete=models.PROTECT, related_name='reviews_avgs')
-    quality = models.ForeignKey(Quality, on_delete=models.PROTECT, related_name='reviews_avgs')
-    score = models.FloatField()
-    count = models.IntegerField()
-    # creates a class that averages the numeric scores that intersect between a song and a given quality, while counting how many reviews have been given about that quality
-
-    def add_review(self, review):
-        '''Adjust the score and the count based on a review'''
-        rev_total = self.score * self.count
-        rev_total += review.score
-        self.count += 1
-        self.score = rev_total / self.count
-        self.save()
     
-    def reset_average(self):
-        '''Totally resets the averages by looking at all reviews'''
-        reviews = Review.objects.filter(song=self.song).filter(quality=self.quality)    #pulls all the reviews for a given song on a given quality
-        count = len(reviews) #counts how many reviews exist for that intersection
-        agg = sum ((review.score for review in reviews))    #adds up all the scores for each review
-        self.count = count
-        self.score = agg/count  #creates a new average
-        self.save()
+    singability = models.IntegerField(null=True, blank=True)
+    playability = models.IntegerField(null=True, blank=True)
+    repetition = models.IntegerField(null=True, blank=True)
+    tempo = models.IntegerField(null=True, blank=True)
+    popularity = models.IntegerField(null=True, blank=True)
+    arousal = models.IntegerField(null=True, blank=True)
+    valence = models.IntegerField(null=True, blank=True)
+
+    genre = models.ManyToManyField(Genre)
+
+    comment = models.TextField(max_length=500, null=True, blank=True)
+
+    def __str__(self):
+        return self.song.song_name  + ' ' + str(self.tempo)

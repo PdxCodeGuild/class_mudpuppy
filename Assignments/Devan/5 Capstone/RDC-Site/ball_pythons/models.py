@@ -31,12 +31,12 @@ class BallPython(models.Model):
     gender = models.CharField(max_length=1, choices=gender_CHOICES)
     weight = models.FloatField(default=100)
     weighed_on = models.DateField()
-    feeding_on = models.CharField(max_length=3, choices=feeder_CHOICES, default='LFR')
+    feeding_on = models.CharField(
+        max_length=3, choices=feeder_CHOICES, default='LFR')
     hatched_on = models.DateField()
     cost_in_dollars = models.FloatField()
     picture = models.ImageField(upload_to=os.path.join('ball_pythons', 'img'))
+    listed_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
-
-
