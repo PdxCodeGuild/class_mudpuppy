@@ -12,10 +12,10 @@
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
-            background-image: url("/static/horoscope_app/ocean2.jpg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-color:rgb(21, 49, 49);
+            /* background-image: url("/static/horoscope_app/ocean2.jpg"); */
+            /* background-repeat: no-repeat;
+            background-position: center; */
+            background-color:silver;
             min-height: 100vh;
             margin: 0;
             font-size:large;
@@ -36,5 +36,6 @@
     {{ birthday.sign }}
     {{ horoscope }}
 </div>   
+<a href="{% url 'tarot_app:surprise'%}">click here for your surprise!</a>
 </body>
 </html>
