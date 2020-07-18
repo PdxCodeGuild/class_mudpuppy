@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
+
 # Create your models here.
 class Complaint(models.Model):
     name = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -9,8 +11,9 @@ class Complaint(models.Model):
     email = models.CharField(max_length=200)
     address = models.CharField(max_length=400)
     review = models.TextField()
+    date = models.DateTimeField(default=timezone.now())
 
 
     def __str__(self):
-        self.name + ' | ' + self.business + ' | ' + self.title 
+        return str(self.business) + ' | ' + str(self.title) + ' | ' +str(self.name)
 

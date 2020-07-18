@@ -1,0 +1,11 @@
+{%extends 'main_app/base.html'%}
+
+{%block content%}
+    <h1>Business Complaints</h1>
+    <ul>
+        {% for complaint in object_list%}
+            <li> {{complaint.name}} - {{complaint.business}}<br/>{{complaint.review}}<hr><small class="text-muted">{{complaint.name}} - {{complaint.date}}</small></li>
+        {%endfor%}
+    </ul>
+
+{% endblock content%}

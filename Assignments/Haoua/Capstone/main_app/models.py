@@ -12,12 +12,9 @@ class Post(models.Model):
 
 
     def __str__(self):
-        self.author
-        self.title
-        self.content
-        self.date
 
-        return self.title
+        return(self.title|self.author)
+
     
 
 
