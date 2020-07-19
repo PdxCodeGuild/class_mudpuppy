@@ -1,0 +1,18 @@
+{% extends 'main_app/base.html'%}
+{% load crispy_forms_tags%}
+
+{%block content%}
+    {%if user.is_authenticated%}
+        <h1>File a Business Complaint</h1>
+        <form method="POST"> 
+            {% csrf_token%}
+            {{form|crispy}}
+            <button class="btn btn-outline-primary">Post Complaint</button>
+        </form>
+
+    {%else %}
+        <h1>Please login or create an account to create a complaint</h1>
+        <button class="btn btn-outline-primary"><a href="{%url 'login'%}"></a></button>
+    {%endif%}
+
+{%endblock content%}

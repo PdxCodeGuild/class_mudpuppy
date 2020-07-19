@@ -2,10 +2,13 @@
 
 {%block content%}
     <h1>Business Complaints</h1>
+    <br>
     <ul>
         {% for complaint in object_list%}
-            <li> {{complaint.name}} - {{complaint.business}}<br/>{{complaint.review}}<hr><small class="text-muted">{{complaint.name}} - {{complaint.date}}</small></li>
+            <h3> <a href="{% url 'complaints' complaint.pk%}">{{complaint.title}}</a></h3>
+            <li>Business: {{complaint.business}} - {{complaint.address}}<br/> Contact : {{complaint.phone}} - {{complaint.email}}<br/>Complaint: {{complaint.review}}<hr><small class="text-muted"> By {{complaint.name}} on {{complaint.date}}</small></li>
         {%endfor%}
     </ul>
+    <button class="btn btn-outline-primary"><a href="{% url 'home' %}">Back</a></button>
 
 {% endblock content%}
