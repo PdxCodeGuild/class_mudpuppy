@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 class ComplaintView(ListView):
     model = Complaint
-    template= 'complaint_list.html'
+    template = 'complaint_list.html'
 
 
 class ComplaintDetail(DetailView):
@@ -22,8 +22,11 @@ class ComplaintDetail(DetailView):
 
 
 class CreateComplaint(CreateView):
-    fields = ('title','business','phone', 'email','address', 'review', 'date')
     model = Complaint
     template = 'complaint_form.html'
-    # fields = ('title','business','phone', 'email','address', 'review', 'date')
+    fields = ('title','business','phone', 'email','address', 'review', 'date')
 
+    # @login_required
+
+    # def create(request):
+    #     return render(request, 'complaint/complaint_form.html')
