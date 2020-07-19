@@ -16,6 +16,7 @@ def index(request):
 
 def add_review(request):
     data = request.POST
+    print(data)
 
     new_song_input, created = Song.objects.get_or_create(
         song_name = data['song_name'],
@@ -54,4 +55,21 @@ def song_display(request, song_id):
         request,
         'capstone/song_display.html',
         context,
+    )
+
+def artist_display(request, artist):
+    context = {
+        'artist': Song.objects.all().filter(artist),
+    }
+    return render (
+        request,
+        'capstone/artist_display.html',
+        context,
+    )
+
+def landing(request):
+    return render(
+        request,
+        'capstone/landing_page.html',
+        None
     )

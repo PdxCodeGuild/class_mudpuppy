@@ -19,7 +19,7 @@
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="index.html" target="_blank">Input Form</a></li>
+                <li><a href="{% url 'capstone:index' %}" target="_blank">Input Form</a></li>
                 <li><a href="search.html" target="_blank">Search</a></li>
                 <li><a href="song_display.html" target="_blank">Song Display</a></li>
             </ul>
@@ -31,13 +31,12 @@
         <div class="col s2">
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
-                  <span class="card-title">Card Title</span>
+                  <span class="card-title">Ingrid Michaelson</span>
+
                   <ol>
-                      <li>Item 1</li>
-                      <li>Item 2</li>
-                      <li>Item 3</li>
-                      <li>Item 4</li>
-                      <li>Item 5</li>
+                      {% for song in song.artist_display('Ingrid Michaelson') %}
+                      <li>{{song.song_name}}</li>
+                      {% endfor %}
                   </ol>
                 </div>
                 <div class="card-action">
@@ -81,18 +80,8 @@
                     <h5>Help Grow Our Database</h5>
                     <p>We'd love your input! Choose any musical artist and include one of their songs every music therapist should know...</p>
 
-                    <div class="input-field">
-                        <input id="artist-name-mini-input" type="text" class="validate">
-                        <label for="artist_name">Artist Name</label>
-                      </div>
-                      <div class="input-field">
-                        <input id="song-title-mini-input" type="text" class="validate">
-                        <label for="song_title">Song Title</label>
-                      </div>
-                      <div class="input-field">
-                        <input id="year-mini-input" type="text" class="validate">
-                        <label for="release_year">Release Year</label>
-                        <a class="waves-effect waves-light btn" id="landing-submit-button">Submit</a>
+                    <div>
+                      <p>Want to improve our database? Click <a href="{% url 'capstone:index' %}">here</a> to help!</p>
                       </div>
                
                     
@@ -116,13 +105,7 @@
                       <p>
                         <label>
                           <input name="group1" type="radio" />
-                          <span>Genre</span>
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          <input name="group1" type="radio" />
-                          <span>Tag</span>
+                          <span>Song Title</span>
                         </label>
                       </p>
                       <a class="waves-effect waves-light btn" id="landing-search-button">Search</a>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .link-holder{
+                border: 4px solid black;
+                margin: 50px;
+                padding: 20px;        
+            }
+        </style>
+    </head>
+    <body>
+            {% for link in all_links_template %}
+                    <div class="link-holder">
+                        <h2><a href="https://{{link.link}}">{{link.name}}</a></h2>
+                        <h4><a href="{% url 'links_paths:slug_path' in_slug=link.slug %}">comments</a></h4>
+                    </div>
+            {% endfor %}    
+    </body>
+</html>

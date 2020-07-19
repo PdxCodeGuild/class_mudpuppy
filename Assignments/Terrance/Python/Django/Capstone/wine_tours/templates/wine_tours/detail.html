@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pacific NW Wine Tours</title>
+    <style>
+        h1 {border-style: solid; text-align: center; font-family: 'Suranna', serif; margin-top: 3%; margin-bottom: 1%;}
+        h2 {border-style: solid; text-align: center; font-family: 'Suranna', serif; margin-top: 3%; margin-bottom: 1%;}
+        .title_background {max-width: 40%; justify-content: center; margin: 0 auto}
+        .title_background2 {max-width: 10%; justify-content: center; margin: 2% auto}
+        #title {color:black;}
+        p {text-align: right; margin: 2.5%}
+        body {background-color: rgb(150, 114, 131); border: 1px solid #ddd; border-radius: 4px; padding: 5px; margin: 5px;}
+        .reservation_link {margin-left: 5%;}
+        .vineyard_info {margin-left: 2.5%;}
+        
+    </style>
+</head>
+<body>
+
+<div class= "title_background center"> 
+<h1 id="title">Pacific NW Wine Tours Affiliate Page</h1>
+</div>
+
+<div class= "vineyard_info">
+<ul>
+    <li>{{vineyard.name}}</li>
+    <li>{{vineyard.location}}</li>
+    <li>{{vineyard.description}}</li>
+</ul>
+</div>
+
+<div class="reservation_link">
+<a href= "/wine/reservations/{{vineyard.id}}/">Make a Reservation!</a>
+</div>
+
+<ul>
+<p>
+For More Information, Please Visit: <a href="{{vineyard.homepage}}">{{vineyard.name}}</a>
+</p>
+</ul>
+
+<div class= "title_background2 center"> 
+<h2 id ="footer"><a href="/wine/">Main Page</a></h2>
+</div>
+
+</body>
+</html>

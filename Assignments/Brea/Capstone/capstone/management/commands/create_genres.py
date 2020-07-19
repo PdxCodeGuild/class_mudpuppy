@@ -6,7 +6,7 @@ class Command(BaseCommand):
     help = 'Populates the genres database'
 
     def handle(self, *args, **options):
-        with open('capstone/management/commands/genres.csv') as f:
+        with open('capstone/management/commands/genres.csv', encode = encoding='utf-8-sig') as f:
             csv_reader = csv.reader(f, delimiter=',')
             for row in csv_reader:
                 Genre.objects.get_or_create(
