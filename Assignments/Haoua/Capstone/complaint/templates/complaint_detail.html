@@ -1,8 +1,9 @@
 {% extends 'main_app/base.html'%}
 
 {%block content%}
+    
     <h1>{{complaint.title}} - {{complaint.business}}</h1>
-    <small class="text-muted"> {{complaint.name}} - {{complaint.date}}</small>
+    <small class="text-muted"> {{user.username}} - {{complaint.date}}</small>
     <br>
     <hr>
     <h6> <h4>Business Contact:</h4> {{complaint.phone}} -- {{complaint.email}}</h6>

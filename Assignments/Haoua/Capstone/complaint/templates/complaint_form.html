@@ -1,30 +1,32 @@
 {% extends 'main_app/base.html'%}
 {% load crispy_forms_tags%}
-{%block}
 {%block content%}
 
     <style>
         form {
             width: 55vw;
             height: 168vh;
-            border: .5em dashed rgb(0, 110, 255);
-            padding:1em;
+            /* border: .5vw dashed rgb(0, 110, 255);
+            padding:1vw; */
             background-color: lemonchiffon;
-            margin-left: 20vw;
+            /* margin-left: 20vw; */
+           
            
         }
 
         #formid {
-            margin-left: 28vw;
+            /* margin-left: 28vw; */
         }
     </style>
+
     {%if user.is_authenticated%}
         <div id="formid" class="container-fluid">
             <h1>File a Business Complaint</h1>
         </div>
+        
         <hr>
         <br>
-        <form  method="POST"> 
+        <form class="container" method="POST"> 
             {% csrf_token%}
             {{form|crispy}}
             <br>

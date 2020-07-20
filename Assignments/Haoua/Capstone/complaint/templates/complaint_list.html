@@ -6,7 +6,7 @@
     <ul>
         {% for complaint in object_list%}
             <h3> <a href="{% url 'complaints' complaint.pk%}">{{complaint.title}}</a></h3>
-            <li>Business: {{complaint.business}} - {{complaint.address}}<br/> Contact : {{complaint.phone}} - {{complaint.email}}<br/>Complaint: {{complaint.review}}<hr><small class="text-muted"> By {{complaint.name}} on {{complaint.date}}</small></li>
+            <li>Business: {{complaint.business}} - {{complaint.address}}<br/> Contact : {{complaint.phone}} - {{complaint.email}}<br/>Complaint: {{complaint.review}}<hr><small class="text-muted"> By {{complain.name}} on {{complaint.date}}</small></li>
         {%endfor%}
     </ul>
     <button class="btn btn-outline-primary"><a href="{% url 'home' %}">Back</a></button>

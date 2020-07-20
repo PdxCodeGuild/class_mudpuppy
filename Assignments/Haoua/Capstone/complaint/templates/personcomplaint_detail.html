@@ -1,0 +1,17 @@
+{% extends 'main_app/base.html'%}
+
+{%block content%}
+    
+    <h1>{{person.title}} - {{person.perpetrator}}</h1>
+    <small class="text-muted"> {{user.username}} - {{person.date}}</small>
+    <br>
+    <hr>
+    <h6> <h4>Work Contact:</h4> {{person.job_phone}} -- {{person.job_email}}</h6>
+    <h6> <h4>Social Media: </h4>{{person.social_media}}</h6>
+    <br>
+    
+    <div><h4>Complaint:</h4> {{person.review}}</div>
+
+    <br>
+    <button class="btn btn-outline-primary"><a href="{% url 'people' %}">Back</a></button>
+{%endblock content%}
