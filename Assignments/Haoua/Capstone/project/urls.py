@@ -20,17 +20,23 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path,include
 from login import views as login_views
-from complaint.views import ComplaintView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_app.urls'), name='home'),
+
     path('signup/', login_views.signup, name='signup'),
+
+
+    
     path('signin/', auth.LoginView.as_view(template_name='login/login.html'), name='login'),
     path('signout/', auth.LogoutView.as_view(template_name='login/logout.html'), name='logout'),
     path('account/', login_views.account, name='account'),
     path('blog/', include('main_app.urls'), name='blog'),
-    path('', include('complaint.urls'), name="complaint")
+    path('file/', include('complaint.urls'), name="complaint")
+    # path('signup/', include('login.urls'), name="signup")
+
 
 
     # path('signout/', auth.LogoutView.as_view(template_name='login/logout.html')),

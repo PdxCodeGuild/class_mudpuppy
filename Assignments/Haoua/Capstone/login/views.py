@@ -18,7 +18,7 @@ def signup(request):
 
     
     else:
-        form
+        form = Register(request.POST)
         # messages.error(request, f"Please try again")
 
 

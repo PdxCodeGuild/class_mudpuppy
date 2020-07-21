@@ -1,6 +1,6 @@
 
 from .models import Complaint, PersonComplaint
-from .forms import ComplaintForm
+from django.utils import timezone
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.decorators import login_required
 
@@ -13,13 +13,15 @@ from django.contrib.auth.decorators import login_required
 class ComplaintView(ListView):
     model = Complaint
     template_name = 'complaint_list.html'
-
+    def __unicode__(self):
+        return self.template_name
 
 class ComplaintDetailView(DetailView):
     model = Complaint
     template_name = 'complaint_detail.html'
    
-
+    def __unicode__(self):
+        return self.template_name
 
 
 class CreateComplaint(CreateView):
@@ -27,7 +29,8 @@ class CreateComplaint(CreateView):
     template_name = 'complaint_form.html'
     fields = "__all__"
 
-
+    def __unicode__(self):
+        return self.template_name
 
     
 
@@ -36,27 +39,32 @@ class CreateComplaint(CreateView):
 
 class PersonCreateComplaint(CreateView):
     model = PersonComplaint
-    form_class= ComplaintForm
     template_name = 'personcomplaint_form.html'
-    # fields = ('title','business','phone', 'email','address', 'review', 'date')
-    # fields = "__all__"
+    fields = "__all__"
   
-    # def dispatch(self, *args, **kwargs):
-    #     return super(PersonCreateComplaint, self).dispatch(*args,**kwargs)
-    # def form_valid(self,form):
-    #     obj = form.save(commit=False)
-    # #     obj.name = self.request.user
-    # #     obj.save()
-    # def get_initial(self):
-    #     self.initial.update({'name': self.request.user})
-    #     return self.initial
+    def __unicode__(self):
+        return self.template_name
+
     
 
 class PersonView(ListView):
     model = PersonComplaint
     template_name = 'personcomplaint_list.html'
 
+    def __unicode__(self):
+        return self.template_name
+
 
 class PersonDetailView(DetailView):
     model = PersonComplaint
     template_name = 'personcomplaint_detail.html'
+
+    
+    def get_queryset(self):
+        variable = PersonComplaint.objects.filter(date__lte=timezone.now())
+        print(variable)
+        return variable
+        
+    def __unicode__(self):
+        return self.template_name
+    

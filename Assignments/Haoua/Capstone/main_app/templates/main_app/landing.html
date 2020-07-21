@@ -16,7 +16,7 @@
             margin-top: -2.7em;
             margin-left: 6.7em;
             padding: 0;
-            
+            margin-right: 0;
 
         }
 
@@ -103,7 +103,7 @@
     
         <!--make carousel a strip: width: 100% height: 25%-50%  -->
     <div class="row">
-        <div id="slide" class="col-md-10 carousel slide "style="max-width: 875px; max-height:200px;" data-ride="carousel" >
+        <div id="slide" class="col-md-10 carousel slide "data-ride="carousel" >
 
             <ol class="carousel-indicators">
                 <li data-target="#slide" data-slide-to="0" class="active"></li>
@@ -114,13 +114,13 @@
             </ol>
 
 
-            <div class="carousel-inner" id="inner" style="max-height:195px; max-width: 875px;">
-                <div class="carousel-item active" id="active "style="max-width:700px;max-height:195px;">
+            <div class="carousel-inner" id="inner" >
+                <div class="carousel-item active" id="active">
                     
            
                     
                     
-                    <div class="card text-center bg-white mb-3" style="max-width:195px;" id="card">
+                    <div class="card text-center bg-white mb-3" id="card">
                         <div class="row no-gutters" id="gutters">
                             <div class="col-md-8" id="card-image">
                                 <img src="{%static 'media/cover.jpg'%}" class="d-block w-100" alt="Blog Photo" id="photo"/>
@@ -150,12 +150,12 @@
 
 
 
-                <div class="carousel-item " id="active "style="max-width:700px;max-height:195px;">
+                <div class="carousel-item " id="active">
                     
            
                     
                     
-                    <div class="card text-dark bg-white mb-2" style="max-width:100px;" id="card">
+                    <div class="card text-dark bg-white mb-2" id="card">
                         <div class="row no-gutters" id="gutters">
                             <div class="col-md-2" id="card-image">
                                 <img src="{%static 'media/Exposing.png'%}" class="d-block w-100" alt="Blog Photo" id="photo"/>
@@ -180,9 +180,9 @@
 
 
             <!-- change carousel items on landing page to photos and cards for the blog page -->
-                <div class="carousel-item" id="active" style="max-width:700px;max-height:195px;">
+                <div class="carousel-item" id="active">
                     
-                    <div class="card mb-2" style="max-width:100px" id="card">
+                    <div class="card mb-2" id="card">
                         <div class="row no-gutters" id="gutters"> 
                             <div class="col-md-2" id="card-image">
                                 <img src="{%static 'media/cover.jpg'%}" class="d-block w-100" alt="Blog Photo" id="photo-1"/>
@@ -205,8 +205,8 @@
             
 
 
-                <div class="carousel-item" id="active" style="max-width:700px;max-height:195px;">
-                    <div class="card mb-2" style="max-width:100px;" id="card">
+                <div class="carousel-item" id="active">
+                    <div class="card mb-2" id="card">
                         <div class="row no-gutters" id="gutters">
                             <div class="col-md-2" id="card-image">
                                 <img src="{%static 'media/abstract.jpg'%}" class="d-block w-100" alt="Blog Photo" id="photo-1"/>
