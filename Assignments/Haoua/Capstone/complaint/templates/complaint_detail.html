@@ -1,0 +1,16 @@
+{% extends 'main_app/base.html'%}
+
+{%block content%}
+    
+    <h1>{{complaint.title}} - {{complaint.business}}</h1>
+    <small class="text-muted"> {{user.username}} - {{complaint.date}}</small>
+    <br>
+    <hr>
+    <h6> <h4>Business Contact:</h4> {{complaint.phone}} -- {{complaint.email}}</h6>
+    <h6> <h4>Business Address: </h4>{{complaint.address}}</h6>
+    <br>
+    <div><h4>Complaint:</h4> {{complaint.review}}</div>
+
+    <br>
+    <button class="btn btn-outline-primary"><a href="{% url 'complaint' %}">Back</a></button>
+{%endblock content%}

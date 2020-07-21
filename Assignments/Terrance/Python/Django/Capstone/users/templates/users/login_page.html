@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Page</title>
+    <style>
+    #title {color:black;}
+    h1 {border-style: solid; text-align: center; font-family: 'Suranna', serif; margin-top: 3%; margin-bottom: 1%;}
+    h2 {border-style: solid; text-align: center; font-family: 'Suranna', serif; margin-top: 3%; margin-bottom: 1%;}
+    .title_background {max-width: 12%; justify-content: center; margin: 0 auto}
+    .title_background2 {max-width: 10%; justify-content: center; margin: 2% auto}
+    .purple {background-color: rgb(150, 114, 131); padding: 5%;}
+    body {border: 1px solid #ddd; border-radius: 4px; padding: 5px; margin: 5px;}
+    p {margin: 5%}
+    
+    </style>
+</head>
+<body> 
+    <div class= "purple">  
+    <div class= "title_background center"> 
+    <h1>Register</h1>
+    <form action="{% url 'users:register' %}" method="POST">
+        {% csrf_token %}
+        <p>
+        <input type="hidden" name="next" value="{{next}}">
+        <input type="text" name="username" placeholder="username">
+        <input type="text" name="email" placeholder="email">
+        <input type="password" name="password" placeholder="password"></p>
+        <p><button type="submit">Register</button></p>
+    </form>
+    </div>
+    
+    <div class= "title_background center"> 
+    <h1>Login</h1>
+    <form action="{% url 'users:login' %}" method="POST">
+        {% csrf_token %}
+        <p><input type="hidden" name="next" value="{{next}}">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password"></p>
+        <p><button type="submit">Login</button></p>
+    </form>
+    </div>
+
+    <div class= "title_background2 center"> 
+        <h2 id ="footer"><a href="/wine/">Main Page</a></h2>
+    </div>
+    </div> 
+</body>
+</html>
+    

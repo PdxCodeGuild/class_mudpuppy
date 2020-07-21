@@ -1,0 +1,43 @@
+{% extends 'main_app/base.html'%}
+{% load crispy_forms_tags%}
+{%block content%}
+
+    <style>
+        form {
+            width: 55vw;
+            height: 200vh;
+            /* border: .5vw dashed rgb(0, 110, 255);
+            padding:1vw; */
+            background-color: lemonchiffon;
+            /* margin-left: 20vw; */
+           
+           
+        }
+
+    </style>
+    {%if user.is_authenticated%}
+        <div id="formid" class="container-fluid">
+            <h1>File an Individual Complaint</h1>
+        </div>
+        <hr>
+        <br>
+        <form class="container" method="POST"> 
+            {% csrf_token%}
+            {{form|crispy}}
+            <br>
+            <button class="btn btn-outline-primary">Post Complaint</button>
+         
+        </form>                <!-- <button type="submit" class="btn btn-outline-primary">Post Complaint</button> -->
+        <br>             
+      
+
+
+
+    {%else %}
+        <h1>Please login or create an account to create a complaint</h1>
+        <button class="btn btn-outline-primary"><a href="{%url 'login'%}"></a></button>
+    {%endif%}
+
+
+
+{%endblock content%}

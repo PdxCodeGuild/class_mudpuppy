@@ -1,0 +1,23 @@
+{%extends 'main_app/base.html'%}
+
+{%block content%}
+    <h1> Individual Complaints</h1>
+    <br>
+    <ul>
+        {% for person in object_list%}
+            <h3> <a href="{% url 'persons' person.pk%}">{{person.title}}</a></h3>
+            <li>Name: {{person.perpetrator}}
+                <br/> 
+                Contact : {{person.social_media}}
+                <br/> 
+                Work: {{person.job}} -- {{person.job_phone}} -- {{person.job_email}}
+                <br/>
+                Complaint: {{person.review}}
+                <hr>
+                <small class="text-muted"> By  on {{person.date}}</small>
+            </li>
+        {%endfor%}
+    </ul>
+    <button class="btn btn-outline-primary"><a href="{% url 'home' %}">Back</a></button>
+
+{% endblock content%}
