@@ -4,17 +4,36 @@
 {% block title %}RDC - Ball Pythons{% endblock %}
 
 {% block content %}
+<section class="container">
+        <div class="row">
 
-{% if all_balls_template %}
-{% for ball in all_balls_template %}
-<div class="snake-card">
-        <img src='{{ ball.picture.url }}' alt="{{ball.name}}">
-        <h4>{{ball.name}}</h4>
-        <h5>{{ball.hatched_on}}</h5>
-</div>
-{% endfor %}
-{% else %}
-<p>There are no snakes available.</p>
-{% endif %}
+                {% if all_balls_template %}
+                {% for ball in all_balls_template %}
+                <div class="col s4">
+                        <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator ball-img" src="{{ ball.picture.url }}">
+                                </div>
+                                <div class="card-content">
+                                        <span class="card-title activator grey-text text-darken-4">{{ ball.name }}<i
+                                                        class="material-icons right">more_vert</i></span>
+                                        <p><a href="#">This is a link</a></p>
+                                </div>
+                                <div class="card-reveal">
+                                        <span class="card-title activator grey-text text-darken-4">{{ ball.morph }}<i
+                                                        class="material-icons right">close</i></span>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex voluptas
+                                                corrupti nihil? Quidem cupiditate, error cum eius similique voluptates
+                                                eos explicabo! Repellat dicta iure a dignissimos quaerat ducimus soluta
+                                                earum.</p>
+                                </div>
+                        </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p>There are no snakes available.</p>
+                {% endif %}
+        </div>
+</section>
 
 {% endblock %}
