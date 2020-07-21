@@ -12,11 +12,15 @@ lab-2.html: make change
     let userInput = parseInt(prompt ("I have a change converter. How many pennies do you have?"))
 
     let quarters = Math.floor(userInput / 25)
-    let dimes = Math.floor(userInput / 10)
-    let nickels = Math.floor(userInput / 5)
-    let leftover_pennies = userInput % 25
+    userInput = userInput - quarters * 25
 
-    alert(`That would equal ${quarters} quarters, ${dimes} dimes, ${nickels} nickels and ${leftover_pennies} pennies`)
+    let dimes = Math.floor(userInput / 10)
+    userInput = userInput - dimes * 10
+
+    let nickels = Math.floor(userInput / 5)
+    userInput = userInput - nickels * 5
+
+    alert(`That would equal ${quarters} quarters, ${dimes} dimes, ${nickels} nickels and ${userInput} pennies`)
 
     </script>
 </body>
