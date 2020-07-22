@@ -16,15 +16,16 @@
 <body>
     <img class="responsive-img" id="banner" src="{% static 'capstone/images/Aoede_Placeholder_Banner.png' %}"
         alt="Aoede Banner">
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="{% url 'capstone:index' %}" target="_blank">Input Form</a></li>
-                <li><a href="search.html" target="_blank">Search</a></li>
-            </ul>
-        </div>
-    </nav>
+        <nav>
+            <div class="nav-wrapper">
+              <!-- <img class="brand-logo" src="{% static 'capstone/images/A.png' %}" alt="Aoede Logo"> -->
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{% url 'capstone:landing' %}">Home</a></li>
+                    <li><a href="{% url 'capstone:index' %}">Input Form</a></li>
+                    <li><a href="{% url 'capstone:song_browse' %}">Browse</a></li>
+                </ul>
+            </div>
+        </nav>
     <main>
         <div id="song-info">
             <h4>{{song.song_name}}</h4>
@@ -37,7 +38,7 @@
                 <p>Here's the information the Aoede community has contributed so far about this song. All scores are
                     averages on a 1 <i>(not that quality)</i> to 7 <i>(very much that quality)</i> scale.</p>
                 <div>
-                    <h6>Musical Qualities</h6>
+                    <h6<u>Musical Qualities</u></h6>
                     <div>
                         <p>Singability: {{song.avg_singability}}</p>
                         <p>Playability: {{song.avg_playability}}</p>
@@ -53,8 +54,9 @@
                 </ol>
                     </div>
                 </div>
+                <br>
                 <div>
-                    <h6>Non-Musical Qualities</h6>
+                    <h6<u>Non-Musical Qualities</u></h6>
                     <p>Popularity: {{song.avg_popularity}}</p>
                     <p>Arousal: {{song.avg_arousal}}</p>
                     <p>Valence: {{song.avg_valence}}</p>
@@ -62,9 +64,9 @@
                 </div>
                 <p>Want to make it better? Click <a href="{% url 'capstone:index' %}">here</a> to improve our database!</p>
             </div>
-
-
+            <br>
             <div class="divider"></div>
+            <br>
             <div>
                 <h5>Comments About {{song.song_name}}</h5>
                 {% for review in song.reviews.all%}

@@ -16,15 +16,16 @@
 <body>
     <img class="responsive-img" id="banner" src="{% static 'capstone/images/Aoede_Placeholder_Banner.png' %}"
         alt="Aoede Banner">
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="{% url 'capstone:index' %}" target="_blank">Input Form</a></li>
-                <li><a href="search.html" target="_blank">Search</a></li>
-            </ul>
-        </div>
-    </nav>
+        <nav>
+            <div class="nav-wrapper">
+              <img class="brand-logo" src="{% static 'capstone/images/A.png' %}" alt="Aoede Logo">
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{% url 'capstone:landing' %}">Home</a></li>
+                    <li><a href="{% url 'capstone:index' %}">Input Form</a></li>
+                    <li><a href="{% url 'capstone:song_browse' %}">Browse</a></li>
+                </ul>
+            </div>
+        </nav>
     <main>
         <div id="song-info">
             <h4>{{song.song_name}}</h4>

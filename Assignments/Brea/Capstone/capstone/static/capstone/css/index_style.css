@@ -7,6 +7,14 @@ body {
     font-family: 'Oxygen', sans-serif;
     color: white;
 }
+img.brand-logo {
+    display: flex;
+    justify-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+}
 main {
     margin: 15px;
+    padding: 10px;
 }

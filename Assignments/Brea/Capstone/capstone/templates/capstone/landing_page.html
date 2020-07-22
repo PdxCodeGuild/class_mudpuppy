@@ -17,99 +17,82 @@
     <img class= "responsive-img" id="banner" src="{% static 'capstone/images/Aoede_Placeholder_Banner.png' %}" alt="Aoede Banner">
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
+          <!-- <img class="brand-logo" src="{% static 'capstone/images/A.png' %}" alt="Aoede Logo"> -->
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="{% url 'capstone:index' %}" target="_blank">Input Form</a></li>
-                <li><a href="search.html" target="_blank">Search</a></li>
-                <li><a href="song_display.html" target="_blank">Song Display</a></li>
+              <li><a href="{% url 'capstone:landing' %}">Home</a></li>
+                <li><a href="{% url 'capstone:index' %}">Input Form</a></li>
+                <li><a href="{% url 'capstone:song_browse' %}">Browse</a></li>
             </ul>
         </div>
     </nav>
 
 
     <div class="row">
-        <div class="col s2">
+        <div class="col s2" id="list-card">
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
                   <span class="card-title">Ingrid Michaelson</span>
 
                   <ol>
-                      {% for song in song.artist_display('Ingrid Michaelson') %}
-                      <li>{{song.song_name}}</li>
+                      {% for song in Ingrid %}
+                      <li><a href = "{% url 'capstone:song_display' song.id %}"> {{song.song_name}} </a></li>
                       {% endfor %}
                   </ol>
                 </div>
-                <div class="card-action">
-                  <a href="#">All Songs for Genre</a>
-                </div>
+                
               </div>
 
               <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
-                  <span class="card-title">Card Title</span>
+                  <span class="card-title">LoFi Hip-Hop</span>
                   <ol>
-                      <li>Item 1</li>
-                      <li>Item 2</li>
-                      <li>Item 3</li>
-                      <li>Item 4</li>
-                      <li>Item 5</li>
-                  </ol>
+                    {% for song in LoFi %}
+                    <li><a href = "{% url 'capstone:song_display' song.id %}"> {{song.song_name}} </a></li>
+                    {% endfor %}
+                </ol>
                 </div>
-                <div class="card-action">
-                  <a href="#">All Songs by Them</a>
-                </div>
+               
               </div>
 
         </div>
         <div class="col s10">
             <div>
                 <h4>What is Aoede?</h4>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in urna consectetur enim tincidunt
-                eleifend. Vivamus iaculis eleifend eros consequat tincidunt. Morbi sodales tristique risus sit amet
-                interdum. Donec id lacus a nulla tristique ornare eget ac ante. Cras posuere, felis id rhoncus rhoncus,
-                ante ipsum mattis leo, et varius nisl orci sed ligula. Donec quis purus facilisis, placerat est ut,
-                tempor nibh. Suspendisse potenti. Pellentesque habitant morbi tristique senectus et netus et malesuada
-                fames ac turpis egestas. Vivamus quis dolor eu purus pharetra convallis nec id turpis. Duis quis
-                vehicula metus. Ut vel finibus tortor, vel luctus mi.
+                <p>
+                  Music therapists need to know <i>a lot</i> of popular music...
+                  <br>
+                  <br>
+                  Research indicates that using a client's preferred music can increase therapeutic rapport, adherence to interventions, and motivate change. But, it's a challenge for the working music therapist to keep up with their clientele's favorite music.
+                  <br>
+                  That's where Aoede comes in.
+                  <br>
+                  <br>
+                  Aoede is a community database of popular music repertoire that allows music therapists to search and view popular music by artist. Each song has its own page with ratings on specific musical and non-musical qualities to makes sure you can find and learn the best repertoire to meet your client's goal.
+
+                  Keep reading to learn more about how it works!
+
+                </p>
             </div>
             <br>
-            <div class="row" id="roles">
+              <div class="row" id="roles">
                 <div class="col s5">
-                    <img class="responsive-img square" src="Contributors Placeholder.png" alt="Contributors">
+                    <img class="responsive-img square" src="{% static 'capstone/images/Contributors Placeholder.png' %}" alt="Contributors">
                     <br>
-                    <h5>Help Grow Our Database</h5>
-                    <p>We'd love your input! Choose any musical artist and include one of their songs every music therapist should know...</p>
-
-                    <div>
-                      <p>Want to improve our database? Click <a href="{% url 'capstone:index' %}">here</a> to help!</p>
-                      </div>
-               
-                    
+                    <!-- <h5>Help Grow Our Database</h6> -->
+                    <h5>Share Your Expertise</h5>
+                    <p>Share what you already know about your favorite music to help other music therapists. 
+                      <br>
+                      <br>
+                      Simply go to our <a href="{% url 'capstone:index' %}">Input Form</a> and rate the songs you already love on their musical and non-musical qualities. Then, find your new favorite clinical song when you see what other songs and ratings other Contributers have input.</p>
                 </div>
                 <div class="col s5">
-                    <img class= "responsive-img square"  src="Explorers Placeholder.png" alt="Explorers">
+                    <img class= "responsive-img square"  src="{% static 'capstone/images/Explorers Placeholder.png' %}" alt="Explorers">
                     <h5>Discover New Songs</h5>
-                    <p>Learn music therapy repertoire more efficiently by diving into our database! You can search by...</p>
-                    <form action="#">
-                    <div class="input-field">
-                        <input id="search-input-landing" type="text" class="validate">
-                        <label for="search-term">Search by...</label>
-                        
-                      </div>
-                      <p>
-                        <label>
-                          <input name="group1" type="radio" />
-                          <span>Artist</span>
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          <input name="group1" type="radio" />
-                          <span>Song Title</span>
-                        </label>
-                      </p>
-                      <a class="waves-effect waves-light btn" id="landing-search-button">Search</a>
-                    </form>
+                    <p>Here's where you find the music that best fit your client's needs.
+                      <br>
+                      <br>
+                      Start by <a href="{% url 'capstone:song_browse' %}">browsing</a> our database of artists. There, you'll find a list of the tops songs our Contributors have recommended for clinical use. Click on a song to see how Contributors rated the song on several musical and non-musical qualities so you find that perfect song for your client's goals and objectives.</p>
+
                 </div>
                 
             </div>

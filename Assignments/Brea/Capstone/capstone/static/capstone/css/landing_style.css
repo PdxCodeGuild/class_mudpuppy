@@ -13,6 +13,13 @@ body {
     display: flex;
     justify-content: center;
 }
+img.brand-logo {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+}
 .card {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -22,8 +29,9 @@ div {
     margin: 15px; */
     color: white;
 }
-#landing-button {
-
+#list-card {
+    padding: 10px;
+    margin-top: 60px;
 }
 #roles {
     display: flex;

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.exceptions import ObjectDoesNotExist
 from .models import Song, Genre, Review
@@ -42,14 +42,14 @@ def add_review(request):
 
     for genre_id in data.getlist('genre'): 
         new_review.genre.add(int(genre_id))
-    return HttpResponse('It worked!')
+    return HttpResponseRedirect(reverse('capstone:song_display', kwargs={'song_id': new_song_input.id}))
 
 def song_display(request, song_id):
     context = {
         'song': Song.objects.get(id=song_id),
         # 'review': Review.objects.get(id=)
     }
-    print(context['song'].genre_display())
+    # print(context['song'].genre_display())
 
     return render (
         request,
@@ -61,15 +61,39 @@ def artist_display(request, artist):
     context = {
         'artist': Song.objects.all().filter(artist),
     }
+
     return render (
         request,
         'capstone/artist_display.html',
         context,
     )
 
+def song_browse(request):
+    context = {
+        'song': Song.objects.all(),
+        'Britney': Song.objects.filter(artist = 'Britney Spears'),
+        'Ingrid' : Song.objects.filter(artist = 'Ingrid Michaelson'),
+        'Disney': Song.objects.filter(artist = 'Disney'),
+        'LoFi': Song.objects.filter(artist = 'LoFi'),
+        'Sia': Song.objects.filter(artist = 'Sia'),
+        'Regina': Song.objects.filter(artist = 'Regina Spektor'),
+    }
+
+    return render (
+        request,
+        'capstone/song_browse.html',
+        context,
+    )
+
 def landing(request):
+    context = {
+        'data': Song.objects.all(),
+        'Ingrid' : Song.objects.filter(artist = 'Ingrid Michaelson'),
+        'LoFi' : Song.objects.filter(artist = 'LoFi'),
+    }
+
     return render(
         request,
         'capstone/landing_page.html',
-        None
+        context,
     )
