@@ -7,12 +7,8 @@ import os
 
 @login_required
 def index(request):
-    # path = settings.MEDIA_ROOT
-    # img_list = os.listdir(path + '/ball_pythons/img')
     all_balls = BallPython.objects.all()
-
-    print('DEBUG:', all_balls[0].picture.url)
-    print(dir(all_balls[0].picture))
+    print('DEGUG', all_balls)
     context = {
         'all_balls_template': all_balls,
     }

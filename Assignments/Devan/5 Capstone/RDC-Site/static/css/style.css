@@ -14,4 +14,24 @@
   font-size: inherit;
 }
 
-.card {}
+
+/* Color Theme Swatches in HSLA */
+.my-dark-blue {
+  color: hsla(203, 63, 34, 1);
+}
+
+.my-light-blue {
+  color: hsla(185, 44, 48, 1);
+}
+
+.my-pink {
+  color: hsla(350, 92, 68, 1);
+}
+
+.my-orange {
+  color: hsla(7, 98, 69, 1);
+}
+
+.my-yellow {
+  color: hsla(33, 95, 67, 1);
+}

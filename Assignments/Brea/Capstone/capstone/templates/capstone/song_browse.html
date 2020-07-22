@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>Aoede App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'capstone/css/landing_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <style>
+        .card {
+            width: 400px;
+            height: 500px;
+        }
+        .header {
+            align-content: center;
+        }
+        main {
+            padding: 10px;
+            margin: 10px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+    </style>
+</head>
+
+<body>
+    <img class="responsive-img" id="banner" src="{% static 'capstone/images/Aoede_Placeholder_Banner.png' %}"
+        alt="Aoede Banner">
+    <nav>
+        <div class="nav-wrapper">
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="{% url 'capstone:landing' %}">Home</a></li>
+                <li><a href="{% url 'capstone:index' %}">Input Form</a></li>
+                <li><a href="{% url 'capstone:song_browse' %}">Browse</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="">
+            <div>
+                <div class="header">
+                <h3>Browse Artists</h3>
+                <p>
+                    Looking for a particular musical artist? Artists in Aoede's database are listed below alphabetically:
+                    <br>
+                </p>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col s4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{% static 'capstone/images/britneyaoede.jpg' %}">
+                                <span class="card-title">Britney Spears</span>
+                            </div>
+                            <div class="card-content">
+                                <ol>
+                                    {% for song in Britney %}
+                                    <li><a href="{% url 'capstone:song_display' song.id %}"> {{song.song_name}} </a>
+                                    </li>
+                                    {% endfor %}
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{% static 'capstone/images/disneyaoede.jpg' %}">
+                                <span class="card-title">Disney Music</span>
+                            </div>
+                            <div class="card-content">
+                                <ol>
+                                    {% for song in Disney %}
+                                    <li><a href="{% url 'capstone:song_display' song.id %}"> {{song.song_name}} </a>
+                                    </li>
+                                    {% endfor %}
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{% static 'capstone/images/ingridaoede.jpg' %}">
+                                <span class="card-title">Ingrid Michaelson</span>
+                            </div>
+                            <div class="card-content">
+                                <ol>
+                                    {% for song in Ingrid %}
+                                    <li><a href="{% url 'capstone:song_display' song.id %}"> {{song.song_name}} </a>
+                                    </li>
+                                    {% endfor %}
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{% static 'capstone/images/lofiaoede.jpg' %}">
+                            <span class="card-title">LoFi</span>
+                        </div>
+                        <div class="card-content">
+                            <ol>
+                                {% for song in LoFi %}
+                                <li><a href="{% url 'capstone:song_display' song.id %}"> {{song.song_name}} </a></li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{% static 'capstone/images/reginaaoede.jpg' %}">
+                            <span class="card-title">Regina Spektor</span>
+                        </div>
+                        <div class="card-content">
+                            <ol>
+                                {% for song in Regina %}
+                                <li><a href="{% url 'capstone:song_display' song.id %}"> {{song.song_name}} </a></li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{% static 'capstone/images/siaaoede.jpg' %}">
+                            <span class="card-title">Sia</span>
+                        </div>
+                        <div class="card-content">
+                            <ol>
+                                {% for song in Sia %}
+                                <li><a href="{% url 'capstone:song_display' song.id %}"> {{song.song_name}} </a></li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

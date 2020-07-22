@@ -16,26 +16,25 @@
 </head>
 
 <body>
-    <img class="responsive-img" id="banner" src="{% static 'capstone/images/Aoede_Placeholder_Banner.png' %}" alt="Aoede Banner">
+    <img class="responsive-img" id="banner" src="{% static 'capstone/images/Aoede_Placeholder_Banner.png' %}"
+        alt="Aoede Banner">
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="{% url 'capstone:index' %}" target="_blank">Input Form</a></li>
-                <li><a href="search.html" target="_blank">Search</a></li>
+                <li><a href="{% url 'capstone:landing' %}">Home</a></li>
+                <li><a href="{% url 'capstone:index' %}">Input Form</a></li>
+                <li><a href="{% url 'capstone:song_browse' %}">Browse</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <h2>Song Input</h2>
+        <h3>Song Input</h3>
         <p>Help make our Aoede database even more complete with your personal music expertise!</p>
         <form method="POST" action="{% url 'capstone:add_review' %}" class="col s12">
             {% csrf_token %}
             <h4>Song Information (Required)</h4>
-            <!-- <form> -->
-            <!-- <div class="input-field col s12">
-                <div> -->
+            <br>
             <div class="input-field">
                 <input name="song_name" id="song_name" type="text" class="validate">
                 <label for="song_name" class="active">Song Title</label>
@@ -50,9 +49,9 @@
                 <input class="" name="artist" id="artist" type="text" class="validate">
                 <label for="artist">Artist Name(s)</label>
             </div>
-            <!-- </div> -->
             </div>
-            <!-- </form> -->
+            <br>
+            <br>
             </div>
             <h4>Extra Information</h4>
             <p>If you'd like, rate the song above on the following musical and non-musical attributes...</p>
@@ -65,14 +64,14 @@
                         {% for choice in choices %}
                         <option value="{{choice.id}}">{{choice.name}}</option>
                         {% endfor %}
-                        
+
                     </select>
                     <br>
                     <p class="range-field">
                     <h6>Singability (1 = difficult, 7 = easy)</h6>
-                        <ul>
-                            <li>Is there a wide pitch range? Is the melody easy to follow?</li>
-                        </ul>
+                    <ul>
+                        <li>Is there a wide pitch range? Is the melody easy to follow?</li>
+                    </ul>
                     <input class="form-range active" type="range" id="singability" min="1" max="7" name="singability" />
                     <span class="thumb">
                         <span class="value"></span>

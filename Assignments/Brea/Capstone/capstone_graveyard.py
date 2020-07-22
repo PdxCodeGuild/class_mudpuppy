@@ -287,3 +287,13 @@ def add_review(request):
     song.reset_highest()
 
     return HttpResponseRedirect('/index/') #eventually, I want them to go to the song display page for the song they just reviewed
+
+     <div class="card-action">
+                  <a href="{% url 'capstone:song_display(song.id)' %}">All LoFi Hip-Hop Songs</a>
+                </div>
+    <div class="card-action">
+                  <a href="{% url 'capstone:song_display(song.id)' %}">All Ingrid Michaelson Songs</a>
+                </div>
+    <a href="#" class="brand-logo">Logo</a>
+
+    <!-- <img class="brand-logo" src="{% static 'capstone/images/A.png' %}" alt="Aoede Logo"> -->

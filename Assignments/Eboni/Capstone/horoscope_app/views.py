@@ -77,8 +77,7 @@ def detail(request):
         elif day >=22: 
             sign = 'Capricorn'
 
-    if month == 1:
-        if day <=19:
+    
             sign= 'Capricorn'
         elif day >= 20:
             sign = 'Aquarius'
@@ -121,10 +120,16 @@ def detail(request):
     print(f"month={month} and day={day}")
     response = requests.get(f'http://horoscope-api.herokuapp.com/horoscope/today/{user_birthday.sign}')
     data = json.loads(response.text)
+    month_response = requests.get(f'http://horoscope-api.herokuapp.com/horoscope/month/{user_birthday.sign}')
+    monthly = json.loads(month_response.text)
     context = {
-        "birthday":user_birthday, "horoscope":data['horoscope']
+        "birthday":user_birthday, "horoscope":data['horoscope'], "monthly_horoscope":monthly ['horoscope']
+
 
     }
+
+    
+    
     return render(request, "horoscope_app/detail.html", context)
 
 
