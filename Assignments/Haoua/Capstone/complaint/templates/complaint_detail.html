@@ -1,16 +1,55 @@
 {% extends 'main_app/base.html'%}
 
 {%block content%}
-    
-    <h1>{{complaint.title}} - {{complaint.business}}</h1>
-    <small class="text-muted"> {{user.username}} - {{complaint.date}}</small>
-    <br>
-    <hr>
-    <h6> <h4>Business Contact:</h4> {{complaint.phone}} -- {{complaint.email}}</h6>
-    <h6> <h4>Business Address: </h4>{{complaint.address}}</h6>
-    <br>
-    <div><h4>Complaint:</h4> {{complaint.review}}</div>
 
+    <style>
+        #color {
+            color: white;
+        }
+
+        hr {
+            border-color:white;
+        }
+    </style>
     <br>
-    <button class="btn btn-outline-primary"><a href="{% url 'complaint' %}">Back</a></button>
+    <br>
+    <div class="row container col-md-12">
+        <div class="container col-md-9 text-white" id="color">
+            <h1>{{complaint.title}} - {{complaint.business}}</h1>
+            <small class="text-white"> {{user.username}} - {{complaint.date}}</small>
+            <br>
+            <hr>
+            <h6> <h4>Business Contact:</h4> {{complaint.phone}} -- {{complaint.email}}</h6>
+            <h6> <h4>Business Address: </h4>{{complaint.address}}</h6>
+            <br>
+            <div><h4>Complaint:</h4> {{complaint.review}}</div>
+
+            <br>
+            <button class="btn btn-outline-primary"><a href="{% url 'complaint' %}">Back</a></button>
+        </div>
+
+        {% if user.is_authenticated%}
+            <div id="sidebar" class="col-md-3 mb-1 container-fluid">
+                <div class="content-section container-fluid">
+                   
+                    <p class="muted-text" id="sidebarr">
+                        <ul class="list-group">
+                            <small class="text-muted">
+                                <li class="list-group-item list-group-item-primary"><h6 class="display-6">What you've missed</h6></li>
+                                <!-- <li class="list-group-item list-group-item-dark">Announcements</li> -->
+                                    <li class="list-group-item list-group-item-warning"><a href="{% url 'people'%}">Person Complaints</a></li>
+                                    <li class="list-group-item list-group-item-warning"><a href="{% url 'complaint'%}">Business Complaints</a></li>
+                                    <li class="list-group-item list-group-item-warning"><a href="https://mercatuspdx.com/directory/black-owned-businesses/#!directory/ord=rnd">BIPOC Businesses</a></li>
+                            </small>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+        {%else%}
+            <h1>Please login or create an account to create a complaint</h1>
+            <button class="btn btn-outline-primary"><a href="{%url 'login'%}"></a></button>
+
+        {%endif%}
+    </div>
 {%endblock content%}

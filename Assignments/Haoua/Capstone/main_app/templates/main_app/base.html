@@ -26,7 +26,11 @@
     
 
     <style>
-            
+        
+
+        body {
+            background-color: rgb(49, 47, 48);
+        }
          
         #nav-item{
             color: white;
@@ -89,7 +93,6 @@
 
         }
 
-            
 
             
         </style>
@@ -103,7 +106,7 @@
     <nav class="navbar padding fixed-top navbar-expand-sm bg-light navbar-light">
     
             <!-- logo -->
-        <div class="container" id="logo">
+        <div class="container col-md-3" id="logo">
             <i class="fa fa-low-vision" id="logoo"></i>
             <p id="title"><bold>Exposing Racism</bold></p>
                     <!-- <p id="slogan">Know better, be better</p> -->
@@ -122,69 +125,62 @@
                     badge badge-primary into a tag class or <button type="button" class="btn btn-outline-primary">Primary</button>
                 
                 -->
-            <ul class="nav nav-pills navbar-nav ml-auto" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#home" data-toggle="pill" alt="HOME">HOME</a>
+            <ul class="nav nav-pills navbar-nav col-md-6 ml-auto" role="tablist">
+
+
+                <li class="nav-item dropdown container-fluid col-md-3">
+                    <a class="nav-link" href="{% url 'home' %}"alt="notworking">HOME</a>
                 </li>
                 
         
 
     
                     <!-- drop down navigations -->
-                <li class="nav-item dropdown">
+
+    
+                    
+                <li class="nav-item dropdown container-fluid col-md-3">
+                        <!--create different apps and map this section to it -->
+                
+                    <a class="nav-link"  href="{% url 'blog'%}">BLOG</a>
+            
+                </li>
+    
+
+
+                <li class="nav-item dropdown container-fluid col-md-3">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Account</a>
                     <div class="dropdown-menu">
                         {% if user.is_authenticated%}
                             <a class="dropdown-item" href="{%url 'account'%}">Profile</a>
-
+    
                             <a class="dropdown-item" href="{%url 'logout' %}">Logout</a>
                         {%else%}
                             <a class="dropdown-item" href="{%url 'login' %}">Sign in</a>
                             <a class="dropdown-item" href="{%url 'signup'%}">Create an Account</a>
                         {% endif %}
-                    </div>
-                        
-    
-    
-                </li>
-    
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Posts</a>
-                        <div class="dropdown-menu">
-                    
-                            <a class="dropdown-item" href="#">See what people have to say</a>
-                                <!-- if the user is logged in, create a tab called "create post"-->
-                                <!-- <a class="dropdown-item" href="#">Create post</a> -->
+                     </div>
+                            
         
-                        </div>
+        
                 </li>
-                    
-                <li class="nav-item dropdown">
-                        <!--create different apps and map this section to it -->
-                
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">BLOG</a>
+
+
+
+                <li class="nav-item dropdown col-md-3 container">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{% url 'about'%}">About Us</a>
                     <div class="dropdown-menu">
                 
-                        <a class="dropdown-item" href="#">Articles</a>
-                        <!-- save option to write articles for admin only-->
-                        <!-- <a class="dropdown-item" href="#">Write an article </a> -->
+                        <a class="dropdown-item" href="{% url 'home'%}">Our Mission</a>
+                        <a class="dropdown-item" href="{%  url 'about'%}">Who Are We</a>
+                        <a class="dropdown-item" href="{%  url 'about'%}">Our Story</a>
     
-                    </div>
-                </li>
-    
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">About Us</a>
-                    <div class="dropdown-menu">
-                
-                        <a class="dropdown-item" href="#">Our Mission</a>
-                        <a class="dropdown-item" href="#">Who Are We</a>
-                        <a class="dropdown-item" href="#">Our Story</a>
-    
-                        <div class="nav-item dropdown">
+                        <div class="nav-item dropdown col-md-3">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown"href="#">Contact Us</a>
                             <div class="dropdown-toggle">
-                                <a class="dropdown-item" href="#">EMAIL</a>
-                                <a class="dropdown-item" href="#">PHONE</a>
+                                <a class="dropdown-item" href="mailto: haouangoyed@gmail.com">EMAIL</a>
+                                    <!-- <p class="dropdown-item">Haouangoyed@gmail.com</p> -->
+                                <a class="dropdown-item" href="tel:971-800-9000">PHONE</a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fa fa-facebook-square"></i>
                                     <i class="fa fa-instagram"></i>

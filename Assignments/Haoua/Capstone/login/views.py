@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from complaint.models import Complaint, PersonComplaint
 # Create your views here. 
 
 from .forms import Register 
@@ -10,21 +11,21 @@ def signup(request):
         form = Register(request.POST)
         if form.is_valid():
             form.save()
+            
 
-            username = form.cleaned_data.get('username')
-            messages.success(request, f"Welcome {username}, you've created an account.")
-            return redirect('signin/')
+            return redirect('login')
             # if I have time homepage will only be accessible to users and a landing page accessible to everyone
 
     
     else:
         form = Register(request.POST)
-        # messages.error(request, f"Please try again")
+        # messages.error(request, f"Please try again")a.get()
 
 
-    return render(request, 'login/signup.html', {'form':form})
+        return render(request, 'login/signup.html', {'form':form})
 
 @login_required
 
 def account(request):
+
     return render(request, 'login/account.html')

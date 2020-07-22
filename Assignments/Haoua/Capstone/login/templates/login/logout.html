@@ -26,31 +26,33 @@
     
 
     <style>
-         
-            #nav-item{
-                color: white;
-            }
+        body {
+            background-color: rgb(49, 47, 48);
+        }
+        #nav-item{
+            color: white;
+        }
     
-            #logo {
-                display: flex;
-                flex-direction:column;
+        #logo {
+            display: flex;
+            flex-direction:column;
         
-                color: white;
+            color: white;
                 /* background-color: white; */
-                font-size: xx-small;
-                justify-content: center;
-                margin: 0;
-                padding: 0;
+            font-size: xx-small;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
                 /* justify-items: center;
                 align-items: center; */
                 /* width: 8vw;
     
     
                 height: 8vh; */
-                flex: 5 5 .1%;
+            flex: 5 5 .1%;
                 /* flex-wrap: wrap; */
                 
-            }
+        }
     
             /* add media queries for different device sizes  */
     /*eru
@@ -58,66 +60,72 @@
                 /* width: 20em;
                 height: 20em; */
        
-            #logoo {
-                font-size: 4.35vw;
-                justify-self: center;
-                background-color: black;
-                padding: 2px;
+        #logoo {
+            font-size: 4.35vw;
+            justify-self: center;
+            background-color: black;
+            padding: 2px;
               
-            }
+        }
     
           
     
-            #title {
-                padding: 0;
-                margin: 0;
-                font-style: bold;
-                font-size:.57vw ;
-                background-color: black;
-                padding: 2px;
+        #title {
+            padding: 0;
+            margin: 0;
+            font-style: bold;
+            font-size:.57vw ;
+            background-color: black;
+            padding: 2px;
                 
              
-            }
+        }
     
                 
     
 
             
-        </style>
+    </style>
     
-    </head>
-    
+
  
 </head>
-<div class="container-fluid" data-spy="scroll" data-target=".navbar" data-offset="50">
+<body>
+    <div class="container-fluid" data-spy="scroll" data-target=".navbar" data-offset="50">
     
-    <nav class="navbar padding fixed-top navbar-expand-sm bg-light navbar-light">
+        <nav class="navbar padding fixed-top navbar-expand-sm bg-light navbar-light">
     
             <!-- logo -->
-        <div class="container" id="logo">
-            <i class="fa fa-low-vision" id="logoo"></i>
-            <p id="title"><bold>Exposing Racism</bold></p>
+            <div class="container" id="logo">
+                <i class="fa fa-low-vision" id="logoo"></i>
+                <p id="title"><bold>Exposing Racism</bold></p>
                     <!-- <p id="slogan">Know better, be better</p> -->
     
-        </div>
-    </nav>
-</div>
-</html>
+            </div>
+        </nav>
+    </div>
 
 
 
-{% block content %}
+
+    <br>
     <br>
     <br>
     <br>
     <br>
     
-    <h2>You've been logged out</h2>
-    <div class="alert-alert-info border-top pt-2" role="alert">
-            <small class="text-muted">
-               <button type="button" class="btn btn-outline-dark btn-lg"><a id="login_link" class="ml-1" href="{% url 'login'%}">Login</a></button>
+<!-- <h2>You've been logged out</h2> -->
+    <div class="row container col-md-12"> 
+        <div class="col-md-12 container-fluid">
+            <h2 class="text-white text-center">You've been logged out</h2>
+        </div>
+        <br>
+        <div class="col-md-1 container-fluid">
+            <small class="text-muted container-fluid">
+                <button type="button" class="btn btn-outline-danger btn-lg"><a id="login_link" class="ml-1" href="{% url 'login'%}">Login</a></button>
             </small>
+        </div>
     </div>
     <!-- repeated information placed here -->
-
-{% endblock content %}
+</body>
+</html>

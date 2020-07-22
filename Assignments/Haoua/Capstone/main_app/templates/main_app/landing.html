@@ -5,16 +5,20 @@
 
 {% block content %}
     <style> 
+    * {
+        margin: 0;
+    }
 
         body {
-            background-color: black;
+            background-color: rgb(49, 47, 48);
+            
         }
         #sidebar{
             /* margin-left: 17em;
             margin-top: -2em;
             padding-top: -3em; */
-            margin-top: -2.7em;
-            margin-left: 6.7em;
+            margin-top: -1.5em;
+            /* margin-left: 6.7em; */
             padding: 0;
             margin-right: 0;
 
@@ -26,7 +30,8 @@
             
         }
         #sidebarr {
-            height: 5vh;
+            height: 3.6vh;
+       
         }
         #slide {
             /* margin-left: 1em;
@@ -34,11 +39,13 @@
             justify-content: center;
             background-color: blue;
             margin-left: 0;
-
+            height: 35vh;
+            margin-top: 1em;
+            margin-bottom: 1em;
         }
 
         img {
-            width: 5vw;
+            /* width: 5vw; */
             height: 35vh;
         }
 
@@ -51,14 +58,15 @@
         }
 
         #card-text {
-            text-overflow: ellipsis;
-
+         
+            
         }
 
         #active {
             background-color: blue;
             padding: 0;
             margin: 0;
+            height: 35vh;
         }
 
         #gutters {
@@ -72,6 +80,8 @@
           
             padding: 0;
             margin: 0;
+            height: 35vh;
+            
 
 
         }
@@ -80,10 +90,16 @@
             background-color: blue;
             padding: 0;
             margin: 0;
+            height: 35vh;
+          
 
 
 
 
+        }
+
+        h5 {
+          
         }
     </style>
 
@@ -102,7 +118,7 @@
     <br>
     
         <!--make carousel a strip: width: 100% height: 25%-50%  -->
-    <div class="row">
+    <div class="row container-fluid">
         <div id="slide" class="col-md-10 carousel slide "data-ride="carousel" >
 
             <ol class="carousel-indicators">
@@ -114,22 +130,22 @@
             </ol>
 
 
-            <div class="carousel-inner" id="inner" >
-                <div class="carousel-item active" id="active">
+            <div class="carousel-inner container-fluid" id="inner" >
+                <div class="carousel-item active container-fluid" id="active">
                     
            
                     
                     
-                    <div class="card text-center bg-white mb-3" id="card">
-                        <div class="row no-gutters" id="gutters">
-                            <div class="col-md-8" id="card-image">
+                    <div class="card text-center mb-2 container-fluid" id="card">
+                        <div class="row no-gutters container-fluid" id="gutters">
+                            <div class="col-md-2 container-fluid" id="card-image">
                                 <img src="{%static 'media/cover.jpg'%}" class="d-block w-100" alt="Blog Photo" id="photo"/>
                                 
                             </div>
-                            <div class="col-md-4">
-                                <div class="card-body">
+                            <div class="col-md-4 container-fluid">
+                                <div class="card-body container-fluid">
                                 <!-- insert a variable for Blog so   that the most recent blogs are shown-->
-                                
+                                    
                                   <!-- insert a variable for "" so   that the timelapmedse is shown-->
                                 </div>
                             </div>
@@ -140,9 +156,9 @@
 
 
 
-                    <div class="carousel-caption d-block w-100 h-50">
+                    <div class="carousel-caption container-fluid mb-4">
                         
-                        <h5 class="text-white"><bold>Checkout our Team!</bold></h5>
+                        <h5 class="text-white "><bold>Checkout our Team!</bold></h5>
                     </div>
                 </div>
 
@@ -155,7 +171,7 @@
            
                     
                     
-                    <div class="card text-dark bg-white mb-2" id="card">
+                    <div class="card text-white" id="card">
                         <div class="row no-gutters" id="gutters">
                             <div class="col-md-2" id="card-image">
                                 <img src="{%static 'media/Exposing.png'%}" class="d-block w-100" alt="Blog Photo" id="photo"/>
@@ -182,7 +198,7 @@
             <!-- change carousel items on landing page to photos and cards for the blog page -->
                 <div class="carousel-item" id="active">
                     
-                    <div class="card mb-2" id="card">
+                    <div class="card text-white mb-2" id="card">
                         <div class="row no-gutters" id="gutters"> 
                             <div class="col-md-2" id="card-image">
                                 <img src="{%static 'media/cover.jpg'%}" class="d-block w-100" alt="Blog Photo" id="photo-1"/>
@@ -206,7 +222,7 @@
 
 
                 <div class="carousel-item" id="active">
-                    <div class="card mb-2" id="card">
+                    <div class="card text-white mb-2" id="card">
                         <div class="row no-gutters" id="gutters">
                             <div class="col-md-2" id="card-image">
                                 <img src="{%static 'media/abstract.jpg'%}" class="d-block w-100" alt="Blog Photo" id="photo-1"/>
@@ -247,17 +263,18 @@
         
         {% if user.is_authenticated%}
                    
-            <div id="sidebar" class="col-md-2">
-                <div class="content-section float-right">
+            <div id="sidebar" class="col-md-2 container-fluid">
+                <div class="content-section float-right container-fluid">
                        
                         <p class="muted-text" id="sidebarr">
                             <ul class="list-group">
-                                <li class="list-group-item list-group-item-primary"><h6 class="display-6">What you've missed</h6></li>
+                                <small class="text-muted">
+                                    <li class="list-group-item list-group-item-primary"><h6 class="display-6">What you've missed</h6></li>
                                     <!-- <li class="list-group-item list-group-item-dark">Announcements</li> -->
-                                    <li class="list-group-item list-group-item-warning">Posts</li>
-                                    <li class="list-group-item list-group-item-warning">Business Complaints</li>
-                                    <li class="list-group-item list-group-item-warning">BIPOC Businesses</li>
-        
+                                        <li class="list-group-item list-group-item-warning"><a href="#">Person Complaints</a></li>
+                                        <li class="list-group-item list-group-item-warning"><a href="#">Business Complaints</a></li>
+                                        <li class="list-group-item list-group-item-warning"><a href="#">BIPOC Businesses</a></li>
+                                </small>
                             </ul>
                         </p>
                 </div>
@@ -266,17 +283,20 @@
             <!-- </div> -->
         
         {%else%}
-            <div class="col">
-                <div id="sidebar" class="content-section">
-                    <h6 class="display-6">What you've missed</h6>
-                        <p class="muted-text">
-                            <ul class="list-group">
+            <div class="col-md-2 container-fluid" id="sidebar">
+                <div id="sidebar" class="content-section float-right container-fluid">
+                    
+                    <small class="muted-text">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary"><h6 class="display-6">What you've missed</h6></li>
+
+                            
                                 <!-- <li class="list-group-item list-group-item-dark">Announcements</li> -->
-                                <li class="list-group-item list-group-item-dark">Business Complaints</li>
-                                <li class="list-group-item list-group-item-dark">BIPOC Businesses</li>
+                            <li class="list-group-item list-group-item-warning">Business Complaints</li>
+                            <li class="list-group-item list-group-item-warning">BIPOC Businesses</li>
         
-                            </ul>
-                        </p>
+                        </ul>
+                    </small>
                 </div>
             </div>
         {%endif%}

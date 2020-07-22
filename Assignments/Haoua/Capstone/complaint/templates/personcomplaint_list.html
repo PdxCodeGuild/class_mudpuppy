@@ -1,23 +1,92 @@
-{%extends 'main_app/base.html'%}
+{% extends 'main_app/base.html' %}
 
 {%block content%}
-    <h1> Individual Complaints</h1>
+    <style>
+
+        li {
+            list-style-type:none;
+        }
+
+        hr {
+            border-color: white;
+        }
+
+        #border {
+            border: 2px dotted chartreuse;
+        }
+
+        #wordd {
+            word-wrap: word-break;
+        
+        }
+        body {
+            margin:0;
+            padding: 0;
+        }
+
+   
+    </style>
+
+
     <br>
-    <ul>
-        {% for person in object_list%}
-            <h3> <a href="{% url 'persons' person.pk%}">{{person.title}}</a></h3>
-            <li>Name: {{person.perpetrator}}
-                <br/> 
-                Contact : {{person.social_media}}
-                <br/> 
-                Work: {{person.job}} -- {{person.job_phone}} -- {{person.job_email}}
-                <br/>
-                Complaint: {{person.review}}
+    <br>
+    <br>
+    <br>
+    {% if user.is_authenticated%}
+        <div class="row text-white container-fluid col-md-12">
+            <div class="col-md-9 container">
+                <h1 > Individual Complaints</h1>
                 <hr>
-                <small class="text-muted"> By {{user.username}} on {{person.date}}</small>
-            </li>
-        {%endfor%}
-    </ul>
-    <button class="btn btn-outline-primary"><a href="{% url 'home' %}">Back</a></button>
+                <ul>
+                    {% for person in object_list%}
+                        <div class="container-fluid col-md-9" id="border">
+                            <h3> <a href="{% url 'persons' person.pk%}">{{person.title}}</a></h3>
+                            <li>
+                                <p>Name: {{person.perpetrator}}</p>
+                                
+                                <p>Contact : {{person.social_media}}</p>
+                                 
+                                <p>Work: {{person.job}} -- {{person.job_phone}} -- {{person.job_email}}</p>
+                                
+                                <div id="wordd">Complaint: {{person.review}}</div>
+                                
+                                <small class="text-white"> By {{user.username}} on {{person.date}}</small>
+                            </li>
+                            
+                            
+                        </div>
+                        <br>
+                        
+                        
+                    {%endfor%}
+                    <button class="btn btn-outline-primary"><a href="{% url 'home' %}">Back</a></button>
+                    
+                </ul>
+            </div>
+            
+
+        
+            <div id="sidebar" class="col-md-3 mb-1 container">
+                <div class="content-section">
+               
+                    <p class="muted-text" id="sidebarr">
+                        <ul class="list-group">
+                            <small class="text-muted">
+                                <li class="list-group-item list-group-item-primary"><h6 class="display-6">What you've missed</h6></li>
+                            <!-- <li class="list-group-item list-group-item-dark">Announcements</li> -->
+                                    <li class="list-group-item list-group-item-warning"><a href="{% url 'people'%}">Person Complaints</a></li>
+                                    <li class="list-group-item list-group-item-warning"><a href="{% url 'complaint'%}">Business Complaints</a></li>
+                                    <li class="list-group-item list-group-item-warning"><a href="https://mercatuspdx.com/directory/black-owned-businesses/#!directory/ord=rnd">BIPOC Businesses</a></li>
+                            </small>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    {%else%}
+        <h1 class="text-white">Please login or create an account to create a complaint</h1>
+        <button class="btn btn-outline-primary"><a href="{%url 'login'%}"></a></button>
+
+    {%endif%}
 
 {% endblock content%}

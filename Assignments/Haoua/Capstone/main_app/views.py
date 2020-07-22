@@ -7,8 +7,8 @@ def home(request):
     return render(request,'main_app/landing.html', {'posts': Post.objects.all()})
 
 def about(request):
-    return render(request,'main_app/about.html',)
-
+    return render(request,'main_app/about.html')
+    
 
 def blog(request):
     return render(request, 'main_app/blog.html',{'posts': Post.objects.all()})

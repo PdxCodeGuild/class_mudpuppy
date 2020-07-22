@@ -244,13 +244,7 @@
     <br>
     <div class="col-md-6">
     
-        {% if messages %}
-            {% for item in messages %}
-                <div class="alert alert-{{item.tags}}">
-                    {{item}}
-                </div>
-            {%endfor%}
-        {% endif%}
+  
         
         {%block content %}
         

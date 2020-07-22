@@ -6,10 +6,104 @@
 <!-- photos of admin-->
 <!-- mission statement -->
 <!-- ways  to contact us -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
 
+        hr {
+            border-color:white;
+            
 
+        }
+
+        #aboutus {
+            width: 90vw;
+            height:100vh;
+        }
+    </style>
+
+    <br>
+    <br>
 <!-- this info is only available to users who are logged in -->
+    <div class="row container col-md-12" id="aboutus">
+        <div class="container col-md-9">
+            <h1 class="text-white" id="us">About Us</h1>
+            <hr>
+            <br>
+            <ul class="list">
+                <li>
+                    <h1 class="text-white">WHO WE ARE: </h1>
+                    <p class="text-white"> We are a group of local individuals who want to expose racist systems</p>
 
+                </li>
+
+                <li> 
+                    <h1 class="text-white">WHY WE DO IT: </h1>
+                    <p class="text-white"> Too many people have gotten away with mistreatment of marginalized folks for too long. Over 12,000+ people in the Pacific Northwest have come together to fight racism and injustice across the nation</p>
+
+                </li>
+
+                <li> 
+                    <h1 class="text-white">OUR VALUES: </h1>
+                    <p class="text-white"> RESPECT, HONESTY, RESISTANCE, TRANSPERANCY, LOVE</p>
+
+                </li>
+                <li>            <button class="btn btn-outline-danger"><a href="{% url 'home' %}">HOME</a></button>
+                </li>
+            </ul>
+           
+            <!-- <button class="btn btn-outline-danger"><a href="{% url 'home' %}"></a>HOME</button> -->
+
+        </div>
+
+                
+        {% if user.is_authenticated%}
+            <div id="sidebar" class="col-md-3 container-fluid">
+                <div class="content-section container-fluid">
+                       
+                    <p class="muted-text" id="sidebarr">
+                        <ul class="list-group">
+                            <small class="text-muted">
+                                <li class="list-group-item list-group-item-primary"><h6 class="display-6">What you've missed</h6></li>
+                                    <!-- <li class="list-group-item list-group-item-dark">Announcements</li> -->
+                                    <li class="list-group-item list-group-item-warning"><a href="#">Person Complaints</a></li>
+                                    <li class="list-group-item list-group-item-warning"><a href="#">Business Complaints</a></li>
+                                    <li class="list-group-item list-group-item-warning"><a href="#">BIPOC Businesses</a></li>
+                            </small>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- </div> -->
+        
+        {%else%}
+            <div class="col-md-2 container-fluid" id="sidebar">
+                <div id="sidebar" class="content-section float-right container-fluid">
+                    
+                    <small class="muted-text">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary"><h6 class="display-6">What you've missed</h6></li>
+
+                            
+                                <!-- <li class="list-group-item list-group-item-dark">Announcements</li> -->
+                            <li class="list-group-item list-group-item-warning">Business Complaints</li>
+                            <li class="list-group-item list-group-item-warning">BIPOC Businesses</li>
+        
+                        </ul>
+                    </small>
+                </div>
+            </div>
+        {%endif%}
+    </div>
+
+
+    <!-- <button class="btn btn-outline-danger"><a href="{% url 'home' %}"></a>HOME</button> -->
 
 {% endblock content %}
 

@@ -33,8 +33,8 @@ urlpatterns = [
     path('signin/', auth.LoginView.as_view(template_name='login/login.html'), name='login'),
     path('signout/', auth.LogoutView.as_view(template_name='login/logout.html'), name='logout'),
     path('account/', login_views.account, name='account'),
-    path('blog/', include('main_app.urls'), name='blog'),
-    path('file/', include('complaint.urls'), name="complaint")
+    # path('blog/', include('main_app.urls'), name='blog'),
+    path('', include('complaint.urls'), name="complaint")
     # path('signup/', include('login.urls'), name="signup")
 
 

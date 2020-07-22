@@ -17,23 +17,53 @@
         #formid {
             /* margin-left: 28vw; */
         }
-    </style>
 
+        hr {
+            border-color: white;
+        }
+    </style>
+    <br>
+    <br>
     {%if user.is_authenticated%}
-        <div id="formid" class="container-fluid">
-            <h1>File a Business Complaint</h1>
-        </div>
+        <div class="row container col-md-12">
+            <div class="container col-md-9">
+                <div id="formid" class="text-white container-fluid">
+                    <h1>File a Business Complaint</h1>
+                </div>
         
-        <hr>
-        <br>
-        <form class="container" method="POST"> 
-            {% csrf_token%}
-            {{form|crispy}}
-            <br>
-            <button class="btn btn-outline-primary">Post Complaint</button>
+                <hr>
+                <br>
+                <form class="container" method="POST"> 
+                    {% csrf_token%}
+                    {{form|crispy}}
+                    <br>
+                    <button class="btn btn-outline-primary">Post Complaint</button>
          
-        </form>                <!-- <button type="submit" class="btn btn-outline-primary">Post Complaint</button> -->
-        <br>             
+                </form>                <!-- <button type="submit" class="btn btn-outline-primary">Post Complaint</button> -->
+                <br>  
+            </div>           
+
+            <div id="sidebar" class="col-md-3 mb-1 container-fluid">
+                <div class="content-section container-fluid">
+                           
+                    <p class="muted-text" id="sidebarr">
+                        <ul class="list-group">
+                            <small class="text-muted">
+                                <li class="list-group-item list-group-item-primary"><h6 class="display-6">What you've missed</h6></li>
+                                        <!-- <li class="list-group-item list-group-item-dark">Announcements</li> -->
+                                    <li class="list-group-item list-group-item-warning"><a href="{% url 'people'%}">Person Complaints</a></li>
+                                    <li class="list-group-item list-group-item-warning"><a href="{% url 'complaint'%}">Business Complaints</a></li>
+                                    <li class="list-group-item list-group-item-warning"><a href="https://mercatuspdx.com/directory/black-owned-businesses/#!directory/ord=rnd">BIPOC Businesses</a></li>
+                                
+                            </small>
+                        </ul>
+                    </p>
+                    
+                </div>
+
+            </div>
+
+        </div>
       
 
 
@@ -41,6 +71,7 @@
     {%else %}
         <h1>Please login or create an account to create a complaint</h1>
         <button class="btn btn-outline-primary"><a href="{%url 'login'%}"></a></button>
+
     {%endif%}
 
 

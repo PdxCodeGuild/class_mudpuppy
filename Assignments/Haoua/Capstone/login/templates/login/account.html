@@ -1,5 +1,5 @@
 
-{% extends "login/base.html" %}
+{% extends "main_app/base.html" %}
 
 {%load crispy_forms_tags%}
 
@@ -7,6 +7,67 @@
     <br>
     <br>
     <br>
+    <style>
+        #top {
+            /* margin-top: -4em; */
 
-    <h1> {{user.username}}</h1>
+        }
+        
+    </style>
+    <div class="row col-md-12 container">
+        <div class="container col-md-9">
+            <h1 class="text-white"> Welcome {{user.username}}, Navigate the site </h1>
+        </div>
+        <!-- <div class="col-md-4 float-right container" id="top"> -->
+        {% if user.is_authenticated%}
+            <div id="sidebar" class="col-md-3 container-fluid">
+                <div class="content-section container-fluid">
+                           
+                    <p class="muted-text" id="sidebarr">
+                        <ul class="list-group">
+                            <small class="text-muted">
+                                <li class="list-group-item list-group-item-primary"><h6 class="display-6">What you've missed</h6></li>
+                                        <!-- <li class="list-group-item list-group-item-dark">Announcements</li> -->
+                                    <li class="list-group-item list-group-item-warning"><a href="{% url 'people'%}">Person Complaints</a></li>
+                                    <li class="list-group-item list-group-item-warning"><a href="{% url 'complaint'%}">Business Complaints</a></li>
+                                    <li class="list-group-item list-group-item-warning"><a href="https://mercatuspdx.com/directory/black-owned-businesses/#!directory/ord=rnd">BIPOC Businesses</a></li>
+                            </small>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+                
+                <!-- </div> -->
+            
+        {%else%}
+            <div class="col-md-3 container-fluid" id="sidebar">
+                <div id="sidebar" class="content-section float-right container-fluid">
+                        
+                    <small class="muted-text">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary"><h6 class="display-6">Check us out!</h6></li>
+    
+                                
+                                    <!-- <li class="list-group-item list-group-item-dark">Announcements</li> -->
+                                <li class="list-group-item list-group-item-warning"><a href="{% url 'blog'%}">Blog</a></li>
+                                <li class="list-group-item list-group-item-warning"><a href="https://mercatuspdx.com/directory/black-owned-businesses/#!directory/ord=rnd">BIPOC Businesses</a></li>
+            
+                        </ul>
+                    </small>
+                </div>
+            </div>
+        {%endif%}
+    </div>
+    <div class=" col-md-12">
+        <div class="col-md-6">
+            <button class="btn btn-danger"><a href="{% url 'create'%}">File a Business Complaint</a></button>
+        </div>
+        <br>
+        <br>
+        <div class="col-md-6">
+            <button class="btn btn-danger"><a href="{% url 'person'%}">File an Individual Complaint</a></button>
+        </div>
+    </div>
+
 {% endblock content %}
+
