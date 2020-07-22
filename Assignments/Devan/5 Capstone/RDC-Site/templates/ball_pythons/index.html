@@ -17,15 +17,23 @@
                                 <div class="card-content">
                                         <span class="card-title activator grey-text text-darken-4">{{ ball.name }}<i
                                                         class="material-icons right">more_vert</i></span>
-                                        <p><a href="#">This is a link</a></p>
+                                        <p><a href="#">Inquire</a></p>
                                 </div>
                                 <div class="card-reveal">
-                                        <span class="card-title activator grey-text text-darken-4">{{ ball.morph }}<i
+                                        <span class="card-title activator grey-text text-darken-4">Morph<i
                                                         class="material-icons right">close</i></span>
-                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex voluptas
-                                                corrupti nihil? Quidem cupiditate, error cum eius similique voluptates
-                                                eos explicabo! Repellat dicta iure a dignissimos quaerat ducimus soluta
-                                                earum.</p>
+                                        <ul>
+                                                {% for gene in ball.morph.all %}
+                                                <li>{{ gene }}</li>
+                                                {% endfor %}
+                                        </ul>
+                                        <span class="gender">Gender: {{ ball.gender }}</span><br>
+                                        <span class="hatched-on">Hatched on: {{ ball.hatched_on }}</span><br>
+                                        <span class="weight">Weight: {{ ball.weight }}</span><br>
+                                        <span class="weighed-on">Weighed on: {{ ball.weighed_on }}</span><br>
+                                        <span class="feeding-on">Feeding on: {{ ball.feeding_on }}</span><br>
+                                        <span class="cost">Price: {{ ball.cost_in_dollars }}</span><br>
+                                        <span class="listed-on">Listed: {{ ball.listed_on }}</span><br>
                                 </div>
                         </div>
                 </div>
