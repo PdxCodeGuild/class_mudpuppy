@@ -16,6 +16,7 @@ class ComplaintView(ListView):
     def __unicode__(self):
         return self.template_name
 
+
 class ComplaintDetailView(DetailView):
     model = Complaint
     template_name = 'complaint_detail.html'
