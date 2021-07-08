@@ -1,6 +1,5 @@
-from huepy import *
-
 currency = {'dollar': 100, 'quarter': 25, 'dime': 10, 'nickle': 5, 'penny': 1}
+
 
 class ATM:
     def __init__(self, balance=0, interest_rate=0.001):
@@ -10,28 +9,36 @@ class ATM:
         self.transaction_id = 1
 
     def welcome(self):
-        print('\nWelcome to the ATM.\nHow much money do you have? (ex. 1.75) ')
-        self.balance = float(input('$ '))
-        self.transactions.append(f"ID:{self.transaction_id}     Start Balance: {self.balance}")
-        self.transaction_id += 1
+        print('\nWelcome to the ATM.\n\nHow much money do you have? (ex. 1.75) ')
+        try:
+            self.balance = float(input('$ '))
+            self.transactions.append(
+                f"ID:{self.transaction_id}     Start Balance: {self.balance}")
+            self.transaction_id += 1
+        except:
+            print("\nPlease enter a valid number.")
+            self.welcome()
 
     def check_balance(self):
+        clearScrn()
         return self.balance
 
     def deposit(self, amount):
         self.balance += amount
-        self.transactions.append(f"ID:{self.transaction_id}     Deposit: {amount}")
+        self.transactions.append(
+            f"ID:{self.transaction_id}     Deposit: {amount}")
         self.transaction_id += 1
 
     def withdraw(self, amount):
         self.balance -= amount
-        self.transactions.append(f"ID:{self.transaction_id}     Withdraw: {amount}")
+        self.transactions.append(
+            f"ID:{self.transaction_id}     Withdraw: {amount}")
         self.transaction_id += 1
 
     def view_transactions(self):
         print("-----Transaction History-----")
         print("\n".join(self.transactions))
-        print("\nCurrent Balance: " + bold(green(self.check_balance())))
+        print("\nCurrent Balance: ", (self.check_balance()))
 
     def calc_interest(self):
         self.balance += self.balance * self.interest_rate
@@ -54,40 +61,59 @@ class ATM:
             f'\nI can give you {dollars} dollars, {quarters} quarters, {dimes} dimes, {nickles} nickles, and {pennies} pennies.')
         print('\nThank you! Bye!')
 
+
 atm = ATM()
 atm.welcome()
 
-while True:
-    print(yellow("\n\
--------------------MENU-------------------\n\
-[1] Deposit      [2] Withdraw  [3] Balance\n\
-[4] Transactions [5] Interest  [6] Empty Acct\n\
-[0] Exit"))
-    try:
-        command = int(input('Choose an option: '))
-        if command > 6:
-            print("Not a vaild option, enter 0-5.")
-        elif command == 0:
-            print('Thank\'s for using the ATM.')
+MENU_OPTIONS = {0: "Exit",
+                1: "Deposit",
+                2: "Withdraw",
+                3: "Balance",
+                4: "Transactions",
+                5: "Interest",
+                6: "Empty Account",
+                }
+
+
+def clearScrn():
+    print(chr(27) + "[2J")
+
+
+def mainMenu():
+    while True:
+        #     print("\n\
+        # -------------------MENU-------------------\n\
+        # [1] Deposit      [2] Withdraw  [3] Balance\n\
+        # [4] Transactions [5] Interest  [6] Empty Acct\n\
+        # [0] Exit")
+        print('\n-------MENU-------\n')
+        for pair in MENU_OPTIONS.items():
+            print(": ".join(str(i) for i in pair))
+        try:
+            command = int(input('\nChoose an option: '))
+            if command > 6:
+                print("\nNot a vaild option, enter 0-5.")
+            elif command == 0:
+                print('\nThank\'s for using the ATM.')
+                break
+            elif command == 1:
+                print("\nHow much would you like to deposit? ")
+                amount = float(input('$ '))
+                atm.deposit(amount)
+            elif command == 2:
+                print("\nHow much would you like to withdraw? ")
+                amount = float(input('$ '))
+                atm.withdraw(amount)
+            elif command == 3:
+                print(f'\nYour account balance is $ {atm.check_balance()}')
+            elif command == 4:
+                atm.view_transactions()
+            elif command == 5:
+                atm.calc_interest()
+            elif command == 6:
+                atm.empty_account()
+        except ValueError:
+            print("\nNot a valid entry. Try again. ")
+        except KeyboardInterrupt:
+            print("\nYou quit, thank's for using the atm.")
             break
-        elif command == 1:
-            print("How much would you like to deposit? ")
-            amount = float(input(': '))
-            atm.deposit(amount)
-        elif command == 2:
-            print("How much would you like to withdraw? ")
-            amount = float(input(': '))
-            atm.withdraw(amount)
-        elif command == 3:
-            print('Your account balance is $ ' + bold(green(atm.check_balance())))
-        elif command == 4:
-            atm.view_transactions()
-        elif command == 5:
-            atm.calc_interest()
-        elif command == 6:
-            atm.empty_account()
-    except ValueError:
-        print("Not a valid entry. Try again. ")
-    except KeyboardInterrupt:
-        print("\nYou quit, thank's for using the atm.")
-        break
